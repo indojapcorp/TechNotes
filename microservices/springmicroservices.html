@@ -1,0 +1,59 @@
+<p>Eureka is a service registry developed by Netflix, but integration with Eureka isn&rsquo;t available in Thorntail.</p>
+
+<p>Ribbon is a client-side software load-balancing framework developed by Netflix&nbsp;</p>
+
+<p>Thorntail provides integration with Netflix Ribbon</p>
+
+<p>Ribbon can use a service registry to retrieve instances. Right now, let&rsquo;s focus on the load-balancing options it provides:</p>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li><strong><em>Round Robin</em>&mdash;&nbsp;</strong>Chooses an available server from all those present in sequential order, regardless of whatever load each server may be experiencing.</li>
+	<li><strong><em>Availability Filtering</em>&mdash;&nbsp;</strong>Skips any servers that are deemed to have had their &ldquo;circuit tripped,&rdquo; connection failures the last three times, or a high number of concurrent connections.</li>
+	<li><strong><em>Weighted Response Time</em>&mdash;&nbsp;</strong>Each server is given a weighting based on average response times, which is used to generate a range of random values representing the server. For instance, if servers A and B have a weighting of 5 and 25, respectively, the range would be 1&ndash;5 (A) and 6&ndash;30 (B). A random number is generated between 1 and the sum of all the server weights, which determines the server based on the ranges. A server with a higher weighting, or shorter response time, has a greater chance of being selected.</li>
+	<li><strong><em>Zone Aware Round Robin</em>&mdash;&nbsp;</strong>Particularly useful for deployments to Amazon Web Services, where servers are distributed across availability zones. This rule chooses servers based on whether they&rsquo;re in the same zone as the client, and that are available.</li>
+	<li><strong><em>Random</em>&mdash;&nbsp;</strong>Purely random distribution across available servers.</li>
+</ul>
+
+<p>The default choice is Round Robin. If performance is critical to your microservice, Weighted Response Time would be the best choice for load balancing. It&rsquo;s similar to Round Robin in its behavior, while also favoring those servers that are performing better.</p>
+
+<p>Hystrix is a latency and fault-tolerance library intended to isolate access points with remote systems, services, and libraries; halt cascading failure; and enable resilience in distributed systems. Wherever failure is inevitable, as with distributed systems, the Hystrix library improves the resiliency of microservices in these environments.</p>
+
+<p>Hystrix provides sensible defaults for a circuit breaker to handle time-outs, network congestion, and latency with any request you make.&nbsp;</p>
+
+<h4>What problems does security need to solve?</h4>
+
+<p>Authentication and authorization are the two aspects of security that are the most relevant to microservices for us.&nbsp;</p>
+
+<h3>WORKING WITH KEYCLOAK</h3>
+
+<p>Keycloak is an open source project providing identity and access management for modern applications and services. Adding authentication to applications and securing services can be achieved with a minimum of fuss.</p>
+
+<h4>Understanding Keycloak&rsquo;s features</h4>
+
+<p>Keycloak provides many features. Here are four most relevant for microservice development:</p>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li><strong><em>Single-sign on</em>&mdash;&nbsp;</strong>Allows users to authenticate against Keycloak rather than each individual application or service. After users log in to Keycloak, they can access any application or service that&rsquo;s authenticated through Keycloak.</li>
+	<li><strong><em>Social login</em>&mdash;&nbsp;</strong>It&rsquo;s super easy to enable social logins with Keycloak! Configure the social network within the admin console and go. No code or application changes are required.</li>
+	<li><strong><em>User federation</em>&mdash;&nbsp;</strong>If your users are registered within LDAP or Active Directory, they can easily be federated with Keycloak. It&rsquo;s also possible to develop your own provider to access your users, if they&rsquo;re in different types of stores, such as a relational database.</li>
+	<li><strong><em>Standard protocols</em>&mdash;&nbsp;</strong>Out of the box, Keycloak provides support for OpenID Connect, OAuth 2.0, and Security Assertion Markup Language (SAML).</li>
+</ul>
+
+<p>Securing your microservices is critical, regardless of whether they&rsquo;re intended for internal users only. You can&rsquo;t predict all the types of malicious users who may attempt to do harm through your microservices.</p>
+
+<ul>
+	<li>Keycloak can accept bearer tokens, provide an authorization client, and provide easy configuration for securing your microservices.</li>
+	<li>You can authenticate against Keycloak without a user, which is essential for microservice-to-microservice calls when the recipient is secured.</li>
+	<li>You can integrate Keycloak into an application UI to provide authentication, and pass tokens to RESTful endpoints that are secured.</li>
+	<li>&nbsp;</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
