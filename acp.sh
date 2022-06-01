@@ -2,7 +2,7 @@
 
 echo "Add Commit Push: $1";
 
-if [ "$#" -ne 1 ]
+if [ "$#" -eq 1 ]
  then
 git add *
 git commit -m "Japanese datatables"
