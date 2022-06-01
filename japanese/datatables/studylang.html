@@ -1,0 +1,70 @@
+<html>
+<head>
+<style>
+
+.some-page-wrapper {
+  margin: 5px;
+  background-color: red;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 50%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.orange-column {
+  background-color: orange;
+  height: 100%;
+}
+
+.blue-column {
+  background-color: blue;
+  height: 100%;
+}
+
+.green-column {
+  background-color: green;
+  height: 100%;
+}
+
+</style>
+</head>
+<body>
+
+
+
+
+<div class='some-page-wrapper'>
+  <div class='row'>
+    <div class='column'>
+      <div class='orange-column'>
+        <iframe src="http://localhost/datatables/GRE_1300.html" style="width:100%;height: 95%;" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class='row 2'>
+    <div class='column'>
+      <div class='green-column'>
+        <iframe id="gdic" src="https://www.google.com/search?igu=1&q=define+accolade" style="width:100%;height: 95%;" frameborder="0"></iframe>
+      </div>
+    </div>
+    <div class='column'>
+      <div class='blue-column'>
+        <iframe id="wsen" src="http://sentencedict.com/accolade.html" style="width:100%;height: 95%;" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
