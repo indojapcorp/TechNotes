@@ -46,6 +46,7 @@ speech.text = selectedText;
 
 pagelang=$( "html" ).attr("lang");
     if(pagelang == ''){
+    	pagelang = 'en';
       speakVoice(0);
     }else if(pagelang == 'en'){
       speakVoice(0);
@@ -54,11 +55,18 @@ pagelang=$( "html" ).attr("lang");
     }
     else{
           speakVoice(0);
+    	  pagelang = 'en';
     }
 
+//    console.log("selectedText=" + selectedText);
+//	console.log(selectedText.split(/\r?\n/));
 
 //  speakVoice(18);
-  window.speechSynthesis.speak(speech);    }else{
+
+speakMessage(selectedText,500,pagelang)
+
+//  window.speechSynthesis.speak(speech);    
+  }else{
         
 }
 
@@ -68,3 +76,39 @@ function speakVoice(num) {
 voices = window.speechSynthesis.getVoices();
   speech.voice = voices[num];
 };
+
+function speakMessage(message, PAUSE_MS = 500,lang) {
+  try {
+    const messageParts = message.split(/\r?\n/)
+
+    let currentIndex = 0
+    const speak = (textToSpeak) => {
+      const msg = new SpeechSynthesisUtterance();
+      const voices = window.speechSynthesis.getVoices();
+      msg.voice = voices[0];
+      msg.volume = 1; // 0 to 1
+      msg.rate = 1; // 0.1 to 10
+      msg.pitch = 1; // 0 to 2
+      msg.text = textToSpeak;
+      msg.lang = lang;
+
+      msg.onend = function() {
+        currentIndex++;
+        if (currentIndex < messageParts.length) {
+          setTimeout(() => {
+            speak(messageParts[currentIndex])
+          }, PAUSE_MS)
+        }
+      };
+      speechSynthesis.speak(msg);
+    }
+    speak(messageParts[0])
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+
+function run(pause) {
+  speakMessage('Testing 1,2,3', pause)
+}
