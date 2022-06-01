@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>jap_kanji</title>
+</head>
+
+<body class="container">
+<div>
+              Change Frames: 
+              <select id="selectonoff">
+                    <option value="1" selected="selected">
+                      ON
+                    </option>        
+                    <option value="0">
+                      OFF
+                    </option>                                                                                                                  
+              </select>
+      <div class="mb-5">
+      <button id="start" class="btn btn-success mt-5 me-3">Start</button>
+      <button id="jap" class="btn btn-success mt-5 me-3">Start Jap</button>
+      <button id="pause" class="btn btn-warning mt-5 me-3">Pause</button>
+      <button id="resume" class="btn btn-info mt-5 me-3">Resume</button>
+      <button id="cancel" class="btn btn-danger mt-5 me-3">Cancel</button>
+    </div>
+</div>
+<h1 class="text-center">jap_kanji</h1>
+
+<table id="maintable" class="display compact cell-border" cellspacing="0" width="100%">    <thead>
+<tr>
+<th>Frequency</th>
+<th>Kanji</th>
+<th>Onyomi</th>
+<th>Kunyomi</th>
+<th>Meaning_english</th>
+<th>Njlpt</th>
+<th>Concepttype</th>
+<th>Schoolstd</th>
+    </tr>
+</thead>
+    <tbody>
+    <tr>
+<td>1</td>
+<td>日</td>
+<td> ジツ, ニチ</td>
+<td>-か, -び, ひ</td>
+<td>day, sun, Japan, counter for days</td>
+<td>5</td>
+<td>Sky and heavens</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>2</td>
+<td>一</td>
+<td> イツ, イチ</td>
+<td>ひと.つ, ひと-</td>
+<td>one</td>
+<td>5</td>
+<td>Numbers counting sequence</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>3</td>
+<td>国</td>
+<td> コク</td>
+<td>くに</td>
+<td>country</td>
+<td>5</td>
+<td>Groups</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>4</td>
+<td>会</td>
+<td> エ, カイ</td>
+<td>あつ.まる, あ.わせる, あ.う</td>
+<td>meeting, meet, party, association, interview, join</td>
+<td>4</td>
+<td>Unknown</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>5</td>
+<td>人</td>
+<td> ニン, ジン</td>
+<td>-と, -り, ひと</td>
+<td>person</td>
+<td>5</td>
+<td>General</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>6</td>
+<td>年</td>
+<td> ネン</td>
+<td>とし</td>
+<td>year, counter for years</td>
+<td>5</td>
+<td>Time</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>7</td>
+<td>大</td>
+<td> タイ, ダイ</td>
+<td>-おお.いに, おお.きい, おお-</td>
+<td>large, big</td>
+<td>5</td>
+<td>Shape size pattern arrangement</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>8</td>
+<td>十</td>
+<td> ジュッ, ジッ, ジュウ</td>
+<td>と, とお</td>
+<td>ten</td>
+<td>5</td>
+<td>Numbers counting sequence</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>9</td>
+<td>二</td>
+<td> ジ, ニ</td>
+<td>ふたた.び, ふた.つ, ふた</td>
+<td>two</td>
+<td>5</td>
+<td>Numbers counting sequence</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>10</td>
+<td>本</td>
+<td> ホン</td>
+<td>もと</td>
+<td>book, present, main, true, real, counter for long cylindrical things</td>
+<td>5</td>
+<td>Language communication</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>11</td>
+<td>中</td>
+<td> チュウ</td>
+<td>あた.る, うち, なか</td>
+<td>in, inside, middle, mean, center</td>
+<td>5</td>
+<td>Directions and spatial relationships</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>12</td>
+<td>長</td>
+<td> チョウ</td>
+<td>おさ, なが.い</td>
+<td>long, leader</td>
+<td>5</td>
+<td>Roles and status</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>13</td>
+<td>出</td>
+<td> スイ, シュツ</td>
+<td>い.だす, い.でる, -だ.す, だ.す, -で, で.る</td>
+<td>exit, leave</td>
+<td>5</td>
+<td>Directions and spatial relationships</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>14</td>
+<td>三</td>
+<td> ゾウ, サン</td>
+<td>みっ.つ, み.つ, み</td>
+<td>three</td>
+<td>5</td>
+<td>Numbers counting sequence</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>15</td>
+<td>同</td>
+<td> ドウ</td>
+<td>おな.じ</td>
+<td>same, agree, equal</td>
+<td>4</td>
+<td>Unknown</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>16</td>
+<td>時</td>
+<td> ジ</td>
+<td>-どき, とき</td>
+<td>time, hour</td>
+<td>5</td>
+<td>Time</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>17</td>
+<td>政</td>
+<td> ショウ, セイ</td>
+<td>まん, まつりごと</td>
+<td>politics, government</td>
+<td>2</td>
+<td>Unknown</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>18</td>
+<td>事</td>
+<td> ズ, ジ</td>
+<td>つか.える, つか.う, こと</td>
+<td>matter, thing, fact, business, reason, possibly</td>
+<td>4</td>
+<td>Unknown</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>19</td>
+<td>自</td>
+<td> シ, ジ</td>
+<td>おの.ずと, おの.ずから, みずか.ら</td>
+<td>oneself</td>
+<td>4</td>
+<td>General</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>20</td>
+<td>行</td>
+<td> アン, ギョウ, コウ</td>
+<td>おこ.なう, おこな.う, -いき, -い.き, -ゆき, -ゆ.き, ゆ.く, い.く</td>
+<td>going, journey</td>
+<td>5</td>
+<td>Movement</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>21</td>
+<td>社</td>
+<td> シャ</td>
+<td>やしろ</td>
+<td>company, firm, office, association, shrine</td>
+<td>5</td>
+<td>Religion - supernatural world</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>22</td>
+<td>見</td>
+<td> ケン</td>
+<td>み.せる, み.える, み.る</td>
+<td>see, hopes, chances, idea, opinion, look at, visible</td>
+<td>5</td>
+<td>Senses</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>23</td>
+<td>月</td>
+<td> ガツ, ゲツ</td>
+<td>つき</td>
+<td>month, moon</td>
+<td>5</td>
+<td>Time</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>24</td>
+<td>分</td>
+<td> ブ, フン, ブン</td>
+<td>わ.かつ, わ.かる, わ.かれる, わ.け, わ.ける</td>
+<td>part, minute of time, segment, share, degree, one's lot, duty, understand, know, rate, 1%, chances, shaku/100</td>
+<td>5</td>
+<td>Time</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>25</td>
+<td>議</td>
+<td>ギ</td>
+<td></td>
+<td>deliberation, consultation, debate, consideration</td>
+<td>2</td>
+<td>Unknown</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>26</td>
+<td>後</td>
+<td> コウ, ゴ</td>
+<td>おく.れる, あと, うしろ, うし.ろ, のち</td>
+<td>behind, back, later</td>
+<td>5</td>
+<td>Time</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>27</td>
+<td>前</td>
+<td> ゼン</td>
+<td>-まえ, まえ</td>
+<td>in front, before</td>
+<td>5</td>
+<td>Time</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>28</td>
+<td>民</td>
+<td> ミン</td>
+<td>たみ</td>
+<td>people, nation, subjects</td>
+<td>2</td>
+<td>General</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>29</td>
+<td>生</td>
+<td> ショウ, セイ</td>
+<td>-う, む.す, な.す, な.る, なま-, なま, き, は.やす, は.える, お.う, う.む, うまれ, う.まれ, う.まれる, い.ける, い.かす, い.きる</td>
+<td>life, genuine, birth</td>
+<td>5</td>
+<td>Culture arts music learning</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>30</td>
+<td>連</td>
+<td> レン</td>
+<td>-づ.れ, つ.れる, つら.ねる, つら.なる</td>
+<td>take along, lead, join, connect, party, gang, clique</td>
+<td>2</td>
+<td>Unknown</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>31</td>
+<td>五</td>
+<td> ゴ</td>
+<td>いつ.つ, いつ</td>
+<td>five</td>
+<td>5</td>
+<td>Numbers counting sequence</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>32</td>
+<td>発</td>
+<td> ホツ, ハツ</td>
+<td>はな.つ, つか.わす, おこ.る, あば.く, た.つ</td>
+<td>discharge, departure, publish, emit, start from, disclose, counter for gunshots</td>
+<td>4</td>
+<td>Unknown</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>33</td>
+<td>間</td>
+<td> ケン, カン</td>
+<td>あい, ま, あいだ</td>
+<td>interval, space</td>
+<td>5</td>
+<td>Time</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>34</td>
+<td>対</td>
+<td> ツイ, タイ</td>
+<td>むか.う, なら.ぶ, つれあ.い, そろ.い, こた.える, あいて</td>
+<td>vis-a-vis, opposite, even, equal, versus, anti-, compare</td>
+<td>3</td>
+<td>Unknown</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>35</td>
+<td>上</td>
+<td> シャン, ショウ, ジョウ</td>
+<td>よ.す, のぼ.す, のぼ.せる, のぼ.り, のぼ.る, -あ.がり, あ.がり, -あ.がる, あ.がる, -あ.げる, あ.げる, かみ, うわ-, -うえ, うえ</td>
+<td>above, up</td>
+<td>5</td>
+<td>Directions and spatial relationships</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>36</td>
+<td>部</td>
+<td> ブ</td>
+<td>-べ</td>
+<td>section, bureau, dept, class, copy, part, portion, counter for copies of a newspaper or magazine</td>
+<td>3</td>
+<td>Unknown</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>37</td>
+<td>東</td>
+<td> トウ</td>
+<td>ひがし</td>
+<td>east</td>
+<td>5</td>
+<td>Directions and spatial relationships</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>38</td>
+<td>者</td>
+<td> シャ</td>
+<td>もの</td>
+<td>someone, person</td>
+<td>4</td>
+<td>General</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>39</td>
+<td>党</td>
+<td> トウ</td>
+<td>むら, なかま</td>
+<td>party, faction, clique</td>
+<td>2</td>
+<td>Unknown</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>40</td>
+<td>地</td>
+<td>ジ, チ</td>
+<td></td>
+<td>ground, earth</td>
+<td>4</td>
+<td>Natural substances</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>41</td>
+<td>合</td>
+<td> カッ, ガッ, ゴウ</td>
+<td>-あ.わせる, あ.わせる, あ.わす, -あい, -あ.い, あい-, あ.い, -あ.う, あ.う</td>
+<td>fit, suit, join, 0.1</td>
+<td>3</td>
+<td>Unknown</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>42</td>
+<td>市</td>
+<td> シ</td>
+<td>いち</td>
+<td>market, city, town</td>
+<td>3</td>
+<td>Towns cities buildings structures roads</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>43</td>
+<td>業</td>
+<td> ゴウ, ギョウ</td>
+<td>わざ</td>
+<td>business, vocation, arts, performance</td>
+<td>4</td>
+<td>Money and commerce</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>44</td>
+<td>内</td>
+<td> ダイ, ナイ</td>
+<td>うち</td>
+<td>inside, within, between, among, house, home</td>
+<td>3</td>
+<td>Directions and spatial relationships</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>45</td>
+<td>相</td>
+<td> ショウ, ソウ</td>
+<td>あい-</td>
+<td>inter-, mutual, together, each other, minister of state, councillor, aspect, phase, physiognomy</td>
+<td>3</td>
+<td>Unknown</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>46</td>
+<td>方</td>
+<td> ホウ</td>
+<td>-がた, -かた, かた</td>
+<td>direction, person, alternative</td>
+<td>4</td>
+<td>Roles and status</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>47</td>
+<td>四</td>
+<td> シ</td>
+<td>よん, よっ.つ, よ.つ, よ</td>
+<td>four</td>
+<td>5</td>
+<td>Numbers counting sequence</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>48</td>
+<td>定</td>
+<td> ジョウ, テイ</td>
+<td>さだ.か, さだ.まる, さだ.める</td>
+<td>determine, fix, establish, decide</td>
+<td>3</td>
+<td>Unknown</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>49</td>
+<td>今</td>
+<td> キン, コン</td>
+<td>いま</td>
+<td>now</td>
+<td>5</td>
+<td>Time</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>50</td>
+<td>回</td>
+<td> エ, カイ</td>
+<td>か.える, もとお.る, -まわ.し, まわ.し-, -まわ.す, まわ.す, -まわ.り, -まわ.る, まわ.る</td>
+<td>times, round, game, revolve, counter for occurrences</td>
+<td>3</td>
+<td>Time</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>51</td>
+<td>新</td>
+<td> シン</td>
+<td>にい-, あら-, あら.た, あたら.しい</td>
+<td>new</td>
+<td>3</td>
+<td>Time</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>52</td>
+<td>場</td>
+<td> チョウ, ジョウ</td>
+<td>ば</td>
+<td>location, place</td>
+<td>4</td>
+<td>Unknown</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>53</td>
+<td>金</td>
+<td> ゴン, コン, キン</td>
+<td>-がね, かな-, かね</td>
+<td>gold</td>
+<td>5</td>
+<td>Money and commerce</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>54</td>
+<td>員</td>
+<td>イン</td>
+<td></td>
+<td>employee, member, number, the one in charge</td>
+<td>4</td>
+<td>Unknown</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>55</td>
+<td>九</td>
+<td> ク, キュウ</td>
+<td>ここの.つ, ここの</td>
+<td>nine</td>
+<td>5</td>
+<td>Numbers counting sequence</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>56</td>
+<td>入</td>
+<td> ジュ, ニュウ</td>
+<td>はい.る, -い.れ, い.れる, -い.り, -い.る, い.る</td>
+<td>enter, insert</td>
+<td>5</td>
+<td>Directions and spatial relationships</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>57</td>
+<td>選</td>
+<td> セン</td>
+<td>えら.ぶ</td>
+<td>elect, select, choose, prefer</td>
+<td>3</td>
+<td>Unknown</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>58</td>
+<td>立</td>
+<td> リットル, リュウ, リツ</td>
+<td>-だ.てる, -だ.て, -た.て, たて-, た.て-, -た.てる, た.てる, た.ち-, -た.つ, た.つ</td>
+<td>stand up</td>
+<td>4</td>
+<td>Gestures and sports</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>59</td>
+<td>開</td>
+<td> カイ</td>
+<td>あ.ける, あ.く, ひら.ける, -びら.き, ひら.き, ひら.く</td>
+<td>open, unfold, unseal</td>
+<td>4</td>
+<td>Unknown</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>60</td>
+<td>手</td>
+<td> ズ, シュ</td>
+<td>た-, -て, て-, て</td>
+<td>hand</td>
+<td>4</td>
+<td>Body Arms and legs</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>61</td>
+<td>米</td>
+<td> メエトル, マイ, ベイ</td>
+<td>よね, こめ</td>
+<td>rice, USA, metre</td>
+<td>3</td>
+<td>Food and drink</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>62</td>
+<td>力</td>
+<td> リイ, リキ, リョク</td>
+<td>ちから</td>
+<td>power, strong, strain, bear up, exert</td>
+<td>4</td>
+<td>Vehicles and machines</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>63</td>
+<td>学</td>
+<td> ガク</td>
+<td>まな.ぶ</td>
+<td>study, learning, science</td>
+<td>5</td>
+<td>Culture arts music learning</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>64</td>
+<td>問</td>
+<td> モン</td>
+<td>とん, と.い, と.う</td>
+<td>question, ask, problem</td>
+<td>4</td>
+<td>Language communication</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>65</td>
+<td>高</td>
+<td> コウ</td>
+<td>たか.める, たか.まる, -だか, たか, たか.い</td>
+<td>tall, high, expensive</td>
+<td>5</td>
+<td>Money and commerce</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>66</td>
+<td>代</td>
+<td> タイ, ダイ</td>
+<td>しろ, よ, か.える, -がわ.り, かわ.り, かわ.る, か.わる</td>
+<td>substitute, change, convert, replace, period, age, counter for decades of ages, eras, etc., generation, charge, rate, fee</td>
+<td>4</td>
+<td>Unknown</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>67</td>
+<td>明</td>
+<td> ミン, ミョウ, メイ</td>
+<td>あ.かす, あ.くる, あ.く, -あ.け, あ.ける, あき.らか, あか.らむ, あか.るむ, あか.るい, あ.かり</td>
+<td>bright, light</td>
+<td>3</td>
+<td>Weather and other natural phenomena</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>68</td>
+<td>実</td>
+<td> シツ, ジツ</td>
+<td>みち.る, みの, まことに, まこと, みの.る, み</td>
+<td>reality, truth</td>
+<td>3</td>
+<td>Food and drink</td>
+<td>小学3年</td>
+    </tr>
+    </tbody>
+<tfoot style="background-color: #c0c0c0; color: #ffffff; font-size: 0.9em; ">
+<tr>
+<th>Frequency</th>
+<th>Kanji</th>
+<th>Onyomi</th>
+<th>Kunyomi</th>
+<th>Meaning_english</th>
+<th>Njlpt</th>
+<th>Concepttype</th>
+<th>Schoolstd</th>
+    </tr>
+</tfoot>
+</table>
+
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="js/jszip.min.js"></script>
+<script type="text/javascript" src="js/pdfmake.min.js"></script>
+<script type="text/javascript" src="js/vfs_fonts.js"></script>
+<script type="text/javascript" src="js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="js/buttons.print.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/jquery.mark.min.js"></script>
+<script type="text/javascript" src="js/datatables.mark.js"></script>
+<script type="text/javascript" src="js/buttons.colVis.min.js"></script>
+<script type="text/javascript" src="js/text2speech.js"></script>
+
+<footer></footer>
+</body>
+
+</html>

@@ -7,6 +7,49 @@ speech.pitch = 1;
   
 let voices = [];
 
+//window.addEventListener("dblclick", event => {
+  //  speech.text = window.getSelection().toString();
+  //speakVoice(18);
+   // console.log("Double-click detected" + speech.text)
+ // window.speechSynthesis.speak(speech);
+
+  // Double-click detected
+//})
+
+var selectionEndTimeout;
+var selectedText;
+document.onselectionchange = userSelectionChanged;
+
+function userSelectionChanged() {
+
+    // wait 500 ms after the last selection change event
+    if (selectionEndTimeout) {
+        clearTimeout(selectionEndTimeout);
+    }
+
+    selectionEndTimeout = setTimeout(function () {
+
+        $(window).trigger('selectionEnd');
+    }, 5);
+}
+
+$(window).bind('selectionEnd', function () {
+
+    selectionEndTimeout = null;
+
+    // TODO: Do your cool stuff here........
+
+    selectedText = window.getSelection().toString();
+        console.log("selectionEnd detected" + selectedText)
+    if(selectedText != ''){
+speech.text = selectedText;
+  speakVoice(18);
+    console.log("Double-click detected" + selectedText)
+  window.speechSynthesis.speak(speech);    }else{
+        
+}
+
+});
 
 
 document.querySelector("#start").addEventListener("click", () => {
