@@ -33,7 +33,6 @@ document.querySelector("#voices").addEventListener("change", () => {
 
 document.querySelector("#start").addEventListener("click", () => {
   //speech.text = document.querySelector("textarea").value;
-  //speech.text = document.selection.createRange().htmlText;
   speech.text = window.getSelection().toString();
   window.speechSynthesis.speak(speech);
 });
