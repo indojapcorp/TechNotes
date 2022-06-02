@@ -19,6 +19,9 @@ let voices = [];
 var selectionEndTimeout;
 var selectedText;
 var pagelang;
+var fclang;
+var sclang;
+
 document.onselectionchange = userSelectionChanged;
 
 function userSelectionChanged() {
@@ -44,6 +47,11 @@ $(window).bind('selectionEnd', function () {
     if(selectedText != ''){
 speech.text = selectedText;
 
+fclang=$( "#fclang" ).val();
+sclang=$( "#sclang" ).val();
+
+
+
 pagelang=$( "html" ).attr("lang");
     if(pagelang == ''){
     	pagelang = 'en';
@@ -63,7 +71,18 @@ pagelang=$( "html" ).attr("lang");
 
 //  speakVoice(18);
 
-speakMessage(selectedText,500,pagelang)
+var length =selectedText.split(/\r?\n/).length;
+
+//if(length==1){
+//console.log("len=1");
+//speakMessage(selectedText,500,fclang)
+//}else{
+//console.log("len="+length);
+//speakTwoMessages(selectedText,500);
+//}
+
+//speakMessage(selectedText,500,pagelang)
+speakTwoMessages(selectedText,500);
 
 //  window.speechSynthesis.speak(speech);    
   }else{
@@ -85,7 +104,7 @@ function speakMessage(message, PAUSE_MS = 500,lang) {
     const speak = (textToSpeak) => {
       const msg = new SpeechSynthesisUtterance();
       const voices = window.speechSynthesis.getVoices();
-      msg.voice = voices[0];
+      msg.voice = voices[lang];
       msg.volume = 1; // 0 to 1
       msg.rate = 1; // 0.1 to 10
       msg.pitch = 1; // 0 to 2
@@ -108,6 +127,64 @@ function speakMessage(message, PAUSE_MS = 500,lang) {
   }
 }
 
+
+function speakTwoMessages(message, PAUSE_MS = 500) {
+  try {
+    const messageParts = message.split(/\r?\n/)
+
+    let currentIndex = 0
+    const speak = (textToSpeak1,textToSpeak2) => {
+    
+    //  const messagetabParts = message.split(/\t/);
+
+       msg = new SpeechSynthesisUtterance();
+      const voices = window.speechSynthesis.getVoices();
+      msg.voice = voices[fclang];
+      msg.volume = 1; // 0 to 1
+      msg.rate = 1; // 0.1 to 10
+      msg.pitch = 1; // 0 to 2
+      msg.text = textToSpeak1;
+      msg.lang = fclang;
+      speechSynthesis.speak(msg);
+
+
+		if(textToSpeak2 != undefined){
+       msg = new SpeechSynthesisUtterance();
+      msg.voice = voices[sclang];
+      msg.volume = 1; // 0 to 1
+      msg.rate = 1; // 0.1 to 10
+      msg.pitch = 1; // 0 to 2
+      msg.text = textToSpeak2;
+      msg.lang = sclang;
+      speechSynthesis.speak(msg);
+      }
+
+
+      msg.onend = function() {
+        currentIndex++;
+        if (currentIndex < messageParts.length) {
+          setTimeout(() => {
+            const messagetabParts = messageParts[currentIndex].split(/\t/);
+            speak(messagetabParts[0],messagetabParts[1])
+          }, PAUSE_MS);
+        }
+      };
+//      speechSynthesis.speak(msg);
+      
+      
+      
+    }
+    
+        
+//      const messagetabParts = message.split(/\t/);
+      
+      const messagetabParts = messageParts[0].split(/\t/);
+
+    speak(messagetabParts[0],messagetabParts[1])
+  } catch (e) {
+    console.error(e)
+  }
+}
 
 function run(pause) {
   speakMessage('Testing 1,2,3', pause)
