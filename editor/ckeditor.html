@@ -3,19 +3,52 @@
         <head>
                 <meta charset="utf-8">
                 <title>CKEditor</title>
-                <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
-        </head>
-        <body>
-                <div id="editor">This is some sample content.</div>
+                <style>
+                .ck-editor__editable {
+  min-height: 500px;
+}
+</style>
+<script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/classic/ckeditor.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+                        <body>
+
+
+<textarea name="content" id="editor">
+<p>Here goes the initial content of the editor.</p>
+</textarea>
+
+<!--
+<button id="getdata">Print data</button>
+-->
                 <script>
-                        ClassicEditor
-                                .create( document.querySelector( '#editor' ) )
-                                .then( editor => {
-                                        console.log( editor );
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
+
+let theEditor;
+
+ClassicEditor
+  .create(document.querySelector('#editor'), {
+
+    toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote']
+  })
+  .then(editor => {
+    theEditor = editor;
+
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+
+function getDataFromTheEditor() {
+  return theEditor.getData();
+}
+
+document.getElementById('getdata').addEventListener('click', () => {
+  alert(getDataFromTheEditor());
+});
+
                 </script>
-        </body>
-</html>
+                </body>
+                </html>
