@@ -1,0 +1,478 @@
+<h4>&nbsp;</h4>
+
+<h4>1. What do you know about the term &ldquo;Big Data&rdquo;?</h4>
+
+<p><strong>Answer:&nbsp;</strong>Big Data is a term associated with complex and large datasets. A relational database cannot handle big data, and that&rsquo;s why special tools and methods are used to perform operations on a vast collection of data. Big data enables companies to understand their business better and helps them derive meaningful information from the unstructured and raw data collected on a regular basis. Big data also allows the companies to take better business decisions backed by data.</p>
+
+<h4>2. What are the five V&rsquo;s of Big Data?</h4>
+
+<p><strong>Answer:</strong>&nbsp;The five V&rsquo;s of Big data is as follows:</p>
+
+<ul>
+	<li><strong>Volume &ndash;</strong>&nbsp;Volume represents the volume i.e. amount of data that is growing at a high rate i.e. data volume in Petabytes</li>
+	<li><strong>Velocity &ndash;</strong>&nbsp;Velocity is the rate at which data grows. Social media contributes a major role in the velocity of growing data.</li>
+	<li><strong>Variety &ndash;</strong>&nbsp;Variety refers to the different data types i.e. various data formats like text, audios, videos, etc.</li>
+	<li><strong>Veracity &ndash;</strong>&nbsp;Veracity refers to the uncertainty of available data. Veracity arises due to the high volume of data that brings incompleteness and inconsistency.</li>
+	<li><strong>Value &ndash;</strong>Value refers to turning data into value. By turning accessed big data into values, businesses may generate revenue.</li>
+</ul>
+
+<p><strong>5 V&rsquo;s of Big Data</strong></p>
+
+<p><strong>Note:</strong>&nbsp;This is one of the basic and significant questions asked in the big data interview. You can choose to explain the five V&rsquo;s in detail if you see the interviewer is interested to know more. However, the names can even be mentioned if you are asked about the term &ldquo;Big Data&rdquo;.</p>
+
+<h4>3. Tell us how big data and Hadoop are related to each other.</h4>
+
+<p><strong>Answer:&nbsp;</strong>Big data and Hadoop are almost synonyms terms. With the rise of big data, Hadoop, a framework that specializes in big data operations also became popular. The framework can be used by professionals to analyze big data and help businesses to make decisions.</p>
+
+<p><strong>Note:</strong>&nbsp;This question is commonly asked in a big data interview.&nbsp;<em>Y</em>ou can go further to answer this question and try to explain the main components of Hadoop.</p>
+
+<h4>4. How is big data analysis helpful in increasing business revenue?</h4>
+
+<p><strong>Answer:</strong>&nbsp;Big data analysis has become very important for the businesses. It helps businesses to differentiate themselves from others and increase the revenue. Through predictive analytics, big data analytics provides businesses customized recommendations and suggestions. Also, big data analytics enables businesses to launch new products depending on customer needs and preferences. These factors make businesses earn more revenue, and thus companies are using big data analytics. Companies may encounter a significant increase of 5-20% in revenue by implementing big data analytics. Some popular companies those are using big data analytics to increase their revenue is &ndash; Walmart, LinkedIn, Facebook, Twitter, Bank of America etc.</p>
+
+<h4>5. Explain the steps to be followed to deploy a Big Data solution.</h4>
+
+<p><strong>Answer:</strong>&nbsp;Followings are the three steps that are followed to deploy a Big Data Solution &ndash;</p>
+
+<p><strong>i. Data Ingestion</strong></p>
+
+<p>The first step for deploying a big data solution is the data ingestion i.e. extraction of data from various sources. The data source may be a CRM like Salesforce, Enterprise Resource Planning System like SAP, RDBMS like MySQL or any other log files, documents, social media feeds etc. The data can be ingested either through batch jobs or real-time streaming. The extracted data is then stored in HDFS.</p>
+
+<p><strong>Steps of Deploying Big Data Solution</strong></p>
+
+<p><strong>ii. Data Storage</strong></p>
+
+<p>After data ingestion, the next step is to store the extracted data. The data either be stored in HDFS or NoSQL database (i.e. HBase). The HDFS storage works well for sequential access whereas HBase for random read/write access.</p>
+
+<p><strong>iii. Data Processing</strong></p>
+
+<p>The final step in deploying a big data solution is the data processing. The data is processed through one of the processing frameworks like Spark, MapReduce, Pig, etc.</p>
+
+<p>&nbsp;</p>
+
+<h4>6. Define respective components of HDFS and YARN</h4>
+
+<p><strong>Answer:</strong>&nbsp;The two main components of HDFS are-</p>
+
+<ul>
+	<li>NameNode&nbsp;&ndash; This is the master node for processing metadata information for data blocks within the HDFS</li>
+	<li>DataNode/Slave node &ndash; This is the node which acts as slave node to store the data, for processing and use by the NameNode</li>
+</ul>
+
+<p>In addition to serving the client requests, the NameNode executes either of two following roles &ndash;</p>
+
+<ul>
+	<li>CheckpointNode &ndash; It runs on a different host from the NameNode</li>
+	<li>BackupNode- It is a read-only NameNode which contains file system metadata information excluding the block locations</li>
+</ul>
+
+<p>The two main components of YARN are<strong>&ndash;</strong></p>
+
+<ul>
+	<li>ResourceManager&ndash; This component receives processing requests and accordingly allocates to respective NodeManagers depending on processing needs.</li>
+	<li>NodeManager&ndash; It executes tasks on each single Data Node</li>
+</ul>
+
+<h4>7.&nbsp;Why is Hadoop used for Big Data Analytics?</h4>
+
+<p><strong>Answer:&nbsp;</strong>Since data analysis has become one of the key parameters of business, hence, enterprises are dealing with massive amount of structured, unstructured and semi-structured data. Analyzing unstructured data is quite difficult where Hadoop takes major part with its capabilities of &nbsp;</p>
+
+<ul>
+	<li>Storage</li>
+	<li>Processing</li>
+	<li>Data collection</li>
+</ul>
+
+<p>Moreover, Hadoop is open source and runs on commodity hardware. Hence it is a cost-benefit solution for businesses.</p>
+
+<h4>8.&nbsp;What is fsck?</h4>
+
+<p><strong>Answer:&nbsp;</strong>fsck stands for File System Check.&nbsp;It is a command used by HDFS. This command is used to check inconsistencies and if there is any problem in the file. For example, if there are any missing blocks for a file, HDFS gets notified through this command.</p>
+
+<h4>9.&nbsp;What are the main differences between NAS (Network-attached storage) and HDFS?</h4>
+
+<p><strong>Answer:&nbsp;</strong>The main differences between NAS (Network-attached storage) and HDFS &ndash;</p>
+
+<ul>
+	<li>HDFS runs on a cluster of machines while NAS runs on an individual machine. Hence, data redundancy is a common issue in HDFS. On the contrary, the replication protocol is different in case of NAS. Thus the chances of data redundancy are much less.</li>
+	<li>Data is stored as data blocks in local drives in case of HDFS. In case of NAS, it is stored in dedicated hardware.</li>
+</ul>
+
+<h4>10.&nbsp;What is the Command to format the NameNode?</h4>
+
+<p><strong>Answer:</strong>&nbsp;$ hdfs namenode -format</p>
+
+<h2>Experience-based Big Data Interview Questions</h2>
+
+<p>If you have some considerable experience of working in Big Data world, you will be asked a number of questions in your big data interview based on your previous experience. These questions may be simply related to your experience or scenario based. So, get prepared with these best Big data interview questions and answers &ndash;</p>
+
+<h4>11. Do you have any Big Data experience? If so, please share it with us.</h4>
+
+<p><strong>How to Approach:</strong>&nbsp;There is no specific answer to the question as it is a subjective question and the answer depends on your previous experience. Asking this question during a big data interview, the interviewer wants to understand your previous experience and is also trying to evaluate if you are fit for the project requirement.</p>
+
+<p>So, how will you approach the question? If you have previous experience, start with your duties in your past position and slowly add details to the conversation. Tell them about your contributions that made the project successful. This question is generally, the 2<sup>nd</sup>&nbsp;or 3<sup>rd</sup>&nbsp;question asked in an interview. The later questions are based on this question, so answer it carefully. You should also take care not to go overboard with a single aspect of your previous job. Keep it simple and to the point.</p>
+
+<h4>12.&nbsp;Do you prefer good data or good models? Why?</h4>
+
+<p><strong>How to Approach:&nbsp;</strong>This is a tricky question but generally asked in the big data interview. It asks you to choose between good data or good models. As a candidate, you should try to answer it from your experience. Many companies want to follow a strict process of evaluating data, means they have already selected data models. In this case, having good data can be game-changing. The other way around also works as a model is chosen based on good data.</p>
+
+<p>As we already mentioned, answer it from your experience. However, don&rsquo;t say that having both good data and good models is important as it is hard to have both in real life projects.</p>
+
+<h4>13. Will you optimize algorithms or code to make them run faster?</h4>
+
+<p><strong>How to Approach:&nbsp;</strong>The answer to this question should always be &ldquo;Yes.&rdquo; Real world performance matters and it doesn&rsquo;t depend on the data or model you are using in your project.</p>
+
+<p>The interviewer might also be interested to know if you have had any previous experience in code or algorithm optimization. For a beginner, it obviously depends on which projects he worked on in the past. Experienced candidates can share their experience accordingly as well. However, be honest about your work, and it is fine if you haven&rsquo;t optimized code in the past. Just let the interviewer know your real experience and you will be able to crack the big data interview.</p>
+
+<h4>14. How do you approach data preparation?</h4>
+
+<p><strong>How to Approach:&nbsp;</strong>Data preparation is one of the crucial steps in big data projects. A big data interview may involve at least one question based on data preparation. When the interviewer asks you this question, he wants to know what steps or precautions you take during data preparation.</p>
+
+<p>As you already know, data preparation is required to get necessary data which can then further be used for modeling purposes. You should convey this message to the interviewer. You should also emphasize the type of model you are going to use and reasons behind choosing that particular model. Last, but not the least, you should also discuss important data preparation terms such as transforming variables, outlier values, unstructured data, identifying gaps, and others.</p>
+
+<h4>15. How would you transform unstructured data into structured data?</h4>
+
+<p><strong>How to Approach:&nbsp;</strong>Unstructured data is very common in big data. The unstructured data should be transformed into structured data to ensure proper data analysis. You can start answering the question by briefly differentiating between the two. Once done, you can now discuss the methods you use to transform one form to another. You might also share the real-world situation where you did it. If you have recently been graduated, then you can share information related to your academic projects.</p>
+
+<p>By answering this question correctly, you are signaling that you understand the types of data, both structured and unstructured, and also have the practical experience to work with these. If you give an answer to this question specifically, you will definitely be able to crack the big data interview.</p>
+
+<h4>16.&nbsp;Which hardware configuration is most beneficial for Hadoop jobs?</h4>
+
+<p>Dual processors or core machines with a configuration of &nbsp;4 / 8 GB RAM and ECC memory is ideal for running Hadoop operations. However, the hardware configuration varies based on the project-specific workflow and process flow and need customization accordingly.</p>
+
+<h4>17.&nbsp;What happens when two users try to access the same file in the HDFS?</h4>
+
+<p>HDFS&nbsp;NameNode supports exclusive write only. Hence, only the first user will receive the grant for file access and the second user will be rejected.</p>
+
+<h4>18. How to recover a NameNode when it is down?</h4>
+
+<p>The following steps need to execute to make the Hadoop&nbsp;cluster up and running:</p>
+
+<ol>
+	<li>Use the FsImage which is file system metadata replica to start a new NameNode.&nbsp;</li>
+	<li>Configure the DataNodes and also the clients to make them acknowledge the newly started NameNode.</li>
+	<li>Once the new NameNode completes loading the last checkpoint FsImage which has received enough block reports from the DataNodes, it will start to serve the client.&nbsp;</li>
+</ol>
+
+<p>In case of large Hadoop clusters, the NameNode recovery process consumes a lot of time which turns out to be a more significant challenge in case of routine maintenance.</p>
+
+<h4>19. What do you understand by Rack Awareness in Hadoop?</h4>
+
+<p>It is an algorithm applied to the NameNode to decide how blocks and its replicas are placed. Depending on rack definitions network traffic is minimized between DataNodes within the same rack. For example, if we consider replication factor as 3, two copies will be placed on one rack whereas the third copy in a separate rack.</p>
+
+<h4>20.&nbsp;What is the difference between &ldquo;HDFS Block&rdquo; and &ldquo;Input Split&rdquo;?</h4>
+
+<p>The HDFS divides the input data physically into blocks for processing which is known as HDFS Block.</p>
+
+<p>Input Split is a logical division of data by mapper for mapping operation.</p>
+
+<p>&nbsp;</p>
+
+<h2>Basic Big Data Hadoop Interview Questions</h2>
+
+<p>Hadoop is one of the most popular Big Data frameworks, and if you are going for a Hadoop interview prepare yourself with these basic level interview questions for Big Data Hadoop. These questions will be helpful for you whether you are going for a Hadoop developer or Hadoop Admin interview.</p>
+
+<h4>21. Explain the difference between Hadoop and RDBMS.</h4>
+
+<h4><strong>Answer:&nbsp;</strong>The difference between Hadoop and RDBMS is as follows &ndash;22. What are the common input formats in Hadoop?</h4>
+
+<p><strong>Answer:&nbsp;</strong>Below are the common input formats in Hadoop &ndash;</p>
+
+<ul>
+	<li><strong>Text Input Format &ndash;</strong>&nbsp;The default input format defined in Hadoop is the Text Input Format.</li>
+	<li><strong>Sequence File Input Format &ndash;</strong>&nbsp;To read files in a sequence, Sequence File Input Format is used.</li>
+	<li><strong>Key Value Input Format &ndash;</strong>&nbsp;The input format used for plain text files (files broken into lines) is the Key Value Input Format.</li>
+</ul>
+
+<h4>23. Explain some important features of Hadoop.</h4>
+
+<p><strong>Answer:</strong>&nbsp;Hadoop supports the storage and processing of big data. It is the best solution for handling big data challenges. Some important features of Hadoop are &ndash;</p>
+
+<ul>
+	<li><strong>Open Source &ndash;</strong>&nbsp;Hadoop is an open source framework which means it is available free of cost. Also, the users are allowed to change the source code as per their requirements.</li>
+	<li><strong>Distributed Processing &ndash;</strong>&nbsp;Hadoop supports distributed processing of data i.e. faster processing. The data in Hadoop HDFS is stored in a distributed manner and MapReduce is responsible for the parallel processing of data.</li>
+	<li><strong>Fault Tolerance &ndash;</strong>&nbsp;Hadoop is highly fault-tolerant. It creates three replicas for each block at different nodes, by default. This number can be changed according to the requirement. So, we can recover the data from another node if one node fails. The detection of node failure and recovery of data is done automatically.</li>
+	<li><strong>Reliability &ndash;&nbsp;</strong>Hadoop stores data on the cluster in a reliable manner that is independent of machine. So, the data stored in Hadoop environment is not affected by the failure of the machine.</li>
+	<li><strong>Scalability &ndash;</strong>&nbsp;Another important feature of Hadoop is the scalability. It is compatible with the other hardware and we can easily ass the new hardware to the nodes.</li>
+	<li><strong>High Availability &ndash;</strong>&nbsp;The data stored in Hadoop is available to access even after the hardware failure. In case of hardware failure, the data can be accessed from another path.</li>
+</ul>
+
+<h4>24. Explain the different modes in which Hadoop run.</h4>
+
+<p><strong>Answer:&nbsp;</strong>Apache Hadoop runs in the following three modes &ndash;</p>
+
+<ul>
+	<li><strong>Standalone (Local) Mode &ndash;</strong>&nbsp;By default, Hadoop runs in a local mode i.e. on a non-distributed, single node. This mode uses the local file system to perform input and output operation. This mode does not support the use of HDFS, so it is used for debugging. No custom configuration is needed for configuration files in this mode.</li>
+	<li><strong>Pseudo-Distributed Mode &ndash;</strong>&nbsp;In the pseudo-distributed mode, Hadoop runs on a single node just like the Standalone mode. In this mode, each daemon runs in a separate Java process. As all the daemons run on a single node, there is the same node for both the Master and Slave nodes.</li>
+	<li><strong>Fully &ndash; Distributed Mode &ndash;</strong>&nbsp;In the fully-distributed mode, all the daemons run on separate individual nodes and thus forms a multi-node cluster. There are different nodes for Master and Slave nodes.</li>
+</ul>
+
+<h4>25. Explain the core components of Hadoop.</h4>
+
+<p><strong>Answer:&nbsp;</strong>Hadoop is an open source framework that is meant for storage and processing of big data in a distributed manner. The core components of Hadoop are &ndash;</p>
+
+<ul>
+	<li><strong>HDFS (Hadoop Distributed File System) &ndash;</strong>&nbsp;HDFS is the basic storage system of Hadoop. The large data files running on a cluster of commodity hardware are stored in HDFS. It can store data in a reliable manner even when hardware fails.</li>
+</ul>
+
+<p><strong>Core Components of Hadoop</strong></p>
+
+<ul>
+	<li><strong>Hadoop MapReduce &ndash;</strong>&nbsp;MapReduce is the Hadoop layer that is responsible for data processing. It writes an application to process unstructured and structured data stored in HDFS. It is responsible for the parallel processing of high volume of data by dividing data into independent tasks. The processing is done in two phases Map and Reduce. The Map is the first phase of processing that specifies complex logic code and the&nbsp;Reduce is the second phase of processing that specifies light-weight operations.</li>
+	<li><strong>YARN &ndash;</strong>&nbsp;The processing framework in Hadoop is YARN. It is used for resource management and provides multiple data processing engines i.e. data science, real-time streaming, and batch processing.</li>
+</ul>
+
+<h4>26.&nbsp;What are the configuration parameters in a &ldquo;MapReduce&rdquo; program?</h4>
+
+<p>The main configuration parameters in &ldquo;MapReduce&rdquo; framework are:</p>
+
+<ul>
+	<li>Input locations of Jobs in the distributed file system</li>
+	<li>Output location of Jobs in the distributed file system</li>
+	<li>The input format of data</li>
+	<li>The output format of data</li>
+	<li>The class which contains the map function</li>
+	<li>The class which contains the reduce function</li>
+	<li>JAR file which contains the mapper, reducer and the driver classes</li>
+</ul>
+
+<h4>27.&nbsp;What is a block in HDFS and what is its default size in Hadoop 1 and Hadoop&nbsp;2? Can we change the block size?</h4>
+
+<p>Blocks are smallest continuous data storage in a hard drive. For HDFS, blocks are stored across Hadoop cluster.</p>
+
+<ul>
+	<li>The default block size in Hadoop 1 is: 64 MB</li>
+	<li>The default block size in Hadoop 2 is: 128 MB</li>
+</ul>
+
+<p>Yes, we can change block size by using the parameter &ndash;&nbsp;<strong>dfs.block.size</strong>&nbsp;located in the hdfs-site.xml file.</p>
+
+<p>&nbsp;</p>
+
+<h4>28. What is &nbsp;Distributed Cache in a MapReduce Framework</h4>
+
+<p>Distributed Cache is a feature of Hadoop MapReduce framework to cache files for applications. Hadoop framework makes cached files available for every map/reduce tasks running on the data nodes. Hence, the data files can access the cache file as a local file in the designated job.</p>
+
+<h4>29. What are the three running modes of Hadoop?</h4>
+
+<p>The three running modes of Hadoop are&nbsp;as follows:</p>
+
+<p><strong>i. Standalone or local</strong>: This is the default mode and does not need any configuration. In this mode, all the following components of Hadoop uses local file system and runs on a single JVM &ndash;</p>
+
+<ul>
+	<li>NameNode</li>
+	<li>DataNode</li>
+	<li>ResourceManager</li>
+	<li>NodeManager</li>
+</ul>
+
+<p><strong>ii.</strong><strong>&nbsp;Pseudo-distributed</strong>:<em>&nbsp;In this mode, all the master and slave Hadoop services are deployed and executed on a single node.</em></p>
+
+<p><strong>iii. Fully distributed</strong>: In this mode, Hadoop master and slave services are deployed and executed on separate nodes.</p>
+
+<h4>30. Explain JobTracker in Hadoop</h4>
+
+<p>JobTracker is a JVM process in Hadoop to submit and track MapReduce jobs.</p>
+
+<p>JobTracker performs the following activities in Hadoop in a sequence &ndash;</p>
+
+<ul>
+	<li>JobTracker receives jobs that a client application submits to the job tracker</li>
+	<li>JobTracker notifies NameNode to determine data node</li>
+	<li>JobTracker allocates TaskTracker nodes based on available slots.</li>
+	<li>it submits the work on allocated TaskTracker Nodes,</li>
+	<li>JobTracker monitors the TaskTracker nodes.</li>
+	<li>When a task fails, JobTracker is notified and decides how to reallocate the task.</li>
+</ul>
+
+<h2>Hadoop Developer Interview Questions for Fresher</h2>
+
+<p>It is not easy to crack Hadoop developer interview but the preparation can do everything. If you are a fresher, learn the Hadoop concepts and prepare properly. Have a good knowledge of the different file systems, Hadoop versions, commands, system security, etc.&nbsp; Here are few questions that will help you pass the Hadoop developer interview.</p>
+
+<h4>31. What are the different configuration files in Hadoop?</h4>
+
+<p><strong>Answer:&nbsp;</strong>The different configuration files in Hadoop are &ndash;</p>
+
+<p><strong>core-site.xml &ndash;</strong>&nbsp;This configuration file contains Hadoop core configuration settings, for example, I/O settings, very common for MapReduce and HDFS. It uses hostname a port.</p>
+
+<p><strong>mapred-site.xml &ndash;&nbsp;</strong>This configuration file specifies a framework name for MapReduce by setting mapreduce.framework.name</p>
+
+<p><strong>hdfs-site.xml &ndash;</strong>&nbsp;This configuration file contains HDFS daemons configuration settings. It also specifies default block permission and replication checking on HDFS.</p>
+
+<p><strong>yarn-site.xml &ndash;</strong>&nbsp;This configuration file specifies configuration settings for ResourceManager and NodeManager.</p>
+
+<h4>32. What are the differences between Hadoop 2 and Hadoop 3?</h4>
+
+<p><strong>Answer:</strong>&nbsp;Following are the differences between Hadoop 2 and Hadoop 3 &ndash;</p>
+
+<h4>33. How can you achieve security in Hadoop?</h4>
+
+<p><strong>Answer:&nbsp;</strong>Kerberos are used to achieve security in Hadoop. There are 3 steps to access a service while using Kerberos, at a high level. Each step involves a message exchange with a server.</p>
+
+<ol>
+	<li><strong>Authentication &ndash;</strong>&nbsp;The first step involves authentication of the client to the authentication server, and then provides a time-stamped TGT (Ticket-Granting Ticket) to the client.</li>
+	<li><strong>Authorization &ndash;</strong>&nbsp;In this step, the client uses received TGT to request a service ticket from the TGS (Ticket Granting Server).</li>
+	<li><strong>Service Request &ndash;</strong>&nbsp;It is the final step to achieve security in Hadoop. Then the client uses service ticket to authenticate himself to the server.</li>
+</ol>
+
+<h4>34. What is commodity hardware?</h4>
+
+<p><strong>Answer:</strong>&nbsp;Commodity hardware is a low-cost system identified by less-availability and low-quality. The commodity hardware comprises of RAM as it performs a number of services that require RAM for the execution. One doesn&rsquo;t require high-end hardware configuration or supercomputers to run Hadoop, it can be run on any commodity hardware.</p>
+
+<h4>35. How is NFS different from HDFS?</h4>
+
+<p><strong>Answer:&nbsp;</strong>There are a number of distributed file systems that work in their own way. NFS (Network File System) is one of the oldest and popular distributed file storage systems whereas HDFS (Hadoop Distributed File System) is the recently used and popular one to handle big data.<strong>&nbsp;</strong>The main differences between NFS and HDFS are as follows &ndash;</p>
+
+<h4>36. How do Hadoop MapReduce works?</h4>
+
+<p>There are two phases of MapReduce operation.</p>
+
+<ul>
+	<li>Map phase &ndash; In this phase, the input data is split by map tasks. The map tasks run in parallel. These split data is used for analysis purpose.</li>
+	<li>Reduce phase- In this phase, the similar split data is aggregated from the entire collection and shows the result.</li>
+</ul>
+
+<h4>37. What is MapReduce? What is the syntax you use to run a MapReduce program?</h4>
+
+<p>MapReduce is a programming model in Hadoop for processing large data sets over a cluster of computers, commonly known as HDFS. It is a parallel programming model.</p>
+
+<p>The syntax to run a MapReduce program is &ndash;&nbsp;<em>hadoop_jar_file.jar /input_path /output_path</em><strong><em>.</em></strong></p>
+
+<h4>38. What are the Port Numbers for NameNode, Task Tracker, and Job Tracker?</h4>
+
+<ul>
+	<li><strong>NameNode</strong>&nbsp;&ndash; Port 50070</li>
+	<li><strong>Task Tracker</strong>&nbsp;&ndash; Port 50060</li>
+	<li><strong>Job Tracker</strong>&nbsp;&ndash; Port 50030</li>
+</ul>
+
+<h4>39.What are the different file permissions in HDFS for files or directory levels?</h4>
+
+<p>Hadoop distributed file system (HDFS) uses a specific permissions model for files and directories. Following user levels are used in HDFS &ndash;</p>
+
+<ul>
+	<li>Owner</li>
+	<li>Group</li>
+	<li>Others.</li>
+</ul>
+
+<p>For each of the user mentioned above following permissions are applicable &ndash;</p>
+
+<ul>
+	<li>read (r)</li>
+	<li>write (w)</li>
+	<li>execute(x).</li>
+</ul>
+
+<p>Above mentioned permissions work differently for files and directories.</p>
+
+<p>For files &ndash;</p>
+
+<ul>
+	<li>The&nbsp;<strong>r</strong>&nbsp;permission is for&nbsp;<em>reading</em>&nbsp;a file</li>
+	<li>The&nbsp;<strong>w</strong>&nbsp;permission is for&nbsp;<em>writing</em>&nbsp;a file.</li>
+</ul>
+
+<p>For directories &ndash;</p>
+
+<ul>
+	<li>The&nbsp;<strong>r</strong>&nbsp;permission&nbsp;<em>lists the contents</em>&nbsp;of&nbsp;<em>a specific directory.</em></li>
+	<li>The&nbsp;<strong>w</strong>&nbsp;permission&nbsp;<em>creates or deletes a directory.</em></li>
+	<li>The<strong>&nbsp;X</strong>&nbsp;permission is for accessing a child directory.</li>
+</ul>
+
+<h4>40.What are the basic parameters of a Mapper?</h4>
+
+<p>The basic parameters of a Mapper are</p>
+
+<ul>
+	<li>LongWritable and Text</li>
+	<li>Text and IntWritable</li>
+</ul>
+
+<h2>Hadoop Developer Interview Questions for Experienced</h2>
+
+<p>The interviewer has more expectations from an experienced Hadoop developer, and thus his questions are one-level up. So, if you have gained some experience, don&rsquo;t forget to cover command based, scenario-based, real-experience based questions. Here we bring some sample interview questions for experienced Hadoop developers.</p>
+
+<h4>41. How to restart all the daemons in Hadoop?</h4>
+
+<p><strong>Answer:</strong>&nbsp;To restart all the daemons, it is required to stop all the daemons first. The Hadoop directory contains sbin directory that stores the script files to stop and start daemons in Hadoop.</p>
+
+<p>Use stop daemons command /sbin/stop-all.sh to stop all the daemons and then use /sin/start-all.sh command to start all the daemons again.</p>
+
+<h4>42. What is the use of jps command in Hadoop?</h4>
+
+<p><strong>Answer:</strong>&nbsp;The jps command is used to check if the Hadoop daemons are running properly or not. This command shows all the daemons running on a machine i.e. Datanode, Namenode, NodeManager, ResourceManager etc.</p>
+
+<h4>43. Explain the process that overwrites the replication factors in HDFS.</h4>
+
+<p><strong>Answer:&nbsp;</strong>There are two methods to overwrite the replication factors in HDFS &ndash;</p>
+
+<p><strong>Method 1: On File Basis</strong></p>
+
+<p>In this method, the replication factor is changed on the basis of file using Hadoop FS shell. The command used for this is:</p>
+
+<p>$hadoop fs &ndash; setrep &ndash;w2/my/test_file</p>
+
+<p>Here, test_file is the filename that&rsquo;s replication factor will be set to 2.</p>
+
+<p><strong>Method 2: On Directory Basis</strong></p>
+
+<p>In this method, the replication factor is changed on directory basis i.e. the replication factor for all the files under a given directory is modified.</p>
+
+<p>$hadoop fs &ndash;setrep &ndash;w5/my/test_dir</p>
+
+<p>Here, test_dir is the name of the directory, the replication factor for the directory and all the files in it will be set to 5.</p>
+
+<h4>44. What will happen with a NameNode that doesn&rsquo;t have any data?</h4>
+
+<p><strong>Answer:</strong>&nbsp;A NameNode without any data doesn&rsquo;t exist in Hadoop. If there is a NameNode, it will contain some data in it or it won&rsquo;t exist.</p>
+
+<h4>45. Explain NameNode recovery process.</h4>
+
+<p><strong>Answer:</strong>&nbsp;The NameNode recovery process involves the below-mentioned steps to make Hadoop cluster running:</p>
+
+<ul>
+	<li>In the first step in the recovery process, file system metadata replica (FsImage) starts a new NameNode.</li>
+	<li>The next step is to configure DataNodes and Clients. These DataNodes and Clients will then acknowledge new NameNode.</li>
+	<li>During the final step, the new NameNode starts serving the client on the completion of last checkpoint FsImage loading and receiving block reports from the DataNodes.</li>
+</ul>
+
+<p><strong>Note:</strong>&nbsp;Don&rsquo;t forget to mention, this NameNode recovery process consumes a lot of time on large Hadoop clusters. Thus, it makes routine maintenance difficult. For this reason, HDFS high availability architecture is recommended to use.</p>
+
+<h4>46.&nbsp;How Is Hadoop CLASSPATH essential to start or stop Hadoop daemons?</h4>
+
+<p>CLASSPATH includes necessary directories that contain jar files to start or stop Hadoop daemons. Hence, setting CLASSPATH is essential to start or stop Hadoop daemons.</p>
+
+<p>However, setting up CLASSPATH every time is not the standard that we follow. Usually CLASSPATH is written inside<em>&nbsp;/etc/hadoop/hadoop-env.sh</em>&nbsp;file. Hence, once we run Hadoop, it will load the CLASSPATH automatically.</p>
+
+<h4>47.&nbsp;Why is HDFS only suitable for large data sets and not the correct tool to use for many small files?</h4>
+
+<p>This is due to the performance issue of NameNode. Usually, NameNode is allocated with huge space to store metadata for the large-scale file. The metadata is supposed to be a from a single file for optimum space utilization and cost benefit. In case of small size files, NameNode does not utilize the entire space which is a performance optimization issue.</p>
+
+<h4>48.&nbsp;Why do we need Data Locality in Hadoop? Explain.</h4>
+
+<p>Datasets in HDFS store as blocks in DataNodes the Hadoop cluster. During the execution of a MapReduce job the individual Mapper processes the blocks (Input Splits). If the data does not reside in the same node where the Mapper is executing the job, the data needs to be copied from the DataNode over the network to the mapper DataNode.</p>
+
+<p>Now if a MapReduce job has more than 100 Mapper and each Mapper tries to copy the data from other DataNode in the cluster simultaneously, it would cause serious network congestion which is a big performance issue of the overall system. Hence, data proximity to the computation is an effective and cost-effective solution which is technically termed as Data locality in Hadoop. It helps to increase the overall throughput of the system.</p>
+
+<p>Data locality can be&nbsp;of&nbsp;three&nbsp;types:</p>
+
+<ul>
+	<li><strong>Data local &ndash;</strong>&nbsp;In this type data and the mapper resides on the same node. This is the closest proximity of data and the most preferred scenario.</li>
+	<li><strong>Rack Local &ndash;</strong>&nbsp;In this scenarios mapper and data reside on the same rack but on the different data nodes.</li>
+	<li><strong>Different Rack &ndash;</strong>&nbsp;In this scenario mapper and data reside on the different racks.</li>
+</ul>
+
+<h4>49.&nbsp;DFS can handle a large volume of data then why do we need Hadoop framework?</h4>
+
+<p>Hadoop is not only for storing large data but also to process those big data. Though DFS(Distributed File System) too can store the data, but it lacks below features-</p>
+
+<ul>
+	<li>It is not fault tolerant</li>
+	<li>Data movement over a network depends on bandwidth.</li>
+</ul>
+
+<h4>50.&nbsp;What is Sequencefileinputformat?</h4>
+
+<p>Hadoop uses a specific file format which is known as Sequence file. The sequence file stores data in a serialized key-value pair. Sequencefileinputformat is an input format to read sequence files.</p>
