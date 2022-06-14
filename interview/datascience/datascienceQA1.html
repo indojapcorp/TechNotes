@@ -1,0 +1,1093 @@
+<h3>1. What are the differences between supervised and unsupervised learning?</h3>
+
+<table>
+	<tbody>
+		<tr>
+			<th>
+			<p>Supervised Learning</p>
+			</th>
+			<th>
+			<p>Unsupervised Learning</p>
+			</th>
+		</tr>
+		<tr>
+			<td>
+			<ul>
+				<li>Uses known and labeled data as input</li>
+				<li><a href="https://www.simplilearn.com/tutorials/machine-learning-tutorial/supervised-and-unsupervised-learning" rel="noopener" target="_blank" title="Supervised learning">Supervised learning</a>&nbsp;has a feedback mechanism&nbsp;</li>
+				<li>The most commonly used supervised learning algorithms are decision trees, logistic regression, and support vector machine</li>
+			</ul>
+			</td>
+			<td>
+			<ul>
+				<li>Uses unlabeled data as input</li>
+				<li>Unsupervised learning has no feedback mechanism&nbsp;</li>
+				<li>The most commonly used unsupervised learning algorithms are k-means clustering, hierarchical clustering, and apriori algorithm</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<h3>2. How is logistic regression done?</h3>
+
+<p>Logistic regression measures the relationship between the dependent variable (our label of what we want to predict) and one or more independent variables (our features) by estimating probability using its underlying logistic function (sigmoid).</p>
+
+<p>The image shown below depicts how&nbsp;<a href="https://www.simplilearn.com/tutorials/machine-learning-tutorial/logistic-regression-in-python" rel="noopener" target="_blank" title="logistic regression">logistic regression</a>&nbsp;works:</p>
+
+<p>&nbsp;</p>
+
+<p>The formula and graph for the sigmoid function are as shown:</p>
+
+<p>&nbsp;</p>
+
+<h3>3. Explain the steps in making a decision tree.</h3>
+
+<ol>
+	<li>Take the entire data set as input</li>
+	<li>Calculate entropy of the target variable, as well as the predictor attributes</li>
+	<li>Calculate your information gain of all attributes (we gain information on sorting different objects from each other)</li>
+	<li>Choose the attribute with the highest information gain as the root node&nbsp;</li>
+	<li>Repeat the same procedure on every branch until the decision node of each branch is finalized</li>
+</ol>
+
+<p>For example, let&#39;s say you want to build a&nbsp;<a href="https://www.simplilearn.com/tutorials/machine-learning-tutorial/decision-tree-in-python" rel="noopener" target="_blank" title="decision tree">decision tree</a>&nbsp;to decide whether you should accept or decline a job offer. The decision tree for this case is as shown:</p>
+
+<p>It is clear from the decision tree that an offer is accepted if:</p>
+
+<ul>
+	<li>Salary is greater than $50,000</li>
+	<li>The commute is less than an hour&nbsp;</li>
+	<li>Incentives are offered&nbsp;</li>
+</ul>
+
+<p>4. How do you build a random forest model?</p>
+
+<p>A&nbsp;<a href="https://www.simplilearn.com/tutorials/machine-learning-tutorial/random-forest-algorithm" rel="noopener" target="_blank" title="random forest">random forest</a>&nbsp;is built up of a number of decision trees. If you split the data into different packages and make a decision tree in each of the different groups of data, the random forest brings all those trees together.</p>
+
+<h4>Steps to build a random forest model:</h4>
+
+<ol>
+	<li>Randomly select &#39;k&#39; features from a total of &#39;m&#39; features where k &lt;&lt; m</li>
+	<li>Among the &#39;k&#39; features, calculate the node D using the best split point</li>
+	<li>Split the node into daughter nodes using the best split</li>
+	<li>Repeat steps two and three until leaf nodes are finalized&nbsp;</li>
+	<li>Build forest by repeating steps one to four for &#39;n&#39; times to create &#39;n&#39; number of trees&nbsp;</li>
+</ol>
+
+<h3>5. How can you avoid overfitting your model?</h3>
+
+<p>Overfitting refers to a model that is only set for a very small amount of data and ignores the bigger picture. There are three main methods to avoid&nbsp;<a href="https://www.simplilearn.com/tutorials/machine-learning-tutorial/overfitting-and-underfitting" rel="noopener" target="_blank" title="overfitting">overfitting</a>:</p>
+
+<ol>
+	<li>Keep the model simple&mdash;take fewer variables into account, thereby removing some of the noise in the training data</li>
+	<li>Use cross-validation techniques, such as k folds cross-validation&nbsp;</li>
+	<li>Use regularization techniques, such as LASSO, that penalize certain model parameters if they&#39;re likely to cause overfitting</li>
+</ol>
+
+<h3>6. Differentiate between univariate, bivariate, and multivariate analysis.</h3>
+
+<h4>Univariate</h4>
+
+<p>Univariate data contains only one variable. The purpose of the univariate analysis is to describe the data and find patterns that exist within it.&nbsp;</p>
+
+<p>Example: height of students&nbsp;</p>
+
+<table>
+	<tbody>
+		<tr>
+			<td>
+			<p>Height (in cm)</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>164</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>167.3</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>170</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>174.2</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>178</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>180</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>The patterns can be studied by drawing conclusions using mean, median, mode, dispersion or range, minimum, maximum, etc.</p>
+
+<h4>Bivariate</h4>
+
+<p>Bivariate data involves two different variables. The analysis of this type of data deals with causes and relationships and the analysis is done to determine the relationship between the two variables.</p>
+
+<p>Example: temperature and ice cream sales in the summer season</p>
+
+<table>
+	<tbody>
+		<tr>
+			<td>
+			<p>Temperature (in Celcius)</p>
+			</td>
+			<td>
+			<p>Sales</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>20</p>
+			</td>
+			<td>
+			<p>2,000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>25</p>
+			</td>
+			<td>
+			<p>2,100</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>26</p>
+			</td>
+			<td>
+			<p>2,300</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>28</p>
+			</td>
+			<td>
+			<p>2,400</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>30</p>
+			</td>
+			<td>
+			<p>2,600</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>36</p>
+			</td>
+			<td>
+			<p>3,100</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Here, the relationship is visible from the table that temperature and sales are directly proportional to each other. The hotter the temperature, the better the sales.</p>
+
+<h4>Multivariate</h4>
+
+<p>Multivariate data involves three or more variables, it is categorized under multivariate. It is similar to a bivariate but contains more than one dependent variable.</p>
+
+<p>Example: data for house price prediction&nbsp;</p>
+
+<table>
+	<tbody>
+		<tr>
+			<td>
+			<p>No. of rooms</p>
+			</td>
+			<td>
+			<p>Floors</p>
+			</td>
+			<td>
+			<p>Area (sq ft)</p>
+			</td>
+			<td>
+			<p>Price</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>2</p>
+			</td>
+			<td>
+			<p>0</p>
+			</td>
+			<td>
+			<p>900</p>
+			</td>
+			<td>
+			<p>$4000,00</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>3</p>
+			</td>
+			<td>
+			<p>2</p>
+			</td>
+			<td>
+			<p>1,100</p>
+			</td>
+			<td>
+			<p>$600,000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>3.5</p>
+			</td>
+			<td>
+			<p>5</p>
+			</td>
+			<td>
+			<p>1,500</p>
+			</td>
+			<td>
+			<p>$900,000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>4</p>
+			</td>
+			<td>
+			<p>3</p>
+			</td>
+			<td>
+			<p>2,100</p>
+			</td>
+			<td>
+			<p>$1,200,000</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>The patterns can be studied by drawing conclusions using mean, median, and mode, dispersion or range, minimum, maximum, etc. You can start describing the data and using it to guess what the price of the house will be.</p>
+
+<p>7. What are the feature selection methods used to select the right variables?</p>
+
+<p>There are two main methods for feature selection, i.e, filter, and wrapper methods.</p>
+
+<h4>Filter Methods</h4>
+
+<p>This involves:&nbsp;</p>
+
+<ul>
+	<li>Linear discrimination analysis</li>
+	<li><a href="https://www.simplilearn.com/tutorials/statistics-tutorial/what-is-annova-test" rel="noopener" target="_blank" title="ANOVA">ANOVA</a></li>
+	<li>Chi-Square</li>
+</ul>
+
+<p>The best analogy for selecting features is &quot;bad data in, bad answer out.&quot; When we&#39;re limiting or selecting the features, it&#39;s all about cleaning up the data coming in.&nbsp;</p>
+
+<h4>Wrapper Methods</h4>
+
+<p>This involves:&nbsp;</p>
+
+<ul>
+	<li>Forward Selection: We test one feature at a time and keep adding them until we get a good fit</li>
+	<li>Backward Selection: We test all the features and start removing them to see what works better</li>
+	<li>Recursive Feature Elimination: Recursively looks through all the different features and how they pair together</li>
+</ul>
+
+<p>Wrapper methods are very labor-intensive, and high-end computers are needed if a lot of data analysis is performed with the wrapper method.&nbsp;</p>
+
+<h3>8. In your choice of language, write a program that prints the numbers ranging from one to 50.</h3>
+
+<p>But for multiples of three, print &quot;Fizz&quot; instead of the number, and for the multiples of five, print &quot;Buzz.&quot; For numbers which are multiples of both three and five, print &quot;FizzBuzz&quot;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Note that the range mentioned is 51, which means zero to 50. However, the range asked in the question is one to 50. Therefore, in the above code, you can include the range as (1,51).</p>
+
+<p>The output of the above code is as shown:</p>
+
+<p>&nbsp;</p>
+
+<h3>9. You are given a data set consisting of variables with more than 30 percent missing values. How will you deal with them?</h3>
+
+<p>The following are ways to handle missing data values:</p>
+
+<p>If the data set is large, we can just simply remove the rows with missing data values. It is the quickest way; we use the rest of the data to predict the values.</p>
+
+<p>For smaller data sets, we can substitute missing values with the mean or average of the rest of the data using the pandas&#39; data frame in python. There are different ways to do so, such as df.mean(), df.fillna(mean).</p>
+
+<p>&nbsp;</p>
+
+<p>Offer Expires In</p>
+
+<ul>
+	<li>00&nbsp;:&nbsp;HRS</li>
+	<li>59&nbsp;:&nbsp;MIN</li>
+	<li>27SEC</li>
+</ul>
+
+<h4>10. For the given points, how will you calculate the Euclidean distance in Python?</h4>
+
+<p>plot1 = [1,3]</p>
+
+<p>plot2 = [2,5]</p>
+
+<p>The Euclidean distance can be calculated as follows:</p>
+
+<p>euclidean_distance = sqrt( (plot1[0]-plot2[0])**2 + (plot1[1]-plot2[1])**2 )</p>
+
+<p>Check out the Simplilearn&#39;s video on &quot;Data Science Interview Question&quot; curated by industry experts to help you prepare for an interview.</p>
+
+<h3>11. What are dimensionality reduction and its benefits?</h3>
+
+<p>The&nbsp;<a href="https://www.simplilearn.com/what-is-dimensionality-reduction-article" rel="noopener" target="_blank" title="Dimensionality reduction">Dimensionality reduction</a>&nbsp;refers to the process of converting a data set with vast dimensions into data with fewer dimensions (fields) to convey similar information concisely.&nbsp;</p>
+
+<p>This reduction helps in compressing data and reducing storage space. It also reduces computation time as fewer dimensions lead to less computing. It removes redundant features; for example, there&#39;s no point in storing a value in two different units (meters and inches).&nbsp;</p>
+
+<h3>12. How will you calculate eigenvalues and eigenvectors of the following 3x3 matrix?</h3>
+
+<table>
+	<tbody>
+		<tr>
+			<td>
+			<p>-2</p>
+			</td>
+			<td>
+			<p>-4</p>
+			</td>
+			<td>
+			<p>2</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>-2</p>
+			</td>
+			<td>
+			<p>1</p>
+			</td>
+			<td>
+			<p>2</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>4</p>
+			</td>
+			<td>
+			<p>2</p>
+			</td>
+			<td>
+			<p>5</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>The characteristic equation is as shown:</p>
+
+<p>Expanding determinant:</p>
+
+<p>(-2 &ndash; &lambda;) [(1-&lambda;) (5-&lambda;)-2x2] + 4[(-2) x (5-&lambda;) -4x2] + 2[(-2) x 2-4(1-&lambda;)] =0</p>
+
+<p>- &lambda;3 + 4&lambda;2 + 27&lambda; &ndash; 90 = 0,</p>
+
+<p>&lambda;3 - 4 &lambda;2 -27 &lambda; + 90 = 0</p>
+
+<p>Here we have an algebraic equation built from the eigenvectors.</p>
+
+<p>By hit and trial:</p>
+
+<p>33 &ndash; 4 x 32 - 27 x 3 +90 = 0</p>
+
+<p>Hence, (&lambda; - 3) is a factor:</p>
+
+<p>&lambda;3 - 4 &lambda;2 - 27 &lambda; +90 = (&lambda; &ndash; 3) (&lambda;2 &ndash; &lambda; &ndash; 30)</p>
+
+<p>Eigenvalues are 3,-5,6:</p>
+
+<p>(&lambda; &ndash; 3) (&lambda;2 &ndash; &lambda; &ndash; 30) = (&lambda; &ndash; 3) (&lambda;+5) (&lambda;-6),</p>
+
+<p>Calculate eigenvector for &lambda; = 3</p>
+
+<p>For X = 1,</p>
+
+<p>-5 - 4Y + 2Z =0,</p>
+
+<p>-2 - 2Y + 2Z =0</p>
+
+<p>Subtracting the two equations:&nbsp;</p>
+
+<p>3 + 2Y = 0,</p>
+
+<p>Subtracting back into second equation:</p>
+
+<p>Y = -(3/2)&nbsp;</p>
+
+<p>Z = -(1/2)</p>
+
+<p>Similarly, we can calculate the eigenvectors for -5 and 6.</p>
+
+<h3>13. How should you maintain a deployed model?</h3>
+
+<p>The steps to maintain a deployed model are:</p>
+
+<h4>Monitor&nbsp;</h4>
+
+<p>Constant monitoring of all models is needed to determine their performance accuracy. When you change something, you want to figure out how your changes are going to affect things. This needs to be monitored to ensure it&#39;s doing what it&#39;s supposed to do.</p>
+
+<h4>Evaluate</h4>
+
+<p>Evaluation metrics of the current model are calculated to determine if a new algorithm is needed.&nbsp;</p>
+
+<h4>Compare</h4>
+
+<p>The new models are compared to each other to determine which model performs the best.&nbsp;</p>
+
+<h4>Rebuild</h4>
+
+<p>The best performing model is re-built on the current state of data.</p>
+
+<h3>14. What are recommender systems?</h3>
+
+<p>A recommender system predicts what a user would rate a specific product based on their preferences. It can be split into two different areas:</p>
+
+<h4>Collaborative Filtering</h4>
+
+<p>As an example, Last.fm recommends tracks that other users with similar interests play often. This is also commonly seen on Amazon after making a purchase; customers may notice the following message accompanied by product recommendations: &quot;Users who bought this also bought&hellip;&quot;</p>
+
+<h4>Content-based Filtering</h4>
+
+<p>As an example: Pandora uses the properties of a song to recommend music with similar properties. Here, we look at content, instead of looking at who else is listening to music.</p>
+
+<p>15. How do you find RMSE and MSE in a linear regression model?</p>
+
+<p>RMSE and MSE are two of the most common measures of accuracy for a&nbsp;<a href="https://www.simplilearn.com/tutorials/machine-learning-tutorial/linear-regression-in-python" rel="noopener" target="_blank" title="linear regression">linear regression</a>&nbsp;model.&nbsp;</p>
+
+<p>RMSE indicates the Root Mean Square Error.&nbsp;</p>
+
+<p>MSE indicates the Mean Square Error.</p>
+
+<p>&nbsp;</p>
+
+<h3>16. How can you select k for k-means?&nbsp;</h3>
+
+<p>We use the elbow method to select k for&nbsp;<a href="https://www.simplilearn.com/tutorials/machine-learning-tutorial/k-means-clustering-algorithm" rel="noopener" target="_blank" title="k-means clustering">k-means clustering</a>. The idea of the elbow method is to run k-means clustering on the data set where &#39;k&#39; is the number of clusters.</p>
+
+<p>Within the sum of squares (WSS), it is defined as the sum of the squared distance between each member of the cluster and its centroid.&nbsp;</p>
+
+<h3>17. What is the significance of p-value?</h3>
+
+<p>p-value typically &le; 0.05</p>
+
+<p>This indicates strong evidence against the null hypothesis; so you reject the null hypothesis.</p>
+
+<p>p-value typically &gt; 0.05</p>
+
+<p>This indicates weak evidence against the null hypothesis, so you accept the null hypothesis.&nbsp;</p>
+
+<p>p-value at cutoff 0.05&nbsp;</p>
+
+<p>This is considered to be marginal, meaning it could go either way.</p>
+
+<h3>18. How can outlier values be treated?</h3>
+
+<p>You can drop outliers only if it is a garbage value.&nbsp;</p>
+
+<p>Example: height of an adult = abc ft. This cannot be true, as the height cannot be a string value. In this case, outliers can be removed.</p>
+
+<p>If the outliers have extreme values, they can be removed. For example, if all the data points are clustered between zero to 10, but one point lies at 100, then we can remove this point.</p>
+
+<p>If you cannot drop outliers, you can try the following:</p>
+
+<ul>
+	<li>Try a different model. Data detected as outliers by linear models can be fit by nonlinear models. Therefore, be sure you are choosing the correct model.</li>
+	<li>Try normalizing the data. This way, the extreme data points are pulled to a similar range.</li>
+	<li>You can use algorithms that are less affected by outliers; an example would be&nbsp;<a href="https://www.simplilearn.com/tutorials/data-science-tutorial/random-forest-in-r" rel="noopener" target="_blank" title="random forests">random forests</a>.&nbsp;</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>19. How can time-series data be declared as stationery?</p>
+
+<p>It is stationary when the variance and mean of the series are constant with time.&nbsp;</p>
+
+<p>Here is a visual example:&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>In the first graph, the variance is constant with time. Here, X is the time factor and Y is the variable. The value of Y goes through the same points all the time; in other words, it is stationary.</p>
+
+<p>In the second graph, the waves get bigger, which means it is non-stationary and the variance is changing with time.</p>
+
+<h3>20. How can you calculate accuracy using a confusion matrix?</h3>
+
+<p>Consider this&nbsp;<a href="https://www.simplilearn.com/tutorials/machine-learning-tutorial/confusion-matrix-machine-learning" rel="noopener" target="_blank" title="confusion matrix">confusion matrix</a>:</p>
+
+<p>You can see the values for total data, actual values, and predicted values.</p>
+
+<p>The formula for accuracy is:</p>
+
+<p>Accuracy = (True Positive + True Negative) / Total Observations</p>
+
+<p>= (262 + 347) / 650</p>
+
+<p>= 609 / 650</p>
+
+<p>= 0.93</p>
+
+<p>As a result, we get an accuracy of 93 percent.</p>
+
+<h3>21. Write the equation and calculate the precision and recall rate.</h3>
+
+<p>Consider the same confusion matrix used in the previous question.</p>
+
+<p>Precision = (True positive) / (True Positive + False Positive)</p>
+
+<p>= 262 / 277</p>
+
+<p>= 0.94</p>
+
+<p>Recall Rate = (True Positive) / (Total Positive + False Negative)</p>
+
+<p>= 262 / 288</p>
+
+<p>= 0.90</p>
+
+<h3>22. &#39;People who bought this also bought&hellip;&#39; recommendations seen on Amazon are a result of which algorithm?</h3>
+
+<p>The recommendation engine is accomplished with collaborative filtering. Collaborative filtering explains the behavior of other users and their purchase history in terms of ratings, selection, etc.&nbsp;</p>
+
+<p>The engine makes predictions on what might interest a person based on the preferences of other users. In this algorithm, item features are unknown.</p>
+
+<p>&nbsp;</p>
+
+<p>For example, a sales page shows that a certain number of people buy a new phone and also buy tempered glass at the same time. Next time, when a person buys a phone, he or she may see a recommendation to buy tempered glass as well.</p>
+
+<h3>23. Write a basic SQL query that lists all orders with customer information.</h3>
+
+<p>Usually, we have order tables and customer tables that contain the following columns:</p>
+
+<ul>
+	<li>Order Table&nbsp;</li>
+	<li>Orderid</li>
+	<li>customerId&nbsp;</li>
+	<li>OrderNumber</li>
+	<li>TotalAmount</li>
+	<li>Customer Table&nbsp;</li>
+	<li>Id</li>
+	<li>FirstName</li>
+	<li>LastName</li>
+	<li>City&nbsp;</li>
+	<li>Country&nbsp;&nbsp;</li>
+	<li>The SQL query is:</li>
+	<li>SELECT OrderNumber, TotalAmount, FirstName, LastName, City, Country</li>
+	<li>FROM Order</li>
+	<li>JOIN Customer</li>
+	<li>ON Order.CustomerId = Customer.Id</li>
+</ul>
+
+<h3>24. You are given a dataset on cancer detection. You have built a classification model and achieved an accuracy of 96 percent. Why shouldn&#39;t you be happy with your model performance? What can you do about it?</h3>
+
+<p>Cancer detection results in imbalanced data. In an imbalanced dataset, accuracy should not be based as a measure of performance. It is important to focus on the remaining four percent, which represents the patients who were wrongly diagnosed. Early diagnosis is crucial when it comes to cancer detection, and can greatly improve a patient&#39;s prognosis.</p>
+
+<p>Hence, to evaluate model performance, we should use Sensitivity (True Positive Rate), Specificity (True Negative Rate), F measure to determine the class wise performance of the classifier.</p>
+
+<h3>25. Which of the following machine learning algorithms can be used for inputting missing values of both categorical and continuous variables?</h3>
+
+<ul>
+	<li>K-means clustering</li>
+	<li>Linear regression&nbsp;</li>
+	<li>K-NN (k-nearest neighbor)</li>
+	<li>Decision trees&nbsp;</li>
+</ul>
+
+<p>The&nbsp;<a href="https://www.simplilearn.com/tutorials/machine-learning-tutorial/knn-in-python" rel="noopener" target="_blank" title="K nearest neighbor">K nearest neighbor</a>&nbsp;algorithm can be used because it can compute the nearest neighbor and if it doesn&#39;t have a value, it just computes the nearest neighbor based on all the other features.&nbsp;</p>
+
+<p>When you&#39;re dealing with K-means clustering or&nbsp;<a href="https://www.simplilearn.com/tutorials/data-science-tutorial/linear-regression-in-r" rel="noopener" target="_blank" title="linear regression">linear regression</a>, you need to do that in your pre-processing, otherwise, they&#39;ll crash.&nbsp;<a href="https://www.simplilearn.com/the-power-of-decision-trees-in-machine-learning-article" rel="noopener" target="_blank" title="Decision trees">Decision trees</a>&nbsp;also have the same problem, although there is some variance.</p>
+
+<p>26. Below are the eight actual values of the target variable in the train file. What is the entropy of the target variable?</p>
+
+<p>[0, 0, 0, 1, 1, 1, 1, 1]&nbsp;</p>
+
+<p>Choose the correct answer.</p>
+
+<ol>
+	<li>-(5/8 log(5/8) + 3/8 log(3/8))</li>
+	<li>5/8 log(5/8) + 3/8 log(3/8)</li>
+	<li>3/8 log(5/8) + 5/8 log(3/8)</li>
+	<li>5/8 log(3/8) &ndash; 3/8 log(5/8)</li>
+</ol>
+
+<p>The target variable, in this case, is 1.&nbsp;</p>
+
+<p>The formula for calculating the entropy is:</p>
+
+<p>Putting p=5 and n=8, we get&nbsp;</p>
+
+<p>Entropy = A = -(5/8 log(5/8) + 3/8 log(3/8))</p>
+
+<h3>27. We want to predict the probability of death from heart disease based on three risk factors: age, gender, and blood cholesterol level. What is the most appropriate algorithm for this case?</h3>
+
+<p>Choose the correct option:</p>
+
+<ol>
+	<li>Logistic Regression&nbsp;</li>
+	<li>Linear Regression</li>
+	<li>K-means clustering&nbsp;</li>
+	<li>Apriori algorithm</li>
+</ol>
+
+<p>The most appropriate algorithm for this case is A,<a href="https://www.simplilearn.com/tutorials/data-science-tutorial/logistic-regression-in-r" rel="noopener" target="_blank" title="logistic regression. ">&nbsp;logistic regression.&nbsp;</a></p>
+
+<h3>28. After studying the behavior of a population, you have identified four specific individual types that are valuable to your study. You would like to find all users who are most similar to each individual type. Which algorithm is most appropriate for this study?</h3>
+
+<p>Choose the correct option:</p>
+
+<ol>
+	<li>K-means clustering</li>
+	<li>Linear regression</li>
+	<li>Association rules</li>
+	<li>Decision trees</li>
+</ol>
+
+<p>As we are looking for grouping people together specifically by four different similarities, it indicates the value of k. Therefore, K-means clustering (answer A) is the most appropriate algorithm for this study.</p>
+
+<h3>29. You have run the association rules algorithm on your dataset, and the two rules {banana, apple} =&gt; {grape} and {apple, orange} =&gt; {grape} have been found to be relevant. What else must be true?</h3>
+
+<p>Choose the right answer:</p>
+
+<ol>
+	<li>{banana, apple, grape, orange} must be a frequent itemset</li>
+	<li>{banana, apple} =&gt; {orange} must be a relevant rule</li>
+	<li>{grape} =&gt; {banana, apple} must be a relevant rule</li>
+	<li>{grape, apple} must be a frequent itemset</li>
+</ol>
+
+<p>The answer is A: {grape, apple} must be a frequent itemset</p>
+
+<h3>30. Your organization has a website where visitors randomly receive one of two coupons. It is also possible that visitors to the website will not receive a coupon. You have been asked to determine if offering a coupon to website visitors has any impact on their purchase decisions. Which analysis method should you use?</h3>
+
+<ol>
+	<li>One-way ANOVA&nbsp;</li>
+	<li>K-means clustering</li>
+	<li>Association rules&nbsp;</li>
+	<li>Student&#39;s t-test&nbsp;</li>
+</ol>
+
+<p>The answer is A: One-way ANOVA</p>
+
+<h3>31. What do you understand about true positive rate and false-positive rate?</h3>
+
+<ul>
+	<li>The True Positive Rate (TPR) defines the probability that an actual positive will turn out to be positive.&nbsp;</li>
+</ul>
+
+<p>The True Positive Rate (TPR) is calculated by taking the ratio of the [True Positives (TP)] and [True Positive (TP) &amp; False Negatives (FN) ].&nbsp;</p>
+
+<p>The formula for the same is stated below -</p>
+
+<p>TPR=TP/TP+FN</p>
+
+<ul>
+	<li>The False Positive Rate (FPR) defines the probability that an actual negative result will be shown as a positive one i.e the probability that a model will generate a false alarm.&nbsp;</li>
+</ul>
+
+<p>The False Positive Rate (FPR) is calculated by taking the ratio of the [False Positives (FP)] and [True Positives (TP) &amp; False Positives(FP)].</p>
+
+<p>The formula for the same is stated below -</p>
+
+<p>FPR=FP/TP+FP</p>
+
+<h3>32. What is the ROC curve?</h3>
+
+<p>The graph between the True Positive Rate on the y-axis and the False Positive Rate on the x-axis is called the ROC curve and is used in binary classification.</p>
+
+<p>The False Positive Rate (FPR) is calculated by taking the ratio between False Positives and the total number of negative samples, and the True Positive Rate (TPR) is calculated by taking the ratio between True Positives and the total number of positive samples.</p>
+
+<p>In order to construct the ROC curve, the TPR and FPR values are plotted on multiple threshold values. The area range under the ROC curve has a range between 0 and 1. A completely random model, which is represented by a straight line, has a 0.5 ROC. The amount of deviation a ROC has from this straight line denotes the efficiency of the model.</p>
+
+<p>&nbsp;</p>
+
+<p>The image above denotes a ROC curve example.</p>
+
+<h2><strong>Basic Data Science Interview Questions</strong></h2>
+
+<p>Let us begin with a few basic data science interview questions!</p>
+
+<h3>33. What are the feature vectors?</h3>
+
+<p>A feature vector is an n-dimensional vector of numerical features that represent an object. In machine learning, feature vectors are used to represent numeric or symbolic characteristics (called features) of an object in a mathematical way that&#39;s easy to analyze.</p>
+
+<h3>34. What are the steps in making a decision tree?</h3>
+
+<ol>
+	<li>Take the entire data set as input.</li>
+	<li>Look for a split that maximizes the separation of the classes. A split is any test that divides the data into two sets.</li>
+	<li>Apply the split to the input data (divide step).</li>
+	<li>Re-apply steps one and two to the divided data.</li>
+	<li>Stop when you meet any stopping criteria.</li>
+	<li>This step is called pruning. Clean up the tree if you went too far doing splits.</li>
+</ol>
+
+<h3>35. What is root cause analysis?</h3>
+
+<p>Root cause analysis was initially developed to analyze industrial accidents but is now widely used in other areas. It is a problem-solving technique used for isolating the root causes of faults or problems. A factor is called a root cause if its deduction from the problem-fault-sequence averts the final undesirable event from recurring.</p>
+
+<h3>36. What is logistic regression?</h3>
+
+<p>Logistic regression is also known as the logit model. It is a technique used to forecast the binary outcome from a linear combination of predictor variables.</p>
+
+<h3>37. What are recommender systems?</h3>
+
+<p>Recommender systems are a subclass of information filtering systems that are meant to predict the preferences or ratings that a user would give to a product.</p>
+
+<h3>38. Explain cross-validation.</h3>
+
+<p>Cross-validation is a model validation technique for evaluating how the outcomes of a statistical analysis will generalize to an independent data set. It is mainly used in backgrounds where the objective is to forecast and one wants to estimate how accurately a model will accomplish in practice.&nbsp;</p>
+
+<p>The goal of&nbsp;<a href="https://www.simplilearn.com/tutorials/machine-learning-tutorial/cross-validation" rel="noopener" target="_blank" title="cross-validation">cross-validation</a>&nbsp;is to term a data set to test the model in the training phase (i.e. validation data set) to limit problems like overfitting and gain insight into how the model will generalize to an independent data set.</p>
+
+<h3>39. What is collaborative filtering?</h3>
+
+<p>Most recommender systems use this filtering process to find patterns and information by collaborating perspectives, numerous data sources, and several agents.</p>
+
+<h3>40. Do gradient descent methods always converge to similar points?</h3>
+
+<p>They do not, because in some cases, they reach a local minima or a local optima point. You would not reach the global optima point. This is governed by the data and the starting conditions.</p>
+
+<h3>41. What is the goal of A/B Testing?</h3>
+
+<p>This is statistical hypothesis testing for randomized experiments with two variables, A and B. The objective of<a href="https://www.simplilearn.com/standard-ab-tests-to-run-on-your-website-article" rel="noopener" target="_blank" title="A/B testing">&nbsp;A/B testing</a>&nbsp;is to detect any changes to a web page to maximize or increase the outcome of a strategy.</p>
+
+<h3>42. What are the drawbacks of the linear model?</h3>
+
+<ul>
+	<li>The assumption of linearity of the errors</li>
+	<li>It can&#39;t be used for count outcomes or binary outcomes</li>
+	<li>There are overfitting problems that it can&#39;t solve</li>
+</ul>
+
+<h3>43. What is the law of large numbers?</h3>
+
+<p>It is a theorem that describes the result of performing the same experiment very frequently. This theorem forms the basis of frequency-style thinking. It states that the sample mean, sample variance, and sample standard deviation converge to what they are trying to estimate.</p>
+
+<h3>44.&nbsp; What are the confounding variables?</h3>
+
+<p>These are extraneous variables in a statistical model that correlates directly or inversely with both the dependent and the independent variable. The estimate fails to account for the confounding factor.</p>
+
+<h3>45. What is star schema?</h3>
+
+<p>It is a traditional database schema with a central table. Satellite tables map IDs to physical names or descriptions and can be connected to the central fact table using the ID fields; these tables are known as lookup tables and are principally useful in real-time applications, as they save a lot of memory. Sometimes, star schemas involve several layers of summarization to recover information faster.</p>
+
+<h3>46. How regularly must an algorithm be updated?</h3>
+
+<p>You will want to update an algorithm when:</p>
+
+<ul>
+	<li>You want the model to evolve as data streams through infrastructure</li>
+	<li>The underlying data source is changing</li>
+	<li>There is a case of non-stationarity</li>
+</ul>
+
+<h3>47.&nbsp; What are eigenvalue and eigenvector?</h3>
+
+<p>Eigenvalues are the directions along which a particular linear transformation acts by flipping, compressing, or stretching.</p>
+
+<p>Eigenvectors are for understanding linear transformations. In data analysis, we usually calculate the eigenvectors for a correlation or covariance matrix.&nbsp;</p>
+
+<h3>48. Why is resampling done?</h3>
+
+<p>Resampling is done in any of these cases:</p>
+
+<ul>
+	<li>Estimating the accuracy of sample statistics by using subsets of accessible data, or drawing randomly with replacement from a set of data points</li>
+	<li>Substituting labels on data points when performing significance tests</li>
+	<li>Validating models by using random subsets (<a href="https://www.simplilearn.com/tutorials/angular-tutorial/angular-bootstrap" rel="noopener" target="_blank" title="bootstrapping">bootstrapping</a>, cross-validation)</li>
+</ul>
+
+<h3>49. What is selection bias?</h3>
+
+<p>Selection bias, in general, is a problematic situation in which error is introduced due to a non-random population sample.</p>
+
+<h3>50. What are the types of biases that can occur during sampling?</h3>
+
+<ol>
+	<li>Selection bias</li>
+	<li>Undercoverage bias</li>
+	<li>Survivorship bias</li>
+</ol>
+
+<h3>51. What is survivorship bias?</h3>
+
+<p>Survivorship bias is the logical error of focusing on aspects that support surviving a process and casually overlooking those that did not because of their lack of prominence. This can lead to wrong conclusions in numerous ways.</p>
+
+<h3>52. How do you work towards a random forest?</h3>
+
+<p>The underlying principle of this technique is that several weak learners combine to provide a strong learner. The steps involved are:</p>
+
+<ol>
+	<li>Build several decision trees on bootstrapped training samples of data</li>
+	<li>On each tree, each time a split is considered, a random sample of mm predictors is chosen as split candidates out of all pp predictors</li>
+	<li>Rule of thumb: At each split m=p&radic;m=p</li>
+	<li>Predictions: At the majority rule</li>
+</ol>
+
+<p>This exhaustive list is sure to strengthen your preparation for data science interview questions.</p>
+
+<h3>53. What is a bias-variance trade-off?</h3>
+
+<p>Bias: Due to an oversimplification of a Machine Learning Algorithm, an error occurs in our model, which is known as Bias. This can lead to an issue of underfitting and might lead to oversimplified assumptions at the model training time to make target functions easier and simpler to understand.</p>
+
+<p>Some of the popular machine learning algorithms which are low on the bias scale are -</p>
+
+<p>Support Vector Machines (SVM), K-Nearest Neighbors (KNN), and Decision Trees.</p>
+
+<p>Algorithms that are high on the bias scale -</p>
+
+<p>Logistic Regression and Linear Regression.</p>
+
+<p>Variance: Because of a complex machine learning algorithm, a model performs really badly on a test data set as the model learns even noise from the training data set. This error that occurs in the Machine Learning model is called Variance and can generate overfitting and hyper-sensitivity in Machine Learning models.</p>
+
+<p>While trying to get over bias in our model, we try to increase the complexity of the machine learning algorithm. Though it helps in reducing the bias, after a certain point, it generates an overfitting effect on the model hence resulting in hyper-sensitivity and high variance.</p>
+
+<p>Bias-Variance trade-off: To achieve the best performance, the main target of a supervised machine learning algorithm is to have low variance and bias.&nbsp;</p>
+
+<p>The following things are observed regarding some of the popular machine learning algorithms -</p>
+
+<ul>
+	<li>The&nbsp;<a href="https://www.simplilearn.com/tutorials/data-science-tutorial/svm-in-r" rel="noopener" target="_blank" title="Support Vector Machine algorithm (SVM)">Support Vector Machine algorithm (SVM)</a>&nbsp;has high variance and low bias. In order to change the trade-off, we can increase the parameter C. The C parameter results in a decrease in the variance and an increase in bias by influencing the margin violations allowed in training datasets.</li>
+	<li>In contrast to the SVM, the K-Nearest Neighbors (KNN) Machine Learning algorithm has a high variance and low bias. To change the trade-off of this algorithm, we can increase the prediction influencing neighbors by increasing the K value, thus increasing the model bias.</li>
+</ul>
+
+<h3>54. Describe Markov chains?</h3>
+
+<p>Markov Chains defines that a state&rsquo;s future probability depends only on its current state.&nbsp;</p>
+
+<p>Markov chains belong to the Stochastic process type category.</p>
+
+<p>The below diagram explains a step-by-step model of the Markov Chains whose output depends on their current state.</p>
+
+<p>A perfect example of the Markov Chains is the system of word recommendation. In this system, the model recognizes and recommends the next word based on the immediately previous word and not anything before that. The Markov Chains take the previous paragraphs that were similar to training data-sets and generates the recommendations for the current paragraphs accordingly based on the previous word.</p>
+
+<h3>55. Why is R used in Data Visualization?</h3>
+
+<p>R is widely used in Data Visualizations for the following reasons-</p>
+
+<ul>
+	<li>We can create almost any type of graph using R.</li>
+	<li>R has multiple libraries like lattice, ggplot2, leaflet, etc., and so many inbuilt functions as well.&nbsp;&nbsp;</li>
+	<li>It is easier to customize graphics in R compared to Python.</li>
+	<li>R is used in feature engineering and in exploratory data analysis as well.</li>
+</ul>
+
+<h3>56. What is the difference between a box plot and a histogram?</h3>
+
+<p>The frequency of a certain feature&rsquo;s values is denoted visually by both box plots</p>
+
+<p>and histograms.&nbsp;</p>
+
+<p>Boxplots are more often used in comparing several datasets and compared to histograms, take less space and contain fewer details. Histograms are used to know and understand the probability distribution underlying a dataset.</p>
+
+<p>&nbsp;</p>
+
+<h3>57. What does NLP stand for?</h3>
+
+<p><a href="https://www.simplilearn.com/tutorials/artificial-intelligence-tutorial/what-is-natural-language-processing-nlp" rel="noopener" target="_blank" title="NLP">NLP</a>&nbsp;is short for Natural Language Processing. It deals with the study of how computers learn a massive amount of textual data through programming. A few popular examples of NLP are Stemming, Sentimental Analysis, Tokenization, removal of stop words, etc.</p>
+
+<h3>58. Difference between an error and a residual error</h3>
+
+<p>The difference between a residual error and error are defined below -</p>
+
+<table>
+	<tbody>
+		<tr>
+			<td>
+			<h4>Error</h4>
+			</td>
+			<td>
+			<h4>Residual Error</h4>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>The difference between the actual value and the predicted value is called an error.</p>
+			&nbsp;
+
+			<p>Some of the popular means of calculating data science errors are -</p>
+			&nbsp;
+
+			<ul>
+				<li>Root Mean Squared Error (RMSE)</li>
+			</ul>
+			&nbsp;
+
+			<ul>
+				<li>Mean Absolute Error (MAE)</li>
+			</ul>
+			&nbsp;
+
+			<ul>
+				<li>Mean Squared Error (MSE)</li>
+			</ul>
+			<br />
+			&nbsp;</td>
+			<td>
+			<p>The difference between the arithmetic mean of a group of values and the observed group of values is called a residual error.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>An error is generally unobservable.</p>
+			</td>
+			<td>
+			<p>&nbsp;A residual error can be represented using a graph.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>A residual error is used to show how the sample population data and the observed data differ from each other.</p>
+			</td>
+			<td>
+			<p>&nbsp;An error is how actual population data and observed data differ from each other.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3>59. Difference between Normalisation and Standardization</h3>
+
+<table>
+	<tbody>
+		<tr>
+			<td>
+			<h4>Standardization</h4>
+			</td>
+			<td>
+			<h4>Normalization</h4>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<ul>
+				<li>The technique of converting data in such a way that it is normally distributed and has a standard deviation of 1 and a mean of 0.</li>
+			</ul>
+			</td>
+			<td>
+			<ul>
+				<li>The technique of converting all data values to lie between 1 and 0 is known as Normalization. This is also known as min-max scaling.&nbsp;</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<ul>
+				<li>Standardization takes care that the standard normal distribution is followed by the data.</li>
+			</ul>
+			</td>
+			<td>
+			<ul>
+				<li>The data returning into the 0 to 1 range is taken care of by Normalization.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<ul>
+				<li>Normalization formula -</li>
+			</ul>
+
+			<p>X&rsquo; = (X - Xmin) / (Xmax - Xmin)</p>
+
+			<p>Here,</p>
+
+			<p>Xmin - feature&rsquo;s minimum value,</p>
+
+			<p>Xmax - feature&rsquo;s maximum value.</p>
+			</td>
+			<td>&nbsp;
+			<ul>
+				<li>Standardization formula -</li>
+			</ul>
+
+			<p>X&rsquo; = (X - 𝞵) / 𝞼</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3><br />
+60. Difference between Point Estimates and Confidence Interval</h3>
+
+<p>Confidence Interval: A range of values likely containing the population parameter is given by the confidence interval. Further, it even tells us how likely that particular interval can contain the population parameter. The Confidence Coefficient (or Confidence level) is denoted by 1-alpha, which gives the probability or likeness. The level of significance is given by alpha.&nbsp;</p>
+
+<p>Point Estimates: An estimate of the population parameter is given by a particular value called the point estimate. Some popular methods used to derive Population Parameters&rsquo; Point estimators are - Maximum Likelihood estimator and the Method of Moments.</p>
+
+<p>To conclude, the bias and variance are inversely proportional to each other, i.e., an increase in bias results in a decrease in the variance, and an increase in variance results in a decrease in bias.</p>
+
+<h2>One-on-One Data Science Interview Questions</h2>
+
+<p>To crack a data science interview is no walk in the park. It requires in-depth knowledge and expertise in various topics. Furthermore, the projects that you have worked on can significantly boost your potential in a lot of interviews. In order to help you with your interviews, we have compiled a set of questions for you to relate to. Since data science is an extensive field, there are no limitations on the type of questions that can be inquired. With that being said, you can answer each of these questions depending on the projects you have worked on and the industries you have been in. Try to answer each one of these sample questions and then share your answer with us through the comments.</p>
+
+<p><strong>Pro Tip:&nbsp;</strong>No matter how basic a question may seem, always try to view it from a technical perspective and use each question to demonstrate your unique technical skills and abilities.</p>
+
+<p>61. Which is your favorite machine learning algorithm and why?</p>
+
+<p>62. Which according to you is the most important skill that makes a good data scientist?</p>
+
+<p>63. Why do you think data science is so popular today?</p>
+
+<p>64. Explain the most challenging data science project that you worked on.</p>
+
+<p>65. How do you usually prefer working on a project - individually, small team, or large team?</p>
+
+<p>66. Based on your experience in the industry, tell me about your top 5 predictions for the next 10 years.</p>
+
+<p>67. What are some unique skills that you can bring to the team as a data scientist?</p>
+
+<p>68. Were you always in the data science field? If not, what made you change your career path and how did you upgrade your skills?&nbsp;</p>
+
+<p>69. If we give you a random data set, how will you figure out whether it suits the business needs or not?</p>
+
+<p>70. Given a chance, if you could pick a career other than being a data scientist, what would you choose?</p>
+
+<p>71. Given the constant change in the data science field, how quickly can you adapt to new technologies?</p>
+
+<p>72. Have you ever been in a conflict with your colleagues regarding different strategies to go about a project? How were you able to resolve it?</p>
+
+<p>73. Can you break down an algorithm you have used on a recent project?</p>
+
+<p>74. What tools did you use in your last project and why?</p>
+
+<p>75. Think of the last technical problem that you solved. If you had no limitations with the project&rsquo;s budget, what would be the first thing you would do to solve the same problem?</p>
+
+<p>76. When you are assigned multiple projects at the same time, how best do you organize your time?&nbsp;</p>
+
+<p>77. Tell me about a time when your project didn&rsquo;t go according to plan and what you learned from it.</p>
+
+<p>78. Have you ever created an original algorithm? How did you go about doing that and for what purpose?</p>
+
+<p>79. What is your most favored strategy to clean a big data set and why?</p>
+
+<p>80. Do you contribute to any open source projects?</p>
