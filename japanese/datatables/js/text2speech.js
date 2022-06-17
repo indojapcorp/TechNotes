@@ -223,7 +223,13 @@ function run(pause) {
   speakMessage('Testing 1,2,3', pause)
 }
 
+
 try {
+
+document.querySelector("#start").addEventListener("click", () => {
+	userSelectionChanged();
+});
+
 document.querySelector("#pause").addEventListener("click", () => {
   window.speechSynthesis.pause();
 });
