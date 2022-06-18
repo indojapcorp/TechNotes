@@ -44,8 +44,16 @@ function userSelectionChanged() {
 
 $(window).bind('selectionEnd', function () {
 
+	console.log('in selectionEnd');
+
     selectionEndTimeout = null;
     selectedText = window.getSelection().toString();
+        if(selectedText.trim() == '' && window.getSelection().anchorNode.id == 'maintable'){
+	        selectedText = window.getSelection().anchorNode.textContent;
+		}
+		selectedText=selectedText.replace(/^\s*[\r\n]/gm, "");
+    //	console.log('selectedText'+selectedText);
+
     if(selectedText != ''){
 speech.text = selectedText;
 
@@ -230,6 +238,10 @@ document.querySelector("#start").addEventListener("click", () => {
 	userSelectionChanged();
 });
 
+document.querySelector("#startall").addEventListener("click", () => {
+	selectText('maintable');
+});
+
 document.querySelector("#pause").addEventListener("click", () => {
   window.speechSynthesis.pause();
 });
@@ -277,4 +289,25 @@ function includeHTML() {
   }
 }
 
+
+function selectText(containerid) {
+    if (document.selection) { // IE
+        var range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(containerid));
+        range.select();
+     //           console.log('IE');
+    } else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(document.getElementById(containerid));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        //  var selection = window.getSelection();
+
+        //  console.dir(selection.anchorNode.textContent);
+
+     //   console.log('chrome');
+    }
+    
+  //  console.log('window.getSelection().toString()='+window.getSelection().toString());
+}
 
