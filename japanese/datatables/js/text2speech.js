@@ -25,6 +25,30 @@ var everyline;
 var times;
 play=false;
 
+//         document.onreadystatechange = function() {
+//             if (document.readyState !== "complete") {
+// 				console.log('not comp');
+//             } else {
+// 				console.log('comp');  
+// 				       //  document.querySelector('#btnpanel').ready(function() {
+// //             console.log( "ready!" );
+// //         });
+//           
+// //               document.querySelector('#btnpanel').append(function (){
+// //         return $('input:text', this).val();
+// //     });
+// 
+// // document.querySelector('#btnpanel').append(function (){
+// //         var t = $('input:text', this).val();
+// //         $(this).append(t);
+// //     });
+//     
+// //       $('#btnpanel').load("settings.html");
+// 
+//             }
+//         };
+
+
 document.onselectionchange = userSelectionChanged;
 
 function userSelectionChanged() {
@@ -44,7 +68,7 @@ function userSelectionChanged() {
 
 $(window).bind('selectionEnd', function () {
 
-	console.log('in selectionEnd');
+	//console.log('in selectionEnd');
 
     selectionEndTimeout = null;
     selectedText = window.getSelection().toString();
@@ -143,8 +167,8 @@ function speakMessage(message, PAUSE_MS = 500,lang) {
 function speakTwoMessages(message, PAUSE_MS = 500 , TIMES = 1 , EVERYLINE = 0) {
   try {
   	
-  	console.log('times='+times);
-  	console.log('EVERYLINE='+EVERYLINE);
+//  	console.log('times='+times);
+//  	console.log('EVERYLINE='+EVERYLINE);
   	  	
   	var sb = "";
   	var sbfull = "";
@@ -166,7 +190,7 @@ function speakTwoMessages(message, PAUSE_MS = 500 , TIMES = 1 , EVERYLINE = 0) {
 	
 	//console.log(sbeachline);
 
-	console.log(sb);
+//	console.log(sb);
 
 
     const messageParts = sb.split(/\r?\n/)
@@ -254,10 +278,12 @@ document.querySelector("#cancel").addEventListener("click", () => {
   play=false;
   window.speechSynthesis.cancel();
 });
+
 }
 catch(err) {
   console.log(' pause/resume button not found');
 }
+
 
 
 function includeHTML() {

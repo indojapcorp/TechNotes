@@ -1,3 +1,30 @@
+<html>
+<script type="text/javascript" src="../../japanese/datatables/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="../../japanese/datatables/js/jquery.mark.min.js"></script>
+<script type="text/javascript" src="../../japanese/datatables/js/text2speech.js"></script>
+<div>
+      <button id="start" class="btn btn-info mt-5 me-3">S</button> 
+      <button id="startall" class="btn btn-info mt-5 me-3">SAll</button>        
+      <button id="pause" class="btn btn-warning mt-5 me-3">P</button>
+      <button id="resume" class="btn btn-info mt-5 me-3">R</button>
+      <button id="cancel" class="btn btn-danger mt-5 me-3">Cancel</button>
+      
+			  Loop every line:
+              <select class="selectpicker" id="everyline" >
+                    <option value="0" selected="selected">
+                      FALSE
+                    </option>        
+                    <option value="1">
+                      TRUE
+                    </option>                                                                                                                  
+              </select>
+              
+              Play Times
+              <input id="times" value="1" size="2"/>
+
+
+</div>
+<div id="maintable">
 <h2>What is DevOps?</h2>
 
 <p>DevOps stands for Development and Operations. It is a software engineering practice that focuses on bringing together the development team and the operations team for the purpose of automating the project at every stage. This approach helps in easily automating the project service management in order to aid the objectives at the operational level and improve the understanding of the technological stack used in the production environment.</p>
@@ -500,3 +527,5 @@ Git repository provides a hook called pre-commit which gets triggered right befo
 	<li><strong>Update hook:</strong>&nbsp;This hook triggers the script to run before any updates are actually made. This hook is called once for every commit which has been pushed to the repository.</li>
 	<li><strong>Post-receive hook:</strong>&nbsp;This hook helps trigger the script after the updates or changes have been accepted by the destination repository. This hook is ideal for configuring deployment scripts, any continuous integration-based scripts or email notifications process to the team, etc.</li>
 </ul>
+</div>
+</html>
