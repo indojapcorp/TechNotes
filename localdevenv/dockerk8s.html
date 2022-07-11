@@ -1,0 +1,239 @@
+<noscript> 
+  <style>
+    body {
+      -ms-overflow-style: scrollbar;
+      overflow-y: scroll;
+      overscroll-behavior-y: none;
+    }
+
+    .errorContainer {
+      background-color: #FFF;
+      color: #0F1419;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10%;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .errorButton {
+      margin: 3em 0;
+    }
+
+    .errorButton a {
+      background: #1DA1F2;
+      border-radius: 2.5em;
+      color: white;
+      padding: 1em 2em;
+      text-decoration: none;
+    }
+
+    .errorButton a:hover,
+    .errorButton a:focus {
+      background: rgb(26, 145, 218);
+    }
+
+    .errorFooter {
+      color: #657786;
+      font-size: 80%;
+      line-height: 1.5;
+      padding: 1em 0;
+    }
+
+    .errorFooter a,
+    .errorFooter a:visited {
+      color: #657786;
+      text-decoration: none;
+      padding-right: 1em;
+    }
+
+    .errorFooter a:hover,
+    .errorFooter a:active {
+      text-decoration: underline;
+    }
+
+      #placeholder,
+      #react-root {
+        display: none !important;
+      }
+      body {
+        background-color: #FFF !important;
+      }
+    </style> 
+  <div class="errorContainer"> 
+   <img width="46" height="38" srcset="https://abs.twimg.com/errors/logo46x38.png 1x, https://abs.twimg.com/errors/logo46x38@2x.png 2x" src="https://abs.twimg.com/errors/logo46x38.png" alt="Twitter"> 
+   <h1>JavaScript is not available.</h1> 
+   <p>We’ve detected that JavaScript is disabled in this browser. Please enable JavaScript or switch to a supported browser to continue using twitter.com. You can see a list of supported browsers in our Help Center.</p> 
+   <p class="errorButton"><a href="https://help.twitter.com/using-twitter/twitter-supported-browsers">Help Center</a></p> 
+   <p class="errorFooter"> <a href="https://twitter.com/tos">Terms of Service</a> <a href="https://twitter.com/privacy">Privacy Policy</a> <a href="https://support.twitter.com/articles/20170514">Cookie Policy</a> <a href="https://legal.twitter.com/imprint.html">Imprint</a> <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&amp;utm_source=twc&amp;utm_medium=web&amp;utm_campaign=ao&amp;utm_content=adsinfo">Ads info</a> © 2022 Twitter, Inc. </p> 
+  </div> 
+ </noscript>
+<h1>Docker Kubernetes Minikube on OSX</h1>
+
+<p>&nbsp;</p>
+
+<p>docker-machine create --driver virtualbox default<br />
+docker-machine env default<br />
+eval $(docker-machine env default)<br />
+docker-machine start<br />
+docker images</p>
+
+<p><br />
+docker-machine start<br />
+eval $(docker-machine env default)<br />
+docker network create knote<br />
+docker build -t knote-java-04:v1 .<br />
+docker save &nbsp;knote-java-04:v1 &gt; knote-java-04-v1.tar<br />
+docker run &nbsp; --name=mongo &nbsp; --rm &nbsp; --network=knote mongo:4.4.6<br />
+or&nbsp;<br />
+docker run &nbsp; --name=mongo &nbsp; --rm &nbsp; --network=knote mvertes/alpine-mongo:4.0.6-1</p>
+
+<p>docker run &nbsp; --name=knote-java &nbsp; --rm &nbsp; --network=knote &nbsp; -p 8080:8080 &nbsp; -e MONGO_URL=mongodb://mongo:27017/dev &nbsp; knote-java-04:v1</p>
+
+<p><br />
+How to get a Docker container&#39;s IP address from the host<br />
+docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; default<br />
+docker-machine ip</p>
+
+<p>docker stop containerids</p>
+
+<p>docker-machine stop</p>
+
+<p>----------<br />
+The default login is, username: &ldquo;docker&ldquo;, password: &ldquo;tcuser&ldquo;.&nbsp;<br />
+minikube start<br />
+minikube image ls<br />
+minikube image load openjdk.tar&nbsp;<br />
+minikube image ls<br />
+minikube image load mongo446.tar&nbsp;<br />
+minikube image load knote-java-03.tar&nbsp;<br />
+minikube stop<br />
+minikube ssh</p>
+
+<p>-------</p>
+
+<p><br />
+$ minikube docker-env<br />
+export DOCKER_TLS_VERIFY=&quot;1&quot;<br />
+export DOCKER_HOST=&quot;tcp://192.168.99.102:2376&quot;<br />
+export DOCKER_CERT_PATH=&quot;/Users/schowdhury/.minikube/certs&quot;<br />
+export DOCKER_API_VERSION=&quot;1.35&quot;<br />
+# Run this command to configure your shell:<br />
+# eval $(minikube docker-env)</p>
+
+<p><br />
+-----documentation of commands<br />
+kubectl explain service.spec.type<br />
+kubectl explain deployment.spec.replicas</p>
+
+<p>------</p>
+
+<p>Then submit your resource definitions to Kubernetes with the following command:<br />
+kubectl apply -f kube</p>
+
+<p>You can watch your Pods coming alive with:<br />
+kubectl get pods --watch</p>
+
+<p><br />
+-------<br />
+In Minikube, a Service can be accessed with the following command:</p>
+
+<p>minikube service knote --url</p>
+
+<p>--------</p>
+
+<p>Kubernetes makes it very easy to increase the number of replicas to 2 or more:<br />
+kubectl scale --replicas=2 deployment/knote</p>
+
+<p>You can watch how a new Pod is created with:<br />
+kubectl get pods -l app=knote --watch</p>
+
+<p><br />
+--------</p>
+
+<p>Kubernetes GUI<br />
+minikube dashboard</p>
+
+<p>------<br />
+Delete deployment of my-app<br />
+kubectl delete deploy my-app<br />
+kubectl delete service my-app</p>
+
+<p>----------</p>
+
+<p>Reset everything<br />
+minikube stop;<br />
+minikube delete;<br />
+rm -rf ~/.minikube ~/.kube;<br />
+brew uninstall kubectl;<br />
+brew cask uninstall docker virtualbox minikube;</p>
+
+<p>--------</p>
+
+<p>Set docker to point to minikube<br />
+eval $(minikube docker-env)</p>
+
+<p>Push to minikube docker<br />
+docker build -t hello-node:v1 .</p>
+
+<p>Set your deployment to not pull IfNotPresent<br />
+K8S default is set to &quot;Always&quot; Change to &quot;IfNotPresent&quot;</p>
+
+<p>imagePullPolicy: IfNotPresent</p>
+
+<p><br />
+-------------</p>
+
+<p>to start minikube with outside of minikube docker registry&nbsp;</p>
+
+<p>minikube start --vm-driver=&quot;virtualbox&quot; --insecure-registry=&quot;$REG_IP&quot;:80<br />
+instead of just</p>
+
+<p>minikube start<br />
+$REG_IP is :</p>
+
+<p>REG_IP=docker-machine ip registry</p>
+
+<p>--------</p>
+
+<p>As per the kubernetes documentation here: https://kubernetes.io/docs/concepts/containers/images/#imagepullpolicy-defaulting</p>
+
+<p>If you use the latest tag for deployment then it will try to pull image. I was able to deploy service with v1 tag after following steps on WSL-2</p>
+
+<p>eval $(minikube -p minikube docker-env)<br />
+minikube start<br />
+docker build --tag=my-service:v1 .<br />
+kubectl create deployment my-service --image=my-service:v1<br />
+kubectl expose pod &quot;my-service&quot; --type=NodePort --port=8080<br />
+minikube service my-serivce</p>
+
+<p>-----------</p>
+
+<p>&nbsp; 467 &nbsp;docker info&nbsp;<br />
+&nbsp; 468 &nbsp;docker container ps<br />
+&nbsp; 469 &nbsp;docker container<br />
+&nbsp; 462 &nbsp;docker container ls<br />
+&nbsp; 470 &nbsp;docker container stop<br />
+&nbsp; 471 &nbsp;docker container kill all<br />
+&nbsp; 472 &nbsp;docker container kill<br />
+&nbsp; &nbsp;448 &nbsp;docker info 93f118f4ed9c<br />
+&nbsp; 452 &nbsp;docker build -t knote-java .<br />
+&nbsp; &nbsp; 444 &nbsp;docker run hello-world<br />
+&nbsp; &nbsp; &nbsp; 421 &nbsp;docker rm mongo knote-java<br />
+&nbsp; 466 &nbsp;docker run &nbsp; --name=mongo &nbsp; --rm &nbsp; --network=knote mongo:4.4.6<br />
+&nbsp; 362 &nbsp;docker inspect -f &#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; default</p>
+
+<p>&nbsp; ------------</p>
+
+<p>&nbsp; &nbsp; 425 &nbsp;minikube start --kubernetes-version v1.15.12 &nbsp; &nbsp;<br />
+&nbsp; 426 &nbsp;minikube start --kubernetes-version v1.16.0<br />
+&nbsp; 427 &nbsp;minikube start --cpus=1<br />
+&nbsp; 428 &nbsp;minikube start --driver=virtualbox<br />
+&nbsp; 429 &nbsp;vboxmanage showvminfo minikube | grep &quot;Memory size\|Number of CPUs&quot;<br />
+&nbsp; 430 &nbsp;minikube stop<br />
+&nbsp; 431 &nbsp;minikube profile list<br />
+&nbsp; 432 &nbsp;minikube config set cpus 1<br />
+&nbsp; 433 &nbsp;minikube start<br />
+&nbsp; 434 &nbsp;minikube config set cpus 2<br />
+&nbsp; 435 &nbsp;minikube start<br />
+&nbsp; 490 &nbsp;minikube stop</p>
