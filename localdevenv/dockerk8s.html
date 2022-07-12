@@ -72,6 +72,17 @@
 
 <p>&nbsp;</p>
 
+CORDA
+Check installed Java versions on mac
+/usr/libexec/java_home -V
+
+To change the default java version 
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+gradle build -Dorg.gradle.java.home=/JDK_PATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
+
+
 <p>docker-machine create --driver virtualbox default<br />
 docker-machine env default<br />
 eval $(docker-machine env default)<br />
