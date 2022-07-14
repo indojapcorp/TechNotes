@@ -78,6 +78,18 @@ Check installed Java versions on mac
 
 To change the default java version 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+----
+nano ~/.bash_profile
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)
+source ~/.bash_profile
+
+
+ls -l /usr/libexec/java_home -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home
+rm -l 
+
+ln -sf /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home /usr/libexec/java_home
+------
 
 gradle build -Dorg.gradle.java.home=/JDK_PATH
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
@@ -301,3 +313,92 @@ services:
     image: hyperledger/fabric-tools:latest
     volumes:
       - ./docker/peercfg:/etc/hyperledger/peercfg
+      
+      
+------------------
+ETHERIUM
+
+GETH
+
+   12  cd localgeth/
+   21  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth
+   22  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth" account new
+   24  geth
+   26  mv ~/Downloads/geth-* .
+   28  mv geth-* ../
+   32  unzip geth-alltools-darwin-amd64-1.10.17-25c9b49f.tar.gz 
+   33  gunzip geth-darwin-amd64-1.10.17-25c9b49f.tar.gz 
+   35  tar xvf geth-darwin-amd64-1.10.17-25c9b49f.tar 
+   36  gunzip geth-alltools-darwin-amd64-1.10.17-25c9b49f.tar.gz 
+   37  tar xvf geth-alltools-darwin-amd64-1.10.17-25c9b49f.tar 
+   39  cd geth-alltools
+   44  geth
+   68  geth attach http://127.0.0.1:8745
+   69  geth attach http://127.0.0.1:8745
+   70  geth attach http://127.0.0.1:8745
+   71  geth attach http://127.0.0.1:8000
+   72  geth attach http://127.0.0.1:8000
+   73  geth attach http://127.0.0.1:8545
+   74  geth attach http://127.0.0.1:8545
+   75  geth attach http://127.0.0.1:8545
+   76  geth attach http://127.0.0.1:8545
+   77  geth attach http://127.0.0.1:8645
+   78  geth attach http://127.0.0.1:8645
+   79  geth attach http://127.0.0.1:8645
+   84  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node02" init /Users/priya/vkdev/web3/etherium/localgeth/node02/genesis.json
+   85  geth --identity "node02" --http --http.port "8545" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node02" --port "30303" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+   86  geth --identity "node02" --http --http.port "8645" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node02" --port "30303" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+   87  geth --identity "node02" --http --http.port "8645" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node02" --port "30403" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 2900 --nat "any"
+   88  geth --identity "node02" --http --http.port "8645" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node02" --port "30303" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 2900 --nat "any"
+   89  geth --identity "node02" --http --http.port "8645" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node02" --port "30403" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+   90  geth --identity "node02" --allow-insecure-unlock --http --http.port "8645" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node02" --port "30403" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 2900 --nat "any"
+   91  geth --identity "node02" --allow-insecure-unlock --http --http.port "8645" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node02" --port "30403" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 2900 --nat "any"
+   97  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" init "/Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json" 
+   98  vi /Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json 
+   99  vi /Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json 
+  100  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" init "/Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json" 
+  101  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" init "/Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json" 
+  102  vi /Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json 
+  103  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" init "/Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json" 
+  104  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" init /Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json
+  105  vi /Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json
+  106  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" init /Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json
+  107  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" init /Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json
+  108  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" init /Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json
+  109  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" init /Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json
+  110  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" init /Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json
+  111  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" init /Users/priya/vkdev/web3/etherium/localgeth/node01/genesis.json
+  112  $ geth --identity "node01" --rpc --rpcport "8000" --rpccorsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" --port "30303" --nodiscover --rpcapi "db,eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+  113  geth
+  114  $ geth --identity "node01" --rpc --rpcport "8000" --rpccorsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" --port "30303" --nodiscover --rpcapi "db,eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+  115  geth --identity "node01" --rpc --rpcport "8000" --rpccorsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" --port "30303" --nodiscover --rpcapi "db,eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+  116  geth --identity "node01" --rpc --rpcport "8000" --rpccorsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" --port "30303" --nodiscover --rpcapi "db,eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+  117  geth --identity "node01" --rpcport "8000" --rpccorsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" --port "30303" --nodiscover --rpcapi "db,eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+  118  geth --identity "node01" --http --http.port "8545" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" --port "30303" --nodiscover --http.api "db,eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+  119  geth --identity "node01" --http --http.port "8545" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" --port "30303" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+  120  geth --identity "node01" --http --http.port "8545" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" --port "30303" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+  121  geth --identity "node01" --allow-insecure-unlock --http --http.port "8545" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" --port "30303" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+  122  geth --identity "node01" --allow-insecure-unlock --http --http.port "8545" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" --port "30303" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+  123  geth --identity "node01" --allow-insecure-unlock --http --http.port "8545" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node01" --port "30303" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+  124  geth --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node03" init /Users/priya/vkdev/web3/etherium/localgeth/node03/genesis.json
+  125  geth --identity "node03" --http --http.port "8745" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node03" --port "30303" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+  126  geth --identity "node03" --http --http.port "8745" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node03" --port "30503" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 3900 --nat "any"
+  127  geth --identity "node03" --http --http.port "8745" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node03" --port "30503" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 1900 --nat "any"
+  128  geth --identity "node03" --allow-insecure-unlock --http --http.port "8745" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node03" --port "30503" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 3900 --nat "any"
+  129  geth --identity "node03" --allow-insecure-unlock --http --http.port "8745" --http.corsdomain "*" --datadir "/Users/priya/vkdev/web3/etherium/localgeth/node03" --port "30503" --nodiscover --http.api "eth,net,web3,personal,miner,admin" --networkid 3900 --nat "any"
+  130  geth attach http://127.0.0.1:8545
+
+
+QUORUM
+
+docker-compose down
+export COMPOSE_PARALLEL_LIMIT=1000
+docker network prune
+docker-compose up -d
+I raised COMPOSE_PARALLEL_LIMIT to 10 but then started getting timeouts, 
+so then raised COMPOSE_HTTP_TIMEOUT from 60 to 300.
+
+
+docker kill $(docker ps -q)
+docker rm $(docker ps -a -q)
+docker network prune  //removes unused networks
