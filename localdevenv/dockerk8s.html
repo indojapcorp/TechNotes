@@ -70,29 +70,36 @@
  </noscript>
 <h1>Docker Kubernetes Minikube on OSX</h1>
 
+
+
+
 <p>&nbsp;</p>
 
-CORDA
-Check installed Java versions on mac
-/usr/libexec/java_home -V
+CORDA<br />
+Check installed Java versions on mac<br />
+/usr/libexec/java_home -V<br />
 
-To change the default java version 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-----
-nano ~/.bash_profile
+To change the default java version <br />
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`<br />
+----<br />
+nano ~/.bash_profile<br />
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)
-source ~/.bash_profile
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)<br />
+source ~/.bash_profile<br />
 
 
-ls -l /usr/libexec/java_home -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home
-rm -l 
+ls -l /usr/libexec/java_home -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home<br />
+rm -l <br />
 
-ln -sf /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home /usr/libexec/java_home
-------
+ln -sf /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home /usr/libexec/java_home<br />
+------<br />
 
-gradle build -Dorg.gradle.java.home=/JDK_PATH
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
+gradle build -Dorg.gradle.java.home=/JDK_PATH<br />
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home<br />
+
+
+docker pull hyperledger/fabric-ccenv:1.4.0<br />
+docker tag hyperledger/fabric-ccenv:1.4.0 hyperledger/fabric-ccenv:latest<br />
 
 
 <p>docker-machine create --driver virtualbox default<br />
@@ -101,8 +108,7 @@ eval $(docker-machine env default)<br />
 docker-machine start<br />
 docker images</p>
 
-docker exec -it cli bash
-docker logs container-id
+
 
 <p><br />
 docker-machine start<br />

@@ -1,0 +1,300 @@
+<noscript> 
+  <style>
+    body {
+      -ms-overflow-style: scrollbar;
+      overflow-y: scroll;
+      overscroll-behavior-y: none;
+    }
+
+    .errorContainer {
+      background-color: #FFF;
+      color: #0F1419;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10%;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .errorButton {
+      margin: 3em 0;
+    }
+
+    .errorButton a {
+      background: #1DA1F2;
+      border-radius: 2.5em;
+      color: white;
+      padding: 1em 2em;
+      text-decoration: none;
+    }
+
+    .errorButton a:hover,
+    .errorButton a:focus {
+      background: rgb(26, 145, 218);
+    }
+
+    .errorFooter {
+      color: #657786;
+      font-size: 80%;
+      line-height: 1.5;
+      padding: 1em 0;
+    }
+
+    .errorFooter a,
+    .errorFooter a:visited {
+      color: #657786;
+      text-decoration: none;
+      padding-right: 1em;
+    }
+
+    .errorFooter a:hover,
+    .errorFooter a:active {
+      text-decoration: underline;
+    }
+
+      #placeholder,
+      #react-root {
+        display: none !important;
+      }
+      body {
+        background-color: #FFF !important;
+      }
+    </style> 
+  <div class="errorContainer"> 
+   <img width="46" height="38" srcset="https://abs.twimg.com/errors/logo46x38.png 1x, https://abs.twimg.com/errors/logo46x38@2x.png 2x" src="https://abs.twimg.com/errors/logo46x38.png" alt="Twitter"> 
+   <h1>JavaScript is not available.</h1> 
+   <p>We’ve detected that JavaScript is disabled in this browser. Please enable JavaScript or switch to a supported browser to continue using twitter.com. You can see a list of supported browsers in our Help Center.</p> 
+   <p class="errorButton"><a href="https://help.twitter.com/using-twitter/twitter-supported-browsers">Help Center</a></p> 
+   <p class="errorFooter"> <a href="https://twitter.com/tos">Terms of Service</a> <a href="https://twitter.com/privacy">Privacy Policy</a> <a href="https://support.twitter.com/articles/20170514">Cookie Policy</a> <a href="https://legal.twitter.com/imprint.html">Imprint</a> <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&amp;utm_source=twc&amp;utm_medium=web&amp;utm_campaign=ao&amp;utm_content=adsinfo">Ads info</a> © 2022 Twitter, Inc. </p> 
+  </div> 
+ </noscript>
+<h1>How to deploy a local private Ethereum blockchain</h1>
+
+<p>This deployment guide covers the steps required to install your own private Ethereum blockchain in your local computer, for testing purposes. It also covers the deployment of a simple smart contract and the setup of a stats dashboard.</p>
+
+<p>For deploying and running the Ethereum blockchain we will use&nbsp;<a href="https://github.com/ethereum/go-ethereum" rel="noopener ugc nofollow" target="_blank">go-ethereum</a>, aka&nbsp;<code>geth</code>, and for deploying the smart contract we will use&nbsp;<a href="https://truffleframework.com/truffle" rel="noopener ugc nofollow" target="_blank">Truffle</a>.</p>
+
+<p>Steps 1&ndash;7 are used to get the private network up and running. Steps 8&ndash;10 focus on testing the private network and step 11 covers the deployment of a stats dashboard.</p>
+
+<ol>
+	<li>Install&nbsp;<code>geth</code></li>
+	<li>Configure the Genesis block</li>
+	<li>Create local nodes</li>
+	<li>Generate initial accounts</li>
+	<li>Initialize and start the nodes</li>
+	<li>Connect to each node from the command line</li>
+	<li>Interconnect the nodes</li>
+	<li>Send some Ether</li>
+	<li>Start a miner</li>
+	<li>Deploy a Smart Contract</li>
+	<li>Run&nbsp;<a href="https://github.com/cubedro/eth-netstats" rel="noopener ugc nofollow" target="_blank">Ethereum Network Stats</a>&nbsp;dashboard</li>
+</ol>
+
+<h2>1. Install geth</h2>
+
+<p><code>geth</code>&nbsp;is the command line interface for running a full Ethereum node implemented in Go. To install it on a Mac, run the following commands:</p>
+
+<pre>
+brew tap ethereum/ethereum
+brew install ethereum</pre>
+
+<p>For installing it on other OS, check the&nbsp;<a href="https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum" rel="noopener ugc nofollow" target="_blank">wiki</a>.</p>
+
+<h2>2. Configure the Genesis block</h2>
+
+<p>Next we need to create a json file which will define how the first block of the blockchain will be created. Each node in the network must be initialized with the same genesis block.</p>
+
+<p>Create a file called&nbsp;<code>genesis.json</code>&nbsp;and save it in the parent folder of the nodes directories. Copy the content below but replace the addresses with those of the accounts created in the 3rd step.</p>
+
+<p>&nbsp;</p>
+
+<p>The&nbsp;<code>config</code>&nbsp;section ensures that certain protocol upgrades are immediately available. The&nbsp;<code>alloc</code>&nbsp;section pre-funds accounts.</p>
+
+<h2>3. Create local nodes</h2>
+
+<p>For the purpose of this private blockchain, we will create some nodes locally in our machine.</p>
+
+<p>Create 3 new directories. Each of them will represent a single node in the blockchain:</p>
+
+<pre>
+$ mkdir node01 node02 node03</pre>
+
+<h2>4. Generate initial accounts</h2>
+
+<p>Let&rsquo;s create 2 Ethereum accounts in the first node, so that later we can do some transactions for testing purposes:</p>
+
+<pre>
+$ geth --datadir &quot;/PATH_TO_NODE01/&quot; account new</pre>
+
+<p>You will be prompted for a secret password. Write down the address of the created accounts and memorize the password.</p>
+
+<h2>5. Initialize and start the nodes</h2>
+
+<p>The first step is to initialize each node with the genesis file previously created. For this, run this command for each of the nodes, replacing with the correct path:</p>
+
+<pre>
+$ geth --datadir &quot;/PATH_TO_NODE/&quot; init /PATH_TO/genesis.json</pre>
+
+<p>Then start each node by running the following command for each of them. You will need to use different numbers both for the port and the rpcport.</p>
+
+<pre>
+$ geth --identity &quot;name_of_your_node&quot; --rpc --rpcport &quot;8000&quot; --rpccorsdomain &quot;*&quot; --datadir &quot;/PATH_TO_NODE/&quot; --port &quot;30303&quot; --nodiscover --rpcapi &quot;db,eth,net,web3,personal,miner,admin&quot; --networkid 1900 --nat &quot;any&quot;</pre>
+
+<p>&nbsp;</p>
+
+<p>Starting the execution of the first node</p>
+
+<p>You can see a list and description of the geth command line options&nbsp;<a href="https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options" rel="noopener ugc nofollow" target="_blank">here</a>.</p>
+
+<h2>6. Connect to each node from the command line</h2>
+
+<p>In order to interact with the nodes you need to open a terminal and use geth to attach to it. Run the following command for each of the nodes, in a separate terminal and use the correct port number for each of them:</p>
+
+<pre>
+$ geth attach http://127.0.0.1:8000</pre>
+
+<p>&nbsp;</p>
+
+<p>Connecting to the first node</p>
+
+<p>The console will enable you to use the&nbsp;<a href="https://github.com/ethereum/wiki/wiki/JavaScript-API" rel="noopener ugc nofollow" target="_blank">Javascript API</a>&nbsp;to interact with the node you have attached to.</p>
+
+<h2><strong>7. Interconnect the nodes</strong></h2>
+
+<p>The first node will be our admin node. Run the following command in the console to read some characteristics about it:</p>
+
+<pre>
+&gt; admin.nodeInfo</pre>
+
+<p>Copy the enode address completely:</p>
+
+<pre>
+enode: &quot;enode://26f7b83...ed769122f1692e@[::]:30303?discport=0&quot;</pre>
+
+<p>Now you can connect the other nodes to this one by running the following command in their respective terminals:</p>
+
+<pre>
+&gt; admin.addPeer(&quot;enode://26f7b8...92e@[::]:30303?discport=0&quot;)</pre>
+
+<p>You can verify that the nodes are peering by entering the following command in the terminal corresponding to the admin node:</p>
+
+<pre>
+&gt; net.peerCount
+2</pre>
+
+<h2>8. Send some Ether</h2>
+
+<p>Next we will execute a transaction. Go to the console attached to the first node and run the following command to check that you can see the accounts created before:</p>
+
+<pre>
+&gt; eth.accounts</pre>
+
+<p>Then check the balance of the first account:</p>
+
+<pre>
+&gt; eth.getBalance(eth.accounts[0])</pre>
+
+<p>Now unlock the first account in order to start a transaction from it:</p>
+
+<pre>
+&gt; personal.unlockAccount(eth.accounts[0])</pre>
+
+<p>Now send some Ether:</p>
+
+<pre>
+&gt; eth.sendTransaction({from:eth.accounts[0], to:eth.accounts[1], value:1000})</pre>
+
+<p>You will be asked to enter the password you used when creating the account. The transaction should be created successfully. The next step is to start a miner so that this transaction is actually processed and persisted in the blockchain.</p>
+
+<h2>9. Start a miner</h2>
+
+<p>The first thing to do is to set an account to receive the mining awards. This is called the etherbase account. We will use the admin node as a miner. Go to the console attached to it and run the following command:</p>
+
+<pre>
+&gt; miner.setEtherbase(eth.accounts[0])</pre>
+
+<p>Then run the following command:</p>
+
+<pre>
+&gt; miner.start()</pre>
+
+<p>You should see a&nbsp;<code>null</code>&nbsp;message in the console, and then in the other console where you started the node you should see the progress of the mining that you just started.</p>
+
+<p>You can now verify the balance of the account and check that the transfer was done properly.</p>
+
+<h2>10. Deploy a Smart Contract</h2>
+
+<p>In this section we will create and deploy a simple smart contract into our network. For this we will be using&nbsp;<a href="https://github.com/trufflesuite/truffle" rel="noopener ugc nofollow" target="_blank">Truffle</a>, which is a development framework for Ethereum.</p>
+
+<p>Run the following command to install the Truffle library:</p>
+
+<pre>
+$ npm install -g truffle</pre>
+
+<p>Next we will initialize a new Truffle project by running this command in a new folder:</p>
+
+<pre>
+$ truffle init</pre>
+
+<p>You will notice that some initial files and directories were created. We need to modify the&nbsp;<code>truffle-config.js</code>&nbsp;so that Truffle knows how to connect to our network. Use the following content for that file, considering that for the port number you need to use the port where your first node is running, and for the&nbsp;<code>from</code>&nbsp;address you must complete the address of the first account created in that node:</p>
+
+<p>&nbsp;</p>
+
+<p>Next, open the&nbsp;<code>contracts</code>&nbsp;folder and create a new file called&nbsp;<code>hello.sol</code>. Complete it with the following code, which is a simple contract written in the&nbsp;<a href="https://github.com/ethereum/solidity" rel="noopener ugc nofollow" target="_blank">Solidity</a>&nbsp;language:</p>
+
+<p>&nbsp;</p>
+
+<p>The next step is to update the migrations file so that Truffle knows that it needs to compile and migrate the contract that we just created. Open the&nbsp;<code>1_initial_migration.js</code>&nbsp;file located in the&nbsp;<code>migrations</code>&nbsp;folder and modify its content to match the following:</p>
+
+<p>&nbsp;</p>
+
+<p>We can now use Truffle to compile our contract and deploy it into our network. Notice that Truffle will also compile and deploy its&nbsp;<code>migrations</code>&nbsp;contract, which is used to track the deployed versions of our contracts and keep them updated.</p>
+
+<p>Go to the&nbsp;<code>contracts</code>&nbsp;folder and run the following command:</p>
+
+<pre>
+$ truffle compile</pre>
+
+<p>Next we need to unlock the account in the first node again, as we are going to deploy the contract using that account. Go to the terminal that is attached to that node and run this command:</p>
+
+<pre>
+&gt; personal.unlockAccount(eth.accounts[0])</pre>
+
+<p>Finally, go back to the&nbsp;<code>contracts</code>&nbsp;folder and run this command to deploy the contract:</p>
+
+<pre>
+$ truffle migrate</pre>
+
+<p>The contract should now be deployed in your network in a new address.</p>
+
+<p>The contract is deployed in our network</p>
+
+<h2>11. Run Ethereum Network Stats dashboard</h2>
+
+<p>The next thing is to set up the&nbsp;<a href="https://github.com/cubedro/eth-netstats" rel="noopener ugc nofollow" target="_blank">Ethereum Network Stats</a>&nbsp;frontend to have a broad view of what&rsquo;s happening in our network.</p>
+
+<p>Clone the repository in a new folder and install the dependencies:</p>
+
+<pre>
+$ git clone https://github.com/cubedro/eth-netstats
+$ cd eth-netstats
+$ npm install
+$ sudo npm install -g grunt-cli</pre>
+
+<p>Now you need to start the client and specify a secret:</p>
+
+<pre>
+$ WS_SECRET=s3cr3t npm start</pre>
+
+<p>Then you need to start each of the nodes again, but this time adding a parameter to specify the location of the stats application. Go to the console where you are running each of the nodes, stop the execution, add the following parameter (replacing with the right node number) and run it again:</p>
+
+<pre>
+--ethstats node01:s3cr3t@localhost:3000</pre>
+
+<p>Open the browser and navigate to localhost:3000. You should see the Stats explorer displaying a lot of information, including the client nodes:</p>
+
+<p><img alt="" src="https://miro.medium.com/max/1400/1*hAKnRNvrwDK_5AWfMzQVQQ.png" style="height:438px; width:700px" /></p>
+
+<p>Ethereum Network Stats dashboard</p>
+
+<p>Thanks for reading! Feel free to clap if you enjoyed it.</p>

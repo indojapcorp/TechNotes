@@ -1,0 +1,980 @@
+<noscript> 
+  <style>
+    body {
+      -ms-overflow-style: scrollbar;
+      overflow-y: scroll;
+      overscroll-behavior-y: none;
+    }
+
+    .errorContainer {
+      background-color: #FFF;
+      color: #0F1419;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10%;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .errorButton {
+      margin: 3em 0;
+    }
+
+    .errorButton a {
+      background: #1DA1F2;
+      border-radius: 2.5em;
+      color: white;
+      padding: 1em 2em;
+      text-decoration: none;
+    }
+
+    .errorButton a:hover,
+    .errorButton a:focus {
+      background: rgb(26, 145, 218);
+    }
+
+    .errorFooter {
+      color: #657786;
+      font-size: 80%;
+      line-height: 1.5;
+      padding: 1em 0;
+    }
+
+    .errorFooter a,
+    .errorFooter a:visited {
+      color: #657786;
+      text-decoration: none;
+      padding-right: 1em;
+    }
+
+    .errorFooter a:hover,
+    .errorFooter a:active {
+      text-decoration: underline;
+    }
+
+      #placeholder,
+      #react-root {
+        display: none !important;
+      }
+      body {
+        background-color: #FFF !important;
+      }
+    </style> 
+  <div class="errorContainer"> 
+   <img width="46" height="38" srcset="https://abs.twimg.com/errors/logo46x38.png 1x, https://abs.twimg.com/errors/logo46x38@2x.png 2x" src="https://abs.twimg.com/errors/logo46x38.png" alt="Twitter"> 
+   <h1>JavaScript is not available.</h1> 
+   <p>We’ve detected that JavaScript is disabled in this browser. Please enable JavaScript or switch to a supported browser to continue using twitter.com. You can see a list of supported browsers in our Help Center.</p> 
+   <p class="errorButton"><a href="https://help.twitter.com/using-twitter/twitter-supported-browsers">Help Center</a></p> 
+   <p class="errorFooter"> <a href="https://twitter.com/tos">Terms of Service</a> <a href="https://twitter.com/privacy">Privacy Policy</a> <a href="https://support.twitter.com/articles/20170514">Cookie Policy</a> <a href="https://legal.twitter.com/imprint.html">Imprint</a> <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&amp;utm_source=twc&amp;utm_medium=web&amp;utm_campaign=ao&amp;utm_content=adsinfo">Ads info</a> © 2022 Twitter, Inc. </p> 
+  </div> 
+ </noscript>
+<p><strong>HYPERLEDGER FABRIC</strong></p>
+
+<p>Hyperledger Fabric is an enterprise-grade permissioned distributed ledger framework for developing solutions and applications. Its modular and versatile design satisfies a broad range of industry use cases. It offers a unique approach to consensus that enables performance at scale while preserving privacy.</p>
+
+<p>Hyperledger Fabric is a platform for distributed ledger solutions, underpinned by a modular architecture delivering high degrees of confidentiality, resiliency, flexibility and scalability. It is designed to support pluggable implementations of different components, and accommodate the complexity and intricacies that exist across the economic ecosystem.</p>
+
+<p>Hyperledger Fabric delivers a uniquely elastic and extensible architecture, distinguishing it from alternative blockchain solutions. Planning for the future of enterprise blockchain requires building on top of a fully-vetted, open source architecture; Hyperledger Fabric is your starting point.</p>
+
+<h2>------------------</h2>
+
+<h1>Key Concepts</h1>
+
+<ul>
+	<li>Introduction</li>
+	<li><strong>Hyperledger Fabric Functionalities</strong></li>
+</ul>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Hyperledger Fabric is an implementation of distributed ledger technology (DLT) that delivers enterprise-ready network security, scalability, confidentiality and performance, in a modular blockchain architecture.&nbsp;</p>
+
+<ul>
+	<li><strong>Hyperledger Fabric Model</strong></li>
+</ul>
+
+<ol>
+	<li>Assets&nbsp;&mdash; Asset definitions enable the exchange of almost anything with monetary value over the network, from whole foods to antique cars to currency futures.</li>
+	<li>Chaincode&nbsp;&mdash; Chaincode execution is partitioned from transaction ordering, limiting the required levels of trust and verification across node types, and optimizing network scalability and performance.</li>
+	<li>Ledger Features&nbsp;&mdash; The immutable, shared ledger encodes the entire transaction history for each channel, and includes SQL-like query capability for efficient auditing and dispute resolution.</li>
+	<li>Privacy&nbsp;&mdash; Channels and private data collections enable private and confidential multi-lateral transactions that are usually required by competing businesses and regulated industries that exchange assets on a common network.</li>
+	<li>Security &amp; Membership Services&nbsp;&mdash; Permissioned membership provides a trusted blockchain network, where participants know that all transactions can be detected and traced by authorized regulators and auditors.</li>
+	<li>Consensus&nbsp;&mdash; A unique approach to consensus enables the flexibility and scalability needed for the enterprise.</li>
+</ol>
+
+<ul>
+	<li><strong>Blockchain network</strong></li>
+</ul>
+
+<p>A blockchain network is a technical infrastructure that provides ledger and smart contract (chaincode) services to applications. Primarily, smart contracts are used to generate transactions which are subsequently distributed to every peer node in the network where they are immutably recorded on their copy of the ledger. The users of applications might be end users using client applications or blockchain network administrators.</p>
+
+<p>In most cases, multiple&nbsp;<a href="https://hyperledger-fabric.readthedocs.io/en/release-1.3/glossary.html#organization">organizations</a>&nbsp;come together as a&nbsp;<a href="https://hyperledger-fabric.readthedocs.io/en/release-1.3/glossary.html#consortium">consortium</a>&nbsp;to form the network and their permissions are determined by a set of&nbsp;<a href="https://hyperledger-fabric.readthedocs.io/en/release-1.3/glossary.html#policy">policies</a>&nbsp;that are agreed by the consortium when the network is originally configured. Moreover, network policies can change over time subject to the agreement of the organizations in the consortium, as we&rsquo;ll discover when we discuss the concept of&nbsp;<em>modification policy</em>.</p>
+
+<ul>
+	<li><strong>Identity</strong></li>
+</ul>
+
+<p>The different actors in a blockchain network include peers, orderers, client applications, administrators and more. Each of these actors &mdash; active elements inside or outside a network able to consume services &mdash; has a digital identity encapsulated in an X.509 digital certificate. These identities really matter because they&nbsp;<strong>determine the exact permissions over resources and access to information that actors have in a blockchain network.</strong></p>
+
+<p>A digital identity furthermore has some additional attributes that Fabric uses to determine permissions, and it gives the union of an identity and the associated attributes a special name &mdash;&nbsp;<strong>principal</strong>. Principals are just like userIDs or groupIDs, but a little more flexible because they can include a wide range of properties of an actor&rsquo;s identity, such as the actor&rsquo;s organization, organizational unit, role or even the actor&rsquo;s specific identity. When we talk about principals, they are the properties which determine their permissions.</p>
+
+<p>For an identity to be&nbsp;<strong>verifiable</strong>, it must come from a&nbsp;<strong>trusted</strong>&nbsp;authority. A&nbsp;membership service provider&nbsp;(MSP) is how this is achieved in Fabric.&nbsp;</p>
+
+<ul>
+	<li>Mapping MSPs to Organizations</li>
+</ul>
+
+<p>An&nbsp;<strong>organization</strong>&nbsp;is a managed group of members. This can be something as big as a multinational corporation or a small as a flower shop. What&rsquo;s most important about organizations (or&nbsp;<strong>orgs</strong>) is that they manage their members under a single MSP. Note that this is different from the organization concept defined in an X.509 certificate, which we&rsquo;ll talk about later.</p>
+
+<ul>
+	<li>Local and Channel MSPs</li>
+</ul>
+
+<p>MSPs appear in two places in a blockchain network: channel configuration (<strong>channel MSPs</strong>), and locally on an actor&rsquo;s premise (<strong>local MSP</strong>).&nbsp;<strong>Local MSPs are defined for clients (users) and for nodes (peers and orderers)</strong>. Node local MSPs define the permissions for that node (who the peer admins are, for example). The local MSPs of the users allow the user side to authenticate itself in its transactions as a member of a channel (e.g. in chaincode transactions), or as the owner of a specific role into the system (an org admin, for example, in configuration transactions).</p>
+
+<p><strong>Every node and user must have a local MSP defined</strong>, as it defines who has administrative or participatory rights at that level (peer admins will not necessarily be channel admins, and vice versa).</p>
+
+<p>In contrast,&nbsp;<strong>channel MSPs define administrative and participatory rights at the channel level</strong>. Every organization participating in a channel must have an MSP defined for it. Peers and orderers on a channel will all share the same view of channel MSPs, and will therefore be able to correctly authenticate the channel participants. This means that if an organization wishes to join the channel, an MSP incorporating the chain of trust for the organization&rsquo;s members would need to be included in the channel configuration. Otherwise transactions originating from this organization&rsquo;s identities will be rejected.</p>
+
+<ul>
+	<li>MSP Levels</li>
+</ul>
+
+<p><em>MSP Levels. The MSPs for the peer and orderer are local, whereas the MSPs for a channel (including the network configuration channel) are shared across all participants of that channel.</em></p>
+
+<p>Network MSP,Channel MSP,Peer MSP,Orderer MSP</p>
+
+<ul>
+	<li>MSP Structure</li>
+	<li>Peers</li>
+	<li>Private data</li>
+	<li>Ledger</li>
+</ul>
+
+<p>A ledger contains the current state of a business as a journal of transactions.</p>
+
+<p>A blockchain ledger consists of two distinct, though related, parts &ndash; a world state and a blockchain.</p>
+
+<p>Firstly, there&rsquo;s a&nbsp;<strong>world state</strong>&nbsp;&ndash; a database that holds the&nbsp;<strong>current values</strong>&nbsp;of a set of ledger states. The world state makes it easy for a program to get the current value of these states, rather than having to calculate them by traversing the entire transaction log. Ledger states are, by default, expressed as&nbsp;<strong>key-value</strong>&nbsp;pairs, though we&rsquo;ll see later that Hyperledger Fabric provides flexibility in this regard. The world state can change frequently, as states can be created, updated and deleted.</p>
+
+<p>Secondly, there&rsquo;s a&nbsp;<strong>blockchain</strong>&nbsp;&ndash; a transaction log that records all the changes that determine the world state. Transactions are collected inside blocks that are appended to the blockchain &ndash; enabling you to understand the history of changes that have resulted in the current world state. The blockchain data structure is very different to the world state because once written, it cannot be modified. It is an&nbsp;<strong>immutable</strong>&nbsp;sequence of blocks, each of which contains a set of ordered transactions.</p>
+
+<ul>
+	<li>Use Cases</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>----------------------</p>
+
+<p>Docker Containers</p>
+
+<h2><strong>1. hyperledger/fabric-ca :&nbsp;</strong></h2>
+
+<p>The Hyperledger Fabric CA is&nbsp;a Certificate Authority (CA) for Hyperledger Fabric.</p>
+
+<p>It provides features such as: registration of identities, or connects to LDAP as the user registry. issuance of Enrollment Certificates (ECerts) certificate renewal and revocation.</p>
+
+<p><a href="https://hyperledger-fabric-ca.readthedocs.io/en/release-1.4/users-guide.html">https://hyperledger-fabric-ca.readthedocs.io/en/release-1.4/users-guide.html</a></p>
+
+<h2><strong>2. hyperledger/fabric-tools:</strong></h2>
+
+<p>&nbsp;</p>
+
+<p>It is a helper container when we go for automation of HLF network creation we can use this container for generating configuration stuff it will have all tools available</p>
+
+<ul>
+	<li>cryptogen</li>
+	<li>configtxgen</li>
+	<li>configtxlator etc</li>
+</ul>
+
+<p>Note: It doesnt have&nbsp;<strong>fabric-ca-client</strong>&nbsp;in order to talk to fabric-ca</p>
+
+<h2><strong>3. fabric-ca-tools</strong>:</h2>
+
+<p>It is a helper container when we go for automation of HLF network creation we can use this container for generating configuration stuff it will have all tools available</p>
+
+<ul>
+	<li>cryptogen</li>
+	<li>configtxgen</li>
+	<li>configtxlator etc</li>
+</ul>
+
+<p>Note: It&nbsp;<strong>does</strong>&nbsp;have&nbsp;<strong>fabric-ca-client</strong>&nbsp;in order to talk to fabric-ca</p>
+
+<h2><strong>4. hyperledger/fabric-ccenv</strong></h2>
+
+<p>Chain code environment. peers use <em>ccenv</em>&nbsp;as chaincode runtime.</p>
+
+<h2><strong>5. hyperledger/fabric-orderer</strong></h2>
+
+<h2>&nbsp;</h2>
+
+<h2>The&nbsp;<em>Orderer</em>&nbsp;is responsible for packaging transactions into Blocks, and distribute them to Anchor Peers across the network.</h2>
+
+<p>Orderer node&nbsp;<strong>includes the transaction into a block and forwards the block to the Anchor nodes of different member Organizations of the Hyperledger Fabric network</strong>. Anchor nodes then broadcast the block to the other peers inside their own organization.</p>
+
+<p>Configuration transactions are processed by the orderer, as it needs to know the current set of policies to execute its basic form of access control. In this case, the orderer&nbsp;<strong>processes the configuration update to make sure that the requestor has the proper administrative rights</strong>.</p>
+
+<p>&nbsp;</p>
+
+<h2><strong>6. hyperledger/fabric-peer</strong></h2>
+
+<h2>&nbsp;</h2>
+
+<h2>The Fabric peer is the main runtime node that manages and provides access to the ledger. It receives blocks from an ordering service node and commits them to the ledger.</h2>
+
+<p>Configuring Fabric peer containers</p>
+
+<p>Three sets of configuration information need to be provided to a Fabric peer:</p>
+
+<ul>
+	<li><code>core.yaml</code>&nbsp;configuration file</li>
+	<li>Membership service provider (MSP) directory for peer&#39;s membership credentials</li>
+	<li>tls directory for peer&#39;s tls credentials (if tls is configured)</li>
+</ul>
+
+<p>You can run a Fabric peer container as follows:</p>
+
+<pre>
+<code>$ docker run -d --publish 7051:7051 \
+-v /tmp/fabric/config/peer0.org1.example.com:/etc/hyperledger/fabric \
+-v /tmp/fabric/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/fabric/msp \
+-v /tmp/fabric/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls:/etc/hyperledger/fabric/tls \
+-v /tmp/fabric/data/peer0.org1.example.com:/var/hyperledger/production \
+-v /var/run:/host/var/run \
+--name peer0.org1.example.com hyperledger/fabric-peer:2.0 peer node start
+</code></pre>
+
+<p>&nbsp;</p>
+
+<h2><strong>7. hyperledger/fabric-baseos</strong></h2>
+
+<p>The&nbsp;<em>baseos</em>&nbsp;serves as a common base for building all images of&nbsp;<em>fabric</em>&nbsp;like peer, orderer, zookeeper, kafka, zookeeper,</p>
+
+<p>You will only need it if you build your fabric docker images from scratch.</p>
+
+<p>The&nbsp;<strong>baseimage</strong>&nbsp;is used for building the chaincode container whenever you instantiate your chaincode on any channel.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>------------------------</p>
+
+<p>Certificate Authorities generate the certificates that represent identities, the MSP contains a list of permissioned identities.</p>
+
+<p>Two types of MSP :</p>
+
+<p>Local MSPs are represented as a folder structure on the file system</p>
+
+<p>Channel MSPs are described in a channel configuration.</p>
+
+<p>Version 1.4.4: working<br />
+curl -sSL http://bit.ly/2ysbOFE | bash -s -- 1.4.4 1.4.4 0.4.18</p>
+
+<p><br />
+Version 2.2.2&nbsp;<br />
+curl -sSL https://bit.ly/2ysbOFE | bash -s -- 2.2.2 1.4.9</p>
+
+<p>cd test-network</p>
+
+<p>export PATH=${PWD}/../bin:$PATH</p>
+
+<p>export FABRIC_CFG_PATH=$PWD/../config/</p>
+
+<p>export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp</p>
+
+<p>export CORE_PEER_TLS_ROOTCERT_FILE=${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt</p>
+
+<p>export CORE_PEER_LOCALMSPID=&quot;Org1MSP&quot;</p>
+
+<p>docker exec -it cli bash<br />
+#netstat -tuplen<br />
+docker logs container-id</p>
+
+<p>&nbsp;1573 &nbsp;export PATH=${PWD}/../bin:$PATH<br />
+&nbsp;1575 &nbsp;export FABRIC_CFG_PATH=$PWD/../config/<br />
+&nbsp;<br />
+&nbsp;clear all unused images with the following docker rm -f $(docker ps -aq)<br />
+&nbsp;#export MSYS_NO_PATHCONV=1 //gave error but still try if needed</p>
+
+<p>&nbsp;</p>
+
+<p>----------------</p>
+
+<p>Version 1.4.4 on mac working</p>
+
+<p>./byfn.sh up</p>
+
+<p>######### &nbsp;Generating Orderer Genesis block ##############<br />
+##########################################################<br />
+CONSENSUS_TYPE=solo</p>
+
+<p>configtxgen -profile TwoOrgsOrdererGenesis -channelID byfn-sys-channel -outputBlock ./channel-artifacts/genesis.block</p>
+
+<p>Loaded configuration: /Users/priya/vkdev/web3/hyperledger1.4.4/fabric-samples/first-network/configtx.yaml</p>
+
+<p>#################################################################<br />
+### Generating channel configuration transaction &#39;channel.tx&#39; ###<br />
+#################################################################<br />
+configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID mychannel</p>
+
+<p>Loaded configuration: /Users/priya/vkdev/web3/hyperledger1.4.4/fabric-samples/first-network/configtx.yaml</p>
+
+<p>#################################################################<br />
+####### &nbsp;&nbsp;&nbsp;Generating anchor peer update for Org1MSP &nbsp;&nbsp;##########<br />
+#################################################################<br />
+configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID mychannel -asOrg Org1MSP</p>
+
+<p>Loaded configuration: /Users/priya/vkdev/web3/hyperledger1.4.4/fabric-samples/first-network/configtx.yaml</p>
+
+<p>#################################################################<br />
+####### &nbsp;&nbsp;&nbsp;Generating anchor peer update for Org2MSP &nbsp;&nbsp;##########<br />
+#################################################################<br />
+configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID mychannel -asOrg Org2MSP</p>
+
+<p>Loaded configuration: /Users/priya/vkdev/web3/hyperledger1.4.4/fabric-samples/first-network/configtx.yaml</p>
+
+<p>docker-compose-cli.yaml<br />
+Creating network &quot;net_byfn&quot; with the default driver<br />
+Creating volume &quot;net_orderer.example.com&quot; with default driver<br />
+Creating volume &quot;net_peer0.org1.example.com&quot; with default driver<br />
+Creating volume &quot;net_peer1.org1.example.com&quot; with default driver<br />
+Creating volume &quot;net_peer0.org2.example.com&quot; with default driver<br />
+Creating volume &quot;net_peer1.org2.example.com&quot; with default driver<br />
+Creating orderer.example.com &nbsp;&nbsp;&nbsp;... done<br />
+Creating peer0.org2.example.com ... done<br />
+Creating peer1.org1.example.com ... done<br />
+Creating peer0.org1.example.com ... done<br />
+Creating peer1.org2.example.com ... done<br />
+Creating cli &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... done</p>
+
+<p><br />
+1.Create channel<br />
+peer channel create -o orderer.example.com:7050 -c mychannel -f ./channel-artifacts/channel.tx --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem</p>
+
+<p>2.Having all peers join the channel...<br />
+peer channel join -b mychannel.block</p>
+
+<p>all the peers join the channel by issuing same command</p>
+
+<p>3.Updating anchor peers for every organization. ex: org1...<br />
+peer channel update -o orderer.example.com:7050 -c mychannel -f ./channel-artifacts/Org1MSPanchors.tx --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem</p>
+
+<p>4.Installing chaincode on every peer. ex: peer0.org1...<br />
+peer chaincode install -n mycc -v 1.0 -l golang -p github.com/chaincode/chaincode_example02/go/</p>
+
+<p>[chaincodeCmd] checkChaincodeCmdParams -&gt; INFO 001 Using default escc<br />
+[chaincodeCmd] checkChaincodeCmdParams -&gt; INFO 002 Using default vscc</p>
+
+<p>Installed remotely response:&lt;status:200 payload:&quot;OK&quot; &gt;&nbsp;</p>
+
+<p>5.Querying chaincode on peer0.org1...<br />
+===================== Querying on peer0.org1 on channel &#39;mychannel&#39;... =====================&nbsp;<br />
+peer chaincode query -C mychannel -n mycc -c &#39;{&quot;Args&quot;:[&quot;query&quot;,&quot;a&quot;]}&#39;</p>
+
+<p>6.Sending invoke transaction on peer0.org1 peer0.org2...<br />
+peer chaincode invoke -o orderer.example.com:7050 --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n mycc --peerAddresses peer0.org1.example.com:7051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses peer0.org2.example.com:9051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c &#39;{&quot;Args&quot;:[&quot;invoke&quot;,&quot;a&quot;,&quot;b&quot;,&quot;10&quot;]}&#39;</p>
+
+<p>7. Step 4 and 5 are repeated for other peers<br />
+Installing chaincode on peer1.org2...<br />
+peer chaincode install -n mycc -v 1.0 -l golang -p github.com/chaincode/chaincode_example02/go/<br />
+===================== Chaincode is installed on peer1.org2 =====================&nbsp;</p>
+
+<p>Querying chaincode on peer1.org2...<br />
+===================== Querying on peer1.org2 on channel &#39;mychannel&#39;... =====================&nbsp;<br />
+Attempting to Query peer1.org2 ...3 secs<br />
+peer chaincode query -C mychannel -n mycc -c &#39;{&quot;Args&quot;:[&quot;query&quot;,&quot;a&quot;]}&#39;</p>
+
+<p>&nbsp;</p>
+
+<p>-------------------</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h1>Commands Reference</h1>
+
+<ul>
+	<li>peer</li>
+	<li>peer chaincode</li>
+	<li>peer channel</li>
+	<li>peer version</li>
+	<li>peer logging</li>
+	<li>peer node</li>
+	<li>configtxgen</li>
+	<li>configtxlator</li>
+	<li>cryptogen</li>
+	<li>Service Discovery Command Line Interface (discover)</li>
+	<li>Fabric-CA Commands</li>
+</ul>
+
+<p>--------------------</p>
+
+<p>&nbsp;</p>
+
+<h1>Operations Guides</h1>
+
+<ul>
+	<li>Upgrading to the Newest Version of Fabric</li>
+	<li>Updating a Channel Configuration</li>
+	<li>Membership Service Providers (MSP)</li>
+	<li>Channel Configuration (configtx)</li>
+	<li>Endorsement policies</li>
+	<li>Pluggable transaction endorsement and validation</li>
+	<li>Access Control Lists (ACL)</li>
+	<li>MSP Implementation with Identity Mixer</li>
+	<li>Identity Mixer MSP configuration generator (idemixgen)</li>
+	<li>Error handling</li>
+	<li>Logging Control</li>
+	<li>Securing Communication With Transport Layer Security (TLS)</li>
+	<li>Bringing up a Kafka-based Ordering Service</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>-------------------</p>
+
+<p>&nbsp;</p>
+
+<h1>Architecture Explained</h1>
+
+<p>&nbsp;</p>
+
+<h2>1. System architecture</h2>
+
+<p>The blockchain is a distributed system consisting of many nodes that communicate with each other. The blockchain runs programs called chaincode, holds state and ledger data, and executes transactions. The chaincode is the central element as transactions are operations invoked on the chaincode. Transactions have to be &ldquo;endorsed&rdquo; and only endorsed transactions may be committed and have an effect on the state. There may exist one or more special chaincodes for management functions and parameters, collectively called&nbsp;<em>system chaincodes</em>.</p>
+
+<h3>1.1. Transactions</h3>
+
+<p>Transactions may be of two types:</p>
+
+<ul>
+	<li><em>Deploy transactions</em>&nbsp;create new chaincode and take a program as parameter. When a deploy transaction executes successfully, the chaincode has been installed &ldquo;on&rdquo; the blockchain.</li>
+	<li><em>Invoke transactions</em>&nbsp;perform an operation in the context of previously deployed chaincode. An invoke transaction refers to a chaincode and to one of its provided functions. When successful, the chaincode executes the specified function - which may involve modifying the corresponding state, and returning an output.</li>
+</ul>
+
+<p>As described later, deploy transactions are special cases of invoke transactions, where a deploy transaction that creates new chaincode, corresponds to an invoke transaction on a system chaincode.</p>
+
+<p><strong>Remark:</strong>&nbsp;<em>This document currently assumes that a transaction either creates new chaincode or invokes an operation provided by *one</em>&nbsp;already deployed chaincode. This document does not yet describe: a) optimizations for query (read-only) transactions (included in v1), b) support for cross-chaincode transactions (post-v1 feature).*</p>
+
+<h3>1.2. Blockchain datastructures</h3>
+
+<h4>1.2.1. State</h4>
+
+<p>The latest state of the blockchain (or, simply,&nbsp;<em>state</em>) is modeled as a versioned key-value store (KVS), where keys are names and values are arbitrary blobs. These entries are manipulated by the chaincodes (applications) running on the blockchain through&nbsp;<code>put</code>&nbsp;and&nbsp;<code>get</code>&nbsp;KVS-operations. The state is stored persistently and updates to the state are logged. Notice that versioned KVS is adopted as state model, an implementation may use actual KVSs, but also RDBMSs or any other solution.</p>
+
+<p>More formally, state&nbsp;<code>s</code>&nbsp;is modeled as an element of a mapping&nbsp;<code>K&nbsp;-&gt;&nbsp;(V&nbsp;X&nbsp;N)</code>, where:</p>
+
+<ul>
+	<li><code>K</code>&nbsp;is a set of keys</li>
+	<li><code>V</code>&nbsp;is a set of values</li>
+	<li><code>N</code>&nbsp;is an infinite ordered set of version numbers. Injective function&nbsp;<code>next:&nbsp;N&nbsp;-&gt;&nbsp;N</code>&nbsp;takes an element of&nbsp;<code>N</code>&nbsp;and returns the next version number.</li>
+</ul>
+
+<p>Both&nbsp;<code>V</code>&nbsp;and&nbsp;<code>N</code>&nbsp;contain a special element &perp; (empty type), which is in case of&nbsp;<code>N</code>&nbsp;the lowest element. Initially all keys are mapped to (&perp;, &perp;). For&nbsp;<code>s(k)=(v,ver)</code>&nbsp;we denote&nbsp;<code>v</code>&nbsp;by&nbsp;<code>s(k).value</code>, and&nbsp;<code>ver</code>&nbsp;by&nbsp;<code>s(k).version</code>.</p>
+
+<p>KVS operations are modeled as follows:</p>
+
+<ul>
+	<li><code>put(k,v)</code>&nbsp;for&nbsp;<code>k</code>&nbsp;&isin;&nbsp;<code>K</code>&nbsp;and&nbsp;<code>v</code>&nbsp;&isin;&nbsp;<code>V</code>, takes the blockchain state&nbsp;<code>s</code>&nbsp;and changes it to&nbsp;<code>s&#39;</code>&nbsp;such that&nbsp;<code>s&#39;(k)=(v,next(s(k).version))</code>&nbsp;with&nbsp;<code>s&#39;(k&#39;)=s(k&#39;)</code>&nbsp;for all&nbsp;<code>k&#39;!=k</code>.</li>
+	<li><code>get(k)</code>&nbsp;returns&nbsp;<code>s(k)</code>.</li>
+</ul>
+
+<p>State is maintained by peers, but not by orderers and clients.</p>
+
+<p><strong>State partitioning.</strong>&nbsp;Keys in the KVS can be recognized from their name to belong to a particular chaincode, in the sense that only transaction of a certain chaincode may modify the keys belonging to this chaincode. In principle, any chaincode can read the keys belonging to other chaincodes.&nbsp;<em>Support for cross-chaincode transactions, that modify the state belonging to two or more chaincodes is a post-v1 feature.</em></p>
+
+<h4>1.2.2 Ledger</h4>
+
+<p>Ledger provides a verifiable history of all successful state changes (we talk about&nbsp;<em>valid</em>&nbsp;transactions) and unsuccessful attempts to change state (we talk about&nbsp;<em>invalid</em>&nbsp;transactions), occurring during the operation of the system.</p>
+
+<p>Ledger is constructed by the ordering service (see Sec 1.3.3) as a totally ordered hashchain of&nbsp;<em>blocks</em>&nbsp;of (valid or invalid) transactions. The hashchain imposes the total order of blocks in a ledger and each block contains an array of totally ordered transactions. This imposes total order across all transactions.</p>
+
+<p>Ledger is kept at all peers and, optionally, at a subset of orderers. In the context of an orderer we refer to the Ledger as to&nbsp;<code>OrdererLedger</code>, whereas in the context of a peer we refer to the ledger as to&nbsp;<code>PeerLedger</code>.&nbsp;<code>PeerLedger</code>&nbsp;differs from the&nbsp;<code>OrdererLedger</code>&nbsp;in that peers locally maintain a bitmask that tells apart valid transactions from invalid ones (see Section XX for more details).</p>
+
+<p>Peers may prune&nbsp;<code>PeerLedger</code>&nbsp;as described in Section XX (post-v1 feature). Orderers maintain&nbsp;<code>OrdererLedger</code>&nbsp;for fault-tolerance and availability (of the&nbsp;<code>PeerLedger</code>) and may decide to prune it at anytime, provided that properties of the ordering service (see Sec. 1.3.3) are maintained.</p>
+
+<p>The ledger allows peers to replay the history of all transactions and to reconstruct the state. Therefore, state as described in Sec 1.2.1 is an optional datastructure.</p>
+
+<h3>1.3. Nodes</h3>
+
+<p>Nodes are the communication entities of the blockchain. A &ldquo;node&rdquo; is only a logical function in the sense that multiple nodes of different types can run on the same physical server. What counts is how nodes are grouped in &ldquo;trust domains&rdquo; and associated to logical entities that control them.</p>
+
+<p>There are three types of nodes:</p>
+
+<ol>
+	<li><strong>Client</strong>&nbsp;or&nbsp;<strong>submitting-client</strong>: a client that submits an actual transaction-invocation to the endorsers, and broadcasts transaction-proposals to the ordering service.</li>
+	<li><strong>Peer</strong>: a node that commits transactions and maintains the state and a copy of the ledger (see Sec, 1.2). Besides, peers can have a special&nbsp;<strong>endorser</strong>&nbsp;role.</li>
+	<li><strong>Ordering-service-node</strong>&nbsp;or&nbsp;<strong>orderer</strong>: a node running the communication service that implements a delivery guarantee, such as atomic or total order broadcast.</li>
+</ol>
+
+<p>The types of nodes are explained next in more detail.</p>
+
+<h4>1.3.1. Client</h4>
+
+<p>The client represents the entity that acts on behalf of an end-user. It must connect to a peer for communicating with the blockchain. The client may connect to any peer of its choice. Clients create and thereby invoke transactions.</p>
+
+<p>As detailed in Section 2, clients communicate with both peers and the ordering service.</p>
+
+<h4>1.3.2. Peer</h4>
+
+<p>A peer receives ordered state updates in the form of&nbsp;<em>blocks</em>&nbsp;from the ordering service and maintain the state and the ledger.</p>
+
+<p>Peers can additionally take up a special role of an&nbsp;<strong>endorsing peer</strong>, or an&nbsp;<strong>endorser</strong>. The special function of an&nbsp;<em>endorsing peer</em>&nbsp;occurs with respect to a particular chaincode and consists in&nbsp;<em>endorsing</em>&nbsp;a transaction before it is committed. Every chaincode may specify an&nbsp;<em>endorsement policy</em>&nbsp;that may refer to a set of endorsing peers. The policy defines the necessary and sufficient conditions for a valid transaction endorsement (typically a set of endorsers&rsquo; signatures), as described later in Sections 2 and 3. In the special case of deploy transactions that install new chaincode the (deployment) endorsement policy is specified as an endorsement policy of the system chaincode.</p>
+
+<h4>1.3.3. Ordering service nodes (Orderers)</h4>
+
+<p>The&nbsp;<em>orderers</em>&nbsp;form the&nbsp;<em>ordering service</em>, i.e., a communication fabric that provides delivery guarantees. The ordering service can be implemented in different ways: ranging from a centralized service (used e.g., in development and testing) to distributed protocols that target different network and node fault models.</p>
+
+<p>Ordering service provides a shared&nbsp;<em>communication channel</em>&nbsp;to clients and peers, offering a broadcast service for messages containing transactions. Clients connect to the channel and may broadcast messages on the channel which are then delivered to all peers. The channel supports&nbsp;<em>atomic</em>&nbsp;delivery of all messages, that is, message communication with total-order delivery and (implementation specific) reliability. In other words, the channel outputs the same messages to all connected peers and outputs them to all peers in the same logical order. This atomic communication guarantee is also called&nbsp;<em>total-order broadcast</em>,&nbsp;<em>atomic broadcast</em>, or&nbsp;<em>consensus</em>&nbsp;in the context of distributed systems. The communicated messages are the candidate transactions for inclusion in the blockchain state.</p>
+
+<p><strong>Partitioning (ordering service channels).</strong>&nbsp;Ordering service may support multiple&nbsp;<em>channels</em>&nbsp;similar to the&nbsp;<em>topics</em>&nbsp;of a publish/subscribe (pub/sub) messaging system. Clients can connect to a given channel and can then send messages and obtain the messages that arrive. Channels can be thought of as partitions - clients connecting to one channel are unaware of the existence of other channels, but clients may connect to multiple channels. Even though some ordering service implementations included with Hyperledger Fabric support multiple channels, for simplicity of presentation, in the rest of this document, we assume ordering service consists of a single channel/topic.</p>
+
+<p><strong>Ordering service API.</strong>&nbsp;Peers connect to the channel provided by the ordering service, via the interface provided by the ordering service. The ordering service API consists of two basic operations (more generally&nbsp;<em>asynchronous events</em>):</p>
+
+<p><strong>TODO</strong>&nbsp;add the part of the API for fetching particular blocks under client/peer specified sequence numbers.</p>
+
+<ul>
+	<li><code>broadcast(blob)</code>: a client calls this to broadcast an arbitrary message&nbsp;<code>blob</code>&nbsp;for dissemination over the channel. This is also called&nbsp;<code>request(blob)</code>&nbsp;in the BFT context, when sending a request to a service.</li>
+	<li><code>deliver(seqno,&nbsp;prevhash,&nbsp;blob)</code>: the ordering service calls this on the peer to deliver the message&nbsp;<code>blob</code>&nbsp;with the specified non-negative integer sequence number (<code>seqno</code>) and hash of the most recently delivered blob (<code>prevhash</code>). In other words, it is an output event from the ordering service.&nbsp;<code>deliver()</code>&nbsp;is also sometimes called&nbsp;<code>notify()</code>&nbsp;in pub-sub systems or&nbsp;<code>commit()</code>&nbsp;in BFT systems.</li>
+</ul>
+
+<p><strong>Ledger and block formation.</strong>&nbsp;The ledger (see also Sec. 1.2.2) contains all data output by the ordering service. In a nutshell, it is a sequence of&nbsp;<code>deliver(seqno,&nbsp;prevhash,&nbsp;blob)</code>&nbsp;events, which form a hash chain according to the computation of&nbsp;<code>prevhash</code>&nbsp;described before.</p>
+
+<p>Most of the time, for efficiency reasons, instead of outputting individual transactions (blobs), the ordering service will group (batch) the blobs and output&nbsp;<em>blocks</em>&nbsp;within a single&nbsp;<code>deliver</code>&nbsp;event. In this case, the ordering service must impose and convey a deterministic ordering of the blobs within each block. The number of blobs in a block may be chosen dynamically by an ordering service implementation.</p>
+
+<p>In the following, for ease of presentation, we define ordering service properties (rest of this subsection) and explain the workflow of transaction endorsement (Section 2) assuming one blob per&nbsp;<code>deliver</code>&nbsp;event. These are easily extended to blocks, assuming that a&nbsp;<code>deliver</code>&nbsp;event for a block corresponds to a sequence of individual&nbsp;<code>deliver</code>&nbsp;events for each blob within a block, according to the above mentioned deterministic ordering of blobs within a block.</p>
+
+<p><strong>Ordering service properties</strong></p>
+
+<p>The guarantees of the ordering service (or atomic-broadcast channel) stipulate what happens to a broadcasted message and what relations exist among delivered messages. These guarantees are as follows:</p>
+
+<ol>
+	<li>
+	<p><strong>Safety (consistency guarantees)</strong>: As long as peers are connected for sufficiently long periods of time to the channel (they can disconnect or crash, but will restart and reconnect), they will see an&nbsp;<em>identical</em>&nbsp;series of delivered&nbsp;<code>(seqno,&nbsp;prevhash,&nbsp;blob)</code>&nbsp;messages. This means the outputs (<code>deliver()</code>&nbsp;events) occur in the&nbsp;<em>same order</em>&nbsp;on all peers and according to sequence number and carry&nbsp;<em>identical content</em>&nbsp;(<code>blob</code>&nbsp;and&nbsp;<code>prevhash</code>) for the same sequence number. Note this is only a&nbsp;<em>logical order</em>, and a&nbsp;<code>deliver(seqno,&nbsp;prevhash,&nbsp;blob)</code>&nbsp;on one peer is not required to occur in any real-time relation to&nbsp;<code>deliver(seqno,&nbsp;prevhash,&nbsp;blob)</code>&nbsp;that outputs the same message at another peer. Put differently, given a particular&nbsp;<code>seqno</code>,&nbsp;<em>no</em>&nbsp;two correct peers deliver&nbsp;<em>different</em>&nbsp;<code>prevhash</code>&nbsp;or&nbsp;<code>blob</code>&nbsp;values. Moreover, no value&nbsp;<code>blob</code>&nbsp;is delivered unless some client (peer) actually called&nbsp;<code>broadcast(blob)</code>&nbsp;and, preferably, every broadcasted blob is only delivered&nbsp;<em>once</em>.</p>
+
+	<p>Furthermore, the&nbsp;<code>deliver()</code>&nbsp;event contains the cryptographic hash of the data in the previous&nbsp;<code>deliver()</code>&nbsp;event (<code>prevhash</code>). When the ordering service implements atomic broadcast guarantees,&nbsp;<code>prevhash</code>&nbsp;is the cryptographic hash of the parameters from the&nbsp;<code>deliver()</code>&nbsp;event with sequence number&nbsp;<code>seqno-1</code>. This establishes a hash chain across&nbsp;<code>deliver()</code>&nbsp;events, which is used to help verify the integrity of the ordering service output, as discussed in Sections 4 and 5 later. In the special case of the first&nbsp;<code>deliver()</code>&nbsp;event,&nbsp;<code>prevhash</code>&nbsp;has a default value.</p>
+	</li>
+	<li>
+	<p><strong>Liveness (delivery guarantee)</strong>: Liveness guarantees of the ordering service are specified by a ordering service implementation. The exact guarantees may depend on the network and node fault model.</p>
+
+	<p>In principle, if the submitting client does not fail, the ordering service should guarantee that every correct peer that connects to the ordering service eventually delivers every submitted transaction.</p>
+	</li>
+</ol>
+
+<p>To summarize, the ordering service ensures the following properties:</p>
+
+<ul>
+	<li><em>Agreement.</em>&nbsp;For any two events at correct peers&nbsp;<code>deliver(seqno,&nbsp;prevhash0,&nbsp;blob0)</code>&nbsp;and&nbsp;<code>deliver(seqno,&nbsp;prevhash1,&nbsp;blob1)</code>&nbsp;with the same&nbsp;<code>seqno</code>,&nbsp;<code>prevhash0==prevhash1</code>&nbsp;and&nbsp;<code>blob0==blob1</code>;</li>
+	<li><em>Hashchain integrity.</em>&nbsp;For any two events at correct peers&nbsp;<code>deliver(seqno-1,&nbsp;prevhash0,&nbsp;blob0)</code>&nbsp;and&nbsp;<code>deliver(seqno,&nbsp;prevhash,&nbsp;blob)</code>,&nbsp;<code>prevhash&nbsp;=&nbsp;HASH(seqno-1||prevhash0||blob0)</code>.</li>
+	<li><em>No skipping</em>. If an ordering service outputs&nbsp;<code>deliver(seqno,&nbsp;prevhash,&nbsp;blob)</code>&nbsp;at a correct peer&nbsp;<em>p</em>, such that&nbsp;<code>seqno&gt;0</code>, then&nbsp;<em>p</em>&nbsp;already delivered an event&nbsp;<code>deliver(seqno-1,&nbsp;prevhash0,&nbsp;blob0)</code>.</li>
+	<li><em>No creation</em>. Any event&nbsp;<code>deliver(seqno,&nbsp;prevhash,&nbsp;blob)</code>&nbsp;at a correct peer must be preceded by a&nbsp;<code>broadcast(blob)</code>&nbsp;event at some (possibly distinct) peer;</li>
+	<li><em>No duplication (optional, yet desirable)</em>. For any two events&nbsp;<code>broadcast(blob)</code>&nbsp;and&nbsp;<code>broadcast(blob&#39;)</code>, when two events&nbsp;<code>deliver(seqno0,&nbsp;prevhash0,&nbsp;blob)</code>&nbsp;and&nbsp;<code>deliver(seqno1,&nbsp;prevhash1,&nbsp;blob&#39;)</code>&nbsp;occur at correct peers and&nbsp;<code>blob&nbsp;==&nbsp;blob&#39;</code>, then&nbsp;<code>seqno0==seqno1</code>&nbsp;and&nbsp;<code>prevhash0==prevhash1</code>.</li>
+	<li><em>Liveness</em>. If a correct client invokes an event&nbsp;<code>broadcast(blob)</code>&nbsp;then every correct peer &ldquo;eventually&rdquo; issues an event&nbsp;<code>deliver(*,&nbsp;*,&nbsp;blob)</code>, where&nbsp;<code>*</code>&nbsp;denotes an arbitrary value.</li>
+</ul>
+
+<h2>2. Basic workflow of transaction endorsement</h2>
+
+<p>In the following we outline the high-level request flow for a transaction.</p>
+
+<p><strong>Remark:</strong>&nbsp;<em>Notice that the following protocol *does not</em>&nbsp;assume that all transactions are deterministic, i.e., it allows for non-deterministic transactions.*</p>
+
+<h3>2.1. The client creates a transaction and sends it to endorsing peers of its choice</h3>
+
+<p>To invoke a transaction, the client sends a&nbsp;<code>PROPOSE</code>&nbsp;message to a set of endorsing peers of its choice (possibly not at the same time - see Sections 2.1.2. and 2.3.). The set of endorsing peers for a given&nbsp;<code>chaincodeID</code>&nbsp;is made available to client via peer, which in turn knows the set of endorsing peers from endorsement policy (see Section 3). For example, the transaction could be sent to&nbsp;<em>all</em>&nbsp;endorsers of a given&nbsp;<code>chaincodeID</code>. That said, some endorsers could be offline, others may object and choose not to endorse the transaction. The submitting client tries to satisfy the policy expression with the endorsers available.</p>
+
+<p>In the following, we first detail&nbsp;<code>PROPOSE</code>&nbsp;message format and then discuss possible patterns of interaction between submitting client and endorsers.</p>
+
+<h3>2.1.1.&nbsp;<code>PROPOSE</code>&nbsp;message format</h3>
+
+<p>The format of a&nbsp;<code>PROPOSE</code>&nbsp;message is&nbsp;<code>&lt;PROPOSE,tx,[anchor]&gt;</code>, where&nbsp;<code>tx</code>&nbsp;is a mandatory and&nbsp;<code>anchor</code>&nbsp;optional argument explained in the following.</p>
+
+<ul>
+	<li>
+	<p><code>tx=&lt;clientID,chaincodeID,txPayload,timestamp,clientSig&gt;</code>, where</p>
+
+	<ul>
+		<li><code>clientID</code>&nbsp;is an ID of the submitting client,</li>
+		<li><code>chaincodeID</code>&nbsp;refers to the chaincode to which the transaction pertains,</li>
+		<li><code>txPayload</code>&nbsp;is the payload containing the submitted transaction itself,</li>
+		<li><code>timestamp</code>&nbsp;is a monotonically increasing (for every new transaction) integer maintained by the client,</li>
+		<li><code>clientSig</code>&nbsp;is signature of a client on other fields of&nbsp;<code>tx</code>.</li>
+	</ul>
+
+	<p>The details of&nbsp;<code>txPayload</code>&nbsp;will differ between invoke transactions and deploy transactions (i.e., invoke transactions referring to a deploy-specific system chaincode). For an&nbsp;<strong>invoke transaction</strong>,&nbsp;<code>txPayload</code>&nbsp;would consist of two fields</p>
+
+	<ul>
+		<li><code>txPayload&nbsp;=&nbsp;&lt;operation,&nbsp;metadata&gt;</code>, where
+
+		<ul>
+			<li><code>operation</code>&nbsp;denotes the chaincode operation (function) and arguments,</li>
+			<li><code>metadata</code>&nbsp;denotes attributes related to the invocation.</li>
+		</ul>
+		</li>
+	</ul>
+
+	<p>For a&nbsp;<strong>deploy transaction</strong>,&nbsp;<code>txPayload</code>&nbsp;would consist of three fields</p>
+
+	<ul>
+		<li><code>txPayload&nbsp;=&nbsp;&lt;source,&nbsp;metadata,&nbsp;policies&gt;</code>, where
+
+		<ul>
+			<li><code>source</code>&nbsp;denotes the source code of the chaincode,</li>
+			<li><code>metadata</code>&nbsp;denotes attributes related to the chaincode and application,</li>
+			<li><code>policies</code>&nbsp;contains policies related to the chaincode that are accessible to all peers, such as the endorsement policy. Note that endorsement policies are not supplied with&nbsp;<code>txPayload</code>&nbsp;in a&nbsp;<code>deploy</code>&nbsp;transaction, but&nbsp;<code>txPayload</code>&nbsp;of a&nbsp;<code>deploy</code>&nbsp;contains endorsement policy ID and its parameters (see Section 3).</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p><code>anchor</code>&nbsp;contains&nbsp;<em>read version dependencies</em>, or more specifically, key-version pairs (i.e.,&nbsp;<code>anchor</code>&nbsp;is a subset of&nbsp;<code>KxN</code>), that binds or &ldquo;anchors&rdquo; the&nbsp;<code>PROPOSE</code>&nbsp;request to specified versions of keys in a KVS (see Section 1.2.). If the client specifies the&nbsp;<code>anchor</code>&nbsp;argument, an endorser endorses a transaction only upon&nbsp;<em>read</em>&nbsp;version numbers of corresponding keys in its local KVS match&nbsp;<code>anchor</code>&nbsp;(see Section 2.2. for more details).</p>
+	</li>
+</ul>
+
+<p>Cryptographic hash of&nbsp;<code>tx</code>&nbsp;is used by all nodes as a unique transaction identifier&nbsp;<code>tid</code>&nbsp;(i.e.,&nbsp;<code>tid=HASH(tx)</code>). The client stores&nbsp;<code>tid</code>&nbsp;in memory and waits for responses from endorsing peers.</p>
+
+<h4>2.1.2. Message patterns</h4>
+
+<p>The client decides on the sequence of interaction with endorsers. For example, a client would typically send&nbsp;<code>&lt;PROPOSE,&nbsp;tx&gt;</code>&nbsp;(i.e., without the&nbsp;<code>anchor</code>&nbsp;argument) to a single endorser, which would then produce the version dependencies (<code>anchor</code>) which the client can later on use as an argument of its&nbsp;<code>PROPOSE</code>&nbsp;message to other endorsers. As another example, the client could directly send&nbsp;<code>&lt;PROPOSE,&nbsp;tx&gt;</code>&nbsp;(without&nbsp;<code>anchor</code>) to all endorsers of its choice. Different patterns of communication are possible and client is free to decide on those (see also Section 2.3.).</p>
+
+<h3>2.2. The endorsing peer simulates a transaction and produces an endorsement signature</h3>
+
+<p>On reception of a&nbsp;<code>&lt;PROPOSE,tx,[anchor]&gt;</code>&nbsp;message from a client, the endorsing peer&nbsp;<code>epID</code>&nbsp;first verifies the client&rsquo;s signature&nbsp;<code>clientSig</code>&nbsp;and then simulates a transaction. If the client specifies&nbsp;<code>anchor</code>&nbsp;then endorsing peer simulates the transactions only upon read version numbers (i.e.,&nbsp;<code>readset</code>&nbsp;as defined below) of corresponding keys in its local KVS match those version numbers specified by&nbsp;<code>anchor</code>.</p>
+
+<p>Simulating a transaction involves endorsing peer tentatively&nbsp;<em>executing</em>&nbsp;a transaction (<code>txPayload</code>), by invoking the chaincode to which the transaction refers (<code>chaincodeID</code>) and the copy of the state that the endorsing peer locally holds.</p>
+
+<p>As a result of the execution, the endorsing peer computes&nbsp;<em>read version dependencies</em>&nbsp;(<code>readset</code>) and&nbsp;<em>state updates</em>&nbsp;(<code>writeset</code>), also called&nbsp;<em>MVCC+postimage info</em>&nbsp;in DB language.</p>
+
+<p>Recall that the state consists of key-value pairs. All key-value entries are versioned; that is, every entry contains ordered version information, which is incremented each time the value stored under a key is updated. The peer that interprets the transaction records all key-value pairs accessed by the chaincode, either for reading or for writing, but the peer does not yet update its state. More specifically:</p>
+
+<ul>
+	<li>Given state&nbsp;<code>s</code>&nbsp;before an endorsing peer executes a transaction, for every key&nbsp;<code>k</code>&nbsp;read by the transaction, pair&nbsp;<code>(k,s(k).version)</code>&nbsp;is added to&nbsp;<code>readset</code>.</li>
+	<li>Additionally, for every key&nbsp;<code>k</code>&nbsp;modified by the transaction to the new value&nbsp;<code>v&#39;</code>, pair&nbsp;<code>(k,v&#39;)</code>&nbsp;is added to&nbsp;<code>writeset</code>. Alternatively,&nbsp;<code>v&#39;</code>&nbsp;could be the delta of the new value to previous value (<code>s(k).value</code>).</li>
+</ul>
+
+<p>If a client specifies&nbsp;<code>anchor</code>&nbsp;in the&nbsp;<code>PROPOSE</code>&nbsp;message then client specified&nbsp;<code>anchor</code>&nbsp;must equal&nbsp;<code>readset</code>&nbsp;produced by endorsing peer when simulating the transaction.</p>
+
+<p>Then, the peer forwards internally&nbsp;<code>tran-proposal</code>&nbsp;(and possibly&nbsp;<code>tx</code>) to the part of its (peer&rsquo;s) logic that endorses a transaction, referred to as&nbsp;<strong>endorsing logic</strong>. By default, endorsing logic at a peer accepts the&nbsp;<code>tran-proposal</code>&nbsp;and simply signs the&nbsp;<code>tran-proposal</code>. However, endorsing logic may interpret arbitrary functionality, to, e.g., interact with legacy systems with&nbsp;<code>tran-proposal</code>&nbsp;and&nbsp;<code>tx</code>&nbsp;as inputs to reach the decision whether to endorse a transaction or not.</p>
+
+<p>If endorsing logic decides to endorse a transaction, it sends&nbsp;<code>&lt;TRANSACTION-ENDORSED,&nbsp;tid,&nbsp;tran-proposal,epSig&gt;</code>&nbsp;message to the submitting client(<code>tx.clientID</code>), where:</p>
+
+<ul>
+	<li>
+	<p><code>tran-proposal&nbsp;:=&nbsp;(epID,tid,chaincodeID,txContentBlob,readset,writeset)</code>,</p>
+
+	<p>where&nbsp;<code>txContentBlob</code>&nbsp;is chaincode/transaction specific information. The intention is to have&nbsp;<code>txContentBlob</code>&nbsp;used as some representation of&nbsp;<code>tx</code>&nbsp;(e.g.,&nbsp;<code>txContentBlob=tx.txPayload</code>).</p>
+	</li>
+	<li>
+	<p><code>epSig</code>&nbsp;is the endorsing peer&rsquo;s signature on&nbsp;<code>tran-proposal</code></p>
+	</li>
+</ul>
+
+<p>Else, in case the endorsing logic refuses to endorse the transaction, an endorser&nbsp;<em>may</em>&nbsp;send a message&nbsp;<code>(TRANSACTION-INVALID,&nbsp;tid,&nbsp;REJECTED)</code>&nbsp;to the submitting client.</p>
+
+<p>Notice that an endorser does not change its state in this step, the updates produced by transaction simulation in the context of endorsement do not affect the state!</p>
+
+<h3>2.3. The submitting client collects an endorsement for a transaction and broadcasts it through ordering service</h3>
+
+<p>The submitting client waits until it receives &ldquo;enough&rdquo; messages and signatures on&nbsp;<code>(TRANSACTION-ENDORSED,&nbsp;tid,&nbsp;*,&nbsp;*)</code>&nbsp;statements to conclude that the transaction proposal is endorsed. As discussed in Section 2.1.2., this may involve one or more round-trips of interaction with endorsers.</p>
+
+<p>The exact number of &ldquo;enough&rdquo; depend on the chaincode endorsement policy (see also Section 3). If the endorsement policy is satisfied, the transaction has been&nbsp;<em>endorsed</em>; note that it is not yet committed. The collection of signed&nbsp;<code>TRANSACTION-ENDORSED</code>&nbsp;messages from endorsing peers which establish that a transaction is endorsed is called an&nbsp;<em>endorsement</em>&nbsp;and denoted by&nbsp;<code>endorsement</code>.</p>
+
+<p>If the submitting client does not manage to collect an endorsement for a transaction proposal, it abandons this transaction with an option to retry later.</p>
+
+<p>For transaction with a valid endorsement, we now start using the ordering service. The submitting client invokes ordering service using the&nbsp;<code>broadcast(blob)</code>, where&nbsp;<code>blob=endorsement</code>. If the client does not have capability of invoking ordering service directly, it may proxy its broadcast through some peer of its choice. Such a peer must be trusted by the client not to remove any message from the&nbsp;<code>endorsement</code>&nbsp;or otherwise the transaction may be deemed invalid. Notice that, however, a proxy peer may not fabricate a valid&nbsp;<code>endorsement</code>.</p>
+
+<h3>2.4. The ordering service delivers a transactions to the peers</h3>
+
+<p>When an event&nbsp;<code>deliver(seqno,&nbsp;prevhash,&nbsp;blob)</code>&nbsp;occurs and a peer has applied all state updates for blobs with sequence number lower than&nbsp;<code>seqno</code>, a peer does the following:</p>
+
+<ul>
+	<li>It checks that the&nbsp;<code>blob.endorsement</code>&nbsp;is valid according to the policy of the chaincode (<code>blob.tran-proposal.chaincodeID</code>) to which it refers.</li>
+	<li>In a typical case, it also verifies that the dependencies (<code>blob.endorsement.tran-proposal.readset</code>) have not been violated meanwhile. In more complex use cases,&nbsp;<code>tran-proposal</code>&nbsp;fields in endorsement may differ and in this case endorsement policy (Section 3) specifies how the state evolves.</li>
+</ul>
+
+<p>Verification of dependencies can be implemented in different ways, according to a consistency property or &ldquo;isolation guarantee&rdquo; that is chosen for the state updates.&nbsp;<strong>Serializability</strong>&nbsp;is a default isolation guarantee, unless chaincode endorsement policy specifies a different one. Serializability can be provided by requiring the version associated with&nbsp;<em>every</em>&nbsp;key in the&nbsp;<code>readset</code>&nbsp;to be equal to that key&rsquo;s version in the state, and rejecting transactions that do not satisfy this requirement.</p>
+
+<ul>
+	<li>If all these checks pass, the transaction is deemed&nbsp;<em>valid</em>&nbsp;or&nbsp;<em>committed</em>. In this case, the peer marks the transaction with 1 in the bitmask of the&nbsp;<code>PeerLedger</code>, applies&nbsp;<code>blob.endorsement.tran-proposal.writeset</code>&nbsp;to blockchain state (if&nbsp;<code>tran-proposals</code>&nbsp;are the same, otherwise endorsement policy logic defines the function that takes&nbsp;<code>blob.endorsement</code>).</li>
+	<li>If the endorsement policy verification of&nbsp;<code>blob.endorsement</code>&nbsp;fails, the transaction is invalid and the peer marks the transaction with 0 in the bitmask of the&nbsp;<code>PeerLedger</code>. It is important to note that invalid transactions do not change the state.</li>
+</ul>
+
+<p>Note that this is sufficient to have all (correct) peers have the same state after processing a deliver event (block) with a given sequence number. Namely, by the guarantees of the ordering service, all correct peers will receive an identical sequence of&nbsp;<code>deliver(seqno,&nbsp;prevhash,&nbsp;blob)</code>&nbsp;events. As the evaluation of the endorsement policy and evaluation of version dependencies in&nbsp;<code>readset</code>&nbsp;are deterministic, all correct peers will also come to the same conclusion whether a transaction contained in a blob is valid. Hence, all peers commit and apply the same sequence of transactions and update their state in the same way.</p>
+
+<h2>3. Endorsement policies</h2>
+
+<h3>3.1. Endorsement policy specification</h3>
+
+<p>An&nbsp;<strong>endorsement policy</strong>, is a condition on what&nbsp;<em>endorses</em>&nbsp;a transaction. Blockchain peers have a pre-specified set of endorsement policies, which are referenced by a&nbsp;<code>deploy</code>&nbsp;transaction that installs specific chaincode. Endorsement policies can be parametrized, and these parameters can be specified by a&nbsp;<code>deploy</code>&nbsp;transaction.</p>
+
+<p>To guarantee blockchain and security properties, the set of endorsement policies&nbsp;<strong>should be a set of proven policies</strong>&nbsp;with limited set of functions in order to ensure bounded execution time (termination), determinism, performance and security guarantees.</p>
+
+<p>Dynamic addition of endorsement policies (e.g., by&nbsp;<code>deploy</code>&nbsp;transaction on chaincode deploy time) is very sensitive in terms of bounded policy evaluation time (termination), determinism, performance and security guarantees. Therefore, dynamic addition of endorsement policies is not allowed, but can be supported in future.</p>
+
+<h3>3.2. Transaction evaluation against endorsement policy</h3>
+
+<p>A transaction is declared valid only if it has been endorsed according to the policy. An invoke transaction for a chaincode will first have to obtain an&nbsp;<em>endorsement</em>&nbsp;that satisfies the chaincode&rsquo;s policy or it will not be committed. This takes place through the interaction between the submitting client and endorsing peers as explained in Section 2.</p>
+
+<p>Formally the endorsement policy is a predicate on the endorsement, and potentially further state that evaluates to TRUE or FALSE. For deploy transactions the endorsement is obtained according to a system-wide policy (for example, from the system chaincode).</p>
+
+<p>An endorsement policy predicate refers to certain variables. Potentially it may refer to:</p>
+
+<ol>
+	<li>keys or identities relating to the chaincode (found in the metadata of the chaincode), for example, a set of endorsers;</li>
+	<li>further metadata of the chaincode;</li>
+	<li>elements of the&nbsp;<code>endorsement</code>&nbsp;and&nbsp;<code>endorsement.tran-proposal</code>;</li>
+	<li>and potentially more.</li>
+</ol>
+
+<p>The above list is ordered by increasing expressiveness and complexity, that is, it will be relatively simple to support policies that only refer to keys and identities of nodes.</p>
+
+<p><strong>The evaluation of an endorsement policy predicate must be deterministic.</strong>&nbsp;An endorsement shall be evaluated locally by every peer such that a peer does&nbsp;<em>not</em>&nbsp;need to interact with other peers, yet all correct peers evaluate the endorsement policy in the same way.</p>
+
+<h3>3.3. Example endorsement policies</h3>
+
+<p>The predicate may contain logical expressions and evaluates to TRUE or FALSE. Typically the condition will use digital signatures on the transaction invocation issued by endorsing peers for the chaincode.</p>
+
+<p>Suppose the chaincode specifies the endorser set&nbsp;<code>E&nbsp;=&nbsp;{Alice,&nbsp;Bob,&nbsp;Charlie,&nbsp;Dave,&nbsp;Eve,&nbsp;Frank,&nbsp;George}</code>. Some example policies:</p>
+
+<ul>
+	<li>A valid signature from on the same&nbsp;<code>tran-proposal</code>&nbsp;from all members of E.</li>
+	<li>A valid signature from any single member of E.</li>
+	<li>Valid signatures on the same&nbsp;<code>tran-proposal</code>&nbsp;from endorsing peers according to the condition&nbsp;<code>(Alice&nbsp;OR&nbsp;Bob)&nbsp;AND&nbsp;(any&nbsp;two&nbsp;of:&nbsp;Charlie,&nbsp;Dave,&nbsp;Eve,&nbsp;Frank,&nbsp;George)</code>.</li>
+	<li>Valid signatures on the same&nbsp;<code>tran-proposal</code>&nbsp;by any 5 out of the 7 endorsers. (More generally, for chaincode with&nbsp;<code>n&nbsp;&gt;&nbsp;3f</code>&nbsp;endorsers, valid signatures by any&nbsp;<code>2f+1</code>&nbsp;out of the&nbsp;<code>n</code>&nbsp;endorsers, or by any group of&nbsp;<em>more</em>&nbsp;than&nbsp;<code>(n+f)/2</code>&nbsp;endorsers.)</li>
+	<li>Suppose there is an assignment of &ldquo;stake&rdquo; or &ldquo;weights&rdquo; to the endorsers, like&nbsp;<code>{Alice=49,&nbsp;Bob=15,&nbsp;Charlie=15,&nbsp;Dave=10,&nbsp;Eve=7,&nbsp;Frank=3,&nbsp;George=1}</code>, where the total stake is 100: The policy requires valid signatures from a set that has a majority of the stake (i.e., a group with combined stake strictly more than 50), such as&nbsp;<code>{Alice,&nbsp;X}</code>&nbsp;with any&nbsp;<code>X</code>&nbsp;different from George, or&nbsp;<code>{everyone&nbsp;together&nbsp;except&nbsp;Alice}</code>. And so on.</li>
+	<li>The assignment of stake in the previous example condition could be static (fixed in the metadata of the chaincode) or dynamic (e.g., dependent on the state of the chaincode and be modified during the execution).</li>
+	<li>Valid signatures from (Alice OR Bob) on&nbsp;<code>tran-proposal1</code>&nbsp;and valid signatures from&nbsp;<code>(any&nbsp;two&nbsp;of:&nbsp;Charlie,&nbsp;Dave,&nbsp;Eve,&nbsp;Frank,&nbsp;George)</code>&nbsp;on&nbsp;<code>tran-proposal2</code>, where&nbsp;<code>tran-proposal1</code>&nbsp;and&nbsp;<code>tran-proposal2</code>&nbsp;differ only in their endorsing peers and state updates.</li>
+</ul>
+
+<p>How useful these policies are will depend on the application, on the desired resilience of the solution against failures or misbehavior of endorsers, and on various other properties.</p>
+
+<h2>4 (post-v1). Validated ledger and&nbsp;<code>PeerLedger</code>&nbsp;checkpointing (pruning)</h2>
+
+<h3>4.1. Validated ledger (VLedger)</h3>
+
+<p>To maintain the abstraction of a ledger that contains only valid and committed transactions (that appears in Bitcoin, for example), peers may, in addition to state and Ledger, maintain the&nbsp;<em>Validated Ledger (or VLedger)</em>. This is a hash chain derived from the ledger by filtering out invalid transactions.</p>
+
+<p>The construction of the VLedger blocks (called here&nbsp;<em>vBlocks</em>) proceeds as follows. As the&nbsp;<code>PeerLedger</code>&nbsp;blocks may contain invalid transactions (i.e., transactions with invalid endorsement or with invalid version dependencies), such transactions are filtered out by peers before a transaction from a block becomes added to a vBlock. Every peer does this by itself (e.g., by using the bitmask associated with&nbsp;<code>PeerLedger</code>). A vBlock is defined as a block without the invalid transactions, that have been filtered out. Such vBlocks are inherently dynamic in size and may be empty. An illustration of vBlock construction is given in the figure below.</p>
+
+<p>vBlocks are chained together to a hash chain by every peer. More specifically, every block of a validated ledger contains:</p>
+
+<ul>
+	<li>The hash of the previous vBlock.</li>
+	<li>vBlock number.</li>
+	<li>An ordered list of all valid transactions committed by the peers since the last vBlock was computed (i.e., list of valid transactions in a corresponding block).</li>
+	<li>The hash of the corresponding block (in&nbsp;<code>PeerLedger</code>) from which the current vBlock is derived.</li>
+</ul>
+
+<p>All this information is concatenated and hashed by a peer, producing the hash of the vBlock in the validated ledger.</p>
+
+<h3>4.2.&nbsp;<code>PeerLedger</code>&nbsp;Checkpointing</h3>
+
+<p>The ledger contains invalid transactions, which may not necessarily be recorded forever. However, peers cannot simply discard&nbsp;<code>PeerLedger</code>&nbsp;blocks and thereby prune&nbsp;<code>PeerLedger</code>&nbsp;once they establish the corresponding vBlocks. Namely, in this case, if a new peer joins the network, other peers could not transfer the discarded blocks (pertaining to&nbsp;<code>PeerLedger</code>) to the joining peer, nor convince the joining peer of the validity of their vBlocks.</p>
+
+<p>To facilitate pruning of the&nbsp;<code>PeerLedger</code>, this document describes a&nbsp;<em>checkpointing</em>&nbsp;mechanism. This mechanism establishes the validity of the vBlocks across the peer network and allows checkpointed vBlocks to replace the discarded&nbsp;<code>PeerLedger</code>&nbsp;blocks. This, in turn, reduces storage space, as there is no need to store invalid transactions. It also reduces the work to reconstruct the state for new peers that join the network (as they do not need to establish validity of individual transactions when reconstructing the state by replaying&nbsp;<code>PeerLedger</code>, but may simply replay the state updates contained in the validated ledger).</p>
+
+<h4>4.2.1. Checkpointing protocol</h4>
+
+<p>Checkpointing is performed periodically by the peers every&nbsp;<em>CHK</em>&nbsp;blocks, where&nbsp;<em>CHK</em>&nbsp;is a configurable parameter. To initiate a checkpoint, the peers broadcast (e.g., gossip) to other peers message&nbsp;<code>&lt;CHECKPOINT,blocknohash,blockno,stateHash,peerSig&gt;</code>, where&nbsp;<code>blockno</code>&nbsp;is the current blocknumber and&nbsp;<code>blocknohash</code>&nbsp;is its respective hash,&nbsp;<code>stateHash</code>&nbsp;is the hash of the latest state (produced by e.g., a Merkle hash) upon validation of block&nbsp;<code>blockno</code>&nbsp;and&nbsp;<code>peerSig</code>&nbsp;is peer&rsquo;s signature on&nbsp;<code>(CHECKPOINT,blocknohash,blockno,stateHash)</code>, referring to the validated ledger.</p>
+
+<p>A peer collects&nbsp;<code>CHECKPOINT</code>&nbsp;messages until it obtains enough correctly signed messages with matching&nbsp;<code>blockno</code>,&nbsp;<code>blocknohash</code>&nbsp;and&nbsp;<code>stateHash</code>&nbsp;to establish a&nbsp;<em>valid checkpoint</em>&nbsp;(see Section 4.2.2.).</p>
+
+<p>Upon establishing a valid checkpoint for block number&nbsp;<code>blockno</code>&nbsp;with&nbsp;<code>blocknohash</code>, a peer:</p>
+
+<ul>
+	<li>if&nbsp;<code>blockno&gt;latestValidCheckpoint.blockno</code>, then a peer assigns&nbsp;<code>latestValidCheckpoint=(blocknohash,blockno)</code>,</li>
+	<li>stores the set of respective peer signatures that constitute a valid checkpoint into the set&nbsp;<code>latestValidCheckpointProof</code>,</li>
+	<li>stores the state corresponding to&nbsp;<code>stateHash</code>&nbsp;to&nbsp;<code>latestValidCheckpointedState</code>,</li>
+	<li>(optionally) prunes its&nbsp;<code>PeerLedger</code>&nbsp;up to block number&nbsp;<code>blockno</code>&nbsp;(inclusive).</li>
+</ul>
+
+<h4>4.2.2. Valid checkpoints</h4>
+
+<p>Clearly, the checkpointing protocol raises the following questions:&nbsp;<em>When can a peer prune its ``PeerLedger``? How many ``CHECKPOINT`` messages are &ldquo;sufficiently many&rdquo;?</em>. This is defined by a&nbsp;<em>checkpoint validity policy</em>, with (at least) two possible approaches, which may also be combined:</p>
+
+<ul>
+	<li><em>Local (peer-specific) checkpoint validity policy (LCVP).</em>&nbsp;A local policy at a given peer&nbsp;<em>p</em>&nbsp;may specify a set of peers which peer&nbsp;<em>p</em>&nbsp;trusts and whose&nbsp;<code>CHECKPOINT</code>&nbsp;messages are sufficient to establish a valid checkpoint. For example, LCVP at peer&nbsp;<em>Alice</em>&nbsp;may define that&nbsp;<em>Alice</em>&nbsp;needs to receive&nbsp;<code>CHECKPOINT</code>&nbsp;message from Bob, or from&nbsp;<em>both</em>&nbsp;<em>Charlie</em>&nbsp;and&nbsp;<em>Dave</em>.</li>
+	<li><em>Global checkpoint validity policy (GCVP).</em>&nbsp;A checkpoint validity policy may be specified globally. This is similar to a local peer policy, except that it is stipulated at the system (blockchain) granularity, rather than peer granularity. For instance, GCVP may specify that:
+	<ul>
+		<li>each peer may trust a checkpoint if confirmed by&nbsp;<em>11</em>&nbsp;different peers.</li>
+		<li>in a specific deployment in which every orderer is collocated with a peer in the same machine (i.e., trust domain) and where up to&nbsp;<em>f</em>&nbsp;orderers may be (Byzantine) faulty, each peer may trust a checkpoint if confirmed by&nbsp;<em>f+1</em>&nbsp;different peers collocated with orderers.</li>
+	</ul>
+	</li>
+</ul>
+
+<p>----------------</p>
+
+<h1>Transaction Flow</h1>
+
+<p>This document outlines the transactional mechanics that take place during a standard asset exchange. The scenario includes two clients, A and B, who are buying and selling radishes. They each have a peer on the network through which they send their transactions and interact with the ledger.</p>
+
+<p><img alt="_images/step0.png" src="https://hyperledger-fabric.readthedocs.io/en/release-1.3/_images/step0.png" /></p>
+
+<p><strong>Assumptions</strong></p>
+
+<p>This flow assumes that a channel is set up and running. The application user has registered and enrolled with the organization&rsquo;s certificate authority (CA) and received back necessary cryptographic material, which is used to authenticate to the network.</p>
+
+<p>The chaincode (containing a set of key value pairs representing the initial state of the radish market) is installed on the peers and instantiated on the channel. The chaincode contains logic defining a set of transaction instructions and the agreed upon price for a radish. An endorsement policy has also been set for this chaincode, stating that both&nbsp;<code>peerA</code>&nbsp;and&nbsp;<code>peerB</code>&nbsp;must endorse any transaction.</p>
+
+<p><img alt="_images/step1.png" src="https://hyperledger-fabric.readthedocs.io/en/release-1.3/_images/step1.png" /></p>
+
+<ol>
+	<li><strong>Client A initiates a transaction</strong></li>
+</ol>
+
+<p>What&rsquo;s happening? - Client A is sending a request to purchase radishes. The request targets&nbsp;<code>peerA</code>&nbsp;and&nbsp;<code>peerB</code>, who are respectively representative of Client A and Client B. The endorsement policy states that both peers must endorse any transaction, therefore the request goes to&nbsp;<code>peerA</code>&nbsp;and&nbsp;<code>peerB</code>.</p>
+
+<p>Next, the transaction proposal is constructed. An application leveraging a supported SDK (Node, Java, Python) utilizes one of the available API&rsquo;s which generates a transaction proposal. The proposal is a request to invoke a chaincode function so that data can be read and/or written to the ledger (i.e. write new key value pairs for the assets). The SDK serves as a shim to package the transaction proposal into the properly architected format (protocol buffer over gRPC) and takes the user&rsquo;s cryptographic credentials to produce a unique signature for this transaction proposal.</p>
+
+<p><img alt="_images/step2.png" src="https://hyperledger-fabric.readthedocs.io/en/release-1.3/_images/step2.png" /></p>
+
+<ol start="2">
+	<li><strong>Endorsing peers verify signature &amp; execute the transaction</strong></li>
+</ol>
+
+<p>The endorsing peers verify (1) that the transaction proposal is well formed, (2) it has not been submitted already in the past (replay-attack protection), (3) the signature is valid (using MSP), and (4) that the submitter (Client A, in the example) is properly authorized to perform the proposed operation on that channel (namely, each endorsing peer ensures that the submitter satisfies the channel&rsquo;s&nbsp;<em>Writers</em>&nbsp;policy). The endorsing peers take the transaction proposal inputs as arguments to the invoked chaincode&rsquo;s function. The chaincode is then executed against the current state database to produce transaction results including a response value, read set, and write set. No updates are made to the ledger at this point. The set of these values, along with the endorsing peer&rsquo;s signature is passed back as a &ldquo;proposal response&rdquo; to the SDK which parses the payload for the application to consume.</p>
+
+<p>Note</p>
+
+<p>The MSP is a peer component that allows peers to verify transaction requests arriving from clients and to sign transaction results (endorsements). The writing policy is defined at channel creation time and determines which users are entitled to submit a transaction to that channel.</p>
+
+<p><img alt="_images/step3.png" src="https://hyperledger-fabric.readthedocs.io/en/release-1.3/_images/step3.png" /></p>
+
+<ol start="3">
+	<li><strong>Proposal responses are inspected</strong></li>
+</ol>
+
+<p>The application verifies the endorsing peer signatures and compares the proposal responses to determine if the proposal responses are the same. If the chaincode only queried the ledger, the application would inspect the query response and would typically not submit the transaction to Ordering Service. If the client application intends to submit the transaction to Ordering Service to update the ledger, the application determines if the specified endorsement policy has been fulfilled before submitting (i.e. did peerA and peerB both endorse). The architecture is such that even if an application chooses not to inspect responses or otherwise forwards an unendorsed transaction, the endorsement policy will still be enforced by peers and upheld at the commit validation phase.</p>
+
+<p><img alt="_images/step4.png" src="https://hyperledger-fabric.readthedocs.io/en/release-1.3/_images/step4.png" /></p>
+
+<ol start="4">
+	<li><strong>Client assembles endorsements into a transaction</strong></li>
+</ol>
+
+<p>The application &ldquo;broadcasts&rdquo; the transaction proposal and response within a &ldquo;transaction message&rdquo; to the Ordering Service. The transaction will contain the read/write sets, the endorsing peers signatures and the Channel ID. The Ordering Service does not need to inspect the entire content of a transaction in order to perform its operation, it simply receives transactions from all channels in the network, orders them chronologically by channel, and creates blocks of transactions per channel.</p>
+
+<p><img alt="_images/step5.png" src="https://hyperledger-fabric.readthedocs.io/en/release-1.3/_images/step5.png" /></p>
+
+<ol start="5">
+	<li><strong>Transaction is validated and committed</strong></li>
+</ol>
+
+<p>The blocks of transactions are &ldquo;delivered&rdquo; to all peers on the channel. The transactions within the block are validated to ensure endorsement policy is fulfilled and to ensure that there have been no changes to ledger state for read set variables since the read set was generated by the transaction execution. Transactions in the block are tagged as being valid or invalid.</p>
+
+<p>&nbsp;</p>
+
+<ol start="6">
+	<li><strong>Ledger updated</strong></li>
+</ol>
+
+<p>Each peer appends the block to the channel&rsquo;s chain, and for each valid transaction the write sets are committed to current state database. An event is emitted, to notify the client application that the transaction (invocation) has been immutably appended to the chain, as well as notification of whether the transaction was validated or invalidated.</p>
+
+<p>-------------------------</p>
+
+<h1>Service Discovery</h1>
+
+<h2>Why do we need service discovery?</h2>
+
+<p>In order to execute chaincode on peers, submit transactions to orderers, and to be updated about the status of transactions, applications connect to an API exposed by an SDK.</p>
+
+<p>However, the SDK needs a lot of information in order to allow applications to connect to the relevant network nodes. In addition to the CA and TLS certificates of the orderers and peers on the channel &ndash; as well as their IP addresses and port numbers &ndash; it must know the relevant endorsement policies as well as which peers have the chaincode installed (so the application knows which peers to send chaincode proposals to).</p>
+
+<p>Prior to v1.2, this information was statically encoded. However, this implementation is not dynamically reactive to network changes (such as the addition of peers who have installed the relevant chaincode, or peers that are temporarily offline). Static configurations also do not allow applications to react to changes of the endorsement policy itself (as might happen when a new organization joins a channel).</p>
+
+<p>In addition, the client application has no way of knowing which peers have updated ledgers and which do not. As a result, the application might submit proposals to peers whose ledger data is not in sync with the rest of the network, resulting in transaction being invalidated upon commit and wasting resources as a consequence.</p>
+
+<p>The&nbsp;<strong>discovery service</strong>&nbsp;improves this process by having the peers compute the needed information dynamically and present it to the SDK in a consumable manner.</p>
+
+<h2>How service discovery works in Fabric</h2>
+
+<p>The application is bootstrapped knowing about a group of peers which are trusted by the application developer/administrator to provide authentic responses to discovery queries. A good candidate peer to be used by the client application is one that is in the same organization.</p>
+
+<p>The application issues a configuration query to the discovery service and obtains all the static information it would have otherwise needed to communicate with the rest of the nodes of the network. This information can be refreshed at any point by sending a subsequent query to the discovery service of a peer.</p>
+
+<p>The service runs on peers &ndash; not on the application &ndash; and uses the network metadata information maintained by the gossip communication layer to find out which peers are online. It also fetches information, such as any relevant endorsement policies, from the peer&rsquo;s state database.</p>
+
+<p>With service discovery, applications no longer need to specify which peers they need endorsements from. The SDK can simply send a query to the discovery service asking which peers are needed given a channel and a chaincode ID. The discovery service will then compute a descriptor comprised of two objects:</p>
+
+<ol>
+	<li><strong>Layouts</strong>: a list of groups of peers and a corresponding amount of peers from each group which should be selected.</li>
+	<li><strong>Group to peer mapping</strong>: from the groups in the layouts to the peers of the channel. In practice, each group would most likely be peers that represent individual organizations, but because the service API is generic and ignorant of organizations this is just a &ldquo;group&rdquo;.</li>
+</ol>
+
+<p>The following is an example of a descriptor from the evaluation of a policy of&nbsp;<code>AND(Org1,&nbsp;Org2)</code>&nbsp;where there are two peers in each of the organizations.</p>
+
+<pre>
+Layouts: [
+     QuantitiesByGroup: {
+       &ldquo;Org1&rdquo;: 1,
+       &ldquo;Org2&rdquo;: 1,
+     }
+],
+EndorsersByGroups: {
+  &ldquo;Org1&rdquo;: [peer0.org1, peer1.org1],
+  &ldquo;Org2&rdquo;: [peer0.org2, peer1.org2]
+}
+</pre>
+
+<p>In other words, the endorsement policy requires a signature from one peer in Org1 and one peer in Org2. And it provides the names of available peers in those orgs who can endorse (<code>peer0</code>&nbsp;and&nbsp;<code>peer1</code>&nbsp;in both Org1 and in Org2).</p>
+
+<p>The SDK then selects a random layout from the list. In the example above, the endorsement policy is Org1&nbsp;<code>AND</code>&nbsp;Org2. If instead it was an&nbsp;<code>OR</code>&nbsp;policy, the SDK would randomly select either Org1 or Org2, since a signature from a peer from either Org would satisfy the policy.</p>
+
+<p>After the SDK has selected a layout, it selects from the peers in the layout based on a criteria specified on the client side (the SDK can do this because it has access to metadata like ledger height). For example, it can prefer peers with higher ledger heights over others &ndash; or to exclude peers that the application has discovered to be offline &ndash; according to the number of peers from each group in the layout. If no single peer is preferable based on the criteria, the SDK will randomly select from the peers that best meet the criteria.</p>
+
+<h3>Capabilities of the discovery service</h3>
+
+<p>The discovery service can respond to the following queries:</p>
+
+<ul>
+	<li><strong>Configuration query</strong>: Returns the&nbsp;<code>MSPConfig</code>&nbsp;of all organizations in the channel along with the orderer endpoints of the channel.</li>
+	<li><strong>Peer membership query</strong>: Returns the peers that have joined the channel.</li>
+	<li><strong>Endorsement query</strong>: Returns an endorsement descriptor for given chaincode(s) in a channel.</li>
+	<li><strong>Local peer membership query</strong>: Returns the local membership information of the peer that responds to the query. By default the client needs to be an administrator for the peer to respond to this query.</li>
+</ul>
+
+<h3>Special requirements</h3>
+
+<p>When the peer is running with TLS enabled the client must provide a TLS certificate when connecting to the peer. If the peer isn&rsquo;t configured to verify client certificates (clientAuthRequired is false), this TLS certificate can be self-signed.</p>
+
+<p>-------------------------</p>
+
+<h1>Channels</h1>
+
+<p>A Hyperledger Fabric&nbsp;<code>channel</code>&nbsp;is a private &ldquo;subnet&rdquo; of communication between two or more specific network members, for the purpose of conducting private and confidential transactions. A channel is defined by members (organizations), anchor peers per member, the shared ledger, chaincode application(s) and the ordering service node(s). Each transaction on the network is executed on a channel, where each party must be authenticated and authorized to transact on that channel. Each peer that joins a channel, has its own identity given by a membership services provider (MSP), which authenticates each peer to its channel peers and services.</p>
+
+<p>To create a new channel, the client SDK calls configuration system chaincode and references properties such as&nbsp;<code>anchor&nbsp;peers</code>, and members (organizations). This request creates a&nbsp;<code>genesis&nbsp;block</code>&nbsp;for the channel ledger, which stores configuration information about the channel policies, members and anchor peers. When adding a new member to an existing channel, either this genesis block, or if applicable, a more recent reconfiguration block, is shared with the new member.</p>
+
+<p>Note</p>
+
+<p>See the&nbsp;Channel Configuration (configtx)&nbsp;section for more details on the properties and proto structures of config transactions.</p>
+
+<p>The election of a&nbsp;<code>leading&nbsp;peer</code>&nbsp;for each member on a channel determines which peer communicates with the ordering service on behalf of the member. If no leader is identified, an algorithm can be used to identify the leader. The consensus service orders transactions and delivers them, in a block, to each leading peer, which then distributes the block to its member peers, and across the channel, using the&nbsp;<code>gossip</code>&nbsp;protocol.</p>
+
+<p>Although any one anchor peer can belong to multiple channels, and therefore maintain multiple ledgers, no ledger data can pass from one channel to another. This separation of ledgers, by channel, is defined and implemented by configuration chaincode, the identity membership service and the gossip data dissemination protocol. The dissemination of data, which includes information on transactions, ledger state and channel membership, is restricted to peers with verifiable membership on the channel. This isolation of peers and ledger data, by channel, allows network members that require private and confidential transactions to coexist with business competitors and other restricted members, on the same blockchain network.</p>
+
+<p>----------------</p>
+
+<h1>Capability Requirements</h1>
+
+<p>Because Fabric is a distributed system that will usually involve multiple organizations (sometimes in different countries or even continents), it is possible (and typical) that many different versions of Fabric code will exist in the network. Nevertheless, it&rsquo;s vital that networks process transactions in the same way so that everyone has the same view of the current network state.</p>
+
+<p>This means that every network &ndash; and every channel within that network &ndash; must define a set of what we call &ldquo;capabilities&rdquo; to be able to participate in processing transactions. For example, Fabric v1.1 introduces new MSP role types of &ldquo;Peer&rdquo; and &ldquo;Client&rdquo;. However, if a v1.0 peer does not understand these new role types, it will not be able to appropriately evaluate an endorsement policy that references them. This means that before the new role types may be used, the network must agree to enable the v1.1&nbsp;<code>channel</code>&nbsp;capability requirement, ensuring that all peers come to the same decision.</p>
+
+<p>Only binaries which support the required capabilities will be able to participate in the channel, and newer binary versions will not enable new validation logic until the corresponding capability is enabled. In this way, capability requirements ensure that even with disparate builds and versions, it is not possible for the network to suffer a state fork.</p>
+
+<p>-----------------</p>
+
+<h1>CouchDB as the State Database</h1>
+
+<h2>State Database options</h2>
+
+<p>State database options include LevelDB and CouchDB. LevelDB is the default key-value state database embedded in the peer process. CouchDB is an optional alternative external state database. Like the LevelDB key-value store, CouchDB can store any binary data that is modeled in chaincode (CouchDB attachment functionality is used internally for non-JSON binary data). But as a JSON document store, CouchDB additionally enables rich query against the chaincode data, when chaincode values (e.g. assets) are modeled as JSON data.</p>
+
+<p>Both LevelDB and CouchDB support core chaincode operations such as getting and setting a key (asset), and querying based on keys. Keys can be queried by range, and composite keys can be modeled to enable equivalence queries against multiple parameters. For example a composite key of&nbsp;<code>owner,asset_id</code>&nbsp;can be used to query all assets owned by a certain entity. These key-based queries can be used for read-only queries against the ledger, as well as in transactions that update the ledger.</p>
+
+<p>----------------</p>

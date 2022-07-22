@@ -1,0 +1,665 @@
+<noscript> 
+  <style>
+    body {
+      -ms-overflow-style: scrollbar;
+      overflow-y: scroll;
+      overscroll-behavior-y: none;
+    }
+
+    .errorContainer {
+      background-color: #FFF;
+      color: #0F1419;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10%;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .errorButton {
+      margin: 3em 0;
+    }
+
+    .errorButton a {
+      background: #1DA1F2;
+      border-radius: 2.5em;
+      color: white;
+      padding: 1em 2em;
+      text-decoration: none;
+    }
+
+    .errorButton a:hover,
+    .errorButton a:focus {
+      background: rgb(26, 145, 218);
+    }
+
+    .errorFooter {
+      color: #657786;
+      font-size: 80%;
+      line-height: 1.5;
+      padding: 1em 0;
+    }
+
+    .errorFooter a,
+    .errorFooter a:visited {
+      color: #657786;
+      text-decoration: none;
+      padding-right: 1em;
+    }
+
+    .errorFooter a:hover,
+    .errorFooter a:active {
+      text-decoration: underline;
+    }
+
+      #placeholder,
+      #react-root {
+        display: none !important;
+      }
+      body {
+        background-color: #FFF !important;
+      }
+    </style> 
+  <div class="errorContainer"> 
+   <img width="46" height="38" srcset="https://abs.twimg.com/errors/logo46x38.png 1x, https://abs.twimg.com/errors/logo46x38@2x.png 2x" src="https://abs.twimg.com/errors/logo46x38.png" alt="Twitter"> 
+   <h1>JavaScript is not available.</h1> 
+   <p>We’ve detected that JavaScript is disabled in this browser. Please enable JavaScript or switch to a supported browser to continue using twitter.com. You can see a list of supported browsers in our Help Center.</p> 
+   <p class="errorButton"><a href="https://help.twitter.com/using-twitter/twitter-supported-browsers">Help Center</a></p> 
+   <p class="errorFooter"> <a href="https://twitter.com/tos">Terms of Service</a> <a href="https://twitter.com/privacy">Privacy Policy</a> <a href="https://support.twitter.com/articles/20170514">Cookie Policy</a> <a href="https://legal.twitter.com/imprint.html">Imprint</a> <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&amp;utm_source=twc&amp;utm_medium=web&amp;utm_campaign=ao&amp;utm_content=adsinfo">Ads info</a> © 2022 Twitter, Inc. </p> 
+  </div> 
+ </noscript>
+<p>Go Language Cheat Sheet</p>
+
+<h3>Introduction</h3>
+
+<ul>
+	<li><a href="https://tour.golang.org/welcome/1">A tour of Go</a><em>(tour.golang.org)</em></li>
+	<li><a href="https://repl.it/languages/go">Go repl</a><em>(repl.it)</em></li>
+	<li><a href="https://github.com/golang/go/wiki/">Golang wiki</a><em>(github.com)</em></li>
+</ul>
+
+<h3>Hello world</h3>
+
+<h4>hello.go</h4>
+
+<pre>
+<code>package main
+
+import "fmt"
+
+func main() {
+  message := greetMe("world")
+  fmt.Println(message)
+}
+
+func greetMe(name string) string {
+  return "Hello, " + name + "!"
+}
+</code></pre>
+
+<pre>
+<code>$ go build
+</code></pre>
+
+<p>Or try it out in the&nbsp;<a href="https://repl.it/languages/go">Go repl</a>, or&nbsp;<a href="https://tour.golang.org/welcome/1">A Tour of Go</a>.</p>
+
+<h3>Variables</h3>
+
+<h4>Variable declaration</h4>
+
+<pre>
+<code>var msg string
+msg = "Hello"
+</code></pre>
+
+<h4>Shortcut of above (Infers type)</h4>
+
+<pre>
+<code>msg := "Hello"
+</code></pre>
+
+<h3>Constants</h3>
+
+<pre>
+<code>const Phi = 1.618
+</code></pre>
+
+<p>Constants can be character, string, boolean, or numeric values.</p>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/basics/15">Constants</a></p>
+
+<h2><a href="https://devhints.io/go#basic-types">#</a>Basic types</h2>
+
+<h3>Strings</h3>
+
+<pre>
+<code>str := "Hello"
+</code></pre>
+
+<pre>
+<code>str := `Multiline
+string`
+</code></pre>
+
+<p>Strings are of type&nbsp;<code>string</code>.</p>
+
+<h3>Numbers</h3>
+
+<h4>Typical types</h4>
+
+<pre>
+<code>num := 3          // int
+num := 3.         // float64
+num := 3 + 4i     // complex128
+num := byte('a')  // byte (alias for uint8)
+</code></pre>
+
+<h4>Other types</h4>
+
+<pre>
+<code>var u uint = 7        // uint (unsigned)
+var p float32 = 22.7  // 32-bit float
+</code></pre>
+
+<h3>Arrays</h3>
+
+<pre>
+<code>// var numbers [5]int
+numbers := [...]int{0, 0, 0, 0, 0}
+</code></pre>
+
+<p>Arrays have a fixed size.</p>
+
+<h3>Slices</h3>
+
+<pre>
+<code>slice := []int{2, 3, 4}
+</code></pre>
+
+<pre>
+<code>slice := []byte("Hello")
+</code></pre>
+
+<p>Slices have a dynamic size, unlike arrays.</p>
+
+<h3>Pointers</h3>
+
+<pre>
+<code>func main () {
+  b := *getPointer()
+  fmt.Println("Value is", b)
+}
+</code></pre>
+
+<pre>
+<code>func getPointer () (myPointer *int) {
+  a := 234
+  return &amp;a
+}
+</code></pre>
+
+<pre>
+<code>a := new(int)
+*a = 234
+</code></pre>
+
+<p>Pointers point to a memory location of a variable. Go is fully garbage-collected.</p>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/moretypes/1">Pointers</a></p>
+
+<h3>Type conversions</h3>
+
+<pre>
+<code>i := 2
+f := float64(i)
+u := uint(i)
+</code></pre>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/basics/13">Type conversions</a></p>
+
+<h2><a href="https://devhints.io/go#flow-control">#</a>Flow control</h2>
+
+<h3>Conditional</h3>
+
+<pre>
+<code>if day == "sunday" || day == "saturday" {
+  rest()
+} else if day == "monday" &amp;&amp; isTired() {
+  groan()
+} else {
+  work()
+}
+</code></pre>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/flowcontrol/5">If</a></p>
+
+<h3>Statements in if</h3>
+
+<pre>
+<code>if _, err := doThing(); err != nil {
+  fmt.Println("Uh oh")
+}
+</code></pre>
+
+<p>A condition in an&nbsp;<code>if</code>&nbsp;statement can be preceded with a statement before a&nbsp;<code>;</code>. Variables declared by the statement are only in scope until the end of the&nbsp;<code>if</code>.</p>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/flowcontrol/6">If with a short statement</a></p>
+
+<h3>Switch</h3>
+
+<pre>
+<code>switch day {
+  case "sunday":
+    // cases don't "fall through" by default!
+    fallthrough
+
+  case "saturday":
+    rest()
+
+  default:
+    work()
+}
+</code></pre>
+
+<p>See:&nbsp;<a href="https://github.com/golang/go/wiki/Switch">Switch</a></p>
+
+<h3>For loop</h3>
+
+<pre>
+<code>for count := 0; count &lt;= 10; count++ {
+  fmt.Println("My counter is at", count)
+}
+</code></pre>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/flowcontrol/1">For loops</a></p>
+
+<h3>For-Range loop</h3>
+
+<pre>
+<code>entry := []string{"Jack","John","Jones"}
+for i, val := range entry {
+  fmt.Printf("At position %d, the character %s is present\n", i, val)
+}
+</code></pre>
+
+<p>See:&nbsp;<a href="https://gobyexample.com/range">For-Range loops</a></p>
+
+<h3>While loop</h3>
+
+<pre>
+<code>n := 0
+x := 42
+for n != x {
+  n := guess()
+}
+</code></pre>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/flowcontrol/3">Go&rsquo;s &ldquo;while&rdquo;</a></p>
+
+<h2><a href="https://devhints.io/go#functions">#</a>Functions</h2>
+
+<h3>Lambdas</h3>
+
+<pre>
+<code>myfunc := func() bool {
+  return x &gt; 10000
+}
+</code></pre>
+
+<p>Functions are first class objects.</p>
+
+<h3>Multiple return types</h3>
+
+<pre>
+<code>a, b := getMessage()
+</code></pre>
+
+<pre>
+<code>func getMessage() (a string, b string) {
+  return "Hello", "World"
+}
+</code></pre>
+
+<h3>Named return values</h3>
+
+<pre>
+<code>func split(sum int) (x, y int) {
+  x = sum * 4 / 9
+  y = sum - x
+  return
+}
+</code></pre>
+
+<p>By defining the return value names in the signature, a&nbsp;<code>return</code>&nbsp;(no args) will return variables with those names.</p>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/basics/7">Named return values</a></p>
+
+<h2><a href="https://devhints.io/go#packages">#</a>Packages</h2>
+
+<h3>Importing</h3>
+
+<pre>
+<code>import "fmt"
+import "math/rand"
+</code></pre>
+
+<pre>
+<code>import (
+  "fmt"        // gives fmt.Println
+  "math/rand"  // gives rand.Intn
+)
+</code></pre>
+
+<p>Both are the same.</p>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/basics/1">Importing</a></p>
+
+<h3>Aliases</h3>
+
+<pre>
+<code>import r "math/rand"
+</code></pre>
+
+<pre>
+<code>r.Intn()
+</code></pre>
+
+<h3>Exporting names</h3>
+
+<pre>
+<code>func Hello () {
+  ···
+}
+</code></pre>
+
+<p>Exported names begin with capital letters.</p>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/basics/3">Exported names</a></p>
+
+<h3>Packages</h3>
+
+<pre>
+<code>package hello
+</code></pre>
+
+<p>Every package file has to start with&nbsp;<code>package</code>.</p>
+
+<h2><a href="https://devhints.io/go#concurrency">#</a>Concurrency</h2>
+
+<h3>Goroutines</h3>
+
+<pre>
+<code>func main() {
+  // A "channel"
+  ch := make(chan string)
+
+  // Start concurrent routines
+  go push("Moe", ch)
+  go push("Larry", ch)
+  go push("Curly", ch)
+
+  // Read 3 results
+  // (Since our goroutines are concurrent,
+  // the order isn't guaranteed!)
+  fmt.Println(&lt;-ch, &lt;-ch, &lt;-ch)
+}
+</code></pre>
+
+<pre>
+<code>func push(name string, ch chan string) {
+  msg := "Hey, " + name
+  ch &lt;- msg
+}
+</code></pre>
+
+<p>Channels are concurrency-safe communication objects, used in goroutines.</p>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/concurrency/1">Goroutines</a>,&nbsp;<a href="https://tour.golang.org/concurrency/2">Channels</a></p>
+
+<h3>Buffered channels</h3>
+
+<pre>
+<code>ch := make(chan int, 2)
+ch &lt;- 1
+ch &lt;- 2
+ch &lt;- 3
+// fatal error:
+// all goroutines are asleep - deadlock!
+</code></pre>
+
+<p>Buffered channels limit the amount of messages it can keep.</p>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/concurrency/3">Buffered channels</a></p>
+
+<h3>Closing channels</h3>
+
+<h4>Closes a channel</h4>
+
+<pre>
+<code>ch &lt;- 1
+ch &lt;- 2
+ch &lt;- 3
+close(ch)
+</code></pre>
+
+<h4>Iterates across a channel until its closed</h4>
+
+<pre>
+<code>for i := range ch {
+  ···
+}
+</code></pre>
+
+<h4>Closed if&nbsp;<code>ok == false</code></h4>
+
+<pre>
+<code>v, ok := &lt;- ch
+</code></pre>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/concurrency/4">Range and close</a></p>
+
+<h3>WaitGroup</h3>
+
+<pre>
+<code>import "sync"
+
+func main() {
+  var wg sync.WaitGroup
+  
+  for _, item := range itemList {
+    // Increment WaitGroup Counter
+    wg.Add(1)
+    go doOperation(&amp;wg, item)
+  }
+  // Wait for goroutines to finish
+  wg.Wait()
+  
+}
+</code></pre>
+
+<pre>
+<code>func doOperation(wg *sync.WaitGroup, item string) {
+  defer wg.Done()
+  // do operation on item
+  // ...
+}
+</code></pre>
+
+<p>A WaitGroup waits for a collection of goroutines to finish. The main goroutine calls Add to set the number of goroutines to wait for. The goroutine calls&nbsp;<code>wg.Done()</code>&nbsp;when it finishes. See:&nbsp;<a href="https://golang.org/pkg/sync/#WaitGroup">WaitGroup</a></p>
+
+<h2><a href="https://devhints.io/go#error-control">#</a>Error control</h2>
+
+<h3>Defer</h3>
+
+<pre>
+<code>func main() {
+  defer fmt.Println("Done")
+  fmt.Println("Working...")
+}
+</code></pre>
+
+<p>Defers running a function until the surrounding function returns. The arguments are evaluated immediately, but the function call is not ran until later.</p>
+
+<p>See:&nbsp;<a href="https://blog.golang.org/defer-panic-and-recover">Defer, panic and recover</a></p>
+
+<h3>Deferring functions</h3>
+
+<pre>
+<code>func main() {
+  defer func() {
+    fmt.Println("Done")
+  }()
+  fmt.Println("Working...")
+}
+</code></pre>
+
+<p>Lambdas are better suited for defer blocks.</p>
+
+<pre>
+<code>func main() {
+  var d = int64(0)
+  defer func(d *int64) {
+    fmt.Printf("&amp; %v Unix Sec\n", *d)
+  }(&amp;d)
+  fmt.Print("Done ")
+  d = time.Now().Unix()
+}
+</code></pre>
+
+<p>The defer func uses current value of d, unless we use a pointer to get final value at end of main.</p>
+
+<h2><a href="https://devhints.io/go#structs">#</a>Structs</h2>
+
+<h3>Defining</h3>
+
+<pre>
+<code>type Vertex struct {
+  X int
+  Y int
+}
+</code></pre>
+
+<pre>
+<code>func main() {
+  v := Vertex{1, 2}
+  v.X = 4
+  fmt.Println(v.X, v.Y)
+}
+</code></pre>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/moretypes/2">Structs</a></p>
+
+<h3>Literals</h3>
+
+<pre>
+<code>v := Vertex{X: 1, Y: 2}
+</code></pre>
+
+<pre>
+<code>// Field names can be omitted
+v := Vertex{1, 2}
+</code></pre>
+
+<pre>
+<code>// Y is implicit
+v := Vertex{X: 1}
+</code></pre>
+
+<p>You can also put field names.</p>
+
+<h3>Pointers to structs</h3>
+
+<pre>
+<code>v := &amp;Vertex{1, 2}
+v.X = 2
+</code></pre>
+
+<p>Doing&nbsp;<code>v.X</code>&nbsp;is the same as doing&nbsp;<code>(*v).X</code>, when&nbsp;<code>v</code>&nbsp;is a pointer.</p>
+
+<h2><a href="https://devhints.io/go#methods">#</a>Methods</h2>
+
+<h3>Receivers</h3>
+
+<pre>
+<code>type Vertex struct {
+  X, Y float64
+}
+</code></pre>
+
+<pre>
+<code>func (v Vertex) Abs() float64 {
+  return math.Sqrt(v.X * v.X + v.Y * v.Y)
+}
+</code></pre>
+
+<pre>
+<code>v := Vertex{1, 2}
+v.Abs()
+</code></pre>
+
+<p>There are no classes, but you can define functions with&nbsp;<em>receivers</em>.</p>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/methods/1">Methods</a></p>
+
+<h3>Mutation</h3>
+
+<pre>
+<code>func (v *Vertex) Scale(f float64) {
+  v.X = v.X * f
+  v.Y = v.Y * f
+}
+</code></pre>
+
+<pre>
+<code>v := Vertex{6, 12}
+v.Scale(0.5)
+// `v` is updated
+</code></pre>
+
+<p>By defining your receiver as a pointer (<code>*Vertex</code>), you can do mutations.</p>
+
+<p>See:&nbsp;<a href="https://tour.golang.org/methods/4">Pointer receivers</a></p>
+
+<h2><a href="https://devhints.io/go#interfaces">#</a>Interfaces</h2>
+
+<h3>A basic interface</h3>
+
+<pre>
+<code>type Shape interface {
+  Area() float64
+  Perimeter() float64
+}
+</code></pre>
+
+<h3>Struct</h3>
+
+<pre>
+<code>type Rectangle struct {
+  Length, Width float64
+}
+</code></pre>
+
+<p>Struct&nbsp;<code>Rectangle</code>&nbsp;implicitly implements interface&nbsp;<code>Shape</code>&nbsp;by implementing all of its methods.</p>
+
+<h3>Methods</h3>
+
+<pre>
+<code>func (r Rectangle) Area() float64 {
+  return r.Length * r.Width
+}
+
+func (r Rectangle) Perimeter() float64 {
+  return 2 * (r.Length + r.Width)
+}
+</code></pre>
+
+<p>The methods defined in&nbsp;<code>Shape</code>&nbsp;are implemented in&nbsp;<code>Rectangle</code>.</p>
+
+<h3>Interface example</h3>
+
+<pre>
+<code>func main() {
+  var r Shape = Rectangle{Length: 3, Width: 4}
+  fmt.Printf("Type of r: %T, Area: %v, Perimeter: %v.", r, r.Area(), r.Perimeter())
+}
+</code></pre>

@@ -1,0 +1,260 @@
+<noscript> 
+  <style>
+    body {
+      -ms-overflow-style: scrollbar;
+      overflow-y: scroll;
+      overscroll-behavior-y: none;
+    }
+
+    .errorContainer {
+      background-color: #FFF;
+      color: #0F1419;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10%;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .errorButton {
+      margin: 3em 0;
+    }
+
+    .errorButton a {
+      background: #1DA1F2;
+      border-radius: 2.5em;
+      color: white;
+      padding: 1em 2em;
+      text-decoration: none;
+    }
+
+    .errorButton a:hover,
+    .errorButton a:focus {
+      background: rgb(26, 145, 218);
+    }
+
+    .errorFooter {
+      color: #657786;
+      font-size: 80%;
+      line-height: 1.5;
+      padding: 1em 0;
+    }
+
+    .errorFooter a,
+    .errorFooter a:visited {
+      color: #657786;
+      text-decoration: none;
+      padding-right: 1em;
+    }
+
+    .errorFooter a:hover,
+    .errorFooter a:active {
+      text-decoration: underline;
+    }
+
+      #placeholder,
+      #react-root {
+        display: none !important;
+      }
+      body {
+        background-color: #FFF !important;
+      }
+    </style> 
+  <div class="errorContainer"> 
+   <img width="46" height="38" srcset="https://abs.twimg.com/errors/logo46x38.png 1x, https://abs.twimg.com/errors/logo46x38@2x.png 2x" src="https://abs.twimg.com/errors/logo46x38.png" alt="Twitter"> 
+   <h1>JavaScript is not available.</h1> 
+   <p>We’ve detected that JavaScript is disabled in this browser. Please enable JavaScript or switch to a supported browser to continue using twitter.com. You can see a list of supported browsers in our Help Center.</p> 
+   <p class="errorButton"><a href="https://help.twitter.com/using-twitter/twitter-supported-browsers">Help Center</a></p> 
+   <p class="errorFooter"> <a href="https://twitter.com/tos">Terms of Service</a> <a href="https://twitter.com/privacy">Privacy Policy</a> <a href="https://support.twitter.com/articles/20170514">Cookie Policy</a> <a href="https://legal.twitter.com/imprint.html">Imprint</a> <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&amp;utm_source=twc&amp;utm_medium=web&amp;utm_campaign=ao&amp;utm_content=adsinfo">Ads info</a> © 2022 Twitter, Inc. </p> 
+  </div> 
+ </noscript>
+<p>R3 CORDA Auction Cordapps:</p>
+
+<p>Open seven terminals and run following 7 commands.</p>
+
+<p><strong>bash -c &#39;cd &quot;/Users/priya/vkdev/web3/corda/cordappsdemo/cordapp-auction/kotlin-source/build/nodes/Notary&quot; ; &quot;/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home/jre/bin/java&quot; &quot;-Dname=Notary-corda.jar&quot; &quot;-Dcapsule.jvm.args=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -javaagent:drivers/jolokia-jvm-1.3.7-agent.jar=port=7005,logHandlerClass=net.corda.node.JolokiaSlf4Adapter&quot; &quot;-jar&quot; &quot;corda.jar&quot; &amp;&amp; exit&#39;<br />
+bash -c &#39;cd &quot;/Users/priya/vkdev/web3/corda/cordappsdemo/cordapp-auction/kotlin-source/build/nodes/PartyA&quot; ; &quot;/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home/jre/bin/java&quot; &quot;-Dname=PartyC-corda.jar&quot; &quot;-Dcapsule.jvm.args=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006 -javaagent:drivers/jolokia-jvm-1.3.7-agent.jar=port=7006,logHandlerClass=net.corda.node.JolokiaSlf4Adapter&quot; &quot;-jar&quot; &quot;corda.jar&quot; &amp;&amp; exit&#39;<br />
+bash -c &#39;cd &quot;/Users/priya/vkdev/web3/corda/cordappsdemo/cordapp-auction/kotlin-source/build/nodes/PartyA&quot; ; &quot;/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home/jre/bin/java&quot; &quot;-Dname=PartyC-corda-webserver.jar&quot; &quot;-Dcapsule.jvm.args=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5007 -javaagent:drivers/jolokia-jvm-1.3.7-agent.jar=port=7007,logHandlerClass=net.corda.webserver.JolokiaSlf4Adapter&quot; &quot;-jar&quot; &quot;corda-webserver.jar&quot; &amp;&amp; exit&#39;</strong></p>
+
+<p><strong>bash -c &#39;cd &quot;/Users/priya/vkdev/web3/corda/cordappsdemo/cordapp-auction/kotlin-source/build/nodes/PartyB&quot; ; &quot;/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home/jre/bin/java&quot; &quot;-Dname=PartyC-corda.jar&quot; &quot;-Dcapsule.jvm.args=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5008 -javaagent:drivers/jolokia-jvm-1.3.7-agent.jar=port=7008,logHandlerClass=net.corda.node.JolokiaSlf4Adapter&quot; &quot;-jar&quot; &quot;corda.jar&quot; &amp;&amp; exit&#39;<br />
+bash -c &#39;cd &quot;/Users/priya/vkdev/web3/corda/cordappsdemo/cordapp-auction/kotlin-source/build/nodes/PartyB&quot; ; &quot;/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home/jre/bin/java&quot; &quot;-Dname=PartyC-corda-webserver.jar&quot; &quot;-Dcapsule.jvm.args=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5009 -javaagent:drivers/jolokia-jvm-1.3.7-agent.jar=port=7009,logHandlerClass=net.corda.webserver.JolokiaSlf4Adapter&quot; &quot;-jar&quot; &quot;corda-webserver.jar&quot; &amp;&amp; exit&#39;</strong></p>
+
+<p><strong>bash -c &#39;cd &quot;/Users/priya/vkdev/web3/corda/cordappsdemo/cordapp-auction/kotlin-source/build/nodes/PartyC&quot; ; &quot;/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home/jre/bin/java&quot; &quot;-Dname=PartyC-corda.jar&quot; &quot;-Dcapsule.jvm.args=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5010 -javaagent:drivers/jolokia-jvm-1.3.7-agent.jar=port=7010,logHandlerClass=net.corda.node.JolokiaSlf4Adapter&quot; &quot;-jar&quot; &quot;corda.jar&quot; &amp;&amp; exit&#39;<br />
+bash -c &#39;cd &quot;/Users/priya/vkdev/web3/corda/cordappsdemo/cordapp-auction/kotlin-source/build/nodes/PartyC&quot; ; &quot;/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home/jre/bin/java&quot; &quot;-Dname=PartyC-corda-webserver.jar&quot; &quot;-Dcapsule.jvm.args=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5011 -javaagent:drivers/jolokia-jvm-1.3.7-agent.jar=port=7011,logHandlerClass=net.corda.webserver.JolokiaSlf4Adapter&quot; &quot;-jar&quot; &quot;corda-webserver.jar&quot; &amp;&amp; exit&#39;</strong></p>
+
+<p>&nbsp;</p>
+
+<p>------------------</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Using the CorDapp via the console:<br />
+1.Start the Auction In PartyA Console type:</strong></p>
+
+<p><strong>Thu Jul 21 22:45:45 IST 2022&gt;&gt;&gt; start StartAuction itemName: &quot;test&quot;, ItemDescription: &quot;test&quot;, startPrice: 99, ExpiryDate: &quot;2018-11-16T08:25:25.510045Z&quot;, AuctionParticipants: &quot;O=PartyB,L=New York,C=US&quot;</strong></p>
+
+<p><strong>✅ &nbsp; Creating a new Auction.<br />
+&nbsp; &nbsp; ✅ &nbsp; Requesting signature by notary service<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ✅ &nbsp; Requesting signature by Notary service<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ✅ &nbsp; Validating response from Notary service<br />
+&nbsp; &nbsp; ✅ &nbsp; Broadcasting transaction to participants<br />
+✅ &nbsp; Verifying contract constraints.<br />
+✅ &nbsp; Signing transaction with our private key.<br />
+✅ &nbsp; Gathering the counterparty&#39;s signature.<br />
+&nbsp; &nbsp; ✅ &nbsp; Collecting signatures from counterparties.<br />
+&nbsp; &nbsp; ✅ &nbsp; Verifying collected signatures.<br />
+✅ &nbsp; Obtaining notary signature and recording transaction.<br />
+&nbsp; &nbsp; ✅ &nbsp; Requesting signature by notary service<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ✅ &nbsp; Requesting signature by Notary service<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ✅ &nbsp; Validating response from Notary service<br />
+&nbsp; &nbsp; ✅ &nbsp; Broadcasting transaction to participants<br />
+✅ &nbsp; Done</strong></p>
+
+<p><br />
+<strong>2.Get Linear Id of Auction In any Console (Party A,B or C) type:</strong></p>
+
+<p><strong>Thu Jul 21 22:50:15 IST 2022&gt;&gt;&gt; run vaultQuery contractStateType: com.example.state.Auction<br />
+{<br />
+&nbsp; &quot;states&quot; : [ {<br />
+&nbsp; &nbsp; &quot;state&quot; : {<br />
+&nbsp; &nbsp; &nbsp; &quot;data&quot; : {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &quot;itemName&quot; : &quot;test&quot;,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &quot;startPrice&quot; : 99,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &quot;itemOwner&quot; : &quot;O=PartyA, L=London, C=GB&quot;,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &quot;auctionWinner&quot; : null,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &quot;highestBid&quot; : 0,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &quot;linearId&quot; : {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &quot;externalId&quot; : null,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &quot;id&quot; : &quot;df735589-90bc-4c96-b8fd-cfe1e725c8a4&quot;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; },<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &quot;participants&quot; : [ &quot;O=PartyA, L=London, C=GB&quot; ],<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &quot;auctionParticipants&quot; : [ &quot;O=PartyB, L=New York, C=US&quot; ],<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &quot;itemDescription&quot; : &quot;test&quot;,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &quot;expiryDate&quot; : &quot;2018-11-16T08:25:25.510045Z&quot;,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &quot;auctionActive&quot; : false<br />
+&nbsp; &nbsp; &nbsp; },<br />
+&nbsp; &nbsp; &nbsp; &quot;contract&quot; : &quot;com.example.contract.AuctionContract&quot;,<br />
+&nbsp; &nbsp; &nbsp; &quot;notary&quot; : &quot;O=Notary, L=London, C=GB&quot;,<br />
+&nbsp; &nbsp; &nbsp; &quot;encumbrance&quot; : null,<br />
+&nbsp; &nbsp; &nbsp; &quot;constraint&quot; : {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &quot;attachmentId&quot; : &quot;76D3D5F7C37E540D71B249D751CC4490257C653158857CF417F0E0D421AD8B1C&quot;<br />
+&nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; },<br />
+&nbsp; &nbsp; &quot;ref&quot; : {<br />
+&nbsp; &nbsp; &nbsp; &quot;txhash&quot; : &quot;7E341E36AC27784231320EFB0FE75D49D95FFEFEAC60F8B0DDF108408BFE5C4E&quot;,<br />
+&nbsp; &nbsp; &nbsp; &quot;index&quot; : 0<br />
+&nbsp; &nbsp; }<br />
+&nbsp; } ],<br />
+&nbsp; &quot;statesMetadata&quot; : [ {<br />
+&nbsp; &nbsp; &quot;ref&quot; : {<br />
+&nbsp; &nbsp; &nbsp; &quot;txhash&quot; : &quot;7E341E36AC27784231320EFB0FE75D49D95FFEFEAC60F8B0DDF108408BFE5C4E&quot;,<br />
+&nbsp; &nbsp; &nbsp; &quot;index&quot; : 0<br />
+&nbsp; &nbsp; },<br />
+&nbsp; &nbsp; &quot;contractStateClassName&quot; : &quot;com.example.state.Auction&quot;,<br />
+&nbsp; &nbsp; &quot;recordedTime&quot; : &quot;2022-07-21T17:27:50.945Z&quot;,<br />
+&nbsp; &nbsp; &quot;consumedTime&quot; : null,<br />
+&nbsp; &nbsp; &quot;status&quot; : &quot;UNCONSUMED&quot;,<br />
+&nbsp; &nbsp; &quot;notary&quot; : &quot;O=Notary, L=London, C=GB&quot;,<br />
+&nbsp; &nbsp; &quot;lockId&quot; : null,<br />
+&nbsp; &nbsp; &quot;lockUpdateTime&quot; : null<br />
+&nbsp; } ],<br />
+&nbsp; &quot;totalStatesAvailable&quot; : -1,<br />
+&nbsp; &quot;stateTypes&quot; : &quot;UNCONSUMED&quot;,<br />
+&nbsp; &quot;otherResults&quot; : [ ]<br />
+}</strong></p>
+
+<p><strong>3.Make A Bid In PartyB or PartyC Console type:<br />
+start MakeBid amount: 120, AuctionReference: &quot;&lt;LinearId&gt;&quot;<br />
+#start MakeBid amount: 120, AuctionReference: &quot;df735589-90bc-4c96-b8fd-cfe1e725c8a4&quot;<br />
+start MakeBid amount: 120, AuctionReference: &quot;1ad4dc7e-c99d-4852-9c52-c2afad0a3da5&quot;</strong></p>
+
+<p><strong>✅ &nbsp; Creating a new Auction.<br />
+&nbsp; &nbsp; ✅ &nbsp; Requesting signature by notary service<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ✅ &nbsp; Requesting signature by Notary service<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ✅ &nbsp; Validating response from Notary service<br />
+&nbsp; &nbsp; ✅ &nbsp; Broadcasting transaction to participants<br />
+✅ &nbsp; Verifying contract constraints.<br />
+✅ &nbsp; Signing transaction with our private key.<br />
+✅ &nbsp; Gathering the counterparty&#39;s signature.<br />
+&nbsp; &nbsp; ✅ &nbsp; Collecting signatures from counterparties.<br />
+&nbsp; &nbsp; ✅ &nbsp; Verifying collected signatures.<br />
+✅ &nbsp; Obtaining notary signature and recording transaction.<br />
+&nbsp; &nbsp; ✅ &nbsp; Requesting signature by notary service<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ✅ &nbsp; Requesting signature by Notary service<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ✅ &nbsp; Validating response from Notary service<br />
+&nbsp; &nbsp; ✅ &nbsp; Broadcasting transaction to participants<br />
+✅ &nbsp; Done</strong></p>
+
+<p><br />
+<strong>4.End A Auction In PartyAConsole type:<br />
+start EndAuction AuctionReference: &quot;&lt;LinearId&gt;&quot;<br />
+start EndAuction AuctionReference: &quot;1ad4dc7e-c99d-4852-9c52-c2afad0a3da5&quot;</strong></p>
+
+<p><strong>Thu Jul 21 23:07:11 IST 2022&gt;&gt;&gt; start EndAuction AuctionReference: &quot;1ad4dc7e-c99d-4852-9c52-c2afad0a3da5&quot;</strong></p>
+
+<p><strong>✅ &nbsp; Creating a new Auction.<br />
+&nbsp; &nbsp; ✅ &nbsp; Requesting signature by notary service<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ✅ &nbsp; Requesting signature by Notary service<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ✅ &nbsp; Validating response from Notary service<br />
+&nbsp; &nbsp; ✅ &nbsp; Broadcasting transaction to participants<br />
+✅ &nbsp; Verifying contract constraints.<br />
+✅ &nbsp; Signing transaction with our private key.<br />
+✅ &nbsp; Gathering the counterparty&#39;s signature.<br />
+&nbsp; &nbsp; ✅ &nbsp; Collecting signatures from counterparties.<br />
+&nbsp; &nbsp; ✅ &nbsp; Verifying collected signatures.<br />
+✅ &nbsp; Obtaining notary signature and recording transaction.<br />
+&nbsp; &nbsp; ✅ &nbsp; Requesting signature by notary service<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ✅ &nbsp; Requesting signature by Notary service<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ✅ &nbsp; Validating response from Notary service<br />
+&nbsp; &nbsp; ✅ &nbsp; Broadcasting transaction to participants<br />
+✅ &nbsp; Done</strong></p>
+
+<p><strong>----------------</strong></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h2>Using the CorDapp via the HTTP API&#39;s:</h2>
+
+<ol>
+	<li>Create Auction:</li>
+</ol>
+
+<pre>
+<code>curl -X PUT 'http://localhost:10009/api/auction/create-auction?itemName=test&amp;ItemDescription=test&amp;startPrice=99&amp;ExpiryDate=2018-11-16T08:25:25.510045Z&amp;AuctionParticipants=O=PartyB,L=New%20York,C=US'
+</code></pre>
+
+<ol start="2">
+	<li>List Auctions:</li>
+</ol>
+
+<pre>
+<code>curl -X GET 'http://localhost:10009/api/auction/auctions'
+</code></pre>
+
+<ol start="3">
+	<li>Make Bid:</li>
+</ol>
+
+<pre>
+<code>curl -X PUT 'http://localhost:10012/api/auction/make-bid?amount=120&amp;AuctionReference=&lt;LINEAR_ID&gt;'
+</code></pre>
+
+<ol start="4">
+	<li>End Auction:</li>
+</ol>
+
+<pre>
+<code>curl -X PUT 'http://localhost:10009/api/auction/end-auction?AuctionReference=&lt;LINEAR_ID&gt;'
+</code></pre>
+
+<h1>&nbsp;</h1>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
