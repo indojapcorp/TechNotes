@@ -1,0 +1,235 @@
+<p>1) Explain what AWS is?<br />
+AWS stands for Amazon Web Service; it is a collection of remote computing services also known as a cloud computing platform. This new realm of cloud computing is also known as IaaS or Infrastructure as a Service.</p>
+
+<p>2) Mention what the key components of AWS are?<br />
+The key components of AWS are</p>
+
+<p>Route 53: A DNS web service<br />
+Simple E-mail Service: It allows sending e-mail using RESTFUL API call or via regular SMTP<br />
+Identity and Access Management: It provides enhanced security and identity management for your AWS account<br />
+Simple Storage Device or (S3): It is a storage device and the most widely used AWS service<br />
+Elastic Compute Cloud (EC2): It provides on-demand computing resources for hosting applications. It is handy in case of unpredictable workloads<br />
+Elastic Block Store (EBS): It offers persistent storage volumes that attach to EC2 to allow you to persist data past the lifespan of a single Amazon EC2 instance<br />
+CloudWatch: To monitor AWS resources, It allows administrators to view and collect keys. Also, one can set a notification alarm in case of trouble.</p>
+
+<p>3) Explain what S3 is?<br />
+S3 stands for Simple Storage Service. You can use the S3 interface to store and retrieve any amount of data, at any time and from anywhere on the web. For S3, the payment model is &ldquo;pay as you go.&rdquo;</p>
+
+<p>4) What is AMI?<br />
+AMI stands for Amazon Machine Image. It&rsquo;s a template that provides the information (an operating system, an application server, and applications) required to launch an instance, which is a copy of the AMI running as a virtual server in the cloud. You can launch instances from as many different AMIs as you need.</p>
+
+<p>5) Mention what the relationship between an instance and AMI is?<br />
+From a single AMI, you can launch multiple types of instances. An instance type defines the hardware of the host computer used for your instance. Each instance type provides different computer and memory capabilities. Once you launch an instance, it looks like a traditional host, and we can interact with it as we would with any computer.</p>
+
+<p>6) What does an AMI include?<br />
+An AMI includes the following things</p>
+
+<p>A template for the root volume for the instance<br />
+Launch permissions decide which AWS accounts can avail the AMI to launch instances<br />
+A block device mapping that determines the volumes to attach to the instance when it is launched</p>
+
+<p>7) How can you send a request to Amazon S3?<br />
+Amazon S3 is a REST service, and you can send a request by using the REST API or the AWS SDK wrapper libraries that wrap the underlying Amazon S3 REST API.</p>
+
+<p>8) Mention what the difference between Amazon S3 and EC2 is?<br />
+The difference between EC2 and Amazon S3 is that</p>
+
+<p>EC2 S3<br />
+It is a cloud web service used for hosting your application<br />
+It is a data storage system where any amount of data can be stored<br />
+It is like a huge computer machine which can run either Linux or Windows and can handle applications like PHP, Python, Apache, or any databases<br />
+It has a REST interface and uses secure HMAC-SHA1 authentication keys</p>
+
+<p>9) How many buckets can you create in AWS by default?<br />
+By default, you can create up to 100 buckets in each of your AWS accounts.</p>
+
+<p>10) Explain can you vertically scale an Amazon instance? How?<br />
+Yes, you can vertically scale on the Amazon instance. For that</p>
+
+<p>Spin up a new larger instance than the one you are currently running<br />
+Pause that instance and detach the root webs volume from the server and discard<br />
+Then stop your live instance and detach its root volume<br />
+Note the unique device ID and attach that root volume to your new server<br />
+And start it again</p>
+
+<p>11) Explain what T2 instances is?<br />
+T2 instances are designed to provide moderate baseline performance and the capability to burst to higher performance as required by the workload.</p>
+
+<p>12) In VPC with private and public subnets, database servers should ideally be launched into which subnet?<br />
+With private and public subnets in VPC, database servers should ideally launch into private subnets.</p>
+
+<p>13) Mention what the security best practices for Amazon EC2 are?<br />
+For secure Amazon EC2 best practices, follow the following steps</p>
+
+<p>Use AWS identity and access management to control access to your AWS resources<br />
+Restrict access by allowing only trusted hosts or networks to access ports on your instance<br />
+Review the rules in your security groups regularly<br />
+Only open up permissions that you require<br />
+Disable password-based login, for example, launched from your AMI</p>
+
+<p>14) Explain how the buffer is used in Amazon web services?<br />
+The buffer is used to make the system more robust to manage traffic or load by synchronizing different components. Usually, components receive and process the requests in an unbalanced way. With the help of a buffer, the components will be balanced and will work at the same speed to provide faster services.</p>
+
+<p>15) While connecting to your instance what are the possible connection issues one might face?<br />
+The possible connection errors one might encounter while connecting instances are</p>
+
+<p>Connection timed out<br />
+User key not recognized by the server<br />
+Host key not found, permission denied<br />
+An unprotected private key file<br />
+Server refused our key or No supported authentication method available<br />
+Error using MindTerm on Safari Browser<br />
+Error using Mac OS X RDP Client</p>
+
+<p>16) What are key-pairs in AWS?<br />
+Key-pairs are secure login information for your virtual machines. To connect to the instances, you can use key-pairs which contain a public-key and private-key.</p>
+
+<p>17) What are the different types of instances?<br />
+Following are the types of instances:<br />
+General purpose<br />
+Computer Optimized<br />
+Memory Optimized<br />
+Storage Optimized<br />
+Accelerated Computing</p>
+
+<p>18) Is the property of broadcast or multicast supported by Amazon VPC?<br />
+No, currently Amazon VPI does not provide support for broadcast or multicast.</p>
+
+<p>19) How many Elastic IPs are allowed to be created by AWS?<br />
+5 VPC Elastic IP addresses are allowed for each AWS account.</p>
+
+<p>20) Explain default storage class in S3<br />
+The default storage class is a Standard frequently accessed.</p>
+
+<p>21) What are the Roles?<br />
+Roles are used to provide permissions to entities which you can trust within your AWS account. Roles are very similar to users. However, with roles, you do not require to create any username and password to work with the resources.</p>
+
+<p>22) What are the edge locations?<br />
+Edge location is the area where the contents will be cached. So, when a user is trying to access any content, the content will automatically be searched in the edge location.</p>
+
+<p>23) What is VPC?<br />
+VPC stands for Virtual Private Cloud. It allows you to customize your networking configuration. It is a network which is logically isolated from another network in the cloud. It allows you to have your IP address range, internet gateways, subnet, and security groups.</p>
+
+<p>24) Explain snowball<br />
+Snowball is a data transport option. It used source appliances to a large amount of data into and out of AWS. With the help of snowball, you can transfer a massive amount of data from one place to another. It helps you to reduce networking costs.</p>
+
+<p>25) What is a redshift?<br />
+Redshift is a big data warehouse product. It is a fast and powerful, fully managed data warehouse service in the cloud.</p>
+
+<p>26) What are the advantages of auto-scaling?<br />
+Following are the advantages of autoscaling</p>
+
+<p>Offers fault tolerance<br />
+Better availability<br />
+Better cost management</p>
+
+<p>27) What is meant by subnet?<br />
+A large section of IP Addresses divided into chunks is known as subnets.</p>
+
+<p>28) Can you establish a Peering connection to a VPC in a different region?<br />
+Yes, we can establish a peering connection to a VPC in a different region. It is called inter-region VPC peering connection.</p>
+
+<p>29) What is SQS?<br />
+Simple Queue Service is also known as SQS. It is distributed queuing service which acts as a mediator for two controllers.</p>
+
+<p>30) How many subnets can you have per VPC?<br />
+You can have 200 subnets per VPC.</p>
+
+<p>31) DNS and Load Balancer service comes under which type of cloud service?<br />
+DNS and Load Balancer and DNS services come under IAAS-storage cloud service.</p>
+
+<p>32) What is the role of AWS CloudTrail?<br />
+CloudTrail is a specially designed tool for logging and tracking API calls. It helps to audit all S3 bucket accesses.</p>
+
+<p>33) When was EC2 officially launched?<br />
+EC2 officially launched in the year 2006.</p>
+
+<p>34) What is SimpleDB?<br />
+SimpleDB is a data repository of structure record which encourages data doubts and indexing both S3 and EC2are called SimpleDB.</p>
+
+<p>35) Explain Amazon ElasticCache<br />
+Amazon Elasticcache is a web service which makes it easy to deploy, scale and store data in the cloud.</p>
+
+<p>36) What is AWS Lambda?<br />
+Lambda is an Amazon compute service which allows you to run code in the AWS Cloud without managing servers.</p>
+
+<p>37) Name the types of AMI provided by AWS<br />
+The types of AMI provided by AWS are:</p>
+
+<p>Instance store backed<br />
+EBS backed</p>
+
+<p>38) Name the AWS service that exists only to redundantly cache data and images?<br />
+AWS Edge locations are services that redundantly cache data and images.</p>
+
+<p>39) Explain Geo Restriction in CloudFront<br />
+A Geo-restriction feature helps you to prevent users of specific geographic locations from accessing content which you&rsquo;re distributing through a CloudFront web distribution.</p>
+
+<p>40) What is Amazon EMR?<br />
+EMR is a survived cluster stage which helps you to interpret the working of data structures before the intimation. Apache Hadoop and Apache Spark on the Amazon Web Services help you to investigate a large amount of data. You can prepare data for the analytics goals and marketing intellect workloads using Apache Hive and using other relevant open-source designs.</p>
+
+<p>41) What is the boot time taken for the instance stored backed AMI?<br />
+The boot time for an Amazon instance store-backend AMI is less than 5 minutes.</p>
+
+<p>42) Do you need an internet gateway to use peering connections?<br />
+Yes, the Internet gateway is needed to use VPC (virtual private cloud peering) connections.</p>
+
+<p>43) How to connect EBS volume to multiple instances?<br />
+We can&rsquo;t be able to connect EBS volume to multiple instances. However, you can connect various EBS Volumes to a single instance.<br />
+44) List different types of cloud services<br />
+Various types of cloud services are:</p>
+
+<p>Software as a Service (SaaS),<br />
+Data as a Service (DaaS)<br />
+Platform as a Service (PaaS)<br />
+Infrastructure as a Service (IaaS).</p>
+
+<p>45) State the difference between An Instance and AMI<br />
+AMI is a template consisting of software configuration part. For example Operating systems, applications, application servers if you start an instance, a duplicate of the AMI in a row as an attendant in the cloud.</p>
+
+<p>46) What are the different types of Load Balancers in AWS services?<br />
+Two types of Load balancers are:</p>
+
+<p>Application Load Balancer<br />
+Classic Load Balancer</p>
+
+<p>47) In which situation you will select provisioned IOPS over Standard RDS storage?<br />
+You should select provisioned IOPS storage over standard RDS storage if you want to perform batch-related workloads.</p>
+
+<p>48) What are the important features of Amazon cloud search?<br />
+Important features of the Amazon cloud are:</p>
+
+<p>Boolean searches<br />
+Prefix Searches<br />
+Range searches<br />
+Entire text search<br />
+AutoComplete advice</p>
+
+<p>49) Can vertically scaling is allowed in Amazon Instance?<br />
+Yes, you can vertically estimate one Amazon instance.</p>
+
+<p>50) What is the use of lifecycle hooks in Autoscaling?<br />
+Lifecycle hooks are used for autoscaling to put an additional wait time to a scale in or scale out event.</p>
+
+<p>51) What are the various layers of Cloud Architecture explained in AWS training?<br />
+Different layers of cloud architecture are:</p>
+
+<p>Cloud controller<br />
+Cluster controller<br />
+Storage Controller<br />
+Node Controller</p>
+
+<p>52) What are the storage class available in Amazon s3?<br />
+Storage classes available with Amazon s3 are:</p>
+
+<p>Amazon S3 standard<br />
+Amazon S3 standard-infrequent Access<br />
+Amazon S3 Reduced Redundancy Storage<br />
+Amazon Glacier</p>
+
+<p>53) Name some of the DB engines which can be used in AWS RDS<br />
+MS-SQL DB<br />
+MariaDB<br />
+MYSQL DB<br />
+OracleDB<br />
+PostgreDB</p>
