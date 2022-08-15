@@ -1,0 +1,404 @@
+<noscript> 
+  <style>
+    body {
+      -ms-overflow-style: scrollbar;
+      overflow-y: scroll;
+      overscroll-behavior-y: none;
+    }
+
+    .errorContainer {
+      background-color: #FFF;
+      color: #0F1419;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10%;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .errorButton {
+      margin: 3em 0;
+    }
+
+    .errorButton a {
+      background: #1DA1F2;
+      border-radius: 2.5em;
+      color: white;
+      padding: 1em 2em;
+      text-decoration: none;
+    }
+
+    .errorButton a:hover,
+    .errorButton a:focus {
+      background: rgb(26, 145, 218);
+    }
+
+    .errorFooter {
+      color: #657786;
+      font-size: 80%;
+      line-height: 1.5;
+      padding: 1em 0;
+    }
+
+    .errorFooter a,
+    .errorFooter a:visited {
+      color: #657786;
+      text-decoration: none;
+      padding-right: 1em;
+    }
+
+    .errorFooter a:hover,
+    .errorFooter a:active {
+      text-decoration: underline;
+    }
+
+      #placeholder,
+      #react-root {
+        display: none !important;
+      }
+      body {
+        background-color: #FFF !important;
+      }
+    </style> 
+  <div class="errorContainer"> 
+   <img width="46" height="38" srcset="https://abs.twimg.com/errors/logo46x38.png 1x, https://abs.twimg.com/errors/logo46x38@2x.png 2x" src="https://abs.twimg.com/errors/logo46x38.png" alt="Twitter"> 
+   <h1>JavaScript is not available.</h1> 
+   <p>We’ve detected that JavaScript is disabled in this browser. Please enable JavaScript or switch to a supported browser to continue using twitter.com. You can see a list of supported browsers in our Help Center.</p> 
+   <p class="errorButton"><a href="https://help.twitter.com/using-twitter/twitter-supported-browsers">Help Center</a></p> 
+   <p class="errorFooter"> <a href="https://twitter.com/tos">Terms of Service</a> <a href="https://twitter.com/privacy">Privacy Policy</a> <a href="https://support.twitter.com/articles/20170514">Cookie Policy</a> <a href="https://legal.twitter.com/imprint.html">Imprint</a> <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&amp;utm_source=twc&amp;utm_medium=web&amp;utm_campaign=ao&amp;utm_content=adsinfo">Ads info</a> © 2022 Twitter, Inc. </p> 
+  </div> 
+ </noscript>
+<h2>1) What is Kubernetes?</h2>
+
+<p>Kubernetes is a container management system developed in the Google platform. The purpose of Kubernetes is to manage a containerized application in various types of physical, virtual, and cloud environments. Google Kubernetes is a highly flexible container tool to deliver even complex applications, consistently. Applications run on clusters of hundreds to thousands of individual servers.</p>
+
+<h2>2) Define node in Kubernetes</h2>
+
+<p>A node the smallest unit of hardware. It defines a single machine in a cluster that can be a virtual machine from a cloud provider or physical machine in the data center. Every machine available in the Kubernetes cluster can substitute other machines.</p>
+
+<h2>3) What is the work of a kube-scheduler?</h2>
+
+<p>Kube-scheduler is the default scheduler for Kubernetes. It assigns nodes to newly created pods.</p>
+
+<h2>4) Define daemon sets</h2>
+
+<p>Daemon sets are a set of pods that runs on a host. They are used for host layers attributes like monitoring network or simple network.</p>
+
+<h2>5) Define Heapster in Kubernetes</h2>
+
+<p>A Heapster is a metrics collection and performance monitoring system for data that are collected by the Kublet.</p>
+
+<h2>6) What tasks are performed by Kubernetes?</h2>
+
+<p>Kubernetes is the Linux kernel which is used for distributed systems. It helps you to be abstract the underlying hardware of the nodes(servers) and offers a consistent interface for applications that consume the shared pool of resources.</p>
+
+<h2>7) Define Kubernetes controller manager</h2>
+
+<p>The controller manager is a daemon used for garbage collection, core control loops, and namespace creation. It enables the running of more than one process on the master node.</p>
+
+<h2>8) Why use namespace in Kubernetes?</h2>
+
+<p>Namespaces in Kubernetes are used for dividing cluster resources between users. It helps the environment where more than one user spread projects or teams and provides a scope of resources.</p>
+
+<h2>9) Why use Kubernetes?</h2>
+
+<p>Kubernetes is used because:</p>
+
+<ul>
+	<li>Kubernetes can run on-premises bare metal, OpenStack, public clouds Google, Azure, AWS, etc.</li>
+	<li>It helps you to avoid vendor lock issues as it can use any vendor-specific APIs or services except where Kubernetes provides an abstraction, e.g., load balancer and storage.</li>
+	<li>It will enable applications that need to be released and updated without any downtime.</li>
+	<li>Kubernetes allows you to assure those containerized apps run where and when you want and help you to find resources and tools which you want to work.</li>
+</ul>
+
+<h2>10) What are the features of Kubernetes?</h2>
+
+<p>The features of Kubernetes are:</p>
+
+<ul>
+	<li>Automated Scheduling</li>
+	<li>Self-Healing Capabilities</li>
+	<li>Automated rollouts &amp; rollback</li>
+	<li>Horizontal Scaling &amp; Load Balancing</li>
+	<li>Offers environment consistency for development, testing, and production</li>
+	<li>Infrastructure is loosely coupled to each component can act as a separate unit</li>
+	<li>Provides a higher density of resource utilization</li>
+	<li>Offers enterprise-ready features</li>
+	<li>Application-centric management</li>
+	<li>Auto-scalable infrastructure</li>
+	<li>You can create predictable infrastructure</li>
+</ul>
+
+<h2>11) Mention the types of controller managers</h2>
+
+<p>Types of controller managers are: 1) endpoints controller, 2) service accounts controller, 3) node controller, 4) namespace controller, 5) replication controller, 6) token controller.</p>
+
+<h2>12) List various services available in Kubernetes</h2>
+
+<p>Various services available in Kubernetes are 1) Cluster IP service, 2) Load Balancer service, 3) Node Port service, 4) External Name Creation service.</p>
+
+<h2>13) Define Cluster IP</h2>
+
+<p>The Cluster IP is a Kubernetes service that offers a service inside the cluster that other apps inside cluster can access.</p>
+
+<h2>14) Explain node port</h2>
+
+<p>The node port service is a fundamental way to get external traffic to your service. It opens a particular port on all nodes and forwards network traffic sent to this port.</p>
+
+<h2>15) Define kubelet</h2>
+
+<p>The kubelet is a service agent which controls and maintains group pf pods by checking pod specification using Kubernetes. The kubelet runs on each node and allows to communicate between a master node and a slave node.</p>
+
+<h2>16) What are the disadvantages of Kubernetes?</h2>
+
+<ul>
+	<li>Kubernetes dashboard is not as helpful as it should be</li>
+	<li>Security is not very effective.</li>
+	<li>It is very complex and can reduce productivity</li>
+	<li>Kubernetes is more costly than its alternatives.</li>
+</ul>
+
+<h2>17) How can containers within a pod communicate with each other?</h2>
+
+<p>Containers within a pod share networking space and can reach other on localhost. For instance, if you have two containers within a pod, a MySQL container running on port 3306, and a PHP container running on port 80, the PHP container could access the MySQL one through localhost:3306.</p>
+
+<h2>18) What does a Pod do?</h2>
+
+<p>Pods represent the processes running on a cluster. By limiting pods to a single process, Kubernetes can report on the health of each process running in the cluster. Pods have:</p>
+
+<p>a unique IP address (which allows them to communicate with each other)<br />
+persistent storage volumes (as required)<br />
+configuration information that determine how a container should run.<br />
+Although most pods contain a single container, many will have a few containers that work closely together to execute a desired function</p>
+
+<h2>19) What is Kubernetes, exactly?</h2>
+
+<p>The purpose of Kubernetes is to make it easier to organize and schedule your application across a fleet of machines. At a high level it is an operating system for your cluster.</p>
+
+<p>Basically, it allows you to not worry about what specific machine in your datacenter each application runs on. Additionally it provides generic primitives for health checking and replicating your application across these machines, as well as services for wiring your application into micro-services so that each layer in your application is decoupled from other layers so that you can scale/update/maintain them independently.</p>
+
+<h2>20) Explain what are some Pods usage patterns?</h2>
+
+<p>Pods can be used in two main ways:</p>
+
+<p>Pods that run a single container. The simplest and most common Pod pattern is a single container per pod, where the single container represents an entire application. In this case, you can think of a Pod as a wrapper.<br />
+Pods that run multiple containers that need to work together. Pods with multiple containers are primarily used to support colocated, co-managed programs that need to share resources. These colocated containers might form a single cohesive unit of service&mdash;one container serving files from a shared volume while another container refreshes or updates those files. The Pod wraps these containers and storage resources together as a single manageable entity.<br />
+Each Pod is meant to run a single instance of a given application. If you want to run multiple instances, you should use one Pod for each instance of the application. This is generally referred to as replication. Replicated Pods are created and managed as a group by a controller, such as a Deployment.</p>
+
+<h2>21) Explain when to use Docker vs Docker Compose vs Docker Swarm vs Kubernetes</h2>
+
+<p>Docker is a container engine, it makes you build and run usually no more than one container at most, locally on your PC for development purposes.<br />
+Docker Compose is a Docker utility to run multiple containers and let them share volumes and networking via the docker engine features, runs locally to emulate service composition and remotely on clusters. Docker Compose is mostly used as a helper when you want to start multiple Docker containers and don&rsquo;t want to start each one separately using docker run &hellip;.<br />
+Docker Swarm is for running and connecting containers on multiple hosts. It does things like scaling, starting a new container when one crashes, networking containers.<br />
+Kubernetes is a container orchestration platform, it takes care of running containers and enhancing the engine features so that containers can be composed and scaled to serve complex applications (sort of PaaS, managed by you or cloud provider). Kubernetes&rsquo; goal is very similar to that for Docker Swarm but it&rsquo;s developer by Google.</p>
+
+<h2>22) What does it mean that &ldquo;pods are ephemeral&rdquo;?</h2>
+
+<p>Pods are ephemeral. They are not designed to run forever, and when a Pod is terminated it cannot be brought back. In general, Pods do not disappear until they are deleted by a user or by a controller.</p>
+
+<p>Pods do not &ldquo;heal&rdquo; or repair themselves. For example, if a Pod is scheduled on a node which later fails, the Pod is deleted. Similarly, if a Pod is evicted from a node for any reason, the Pod does not replace itself.</p>
+
+<h2>23) What happens when a master fails? What happens when a worker fails?</h2>
+
+<p>Kubernetes is designed to be resilient to any individual node failure, master or worker. When a master fails the nodes of the cluster will keep operating, but there can be no changes including pod creation or service member changes until the master is available. When a worker fails, the master stops receiving messages from the worker. If the master does not receive status updates from the worker the node will be marked as NotReady. If a node is NotReady for 5 minutes, the master reschedules all pods that were running on the dead node to other available nodes.</p>
+
+<h2>24) What is a StatefulSet in Kubernetes?</h2>
+
+<p>When using Kubernetes, most of the time you don&rsquo;t care how your pods are scheduled, but sometimes you care that pods are deployed in order, that they have a persistent storage volume, or that they have a unique, stable network identifier across restarts and reschedules. In those cases, StatefulSets can help you accomplish your objective. It manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.</p>
+
+<p>StatefulSets are valuable for applications that require one or more of the following.</p>
+
+<ul>
+	<li>Stable, unique network identifiers.</li>
+	<li>Stable, persistent storage.</li>
+	<li>Ordered, graceful deployment and scaling.</li>
+	<li>Ordered, automated rolling updates.</li>
+</ul>
+
+<h2>25) What is a DaemonSet?</h2>
+
+<p>DaemonSets are used in Kubernetes when you need to run one or more pods on all (or a subset of) the nodes in a cluster. The typical use case for a DaemonSet is logging and monitoring for the hosts. For example, a node needs a service (daemon) that collects health or log data and pushes them to a central system or database.</p>
+
+<p>As the name suggests you can use daemon sets for running daemons (and other tools) that need to run on all nodes of a cluster. These can be things like cluster storage daemons (e.g. Quobyte, glusterd, ceph, etc.), log collectors (e.g. fluentd or logstash), or monitoring daemons (e.g. Prometheus Node Exporter, collectd, New Relic agent, etc.)</p>
+
+<h2>26) When to use StatefulSet?</h2>
+
+<p>Some examples of reasons you&rsquo;d use a StatefulSet include:</p>
+
+<ul>
+	<li>A Redis pod that has access to a volume, but you want it to maintain access to the same volume even if it is redeployed or restarted</li>
+	<li>A Cassandra cluster and have each node maintain access to its data</li>
+	<li>A webapp that needs to communicate with its replicas using known predefined network identifiers</li>
+</ul>
+
+<h2>27) Which problems does a container orchestration solve?</h2>
+
+<p>Containers run in an isolated process (usually in it&rsquo;s own namespace). This means that by default the container will not be aware of other containers. Additionally, it will not be aware of the systems files, network interfaces, and processes. While this can greatly help with portability of the software it does not solve several production issues such as microservices, container discovery, scalability, disaster recovery, or upgrades.</p>
+
+<p>Adding a container orchestrator can greatly reduce the complexity in production as these tools are designed to resolve the issues outlined above. For example, Kubernetes is built to allow containers to be linked together, deploy containers across an entire network, scale and load balance the network based on container resource consumption, and allow upgrades of individual containers with no downtime.</p>
+
+<p>If you are only running a single container or two containers together you are correct in that an orchestrator may be unnecessary and add unneeded complexity.</p>
+
+<h2>28) Explain Master</h2>
+
+<p>Master is the central control point that provides a unified view of the cluster. There is a single master node that control multiple minions.</p>
+
+<p>Master servers work together to accept user requests, determine the best ways to schedule workload containers, authenticate clients and nodes, adjust cluster-wide networking, and manage scaling and health checking responsibilities</p>
+
+<h2>29) Explain Minions</h2>
+
+<p>A node is a worker machine in Kubernetes, previously known as a minion. A node may be a VM or physical machine, depending on the cluster. Each node contains the services necessary to run pods and is managed by the master components. The services on a node include the container runtime, kubelet and kube-proxy.</p>
+
+<h2>30) Explain Kubelet</h2>
+
+<p>Each node runs services to run containers and be managed from the master. In addition to Docker, Kubelet is another key service installed there. It reads container manifests as YAML files that describes a pod. Kubelet ensures that the containers defined in the pods are started and continue running.</p>
+
+<h2>31) What are the features/benefits of Kubernetes?</h2>
+
+<p>Below are some of the features of Kubernetes:</p>
+
+<p>Automatic scheduling &ndash; Advanced scheduler to launch containers on cluster nodes.<br />
+Automated rollouts &amp; rollback &ndash; Supports rollouts and rollbacks.<br />
+Horizontal scaling &ndash; Scale applications up or down as per requirements.<br />
+Storage orchestration &ndash; Automatically mount the storage system of your choice.<br />
+Self-healing capabilities &ndash; Reschedule, replace, and restart containers that have died or failed.<br />
+Load balancing &ndash; Offers Pods their own IP addresses and a single DNS name for a set of Pods, and can load-balance across them.<br />
+Secret and configuration management &ndash; This lets you store and manage sensitive information<br />
+Allows you to create predictable infrastructure.</p>
+
+<h2>32) List some recommended security measures for Kubernetes.</h2>
+
+<p>Below are some recommended security measures for Kubernetes:</p>
+
+<ul>
+	<li>Enable Role-Based Access Control (RBAC)</li>
+	<li>Keep Kubernetes up to date</li>
+	<li>Use API authentication</li>
+	<li>Restrict SSH access</li>
+	<li>Protect ETCD with TLS and Firewall</li>
+	<li>Isolate Kubernetes Nodes</li>
+	<li>Implementing a pod security policy</li>
+	<li>Turn on Audit Logging</li>
+	<li>Implement Network Segmentation</li>
+	<li>Ensure that the kube-dashboard applies a restrictive RBAC policy</li>
+	<li>Use images from repositories that are authorized</li>
+	<li>Conduct security and vulnerability scanning regularly</li>
+</ul>
+
+<h2>33) Name the process that runs on Kubernetes Master Node.</h2>
+
+<p>The Kube-api server process runs on the master node.</p>
+
+<h2>34) What is Google Container Engine (GKE)?</h2>
+
+<p>Google Container Engine (GKE) is open-source cluster management and container orchestration system. It is used to run and manage Docker containers. GKE supports only those clusters which run within Google&rsquo;s public cloud services. This engine schedules containers into a cluster. Then, it manages them automatically based on defined requirements.</p>
+
+<h2>35) Name the different services in Kubernetes.</h2>
+
+<p>The different in Kubernetes are:</p>
+
+<ul>
+	<li>Cluster IP service</li>
+	<li>External Name Creation service</li>
+	<li>Node Port service</li>
+	<li>Load Balancer service</li>
+</ul>
+
+<h2>36) Name the different types of controller managers.</h2>
+
+<p>The different types of controller managers in Kubernetes are:</p>
+
+<ul>
+	<li>node controller</li>
+	<li>replication controller</li>
+	<li>endpoints controller</li>
+	<li>service accounts controller</li>
+	<li>token controller</li>
+	<li>namespace controller</li>
+</ul>
+
+<h2>37) What is the role of the Kubernetes Controller Manager (kube-controller-manager)?</h2>
+
+<p>A Kubernetes Controller Manager is a Kubernetes control plane component that runs controller processes. It ensures the desired state of the cluster matches the observed state. It is a daemon that embeds the core control loops shipped with Kubernetes. Some types of these controllers are:</p>
+
+<ul>
+	<li>Node controller</li>
+	<li>Job controller</li>
+	<li>Replication controller</li>
+	<li>Endpoints controller</li>
+	<li>Service Account &amp; Token controller</li>
+</ul>
+
+<h2>38) Which three namespaces are available on new clusters?</h2>
+
+<p>The following are the three namespaces available on new clusters</p>
+
+<p>default: It is the default namespace for objects with no other namespace. This namespace acts as the main target for new user-added resources until alternative namespaces are created.<br />
+kube-system: It is the namespace for objects created by the Kubernetes system.<br />
+kube-public: It is globally readable by all users with or without authentication. It helps in exposing any cluster information necessary to bootstrap components. Its public aspect is only a convention and not a requirement.</p>
+
+<h2>39) What information does the node status contain?</h2>
+
+<p>The node status consists of the following information:</p>
+
+<ul>
+	<li>Address</li>
+	<li>Condition</li>
+	<li>Capacity</li>
+	<li>Info</li>
+</ul>
+
+<h2>40) Name some tools for container monitoring.</h2>
+
+<p>Some popular tools for container monitoring include:</p>
+
+<ul>
+	<li>Prometheus</li>
+	<li>InfluxDBHeapster</li>
+	<li>Grafana</li>
+	<li>cAdvisor</li>
+</ul>
+
+<h2>41) How does Kubernetes relate to Docker?</h2>
+
+<p>Docker is a container runtime, which is a software that runs containerized applications. When Kubernetes schedules a pod to a node, the kubelet running on that node instructs Docker to launch the containers.</p>
+
+<h2>42) What is container orchestration?</h2>
+
+<p>Container orchestration is the automation of components and processes related to running containers. It includes things like configuring and scheduling containers, the availability of containers, allocation of resources between containers, and securing the interaction between containers, among other things.</p>
+
+<h2>43) What do you know about Kubernetes clusters?</h2>
+
+<p>A Kubernetes cluster is a set of nodes that containerized applications run on. These nodes can be physical machines or virtual machines.</p>
+
+<h2>44) What is kubectl?</h2>
+
+<p>Kubectl is the command-line configuration tool for Kubernetes that communicates with a Kubernetes API server. Using kubectl allows you to create, inspect, update, and delete Kubernetes objects.</p>
+
+<p>To learn all the stuff you can do with kubectl, check out our kubectl cheatsheet.</p>
+
+<h2>45) What is a pod?</h2>
+
+<p>A pod is the most basic Kubernetes object. A pod consists of a group of containers running in your cluster. Most commonly, a pod runs a single primary container.</p>
+
+<h2>46) Can you explain the different components of Kubernetes architecture?</h2>
+
+<p>Kubernetes is composed of two layers: a control plane and a data plane. The control plane is the container orchestration layer that includes 1. Kubernetes objects that control the cluster, and 2. the data about the cluster&rsquo;s state and configuration. The data plane is the layer that processes the data requests and is managed by the control plane.</p>
+
+<h2>47) Do all of the nodes have to be the same size in your cluster?</h2>
+
+<p>No, they don&rsquo;t. The Kubernetes components, like kubelet, will take up resources on your nodes, and you&rsquo;ll still need more capacity for the node to do any work. In a larger cluster, it often makes sense to create a mix of different instance sizes. That way, pods that require a lot of memory with intensive compute workloads can be scheduled by Kubernetes on large nodes, and smaller nodes can handle smaller pods.</p>
+
+<h2>48) What is a sidecar container, and what would you use it for?</h2>
+
+<p>A sidecar container is a utility container that is used to extend support for a main container in a Pod. Sidecar containers can be paired with one or more main containers, and they enhance the functionality of those main containers. An example would be using a sidecar container specifically to process system logs or for monitoring.</p>
+
+<h2>49) How do logs work for pods?</h2>
+
+<p>With a traditional server setup, application logs are written to a file and then viewed either on each server or collected by a logging agent and sent to a centralized location. In Kubernetes, however, writing logs to disk from a pod is discouraged since you would then have to manage log files for pods. The better way is to have your application output logs to stdout and stderr. The kubelet on each node collects stdout and stderr on the running pods and then combines them into a log file managed by Kubernetes. Then you can use different kubectl commands to view the logs.</p>
+
+<h2>50) How can you separate resources?</h2>
+
+<p>You can separate resources by using namespaces. These can be created either using kubectl or applying a YAML file. After you have created the namespace you can then place resources, or create new resources, within that namespace. Some people think of namespaces in Kubernetes like a virtual cluster in your actual Kubernetes cluster.</p>
+
+<p>&nbsp;</p>

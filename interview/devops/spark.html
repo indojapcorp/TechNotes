@@ -1,0 +1,238 @@
+<h2>Q1. What is RDD?</h2>
+
+<p>Ans. RDD (Resilient Distribution Datasets) is a fault-tolerant collection of operational elements that run parallel. The partitioned data in RDD is immutable and distributed.</p>
+
+<h2>Q2. Name the different types of RDD.</h2>
+
+<p>Ans. There are primarily two types of RDD &ndash; parallelized collection and Hadoop datasets.</p>
+
+<h2>Q3. What are the methods of creating RDDs in Spark?</h2>
+
+<p>Ans. There are two methods &ndash;</p>
+
+<p>By parallelizing a collection in your Driver program.</p>
+
+<p>By loading an external dataset from external storage like HDFS,HBase,shared file system</p>
+
+<h2>Q4. What is a Sparse Vector?</h2>
+
+<p>Ans. A sparse vector has two parallel arrays &ndash;one for indices and the other for values.</p>
+
+<h2>Q5. Mention some of the areas where Spark outperforms Hadoop in processing.</h2>
+
+<p>Ans. Sensor data processing, real-time querying of data, and stream processing.</p>
+
+<h2>Q6. What are the languages supported by Apache Spark and which is the most popular one?</h2>
+
+<p>Ans. There are four languages supported by Apache Spark &ndash; Scala, Java, Python, and R. Scala is the most popular one.</p>
+
+<h2>Q7. What is Yarn?</h2>
+
+<p>Ans. Yarn is one of the key features in Spark, providing a central and resource management platform to deliver scalable operations across the cluster.</p>
+
+<h2>Q8. Do you need to install Spark on all nodes of the Yarn cluster? Why?</h2>
+
+<p>Ans. No, because Spark runs on top of Yarn.</p>
+
+<h2>Q9. Is it possible to run Apache Spark on Apache Mesos?</h2>
+
+<p>Ans. Yes.</p>
+
+<h2>Q10. What is the lineage graph?</h2>
+
+<p>Ans. The RDDs in Spark, depend on one or more other RDDs. The representation of dependencies in between RDDs is known as the lineage graph.</p>
+
+<h2>Q11. Define Partitions in Apache Spark</h2>
+
+<p>Ans. Partition is a smaller and logical division of data similar to &lsquo;split&rsquo; in MapReduce. It is a logical chunk of a large distributed data set. Partitioning is the process to derive logical units of data to speed up the processing process.</p>
+
+<h2>Q12. What is a DStream?</h2>
+
+<p>Ans. Discretized Stream (DStream) is a sequence of Resilient Distributed Databases that represent a stream of data.</p>
+
+<h2>Q13. What is a Catalyst framework?</h2>
+
+<p>Ans. Catalyst framework is an optimization framework present in Spark SQL. It allows Spark to automatically transform SQL queries by adding new optimizations to build a faster processing system.</p>
+
+<h2>Q14. What are the Actions in Spark?</h2>
+
+<p>Ans. An action helps in bringing back the data from RDD to the local machine. An action&rsquo;s execution is the result of all previously created transformations.</p>
+
+<h2>Q15. What is a Parquet file?</h2>
+
+<p>Ans. Parquet is a columnar format file supported by many other data processing systems.</p>
+
+<h2>Q16. What is GraphX?</h2>
+
+<p>Ans. Spark uses GraphX for graph processing to build and transform interactive graphs.</p>
+
+<h2>Q17. What file systems does Spark support?</h2>
+
+<p>Ans. Spark supports the following systems:</p>
+
+<p>Hadoop Distributed File System (HDFS)</p>
+
+<p>Local file system</p>
+
+<p>Amazon S3</p>
+
+<h2>Q18. What is the difference between persist () and cache ()?</h2>
+
+<p>Ans. Persist () allows the user to specify the storage level whereas cache () uses the default storage level.</p>
+
+<h2>Q19. What do you understand by SchemaRDD?</h2>
+
+<p>Ans. SchemaRDD is an RDD that consists of row objects (wrappers around the basic string or integer arrays) with schema information about the type of data in each column.</p>
+
+<h2>Q20. What is a lazy evaluation in Spark?</h2>
+
+<p>Ans. For large data in Spark, multiple operations take place even for the execution of a basic transformation. When a transformation is called on an RDD, the operation does not occur immediately. Transformations in Spark are not evaluated until you trigger an action. This is known as lazy evaluation. It avoids unnecessary memory and CPU usage that could take place due to certain mistakes.</p>
+
+<h2>Q21. What is Apache Spark?</h2>
+
+<p>Ans. Apache Spark is easy to use and flexible data processing framework. Spark can round on Hadoop, standalone, or in the cloud. It is capable of assessing diverse data source, which includes HDFS, Cassandra, and others.</p>
+
+<h2>Q22. Explain Dsstream with reference to Apache Spark</h2>
+
+<p>Ans. Dstream is a sequence of resilient distributed database which represent a stream of data. You can create Dstream from various source like HDFS, Apache Flume, Apache Kafka, etc.</p>
+
+<h2>Q23. Name three data source available in SparkSQL</h2>
+
+<p>Ans. There data source available in SparkSQL are:</p>
+
+<p>JSON Datasets</p>
+
+<p>Hive Tables</p>
+
+<p>Paraquet file</p>
+
+<h2>Q24. Name some internal daemons used in spark?</h2>
+
+<p>Ans. Important daemon used in spark are Blockmanager, Memestore, DAGscheduler, Driver, Worker, Executor, Tasks,etc.</p>
+
+<h2>Q25. Define the term &lsquo;Sparse Vector.&rsquo;</h2>
+
+<p>Ans. Sparse vector is a vector which has two parallel arrays, one for indices, one for values, use for storing non-zero entities to save space.</p>
+
+<h2>Q26. Name the language supported by Apache Spark for developing big data applications</h2>
+
+<p>Ans. Important language use for developing big data application are:</p>
+
+<p>Java,Python,R,Clojure,Scala</p>
+
+<h2>Q27. What is the method to create a Data frame?</h2>
+
+<p>Ans. In Apache Spark, a Data frame can be created using Tables in Hive and Structured data files.</p>
+
+<h2>Q28. Explain SchemaRDD</h2>
+
+<p>Ans. RDD which consists of row object with schema information about the type of data in each column is called SchemaRDD.</p>
+
+<h2>Q29. What are accumulators?</h2>
+
+<p>Ans. Accumulators are the write-only variables. They are initialized once and sent to the workers. These workers will update based on the logic written, which will send back to the driver.</p>
+
+<h2>Q30. What are the components of Spark Ecosystem?</h2>
+
+<p>Ans. An important component of Spark are:</p>
+
+<p>Spark Core: It is a base engine for large scale parallel and distributed data processing.</p>
+
+<p>Spark Streaming: used for real time data streaming</p>
+
+<p>Spark SQL: Integrates relational processing by using Spark&#39;s functional programming API</p>
+
+<p>GraphX: Allows graphs and graph-parallel computation</p>
+
+<p>MLLib: Allows to perform machine learning in Spark.</p>
+
+<h2>Q31. Name three features of using Apache Spark</h2>
+
+<p>Ans. Three most important feature of using Apache Spark are:</p>
+
+<p>Support for sophisticate analytics</p>
+
+<p>Helps you to integrate with Hadoop and existing data</p>
+
+<p>Allows you to run an app in Hadoop cluster , up to 100 times faste in memory and 10 times faster on disk.</p>
+
+<h2>Q32. Explain the default level of parallelism in Apache Spark</h2>
+
+<p>Ans. If the user isn&rsquo;t able to specify, then the number of partitions are considered as default level of parallelism in Apache Spark.</p>
+
+<h2>Q33. Name three companies which is used Spark Streaming services</h2>
+
+<p>Ans. Three known companies using Spark Streaming services are: Uber,Netflix,Pinterest</p>
+
+<h2>Q34. What is Spark SQL?</h2>
+
+<p>Ans. Spark SQL is a module for structured data processing where we take advantage of SQL queries running on that database.</p>
+
+<h2>Q35. Explain Parquet file</h2>
+
+<p>Ans. Paraquet is a columnar format file support by many other data processing systems. Spark SQL allows you to performs both read and write operations with Parquet file.</p>
+
+<h2>Q36. Explain Spark Driver?</h2>
+
+<p>Ans. Spark Driver is the program which runs on the master node of the machine and declares transformations and actions on data RDDs.</p>
+
+<h2>Q37) How can you store the data in spark?</h2>
+
+<p>Ans. Spark is a processing engine which doesn&rsquo;t have any storage engine. It can retrieve data from another storage engine like HDFS, S3.</p>
+
+<h2>Q38. Explain the use of File system API in Apache Spark</h2>
+
+<p>Ans. File system API allows you to read data from various storage devices like HDFS, S3 or local Filesystem.</p>
+
+<h2>Q39. What is the task of Spark Engine</h2>
+
+<p>Ans. Spark Engine is helpful for scheduling, distributing and monitoring the data application across the cluster.</p>
+
+<h2>Q40. What is the user of spark context?</h2>
+
+<p>Ans. SparkContent is the entry point to spark. SparkContext allows you to create RDDs which provided various way of churning data.</p>
+
+<h2>Q41. Explain about transformations and actions in the context of RDDs.</h2>
+
+<p>Ans. Transformations are functions executed on demand, to produce a new RDD. All transformations are followed by actions. Some examples of transformations include map, filter and reduceByKey.</p>
+
+<p>Actions are the results of RDD computations or transformations. After an action is performed, the data from RDD moves back to the local machine. Some examples of actions include reduce, collect, first, and take.</p>
+
+<h2>Q42. Can you use Spark to access and analyse data stored in Cassandra databases?</h2>
+
+<p>Ans. Yes, it is possible if you use Spark Cassandra Connector.</p>
+
+<h2>Q43. Is it possible to run Apache Spark on Apache Mesos?</h2>
+
+<p>Ans. Yes, Apache Spark can be run on the hardware clusters managed by Mesos.</p>
+
+<h2>Q44. Explain about the different cluster managers in Apache Spark</h2>
+
+<p>Ans. The 3 different clusters managers supported in Apache Spark are:<br />
+YARN, Apache Mesos,Standalone deployment</p>
+
+<h2>Q45. How can Spark be connected to Apache Mesos?</h2>
+
+<p>Ans. To connect Spark with Mesos-</p>
+
+<p>Configure the spark driver program to connect to Mesos.Install spark in the same location as that of Mesos and conf the property &#39;spark.mesos.executor.home&#39; to point to the location where it is installed.</p>
+
+<h2>Q46. Why is there a need for broadcast variables when working with Apache Spark?</h2>
+
+<p>Ans. These are read only variables, present in-memory cache on every machine. When working with Spark, usage of broadcast variables eliminates the necessity to ship copies of a variable for every task, so data can be processed faster. Broadcast variables help in storing a lookup table inside the memory which enhances the retrieval efficiency when compared to an RDD lookup ().</p>
+
+<h2>Q47. Is it possible to run Spark and Mesos along with Hadoop?</h2>
+
+<p>Ans. Yes, it is possible to run Spark and Mesos with Hadoop by launching each of these as a separate service on the machines. Mesos acts as a unified scheduler that assigns tasks to either Spark or Hadoop.</p>
+
+<h2>Q48. What are the benefits of using Spark with Apache Mesos?</h2>
+
+<p>Ans. It renders scalable partitioning among various Spark instances and dynamic partitioning between Spark and other big data frameworks</p>
+
+<h2>Q49. What is a DStream?</h2>
+
+<p>Ans. Discretized Stream is a sequence of Resilient Distributed Databases that represent a stream of data. DStreams can be created from various sources like Apache Kafka, HDFS, and Apache Flume. DStreams have two operations &ndash;</p>
+
+<h2>Q50. When running Spark applications, is it necessary to install Spark on all the nodes of YARN cluster?</h2>
+
+<p>Ans. Spark need not be installed when running a job under YARN or Mesos because Spark can execute on top of YARN or Mesos clusters without affecting any change to the cluster.</p>

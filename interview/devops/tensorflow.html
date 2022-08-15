@@ -1,0 +1,417 @@
+<p>TensorFlow is an end-to-end open-source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries, and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML-powered applications.</p>
+
+<p>Moving to&nbsp;<strong>questions</strong>&nbsp;and&nbsp;<strong>answers</strong></p>
+
+<p>1.&nbsp;<strong>What is TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>TensorFlow is the world&rsquo;s most used library for Machine Learning. Developed in 2015 by the Google Brain Team, it ensures to provide an easy-to-use low-level toolkit that can handle complex mathematical operations and learning architectures.</p>
+
+<p>2.&nbsp;<strong>What is the meaning of TensorBoard?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>TensorBoard is a Graphical User Interface (GUI) that is provided by TensorFlow to help users visualize graphs, plots, and other metrics easily without having to write a lot of code. TensorBoard provides an ample number of advantages in terms of readability, ease of use, and performance metrics.</p>
+
+<p>3.&nbsp;<strong>What are tensors?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Tensors are similar to arrays in programming languages, but here, they are of higher dimensions. It can be considered as a generalization of matrices that form an n-dimensional array. TensorFlow provides methods that can be used to create tensor functions and compute their derivatives easily. This is what sets tensors apart from the NumPy arrays.</p>
+
+<p>4.&nbsp;<strong>Are there any limitations to using TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Even though TensorFlow provides numerous advantages, it has one or two caveats in the current versions:</p>
+
+<ul>
+	<li>No support for OpenCL (Open Computing Language) yet</li>
+	<li>GPU memory conflicts when used with Theano</li>
+	<li>Can be overwhelming for beginners to get started<br />
+	Next up on these TensorFlow coding interview questions, let us check out about the types of tensors.</li>
+</ul>
+
+<p>5.&nbsp;<strong>What are some of the advantages of using TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>TensorFlow has numerous advantages, and this is why it is the most used framework for Machine Learning in the world. Some of its advantages are given below:</p>
+
+<ul>
+	<li>Platform independency</li>
+	<li>Usage of GPU for distributed computing</li>
+	<li>Auto-differentiation capability</li>
+	<li>Open-source and large community</li>
+	<li>Highly customizable based on requirements</li>
+	<li>Support for asynchronous computations</li>
+</ul>
+
+<p>6.&nbsp;<strong>What is a graph explorer in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>A graph explorer is used to visualize a graph on TensorBoard. It is also used for the inspection operations of a model in TensorFlow. To easily understand the flow in a graph, it is recommended to use a graph visualizer in TensorBoard.</p>
+
+<p>7.&nbsp;<strong>What is the meaning of Deep Speech?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p><img alt="" src="https://www.devopsschool.com/blog/wp-content/uploads/2022/02/Capture-12.png" style="height:199px; width:981px" /></p>
+
+<p>8.&nbsp;<strong>What are the types of tensors available in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>There are three main types of tensors:</p>
+
+<ul>
+	<li>Constant tensors</li>
+	<li>Variable tensors</li>
+	<li>Placeholder tensors</li>
+</ul>
+
+<p>9.&nbsp;<strong>How is variable lifetime tracked in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>The lifetime of a variable is automatically tracked after its initialization, using the tf.Variable.initializer operation.</p>
+
+<p>Later, after the usage, the session can be closed and the variable can be destroyed, using the tf.Session.close operation.</p>
+
+<p>10.&nbsp;<strong>What is the use of a histogram dashboard in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Histogram dashboards are widely used to display complex statistical distributions of a tensor in a simple way. Every histogram chart will have a slice of data that denotes the data that the tensor has at the point of representation.</p>
+
+<p>11.&nbsp;<strong>How can data be loaded into TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>There are two ways that you can use to load data into TensorFlow before training Machine Learning algorithms:</p>
+
+<ul>
+	<li>Data load into memory: Here, the data is loaded into the memory as a single array unit. It is the easiest way to load the data.</li>
+	<li>TensorFlow data pipeline: It is making use of the built-in APIs to load the data and feed it across to the algorithm.</li>
+</ul>
+
+<p>12.&nbsp;<strong>What are the types of dashboards supported by TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>TensorFlow supports a variety of dashboards that are used to perform numerous tasks on TensorBoard easily:</p>
+
+<ul>
+	<li>Scalar dashboard</li>
+	<li>Image dashboard</li>
+	<li>Graph dashboard</li>
+	<li>Text dashboard</li>
+	<li>Distributer dashboard</li>
+	<li>Histogram dashboard</li>
+</ul>
+
+<p>13.&nbsp;<strong>How is audio stored in the audio dashboard?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>The audio dashboard serves to primarily help users embed playable widgets stored in files. Tf.summary.audio is used for the storage of these files, and the tagging system is used to embed the latest audio based on the storage policies.</p>
+
+<p>14.&nbsp;<strong>What is the simple working of an algorithm in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>There are five main steps that govern the working of the majority of algorithms in TensorFlow. They are as follows:</p>
+
+<ol>
+	<li>Data import or data generation, alongside setting up a data pipeline</li>
+	<li>Data input through computational graphs</li>
+	<li>Generation of the loss function to evaluate the output</li>
+	<li>Backpropagation to modify the data</li>
+	<li>Iterating until output criteria are met</li>
+</ol>
+
+<p>15.&nbsp;<strong>Can TensorFlow be deployed onto a container architecture?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Yes, TensorFlow can be easily used with containerization tools like Docker. The containerization tools alongside TensorFlow are mostly used to deploy various models that require text classification using convolutional neural networks.</p>
+
+<p>16.&nbsp;<strong>What are some of the components needed to deploy a Lite model file?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>In TensorFlow, three main components are used to deploy a Lite model:</p>
+
+<ol>
+	<li>Java API: Used as a wrapper around the C++ API for Android</li>
+	<li>C++ API: Used to load the TensorFlow Lite model and call the interpreter</li>
+	<li>Interpreter: Used to handle kernel loading and the execution of the model</li>
+</ol>
+
+<p>17.&nbsp;<strong>What are the methods that can be used to handle overfitting in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>There are three methods, which can be used to easily handle the condition of overfitting when using TensorFlow:</p>
+
+<ol>
+	<li>Batch normalization</li>
+	<li>Regularization technique</li>
+	<li>Dropouts</li>
+</ol>
+
+<p>18.&nbsp;<strong>Differentiate between TensorFlow and PyTorch.</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p><img alt="" src="https://www.devopsschool.com/blog/wp-content/uploads/2022/02/Capture-9.png" style="height:376px; width:997px" /></p>
+
+<p>19.&nbsp;<strong>What is TensorFlow JS?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>TensorFlow JS is a library that gives users the functionality of using browsers to run Machine Learning models. High-level APIs work with JavaScript to support a variety of entities in the backend, such as WebGL, to use a GPU to render functionality (if available). Models can be imported, re-trained, and executed easily by just using a browser.</p>
+
+<p>20.&nbsp;<strong>What are the languages that are supported in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>TensorFlow supports a wide variety of languages for programmers to write the code in. The preferred language presently is Python.</p>
+
+<p>However, experimental support is being implemented for other languages, such as Go, Java, and C++. Also, language bindings for Ruby, Scala, and Julia are being developed by the open-source community.</p>
+
+<p>21.&nbsp;<strong>Is word embedding supported in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Yes, word embedding is supported in TensorFlow. It is widely used in the field of Natural Language Processing. When TensorFlow is being used, it is called Word2vec.</p>
+
+<p>Two models are used for word embedding in TensorFlow:</p>
+
+<ul>
+	<li>The Continuous Bag of Words model</li>
+	<li>The Skip-Gram model</li>
+</ul>
+
+<p>22.&nbsp;<strong>What are the activation functions in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Activation functions are functions applied to the output side of a neural network that serves to be the input of the next layer. It forms a very important part of neural networks as it provides nonlinearity that sets apart a neural network from logistic regression.</p>
+
+<p>23.&nbsp;<strong>What are placeholder tensors?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Placeholder tensors are entities that provide an advantage over a regular variable. It is used to assign data at a later point in time.</p>
+
+<p>Placeholders can be used to build graphs without any prior data being present. This means that they do not require any sort of initialization for usage.</p>
+
+<p>24.&nbsp;<strong>What is the use of estimators in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Estimators in TensorFlow are high-level APIs used to provide a high amount of code reusability when training a model. They can also override the default behavior of any aspect of the model.</p>
+
+<p>There are two ways of the model building using estimators:</p>
+
+<ul>
+	<li><strong>Premade estimator:&nbsp;</strong>Used to create a specific model like DNNClassifier</li>
+	<li><strong>Base class estimator:</strong>&nbsp;Used to control a model using a model_fn function</li>
+</ul>
+
+<p>25.&nbsp;<strong>What is the code that is used to check the version of TensorFlow using Python?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>&nbsp;</p>
+
+<p>26.&nbsp;<strong>What are managers in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>TensorFlow managers are entities that are responsible for handling the following activities for servable objects:</p>
+
+<ul>
+	<li>Loading</li>
+	<li>Unloading</li>
+	<li>Lookup</li>
+	<li>Lifetime management</li>
+</ul>
+
+<p>27.&nbsp;<strong>What statistical distribution functions are provided by TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Numerous statistical distribution functions are offered by TensorFlow. They are all located inside the tf.contrib.distributions package.</p>
+
+<p>The distributions supported are:</p>
+
+<ul>
+	<li>Beta</li>
+	<li>Bernoulli</li>
+	<li>Chi2</li>
+	<li>Dirichlet</li>
+	<li>Gamma</li>
+	<li>Uniform</li>
+</ul>
+
+<p>28.&nbsp;<strong>What is model quantization in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>The process of handling the complexity that follows when optimizing inferences can be greatly minimized using TensorFlow. Model quantization is primarily used to reduce the representation of weights and also for the storage and computation of the activation function.</p>
+
+<p>Using model quantization provides users with two main advantages:</p>
+
+<ul>
+	<li>Support for a variety of CPU platforms</li>
+	<li>SIMD instruction handling capabilities</li>
+</ul>
+
+<p>29.&nbsp;<strong>Where is TensorFlow mostly used?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>TensorFlow is used in all of the domains that cover Machine Learning and Deep Learning. Being the most essential tool, the following are some of the main use cases of TensorFlow:</p>
+
+<ul>
+	<li>Time series analysis</li>
+	<li>Image recognition</li>
+	<li>Voice recognition</li>
+	<li>Video upscaling</li>
+	<li>Test-based applications</li>
+</ul>
+
+<p>30.&nbsp;<strong>Can you use TensorBoard without installing TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>If TensorFlow is not installed, users can still make use of TensorBoard (versions above 1.14) in a standalone mode with redacted features.</p>
+
+<p>Following plugins are supported:</p>
+
+<ul>
+	<li>Scalars</li>
+	<li>Image</li>
+	<li>Audio</li>
+	<li>Graph</li>
+	<li>Projector</li>
+	<li>Histograms</li>
+	<li>Mesh</li>
+</ul>
+
+<p>31.&nbsp;<strong>What is the simple syntax that can be used to convert a NumPy array into a tensor?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p><img alt="" src="https://www.devopsschool.com/blog/wp-content/uploads/2022/02/Capture-14.png" style="height:279px; width:993px" /></p>
+
+<p>32.&nbsp;<strong>What are TensorFlow serves?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Servables in TensorFlow are simply the objects that client machines use to perform computations. The size of these objects is flexible. Servables can include a variety of information like any entity from a lookup table to a tuple needed for inference models.</p>
+
+<p>33.&nbsp;<strong>What is the meaning of the embedding projector in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Embedding projector is an entity in TensorFlow that is used to easily visualize high-dimensional data.</p>
+
+<p>It is used to read the data from the model checkpoint file prior to visualization and to view the input data after it has been embedded into a high-dimensional space by the model.</p>
+
+<p>34.&nbsp;<strong>How is the weighted standard error computed in TensorFlow?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>&nbsp;</p>
+
+<p>35.&nbsp;<strong>How does the Python API work with TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Python is the primary language when it comes to working with TensorFlow. TensorFlow provides an ample number of functionalities when used with the API, such as:</p>
+
+<ul>
+	<li>Automatic checkpoints</li>
+	<li>Automatic logging</li>
+	<li>Simple training distribution</li>
+	<li>Queue-runner design methods</li>
+</ul>
+
+<p>36.&nbsp;<strong>What are the differences between CNN and RNN?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>37.&nbsp;<strong>What are some of the commonly used optimizers when training a model in TensorFlow?</strong></p>
+
+<p><strong>Answer:</strong>&nbsp;You can use many optimizers based on various factors, such as the learning rate, performance metric, dropout, gradient, and more.</p>
+
+<p>Following are some of the popular optimizers:</p>
+
+<ul>
+	<li>AdaDelta</li>
+	<li>AdaGrad</li>
+	<li>Adam</li>
+	<li>Momentum</li>
+	<li>RMSprop</li>
+	<li>Stochastic Gradient Descent</li>
+</ul>
+
+<p>38.&nbsp;<strong>What are some of the APIs outside of the TensorFlow project?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Following are some of the APIs developed by Machine Learning enthusiasts across the globe:</p>
+
+<ul>
+	<li><strong>TFLearn:</strong>&nbsp;A popular Python package</li>
+	<li><strong>TensorLayer:&nbsp;</strong>For layering architecture support</li>
+	<li><strong>Pretty Tensor:&nbsp;</strong>Google&rsquo;s project providing a chaining interface</li>
+	<li><strong>Sonnet:&nbsp;</strong>Provides a modular approach to programming</li>
+</ul>
+
+<p>39.&nbsp;<strong>What is the difference between Type 1 and Type 2 errors?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>In simple terms, Type 1 errors refer to the occurrence of a false positive outcome, and Type 2 errors denote the occurrence of a false negative value when performing complex computations.</p>
+
+<p>40.&nbsp;<strong>What is the use of ArrayFlow and FeedDictFlow in TensorFlow?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p><img alt="" src="https://www.devopsschool.com/blog/wp-content/uploads/2022/02/Capture-16.png" style="height:256px; width:1005px" /></p>
+
+<p>41.&nbsp;<strong>What are TensorFlow loaders?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Loaders are used in TensorFlow to load, unload, and work with servable objects. The loaders are primarily used to add algorithms and data into TensorFlow for working.</p>
+
+<p>The load() function is used to pre-load a model from a saved entity easily.</p>
+
+<p>42.&nbsp;<strong>When using TensorFlow, is performance always preferred over accuracy?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>No, performance is not always preferred over accuracy when you use TensorFlow. This completely depends on the type of requirement and what the model is trying to achieve. The general rule of thumb is to provide equal weightage to model accuracy and performance.</p>
+
+<p>The next set of TensorFlow interview questions will show the importance of using an example along with concepts to explain</p>
+
+<p>43.&nbsp;<strong>What are some of the parameters to consider when implementing the Word2vec algorithm in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>The Word2vec algorithm is used to compute the vector representations of words from an input dataset.</p>
+
+<p>There are six parameters that have to be considered:</p>
+
+<ul>
+	<li><strong>embedding_size:</strong>&nbsp;Denotes the dimension of the embedding vector</li>
+	<li><strong>max_vocabulary_size:</strong>&nbsp;Denotes the total number of unique words in the vocabulary</li>
+	<li><strong>min_occurrence:</strong>&nbsp;Removes all words that do not appear at least &lsquo;n&rsquo; number of times</li>
+	<li><strong>skip_window:</strong>&nbsp;Denotes words to be considered or not for processing</li>
+	<li><strong>num_skips:&nbsp;</strong>Denotes the number of times you can reuse an input to generate a label</li>
+	<li><strong>num_sampled:&nbsp;</strong>Denotes the number of negative examples to sample from the input</li>
+</ul>
+
+<p>44.&nbsp;<strong>What makes TensorFlow advantageous over other libraries?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Following are some of the benefits of TensorFlow over other libraries:</p>
+
+<ul>
+	<li><strong>Pipelines:</strong>&nbsp;data is used to build efficient pipelines for text and image processing.</li>
+	<li><strong>Debugging:</strong>&nbsp;tfdbg is used to track the state and structure of objects for easy debugging.</li>
+	<li><strong>Visualization:&nbsp;</strong>TensorBoard provides an elegant user interface for users to visualize graphs.</li>
+	<li><strong>Scalability:</strong>&nbsp;It can scale Deep Learning applications and their associated infrastructure easily.</li>
+</ul>
+
+<p>45.&nbsp;<strong>Can you give an example to create a tensor using the constant() function in TensorFlow?.</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>46.&nbsp;<strong>What are some of the important parameters to consider when implementing a random forest algorithm in TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>There are six main parameters you should think about and plan when implementing a random forest algorithm in TensorFlow:</p>
+
+<ul>
+	<li>Number of inputs</li>
+	<li>Feature count</li>
+	<li>Number of samples per batch</li>
+	<li>Total number of training steps</li>
+	<li>Number of trees</li>
+	<li>Maximum number of nodes</li>
+</ul>
+
+<p>47.&nbsp;<strong>What are TensorFlow abstractions?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>TensorFlow contains certain libraries used for abstraction such as Keras and TF-Slim. They are used to provide high-level access to data and model life cycles for programmers using TensorFlow. This can help them easily maintain clean code and also reduce the length of the code exponentially.</p>
+
+<p>Next up on this top TensorFlow interview questions and answers post, we will take a look at the intermediate set of questions.</p>
+
+<p>48.&nbsp;<strong>What are some of the products that are built using TensorFlow?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>There are many products that are built completely using TensorFlow. Some of them are as follows:</p>
+
+<ul>
+	<li>Teachable Machine</li>
+	<li>Handwriting Recognition</li>
+	<li>Giorgio Cam</li>
+	<li>NSynth</li>
+</ul>
+
+<p>49.&nbsp;<strong>What are some of the numerical and categorical loss functions supported when working with TensorFlow?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>Following are some of the widely used numerical and categorical loss functions supported when working with TensorFlow:</p>
+
+<p><strong>Numerical loss functions:</strong></p>
+
+<p>L1 loss<br />
+L2 loss<br />
+Pseudo-Huber loss<br />
+<strong>Categorical loss functions:</strong></p>
+
+<p>Hinge loss<br />
+Cross-entropy loss<br />
+Sigmoid-entropy loss<br />
+Weighted cross-entropy loss</p>
+
+<p>50.&nbsp;<strong>What are the differences between tf.variable and tf.placeholder in TensorFlow?</strong></p>
+
+<p>&nbsp;</p>

@@ -1,0 +1,352 @@
+<p>The Keras is a high-level, deep learning API developed by Google for implementing neural networks. It is written in Python and is used to make the implementation of neural networks easy. It too supports multiple backend neural network computation.&nbsp;</p>
+
+<p>The Keras is relatively easy to learn and work with because it provides a python frontend with a high level of abstraction while having the option of multiple back-ends for computation purposes. This brands Keras slower than other deep learning frameworks, but extremely beginner-friendly.</p>
+
+<p><strong>Interview Questions and Answers for Keras</strong></p>
+
+<p><strong>1. What is Keras?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>The Keras is an API designed for human beings, not machines. The Keras follows best practices for reducing cognitive load and it gives consistent &amp; simple APIs, it minimizes the number of user actions required for common use cases, and it provides clear &amp; actionable error messages. It also has extensive documentation and developer guides.</p>
+
+<p><strong>2. Types are layers in Keras?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p><img alt="" src="https://www.devopsschool.com/blog/wp-content/uploads/2022/02/Variety-of-Keras-Layers-1024x366.jpg" style="height:366px; width:1024px" /></p>
+
+<ul>
+	<li>Core Layers</li>
+	<li>Convolutional Layers</li>
+	<li>Pooling Layers</li>
+	<li>Locally-connected Layers</li>
+	<li>Recurrent Layers</li>
+	<li>Embedding Layers</li>
+	<li>Merge Layers</li>
+	<li>Advanced Activations Layers</li>
+	<li>Normalization Layers</li>
+	<li>Noise layers</li>
+</ul>
+
+<p><strong>3. How can TensorFlow Text be used to preprocess sequence modeling?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p><img alt="" src="https://www.devopsschool.com/blog/wp-content/uploads/2022/02/1_6k09IANsc8O0RLoEMZSuvA.png" style="height:374px; width:841px" /></p>
+
+<ul>
+	<li>The strings can be converted to UTF-8 encoding with the help of the &lsquo;encode&rsquo; method.</li>
+	<li>Once this is done, the strings are transcoded to UTF-8 encoding.</li>
+</ul>
+
+<p><strong>4. Explain the examples of data processing in Keras.</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>Some of the examples include: Firstly, neural networks don&rsquo;t process raw data, like text files, encoded JPEG image files, or CSV files. They process vectorized &amp; standardized representations. Secondly, text files need to be read into string tensors, then split into words. Finally, the words need to be indexed and turned into integer tensors. Thirdly, images need to be read and decoded into integer tensors, then converted to floating points and normalized to small values (usually between 0 and 1). Lastly, CSV data needs to be parsed, with numerical features converted to floating-point tensors and categorical features indexed and converted to integer tensors. Then each feature typically needs to be normalized to zero-mean and unit variance.</p>
+
+<p><strong>5. Name the types of inputs in the Keras model.</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p><img alt="" src="https://www.devopsschool.com/blog/wp-content/uploads/2022/02/keras_multi_input_arch.png" style="height:597px; width:600px" /></p>
+
+<p>Keras models accept three types of inputs: Firstly, NumPy arrays, just like Scikit-Learn and many other Python-based libraries. This is a good option if your data fits in memory. Secondly, TensorFlow Dataset objects. This is a high-performance option that is more suitable for datasets that do not fit in memory and that are streamed from a disk or from a distributed filesystem. Lastly, Python generators that yield batches of data (such as custom subclasses of the keras.utils.Sequence class).</p>
+
+<p><strong>6. Explain the term regularization.</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Regularization is a method that makes slight modifications to the learning algorithm such that the model generalizes better. This in turn improves the model&rsquo;s performance on the unseen data as well.</p>
+
+<p><strong>7. Name some of the regularization techniques.</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p><strong>The techniques are as follows:</strong></p>
+
+<ul>
+	<li>L2 and L1 Regularization</li>
+	<li>Dropout</li>
+	<li>Early Stopping</li>
+	<li>Data Augmentation</li>
+</ul>
+
+<p><strong>8. Explain the L2 and L1 Regularization techniques.</strong></p>
+
+<p><strong>Answer</strong>: L2 and L1 are the most common types of regularization. Regularization works on the premise that smaller weights lead to simpler models which result helps in avoiding overfitting. So to obtain a smaller weight matrix, these techniques add a &lsquo;regularization term&rsquo; along with the loss to obtain the cost function. Here, Cost function = Loss + Regularization term However, the difference between L1 and L2 regularization techniques lies in the nature of this regularization term. In general, the addition of this regularization term causes the values of the weight matrices to reduce, leading to simpler models.</p>
+
+<p><strong>9. What is Convolutional Neural Network?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>A Convolutional Neural Network (ConvNet/CNN) is a Deep Learning algorithm that can take in an input image, assign importance to various aspects/objects in the image and be able to differentiate one from the other. The pre-processing required in a ConvNet is much lower as compared to other classification algorithms. While in primitive methods filters are hand-engineered, with enough training, ConvNets have the ability to learn these filters/characteristics.</p>
+
+<p><strong>10. What do you understand about Dropout and early stopping techniques?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Dropout means that during the training, randomly selected neurons are turned off or &lsquo;dropped&rsquo; out. It means that they are temporarily obstructed from influencing or activating the downward neuron in a forward pass, and none of the weights updates is applied on the backward pass. Whereas Early Stopping is a kind of cross-validation strategy where one part of the training set is used as a validation set, and the performance of the model is gauged against this set. So if the performance on this validation set gets worse, the training on the model is immediately stopped. However, the main idea behind this technique is that while fitting a neural network on training data, consecutively, the model is evaluated on the unseen data or the validation set after each iteration. So if the performance on this validation set is decreasing or remaining the same for certain iterations, then the process of model training is stopped.</p>
+
+<p><strong>11. What do you understand about callbacks?</strong></p>
+
+<p><strong>Answer</strong>: The Callbacks are an important feature of Keras that is configured in fit(). Callbacks are objects that get called by the model at different points during training like: Firstly, at the beginning and end of each batch Secondly, at the beginning and end of each epoch However, callbacks are a way to make model trainable entirely scriptable. This can be used for periodically saving your model.</p>
+
+<p><strong>12. Explain the process of training a CNN.</strong></p>
+
+<p><strong>Answer: The process for training a CNN for classifying images consists of the following steps &minus;</strong></p>
+
+<ul>
+	<li>Data Preparation In this step, we center-crop the images and resize them so that all images for training and testing would be of the same size. This is usually done by running a small Python script on the image data.</li>
+	<li>Model Definition In this step, we define a CNN architecture. The configuration is stored in .pb (protobuf) file.</li>
+	<li>Solver Definition In this, we define the solver configuration file. The solver does the model optimization.</li>
+	<li>Model Training In this, we use the built-in Caffe utility to train the model. The training may take a considerable amount of time and CPU usage. After the training is completed, Caffe stores the model in a file, which can, later on, be used on test data and final deployment for predictions.</li>
+</ul>
+
+<p><strong>13. What do you know about Data preprocessing with Keras?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Once your data is in the form of string/int/float NumpPy arrays, or a Dataset object (or Python generator) that yields batches of string/int/float tensors, it is time to preprocess the data. This can mean: Firstly, Tokenization of string data, followed by token indexing. Secondly, Feature normalization. Thirdly, Rescaling the data to small values. In general, input values to a neural network should be close to zero &mdash; typically we expect either data with zero-mean and unit-variance, or data in the [0, 1] range.</p>
+
+<p><strong>14. Explain the process of debugging your model with eager execution.</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>If you write custom training steps or custom layers, you will need to debug them. The debugging experience refers to an integral part of a framework and with Keras, the debugging workflow is designed with the user in mind. However, by default, Keras models are compiled to highly optimized computation graphs that deliver fast execution times. That means that the Python code you write is not the code you are actually executing. This introduces a layer of indirection that can make debugging hard. Further, it is better to perform debugging in a step-by-step manner. You want to be able to sprinkle your code with a print() statement to see what your data looks like after every operation, you want to be able to use pdb. You can achieve this by running your model eagerly. With eager execution, the Python code you write is the code that gets executed. Simply pass run_eagerly=True to compile():</p>
+
+<p><strong>15. What is a Keras Tuner?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>The Keras Tuner is an easy-to-use, scalable hyperparameter optimization framework that solves the pain points of hyperparameter search. In this, you can easily configure your search space with a define-by-run syntax, then leverage one of the available search algorithms for finding the best hyperparameter values for your models. Further, Keras Tuner comes with Bayesian Optimization, Hyperband, and Random Search algorithms built-in, and is also designed to be easy for researchers to extend in order to experiment with new search algorithms.</p>
+
+<p><strong>16. Explain the role of multiple GPUs in Keras.</strong></p>
+
+<p><strong>Answer</strong>: Keras has built-in industry-strength support for multi-GPU training and distributed multi-worker training, via the tf.distribute API. However, if you have multiple GPUs on your machine, you can train your model on all of them by: Firstly, creating a tf.distribute.MirroredStrategy object. Secondly, creating and compiling your model inside the strategy&rsquo;s scope. Lastly, calling fit() and evaluate() on a dataset as usual.</p>
+
+<p><strong>17. Describe the installation &amp; compatibility of Keras.</strong></p>
+
+<p><strong>Answer</strong>: Keras comes packaged with TensorFlow 2 as tensorflow.keras. However, to start using Keras, simply install TensorFlow 2. Keras/TensorFlow is compatible with: Python 3.5&ndash;3.8 Ubuntu 16.04 or later Windows 7 or later macOS 10.12.6 (Sierra) or later.</p>
+
+<p><strong>18. What is AutoKeras?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>The AutoKeras refers to an AutoML system based on Keras. It is developed by DATA Lab at Texas A&amp;M University. The purpose of AutoKeras is to make machine learning accessible for everyone. It provides high-level end-to-end APIs such as ImageClassifier or TextClassifier to solve machine learning problems in a few lines, as well as flexible building blocks to perform architecture search.</p>
+
+<p><strong>19. How can we create Keras models?</strong></p>
+
+<p><strong>Answer</strong>: There are three ways to create Keras models: Firstly, by the Sequential model. This is very straightforward (a simple list of layers), but is limited to single-input, single-output stacks of layers. Secondly using the Functional API. This is an easy-to-use, fully-featured API that supports arbitrary model architectures. This is the Keras &ldquo;industry strength&rdquo; model. Lastly, by Model subclassing. Here you implement everything from scratch on your own. Use this if you have complex, out-of-the-box research use cases.</p>
+
+<p><strong>20. Define the following terms: TensorFlow Cloud, TensorFlow.js and TensorFlow Lite.</strong></p>
+
+<p><strong>Answer</strong>: The TensorFlow Cloud is managed by the Keras team at Google that refers to a set of utilities to help you run large-scale Keras training jobs on GCP with very little configuration effort. Running your experiments on 8 or more GPUs in the cloud should be as easy as calling model.fit(). TensorFlow.js is TensorFlow&rsquo;s JavaScript runtime, capable of running TensorFlow models in the browser or on a Node.js server, both for training and inference. It natively supports loading Keras models, including the ability to fine-tune or retrain your Keras models directly in the browser. TensorFlow Lite is a runtime for an efficient on-device inference that has native support for Keras models. Deploy your models on Android, iOS, or on embedded devices.</p>
+
+<p><strong>21. Explain the steps for creating a deep Learning Project in Python with Keras.</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>Load Data the first step is for defining the functions and classes. In this, we will use the NumPy library to load our dataset and we will use two classes from the Keras library to define our model.</p>
+
+<p>Define Keras Model Models in Keras are defined as a sequence of layers. Here, we will create a Sequential model and add layers one at a time until we are happy with our network architecture. However, ensure that the input layer has the right number of input features. This can be specified when creating the first layer with the input_dim argument and setting it to 8 for the 8 input variables.</p>
+
+<p>Compile Keras Model After defining the model, compile it. However, compiling the model uses the efficient numerical libraries under the covers (the so-called backend) such as Theano or TensorFlow. The backend automatically chooses the best way to represent the network for training and making predictions to run on your hardware, such as CPU or GPU or even distributed. During compiling, specify some additional properties required when training the network. And, also specify the loss function to use to evaluate a set of weights, the optimizer is used to search through different weights for the network and any optional metrics we would like to collect and report during training.</p>
+
+<p>Fit Keras Model After defining and compiling it is ready for efficient computation. Now, execute the model on some data. We can train or fit our model on our loaded data by calling the fit() function on the model. However, training occurs over epochs and each epoch is split into batches. Epoch: One pass through all of the rows in the training dataset. Batch: One or more samples are considered by the model within an epoch before weights are updated. You must know that one epoch is comprised of one or more batches, depending on the chosen batch size and the model is fit for many epochs.</p>
+
+<p>Evaluate Keras Model After training the neural network on the entire dataset and we can examine the performance of the network on the same dataset. However, we can evaluate your model on your training dataset using the evaluate() function on your model and pass it the same input and output used to train the model. Further, the evaluate() function will return a list with two values. The first will be the loss of the model on the dataset and the second will be the accuracy of the model on the dataset.</p>
+
+<p><strong>22. Explain the classes in a Keras Tuner API.</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Firstly, the Hyperparameters class is used for specifying a set of hyperparameters and their values, to be used in the model building function. Secondly, the Tuner subclasses corresponding to different tuning algorithms are called directly by the user to begin the search or to get the best models. Thirdly, the Oracle subclasses are the core search algorithms, receiving model evaluation results from the Tuner and providing new hyperparameter values. Lastly, the HyperModel subclasses are predefined search spaces for certain model families like ResNet and XceptionNet.</p>
+
+<p><strong>23. What is Cross-Validation.</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>The Cross-validation is a method for examining a machine learning model and testing its performance. CV is mostly used in applied ML tasks. It also helps in comparing and selecting an appropriate model for the specific predictive modeling problem. However, it is easy to understand, easy to implement, and it tends to have a lower bias than other methods used to count the model&rsquo;s efficiency scores.</p>
+
+<p><strong>24. What is Artificial Neural Network?</strong></p>
+
+<p><strong>Answers:&nbsp;</strong>Artificial Neural Network (ANN) is at the very core of Deep Learning an advanced version of Machine Learning techniques. ANNs are versatile, adaptive, and scalable, making them appropriate for tackling large datasets and highly complex Machine Learning tasks such as image classification (e.g., Google Images), speech recognition (e.g., Apple&rsquo;s Siri), video recommendation (e.g., YouTube), or analyzing sentiments among customers (e.g. Twitter Sentiment Analyzer).</p>
+
+<p><strong>25. Describe the algorithm steps used to cross-validate a model.</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>At first, divide the dataset into two parts: one for training, other for testing</p>
+
+<p>Then , training the model on the training set</p>
+
+<p>Validating the model on the test set</p>
+
+<p>Lastly, repeating 1-3 steps a couple of times. This number depends on the CV method that you are using</p>
+
+<p><strong>26. Define Cross-Validation in Deep Learning.</strong></p>
+
+<p><strong>Answer</strong>: Cross-validation in Deep Learning (DL) can be tricky because most of the CV techniques need training the model at least a couple of times. However, in deep learning, you would normally tempt to avoid CV because of the cost associated with training k different models. Rather than doing k-Fold or other CV techniques, you might use a random subset of your training data as a hold-out for validation purposes. For example, Keras&rsquo;s deep learning library enables you to pass one of two parameters for the fit function that performs training. This covers: Firstly, validation_split: percentage of the data that should be held out for validation Secondly, validation_data: a tuple of (X, y) which should be used for validation. This parameter overrides the validation_split parameter which means you can use only one of these parameters at once. And, the same method is used in other DL frameworks such as PyTorch and MxNet. They also suggest giving the dataset into three parts: training, validation, and testing.</p>
+
+<p><strong>27. Explain the k-Fold cross-validation technique with the algorithm.</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>k-Fold CV is a method that minimizes the disadvantages of the hold-out method. k-Fold introduces a new way of splitting the dataset which helps to overcome the &ldquo;test only once bottleneck&rdquo;. The algorithm of the k-Fold technique:</p>
+
+<p>Firstly, select a number of folds &ndash; k. Usually, k is 5 or 10 but you can select any number which is less than the dataset&rsquo;s length.</p>
+
+<p>Secondly, divide the dataset into k equal (if possible) parts (they are called folds)</p>
+
+<p>Then, select k &ndash; 1 folds which will be the training set. The remaining fold will be the test set</p>
+
+<p>Fourthly, train the model on the training set. On each iteration of cross-validation, you must train a new model independently of the model trained on the previous iteration</p>
+
+<p>Then, validate on the test set After that, save the result of the validation</p>
+
+<p>Now, repeat steps 3 &ndash; 6 k times.</p>
+
+<p>Every time use the remaining fold as the test set.</p>
+
+<p>In the end, you should have validated the model on every fold that you have. Lastly, for having the final score average the results that you got on step 6.</p>
+
+<p><strong>28. Name the types of cross-validation methods.</strong></p>
+
+<p><strong>Answers:</strong></p>
+
+<p><strong>Some of the cross-validation methods are:</strong></p>
+
+<ul>
+	<li>Hold-out K-folds</li>
+	<li>Leave-one-out</li>
+	<li>Leave-p-out</li>
+	<li>Stratified K-folds</li>
+	<li>Repeated K-folds</li>
+	<li>Nested K-folds</li>
+</ul>
+
+<p><strong>29. Explain Image Data Augmentation in Keras?</strong></p>
+
+<p><strong>Answer</strong>: Image data augmentation is a method that can be used to artificially expand the size of a training dataset by creating modified versions of images in the dataset. However, training deep learning neural network models on more data can result in more skillful models, and the augmentation techniques can create variations of the images that can improve the ability of the fit models to generalize what they have learned to new images. And, the Keras deep learning neural network library provides the capability to fit models using image data augmentation via the ImageDataGenerator class.</p>
+
+<p><strong>30. What is an imbalance classification?</strong></p>
+
+<p><strong>Answer</strong>: An imbalanced classification problem is an example of a classification problem in which the distribution of examples over the known classes is biased or skewed. The distribution can range from a slight bias to a severe imbalance where there is one example in the minority class for hundreds, thousands, or millions of examples in the majority class or classes. Further, this creates a challenge for predictive modeling as most of the machine learning algorithms used for classification were designed around the assumption of an equal number of examples for each class. This results in models that have poor predictive performance, specifically for the minority class.</p>
+
+<p><strong>31. Name the main types of data augmentation techniques for image data.</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>Image shifts via the width_shift_range and height_shift_range arguments.</p>
+
+<p>The image flips via the horizontal_flip and vertical_flip arguments.</p>
+
+<p>Image rotations via the rotation_range argument Image brightness via the brightness_range argument.</p>
+
+<p>Image zoom via the zoom_range argument.</p>
+
+<p><strong>32. What is a confusion matrix?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>A confusion matrix, also known as an error matrix, is a specific table layout that allows visualization of the performance of an algorithm, typically a supervised learning one. Every row of the matrix represents the instances in an actual class while each column represents the instances in a predicted class, or vice versa. The name stems from the fact that it makes it easy to see whether the system is confusing two classes. Further, it can be considered as a special kind of contingency table, with two dimensions (&ldquo;actual&rdquo; and &ldquo;predicted&rdquo;), and identical sets of &ldquo;classes&rdquo; in both dimensions.</p>
+
+<p><strong>33. Why is there a need for keras?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>The Keras is an API designed for human beings, not machines. Keras follows best practices for reducing cognitive load: it offers consistent &amp; simple APIs, it minimizes the number of user actions required for common use cases, and it provides clear and actionable feedback upon user error.</p>
+
+<p><strong>34. What is flatten layer in keras?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>The role of the Flatten layer in Keras is super simple: A flatten operation on a tensor reshapes the tensor to have a shape that is equal to the number of elements contained in the tensor.</p>
+
+<p><strong>35. Is Keras a library?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Yes, Keras is an open-source neural-network library written in Python.</p>
+
+<p><strong>36. What is Keras dropout?</strong></p>
+
+<p><strong>Answer</strong>: Dropout is a regularization technique for neural network models proposed by Srivastava, it is a technique where randomly selected neurons are ignored during training.</p>
+
+<p><strong>37. What are regularizers in keras?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p><strong>keras.regularizers.l1(0.)</strong></p>
+
+<p><strong>keras.regularizers.l2(0.)</strong></p>
+
+<p><strong>keras.regularizers.l1_l2(l1=0.01, l2=0.01)</strong></p>
+
+<p><strong>38. What are available constraints in keras?</strong></p>
+
+<p><strong>Answers:</strong></p>
+
+<ul>
+	<li>MaxNorm</li>
+	<li>NonNeg</li>
+	<li>UnitNorm</li>
+	<li>MinMaxNorm</li>
+</ul>
+
+<p><strong>39. How can I use Keras with datasets that don&rsquo;t fit in memory?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>You should use the tf.data API to create tf.data.Dataset objects &mdash; an abstraction over a data pipeline that can pull data from local disk, from a distributed file system, from GCS, etc., as well as efficiently apply various data transformations.</p>
+
+<p>For instance, the utility tf.keras.preprocessing.image_dataset_from_directory will create a dataset that reads image data from a local directory. Likewise, the utility tf.keras.preprocessing.text_dataset_from_directory will create a dataset that reads text files from a local directory.</p>
+
+<p>Dataset objects can be directly passed to fit(), or can be iterated over in a custom low-level training loop.</p>
+
+<pre>
+<code>model.fit(dataset, epochs=10, validation_data=val_dataset)</code></pre>
+
+<p><strong>40. What is a Neural Network?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Neural Networks replicate the way humans learn, inspired by how the neurons in our brains fire, only much simpler.</p>
+
+<p><strong>41. What Is a Multi-layer Perceptron(MLP)?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>As in Neural Networks, MLPs have an input layer, a hidden layer, and an output layer. It has the same structure as a single layer perceptron with one or more hidden layers. A single layer perceptron can classify only linear separable classes with binary output (0,1), but MLP can classify nonlinear classes.</p>
+
+<p>Except for the input layer, each node in the other layers uses a nonlinear activation function. This means the input layers, the data coming in, and the activation function is based upon all nodes and weights being added together, producing the output. MLP uses a supervised learning method called &ldquo;backpropagation.&rdquo; In backpropagation, the neural network calculates the error with the help of cost function. It propagates this error backward from where it came (adjusts the weights to train the model more accurately).</p>
+
+<p><strong>42. What Is the Role of Activation Functions in a Neural Network?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>At the most basic level, an activation function decides whether a neuron should be fired or not. It accepts the weighted sum of the inputs and bias as input to any activation function. Step function, Sigmoid, ReLU, Tanh, and Softmax are examples of activation functions.</p>
+
+<p><strong>43. What Are the Applications of a Recurrent Neural Network (RNN)?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>The RNN can be used for sentiment analysis, text mining, and image captioning. Recurrent Neural Networks can also address time series problems such as predicting the prices of stocks in a month or quarter.</p>
+
+<p><strong>44. What Are Hyperparameters?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>The Hyperparameters are parameters whose values control the learning process and control the values of model parameters that a learning algorithm ends up learning. In this light, Hyperparameters are said to be external to the model because the model cannot change its values during learning/training.</p>
+
+<p><strong>45. What Is the Difference Between Batch Gradient Descent and Stochastic Gradient Descent?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>The Stochastic gradient descent is an iterative learning algorithm that uses a working out dataset to update a model. The batch size is a hyper parameter of gradient descent that pedals the number of training samples to work through before the model&rsquo;s internal parameters are updated.</p>
+
+<p><strong>46. What is Overfitting and Underfitting, and How to Combat Them?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p>Overfitting occurs when the model learns the details and noise in the training data to the degree that it adversely impacts the execution of the model on new information. It is more likely to occur with nonlinear models that have more flexibility when learning a target function. An example would be if a model is looking at cars and trucks, but only recognizes trucks that have a specific box shape. It might not be able to notice a flatbed truck because there&rsquo;s only a particular kind of truck it saw in training. The model performs well on training data, but not in the real world.</p>
+
+<p>Underfitting alludes to a model that is neither well-trained on data nor can generalize to new information. This usually happens when there is less and incorrect data to train a model. Underfitting has both poor performance and accuracy.</p>
+
+<p>To combat overfitting and underfitting, you can resample the data to estimate the model accuracy (k-fold cross-validation) and by having a validation dataset to evaluate the model.</p>
+
+<p><strong>47. How Are Weights Initialized in a Network?</strong></p>
+
+<p><strong>Answer</strong>: There are two methods here: we can either initialize the weights to zero or assign them randomly.</p>
+
+<p>Initializing all weights to 0: This makes your model similar to a linear model. All the neurons and every layer perform the same operation, giving the same output and making the deep net useless.</p>
+
+<p>Initializing all weights randomly: Here, the weights are assigned randomly by initializing them very close to 0. It gives better accuracy to the model since every neuron performs different computations. This is the most commonly used method.</p>
+
+<p><strong>48. What is Pooling on CNN, and How Does It Work?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>Pooling is used to reduce the spatial dimensions of a CNN. It performs down-sampling operations to reduce the dimensionality and creates a pooled feature map by sliding a filter matrix over the input matrix.</p>
+
+<p><strong>49. What Is the Difference Between Epoch, Batch, and Iteration in the Deep Learning?</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<ul>
+	<li><strong>Epoch&nbsp;</strong>&ndash; Represents one iteration over the entire dataset (everything put into the training model).</li>
+	<li><strong>Batch &ndash;&nbsp;</strong>Refers to when we cannot pass the entire dataset into the neural network at once, so we divide the dataset into several batches.</li>
+	<li><strong>Iteration &ndash;&nbsp;</strong>if we have 10,000 images as data and a batch size of 200. then an epoch should run 50 iterations (10,000 divided by 50).</li>
+</ul>
+
+<p><strong>50. Why is Tensorflow the Most recommended Library in Deep Learning?</strong></p>
+
+<p><strong>Answer:&nbsp;</strong>The Tensorflow provides both C++ and Python APIs, making it easier to work on and has a faster compilation time compared to other Deep Learning libraries like Keras and Torch. Tensorflow supports both CPU and GPU computing devices.</p>

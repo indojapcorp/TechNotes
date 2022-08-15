@@ -978,3 +978,68 @@ EndorsersByGroups: {
 <p>Both LevelDB and CouchDB support core chaincode operations such as getting and setting a key (asset), and querying based on keys. Keys can be queried by range, and composite keys can be modeled to enable equivalence queries against multiple parameters. For example a composite key of&nbsp;<code>owner,asset_id</code>&nbsp;can be used to query all assets owned by a certain entity. These key-based queries can be used for read-only queries against the ledger, as well as in transactions that update the ledger.</p>
 
 <p>----------------</p>
+
+
+
+<h1>How does Hyperledger Fabric work?</h1>
+
+<p>Hyperledger Fabric is a permissioned blockchain network that gets set by the organizations that intend to set up a consortium. The organizations that take part in building the Hyperledger Fabric network are called the &ldquo;<strong>members</strong>&rdquo;.</p>
+
+<p>Each&nbsp;<strong>member&nbsp;</strong>organization in the blockchain network is responsible to set up their&nbsp;<strong>peers&nbsp;</strong>for participating in the network. All of these peers need are configured with appropriate cryptographic materials like Certificate Authority and other information.</p>
+
+<p>Peers in the member organization receives transaction invocation requests from the clients inside the organization. A&nbsp;<strong>client&nbsp;</strong>can be any specific application/portal serving specific organization/business activities. The client application uses Hyperledger Fabric SDK or REST web service to interact with the Hyperledger Fabric network. Chaincode (similar to Ethereum Smart Contract) installed in peers causes to initiate transaction invocation request.</p>
+
+<p>All the peers maintain their one ledger per channel that they are subscribed to. Hence Distributed Ledger Technology (DLT). But unlike Ethereum in Hyperledger Fabric blockchain network peers have different roles.</p>
+
+<p>So not all peer nodes are the same. There are different types of peer nodes with different roles in the network:</p>
+
+<ul>
+	<li>Endorser peer</li>
+	<li>Anchor peer</li>
+	<li>Orderer peer</li>
+</ul>
+
+<h2>Endorser peer</h2>
+
+<p>Peers can be marked as Endorser peer (ie Endorsing peer). Upon receiving the &ldquo;transaction invocation request&rdquo; from the Client application the Endorser peer</p>
+
+<ul>
+	<li>Validates the transaction. ie Check certificate details and roles of the requester.</li>
+	<li>Executes the Chaincode(ie Smart Contract) and simulates the outcome of the transaction. But it does not update the ledger.</li>
+</ul>
+
+<p>At the end of the above two tasks, the Endorser may approve or disapprove the transaction.</p>
+
+<p>As only the Endorser node executes the Chaincode (Smart Contract) so there is no necessity to install Chaincode in each and every node of the network which increases the scalability of the network.</p>
+
+<h2>Anchor peer</h2>
+
+<p>Anchor peer or cluster of Anchor peers is configured at the time of Channel configuration. Just to remind you,&nbsp;in Hyperledger Fabric you can configure secret channels among the peers and transactions among the peers of that channel are visible only to them.</p>
+
+<p>Anchor peer receives updates and broadcasts the updates to the other peers in the organization. Anchor peers are discoverable. So any peer marked as Anchor peer can be discovered by the Orderer peer or any other peer.</p>
+
+<h2>Orderer peer</h2>
+
+<p>Orderer peer is considered as the central communication channel for the Hyperledger Fabric network. Orderer peer/node is responsible for consistent Ledger state across the network. Orderer peer creates the block and delivers that to all the peers.</p>
+
+<p>Orderer is built on top of a message-oriented architecture. There are two options are currently available to implement Orderer peer:</p>
+
+<ul>
+	<li>Solo: Suitable for development. Single point failure. Solo should not be used for the production-ready network.</li>
+	<li>Kafka: Production-ready Hyperledger Fabric network uses Kafka as the Orderer implementation. Kafka is messaging software that has high throughput fault tolerant feature.</li>
+</ul>
+
+<h1>Hyperledger Fabric Workflow</h1>
+
+<p><img alt="" src="https://miro.medium.com/max/700/1*KU3B3nvtI_8lsUmP6Dh_4Q.png" style="height:394px; width:700px" /></p>
+
+<p>Hyperledger Fabric Workflow</p>
+
+<ol>
+	<li>A participant in the member Organization invokes a transaction request through the client application.</li>
+	<li>Client application broadcasts the transaction invocation request to the Endorser peer.</li>
+	<li>Endorser peer checks the Certificate details and others to validate the transaction. Then it executes the Chaincode (ie. Smart Contract) and returns the Endorsement responses to the Client. Endorser peer sends transaction approval or rejection as part of the endorsement response.</li>
+	<li>The client now sends the approved transaction to the Orderer peer for this to be properly ordered and be included in a block.</li>
+	<li>Orderer node includes the transaction into a block and forwards the block to the Anchor nodes of different member Organizations of the Hyperledger Fabric network.</li>
+	<li>Anchor nodes then broadcast the block to the other peers inside their own organization. These individual peers then update their local ledger with the latest block. Thus all the network gets the ledger synced.</li>
+</ol>

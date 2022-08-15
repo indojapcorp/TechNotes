@@ -1,0 +1,353 @@
+<p>Prometheus</p>
+
+<p>Prometheus is developed at soundcloud and integrated into the CNCF, it has the ability for creating user specific customs alerts and notifications which is based on the data through metrics.<br />
+Prometheus is also used for running ad-hoc queries and minor issues during debugging, its aspect is utilized when integrating with visualization backends.</p>
+
+<p><strong>2.What is the Architecture of Prometheus Monitoring?</strong></p>
+
+<ul>
+	<li>Prometheus can run with both Go and Docker applications. The monitoring application consists of a time-series database, a user interface, and the PromQL query language, which is a flexible and intelligent query language.</li>
+	<li>Prometheus gathers metrics via instrumented jobs. The samples can be kept locally. It can also be scanned using rules to record or collect any new time-series via existing data and generate design alerts. Histograms, gauges, and counters are used to display these metrics. Plaintext data can be transmitted over HTTP.</li>
+</ul>
+
+<p><strong>3. How do we manage and monitor Spring boot application in production using Prometheus?</strong></p>
+
+<ul>
+	<li>Spring Boot Actuator is a Spring Boot sub-project that adds monitoring and management capabilities for your production-ready apps. It offers a number of HTTP or JMX endpoints with which you can communicate.</li>
+	<li>The Prometheus (a tool for monitoring) endpoint is provided by the Spring Boot Actuator, which regularly pulls this endpoint for metric data and offers graphic representation for data. We can see Api latency, performance etc in Prometheus Graph.<br />
+	Below is Prometheus graph for testApi endpoint.</li>
+</ul>
+
+<p><strong>4. What are the Features of Prometheus?</strong></p>
+
+<p>The following are some of the most important aspects of Prometheus:</p>
+
+<ul>
+	<li>Numerous dashboards and graphing modes are available.</li>
+	<li>Representation of a time series grouping from any HTTP pull model.</li>
+	<li>Abilities to use PromQL to support a data model&rsquo;s multidimensionality feature.</li>
+	<li>Individual server nodes are self &ndash; reliant and do not rely on distributed storage.</li>
+	<li>It display time series data, i.e., identified with the metric&rsquo;s name or with KVP (Key-value pairs)</li>
+</ul>
+
+<p><strong>5. What are the Components of Prometheus?</strong></p>
+
+<p><img alt="Complete Prometheus Monitoring Tutorial for Beginners 🚀 - DEV Community" src="https://res.cloudinary.com/practicaldev/image/fetch/s--a1KBd9mA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/rm6wvzsbx4m3ufh79p30.png" /></p>
+
+<p>Components of prometheus</p>
+
+<p>The majority of Prometheus components are written in a programming language, namely Go, and can be deployed and built as static binaries. A large number of its components are optional.</p>
+
+<ul>
+	<li><strong>Prometheus Server</strong></li>
+</ul>
+
+<p>Prometheus&rsquo; server stores and scrapes metrics. It makes use of the persistence layer. This layer is part of the server and is not explicitly defined in the documentation. This server&rsquo;s nodes are all self-contained and do not rely on distributed storage.</p>
+
+<ul>
+	<li><strong>Prometheus UI</strong></li>
+</ul>
+
+<p>We can see charts/graphs, visualise, and access stored data using the web UI. Prometheus simplifies its user interface. We can also configure other visualisation tools, such as Grafana, to connect to the Prometheus server via the Prometheus Query Language (PromQL).</p>
+
+<ul>
+	<li><strong>Prometheus Alertmanager</strong></li>
+</ul>
+
+<p>Alertmanager sends alerts via client applications like the Prometheus server. It has advanced features for routing, grouping, and deduplicating alerts, and it can<br />
+route alerts from other services like OpsGenie and PagerDuty.</p>
+
+<p><strong>6. What database is used by Prometheus?</strong></p>
+
+<p>Disk Time Series Database<br />
+Prometheus comes with a local on-disk time series database and also can integrate with remote storage systems.</p>
+
+<p><strong>7. What is PromQL?</strong></p>
+
+<p>Prometheus helps make its query language, Prometheus Query Language, easier to use (PromQL). It allows users to aggregate and select data. PromQL is specifically designed for use in conjunction with the Time-Series database. Prometheus includes four different types of metrics, that are mentioned below:</p>
+
+<ul>
+	<li>Prometheus Gauge</li>
+	<li>Prometheus Counter</li>
+	<li>Prometheus Summary</li>
+	<li>Prometheus Histogram</li>
+</ul>
+
+<p><strong>8. What is Gauges in Prometheus?</strong></p>
+
+<p>A gauge is any metric that shows an individual value that can vary randomly up and down. Gauges are used to measure the values that are typically or recently used in memory.</p>
+
+<p><strong>9. What are Counters in Prometheus?</strong></p>
+
+<p>A counter is any cumulative metric that shows an individual increasing counter monotonically and whose value could only reset or increase to zero over a restart. For example, we can use a counter to represent the number of errors, completed tasks, and requests served.</p>
+
+<p><strong>10. What do you mean by Summaries and Histograms in Prometheus?</strong></p>
+
+<p>Prometheus supports two kinds of complex metrics: Summaries and Histograms.</p>
+
+<p>These metrics are being used to keep track of the number of observations and the sum of observed values. It generates time series in the database. For example, they all add the suffix _sum to the observed value&rsquo;s sum.</p>
+
+<ul>
+	<li><strong>Histogram</strong></li>
+</ul>
+
+<p>A histogram is used to represent the counts and observations (typically response size and request durations) in the configuration buckets. It also makes the sum of each observed value easier.<br />
+It makes a histogram an important choice for tracking things like latency, which may have SLO (Service Level Objective) defined across it.</p>
+
+<ul>
+	<li><strong>Summary</strong></li>
+</ul>
+
+<p>A summary is used to represent different observations (like response size or request durations usually). It also displays the total number of observations and the sum of each observed value. On any sliding time window, it can calculate configurable quantities.</p>
+
+<p><strong>11. What is the default data retention period in Prometheus?</strong></p>
+
+<p>The default data retention period is 15 days in Prometheus. Data would be automatically deleted after the data storage default retention duration has passed.</p>
+
+<p><strong>12. How to persist its data between restarts in Prometheus running in a Docker container?</strong></p>
+
+<p>We can create/mount volume and persist application data between multiple restarts in Prometheus by using below command:</p>
+
+<hr />
+<p>$ docker volume create a-new-volume<br />
+$ docker run \ &ndash;publish 9090:9090 \<br />
+&ndash;volume a-new-volume:/prometheus \<br />
+&ndash;volume &ldquo;$(pwd)&rdquo;/prometheus.yml:/etc/prometheus/prometheus.yml \ prom/prometheus</p>
+
+<hr />
+<p><strong>13. What is Prometheus exporter?</strong></p>
+
+<p>A Prometheus Exporter is a part of software that allows it to fetch statistics from another, non-Prometheus system. It converts those statistics into Prometheus metrics, using a client library. You can start a web server which exposes a /metrics URL, and can see that URL display the system metrics.</p>
+
+<p><strong>14. What is Thanos Prometheus?</strong></p>
+
+<p>hanos is a &ldquo;highly available Prometheus setup with long-term storage capability,&rdquo; to put it simply. Thanos enables you to query and aggregate data from several Prometheus instances from a single endpoint. Thanos also handles duplicate measurements that may result from several Prometheus instances automatically.</p>
+
+<p><strong>15. What is Grafana Cloud?</strong></p>
+
+<p>Grafana Cloud is highly available, fast fully managed and an open SaaS software as a service metrics platform.I takes the load of hosting the solution on prem and helps in free managing the entire development infrastructure and it runs on Kubernetes clusters.</p>
+
+<p><strong>16. What types of Monitoring can be done via Grafana?</strong></p>
+
+<p>There are 4 tyes of Monitoring that can be done by Grafana are:</p>
+
+<ul>
+	<li>CPU</li>
+	<li>Disk Space</li>
+	<li>Memory</li>
+	<li>Top Process</li>
+</ul>
+
+<p><strong>17. How to calculate containers&rsquo; cpu usage in kubernetes with prometheus as monitoring?</strong></p>
+
+<p>We can get the CPU usage at cluster level by:</p>
+
+<pre>
+sum (rate (container_cpu_usage_seconds_total{id=&rdquo;/&rdquo;}[1m])) / sum (machine_cpu_cores) * 100</pre>
+
+<p>We can track the CPU usage by using:</p>
+
+<ul>
+	<li>sum (rate (container_cpu_usage_seconds_total{image!=&rdquo;&rdquo;}[1m])) by (pod_name)</li>
+</ul>
+
+<p><strong>18. How can we group labels in a Prometheus query?</strong></p>
+
+<p>We can use the label replace to group all the misc together:</p>
+
+<p>sum by (new_group) (</p>
+
+<p>label_replace(</p>
+
+<pre>
+<code>label_replace(my_metric, “new_group”, “$1”, “group”, “.+”),
+
+“new_group”, “misc”, “group”, “misc group.+”</code></pre>
+
+<p>)</p>
+
+<p>)</p>
+
+<p><strong>19. How to use the selected period of time in a query?</strong></p>
+
+<p>We can use the $__interval variable like this:</p>
+
+<p>use the $__interval variable like this:</p>
+
+<p><strong>20. How can we gracefully avoid divide by zero in Prometheus?</strong></p>
+
+<ul>
+	<li>rate({<strong>name</strong>=&rdquo;hystrix_command_latency_total_seconds_sum&rdquo;}[60s])</li>
+	<li>rate({<strong>name</strong>=&rdquo;hystrix_command_latency_total_seconds_count&rdquo;}[60s])</li>
+</ul>
+
+<p><strong>21. How to add extra label to Prometheus metrics?</strong></p>
+
+<p>We can use the following command for adding the extra label:</p>
+
+<pre>
+mongodb_exporter_last_scrape_duration_seconds{instance=&rdquo;127.0.0.1:9216&Prime;,job=&rdquo;mongo&rdquo;}</pre>
+
+<p>If we need to chande the label we can use the following command:</p>
+
+<pre>
+mongodb_exporter_last_scrape_duration_seconds{cluster=&rdquo;stage&rdquo;, instance=&rdquo;127.0.0.1:9216&Prime;,job=&rdquo;mongo&rdquo;}</pre>
+
+<p><strong>22. What is Prometheus good for?</strong></p>
+
+<p>Prometheus can scrape metrics from jobs directly or, for short-lived jobs by using a push gateway when the job exits. The scraped samples are stored locally and rules are applied to the data to aggregate and generate new time series from existing data or generate alerts based on user-defined triggers.</p>
+
+<p><strong>23. What protocol does Prometheus use?</strong></p>
+
+<p>Prometheus is primarily based on a pull model, in which the prometheus server has a list of targets it should scrape metrics from. The pull protocol is HTTP based and simply put, the target returns a list of &rdquo; &ldquo;.</p>
+
+<p><strong>24. Is Prometheus hard to learn?</strong></p>
+
+<p>Prometheus is easy to setup but it barely does anything. It gets really messy when one needs to gather application metrics (postgresql, cassandra, haproxy, java, etc&hellip;) and have dashboards and alerts going to different places (slack, email, etc&hellip;).</p>
+
+<p><strong>25. What can be monitored using Prometheus?</strong></p>
+
+<p>Prometheus is an open-source technology designed to provide monitoring and alerting functionality for cloud-native environments, including Kubernetes. It can collect and store metrics as time-series data, recording information with a timestamp. It can also collect and record labels, which are optional key-value pairs.</p>
+
+<p><strong>26. What is Prometheus alerting?</strong></p>
+
+<p>Prometheus alerting is powered by Alertmanager. Prometheus forwards its alerts to Alertmanager for handling any silencing, inhibition, aggregation, or sending of notifications across your platforms or event management systems of choice.</p>
+
+<p><strong>27. Is Prometheus better than Zabbix?</strong></p>
+
+<p>Prometheus is faster because of the database and Zabbix has a smaller footprint (because it&rsquo;s written in C). In Zabbix you can do most things in the web GUI, but in Prometheus you must edit files like in Nagios.</p>
+
+<p><strong>28. How fast can Prometheus scrape?</strong></p>
+
+<p>Let&rsquo;s do an example to better explain the lifecycle of an alert. We do have a simple alert that monitors the load 1m of a node, and fires when it&rsquo;s higher than 20 for at least 1 minute. Prometheus is configured to scrape metrics every 20 seconds, and the evaluation interval is 1 minute.</p>
+
+<p><strong>29. How do you integrate with Prometheus?</strong></p>
+
+<p>For deployments on Kubernetes, GitLab can be integrated with an in-cluster Prometheus. For other deployment targets, specify the Prometheus server.<br />
+&hellip;<br />
+Use the domain name or IP address of the Thanos server you&rsquo;d like to integrate with.<br />
+Navigate to the Integrations page.<br />
+Click the Prometheus service<br />
+Click Save changes.</p>
+
+<p><strong>30. What is a Prometheus endpoint?</strong></p>
+
+<p>Prometheus is a monitoring platform that collects metrics from monitored targets by scraping metrics HTTP endpoints on these targets. &hellip; Our first exporter will be Prometheus itself, which provides a wide variety of host-level metrics about memory usage, garbage collection, and more.</p>
+
+<p><strong>31. How do you make Prometheus alert rules?</strong></p>
+
+<p>To Configure AlertManager we need to follow these steps,</p>
+
+<ul>
+	<li>Step 1 &ndash; Configure Alert Rule. &hellip;</li>
+	<li>Step 2 &ndash; AlertManager Config File. &hellip;</li>
+	<li>Step 3 &ndash; Update prometheus.yml file to configure Prometheus server to talk with AlertManager Service. &hellip;</li>
+	<li>Step 4 &ndash; Update docker-compose.yml File. &hellip;</li>
+	<li>Step 5 &ndash; Run the container.</li>
+</ul>
+
+<p><strong>32. How do you write Prometheus rules?</strong></p>
+
+<p>To include rules in Prometheus, create a file containing the necessary rule statements and have Prometheus load the file via the rule_files field in the Prometheus configuration. Rule files use YAML. The rule files can be reloaded at runtime by sending SIGHUP to the Prometheus process.</p>
+
+<p><strong>33. What is a Prometheus exporter?</strong></p>
+
+<p>A Prometheus Exporter is a piece of software that. Can fetch statistics from another, non-Prometheus system. Can turn those statistics into Prometheus metrics, using a client library. Starts a web server that exposes a /metrics URL, and have that URL display the system metrics.</p>
+
+<p><strong>34. What is remote write in Prometheus?</strong></p>
+
+<p>Prometheus remote write is a great feature that allows the sending of metrics from almost any device to a Prometheus server. Just install a service Prometheus instance in the device, enable remote_write , and you&rsquo;re good to go! &hellip; In that case, you can use OpenTelemetry instead of Prometheus.</p>
+
+<p><strong>35. Who built Prometheus?</strong></p>
+
+<p><strong>SoundCloud</strong></p>
+
+<p>Prometheus&reg; is an open source monitoring system developed by engineers at SoundCloud in 2012. Prometheus was the second project accepted into the Cloud Native Computing Foundation after Kubernetes, and also the second to graduate.</p>
+
+<p><strong>36. What is runbook in Prometheus?</strong></p>
+
+<p>Prometheus is a systems and service monitoring system. It collects metrics from configured targets at given intervals, evaluates rule expressions, displays the results, and can trigger alerts if some condition is observed to be true; Runbook: Infrastructure Monitoring with Automated Remediation.</p>
+
+<p><strong>37. How does Prometheus Alert Manager work?</strong></p>
+
+<p>The Alertmanager handles alerts sent by client applications such as the Prometheus server. It takes care of deduplicating, grouping, and routing them to the correct receiver integration such as email, PagerDuty, or OpsGenie. It also takes care of silencing and inhibition of alerts.</p>
+
+<p><strong>38. How does Prometheus operator work?</strong></p>
+
+<p><strong>Prometheus Operator</strong></p>
+
+<p>The Operator ensures at all times that a deployment matching the resource definition is running. ServiceMonitor, which declaratively specifies how groups of services should be monitored. The Operator automatically generates Prometheus scrape configuration based on the definition.</p>
+
+<p><strong>39. How do I check my Prometheus configuration?</strong></p>
+
+<p>Thus it&rsquo;s wise to check that the configuration is good before deploying it. To facilitate this, promtool which comes with Prometheus has a check config command. Let&rsquo;s check a prometheus config: Download and extract prometheus.</p>
+
+<p><strong>40. How do you run background in Prometheus?</strong></p>
+
+<p>You could name your job anything you want, but calling it &ldquo;node&rdquo; allows you to use the default console templates of Node Exporter. Save the file and exit. Start the Prometheus server as a background process. Note that you redirected the output of the Prometheus server to a file called prometheus.</p>
+
+<p><strong>41. What is a Prometheus collector?</strong></p>
+
+<p>The Sensu Prometheus Collector is a Sensu Check Plugin that collects metrics from a Prometheus exporter, metric HTTP endpoint, or the HTTP Query API. The collected metrics are outputted to STDOUT in one of three formats: Influx (the default), Graphite, or JSON.</p>
+
+<p><strong>42. How does Prometheus integrate with AlertManager?</strong></p>
+
+<p>Alerting with Prometheus setup steps are mentioned below:</p>
+
+<ul>
+	<li>Setup and configure AlertManager.</li>
+	<li>Configure the config file on Prometheus so it can talk to the AlertManager.</li>
+	<li>Define alert rules in Prometheus server configuration.</li>
+	<li>Define alert mechanism in AlertManager to send alerts via Slack and Mail.</li>
+</ul>
+
+<p><strong>43. How do you integrate PagerDuty with Prometheus?</strong></p>
+
+<p>Integrating With a PagerDuty Service</p>
+
+<p>If you are adding your integration to an existing service, click the name of the service you want to add the integration to. Then select the Integrations tab and click the Add a new integration.</p>
+
+<p><strong>44. What are the ways of Visualising that Prometheus supports?</strong></p>
+
+<p>When it comes to dashboards or visualizations with Prometheus, there are three options: Prometheus Expression Browser, Grafana, and Prometheus Console Templates.</p>
+
+<p><strong>45. How do I silence my Alertmanager?</strong></p>
+
+<p>Procedure</p>
+
+<ul>
+	<li>Go to Administer &gt; Monitoring &gt; Integrations on the IBM Cloud Pak console.</li>
+	<li>Click Configure an integration.</li>
+	<li>Go to the Prometheus tile and click Configure.</li>
+	<li>Enter a name for the integration and click Copy to add the generated webhook URL to the clipboard. &hellip;</li>
+	<li>Click Save.</li>
+</ul>
+
+<p>To mute those alerts to prevent them to be sent over and over they can be disabled by marking them as &ldquo;silenced&rdquo;. An alert can be silenced with the Web UI of the Alertmanager, see the documentation.</p>
+
+<p><strong>46. How do you graph on Prometheus?</strong></p>
+
+<ul>
+	<li>Creating a Prometheus graph</li>
+	<li>Click the graph title, then click &ldquo;Edit&rdquo;.</li>
+	<li>Under the &ldquo;Metrics&rdquo; tab, select your Prometheus data source (bottom right).</li>
+	<li>Enter any Prometheus expression into the &ldquo;Query&rdquo; field, while using the &ldquo;Metric&rdquo; field to lookup metrics via autocompletion.</li>
+</ul>
+
+<p><strong>47. What is the climax of the story of Prometheus?</strong></p>
+
+<p>To begin, the climax was that Prometheus gave the humans fire. &hellip; Second, the falling action started when Zeus found out that Prometheus gave the humans fire. So then Zeus imprisoned Prometheus and had birds eating away at him. Finally, Hercules rescued Prometheus from his imprisonment.</p>
+
+<p><strong>48. What is histogram in Prometheus?</strong></p>
+
+<p>A Prometheus histogram consists of three elements: a _count counting the number of samples; a _sum summing up the value of all samples; and finally a set of multiple buckets _bucket with a label le which contains a count of all samples whose value are less than or equal to the numeric value contained in the le label.</p>
+
+<p><strong>49. What is Prometheus in Kubernetes?</strong></p>
+
+<p>Prometheus is an open-source application used for metrics-based monitoring and alerting. Prometheus calls out to your application, pulls real-time metrics, compresses and stores them in a time-series database. Moreover, it offers a powerful data model and a query language and can provide detailed and actionable metrics. When you deploy a new version of the app, k8s creates a new pod (container) and after the pod is ready k8s destroy the old one. It is on a constant vigil, watching the k8s API and when detects a change it creates a new Prometheus configuration, based on the services (pods) changes.</p>
+
+<p><strong>50. What can you monitor with Prometheus?</strong></p>
+
+<p>Prometheus is a monitoring solution for recording and processing any purely numeric time-series. It gathers, organizes, and stores metrics along with unique identifiers and timestamps. Prometheus is open-source software that collects metrics from targets by &ldquo;scraping&rdquo; metrics HTTP endpoints.</p>
+
+<p>&nbsp;</p>

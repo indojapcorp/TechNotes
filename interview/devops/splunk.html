@@ -1,0 +1,472 @@
+<h2>1) Define Splunk</h2>
+
+<p>It is a software technology that is used for searching, visualizing, and monitoring machine-generated big data. It monitors and different types of log files and stores data in Indexers.</p>
+
+<h2>2) List out common ports used by Splunk.</h2>
+
+<p>Common ports used by Splunk are as follows:</p>
+
+<ul>
+	<li>Web Port: 8000</li>
+</ul>
+
+<ul>
+	<li>Management Port: 8089</li>
+</ul>
+
+<ul>
+	<li>Network port: 514</li>
+</ul>
+
+<ul>
+	<li>Index Replication Port: 8080</li>
+</ul>
+
+<ul>
+	<li>Indexing Port: 9997</li>
+</ul>
+
+<ul>
+	<li>KV store: 8191</li>
+</ul>
+
+<h2>3) Explain Splunk components</h2>
+
+<p>The fundamental components of Splunk are:</p>
+
+<p>Universal forward: It is a lightweight component which inserts data to Splunk forwarder.</p>
+
+<p>Heavy forward: It is a heavy component that allows you to filter the required data.</p>
+
+<p>Search head: This component is used to gain intelligence and perform reporting.</p>
+
+<p>License manager: The license is based on volume &amp; usage. It allows you to use 50 GB per day. Splunk regular checks the licensing details.</p>
+
+<p>Load Balancer: In addition to the functionality of default Splunk loader, it also enables you to use your personalized load balancer.</p>
+
+<h2>4) What do you mean by Splunk indexer?</h2>
+
+<p>It is a component of Splunk Enterprise which creates and manages indexes. The primary functions of an indexer are 1) Indexing raw data into an index and 2) Search and manage Indexed data.</p>
+
+<h2>5) What are the disadvantages of using Splunk?</h2>
+
+<p>Some disadvantages of using Splunk tool are:</p>
+
+<p>Splunk can prove expensive for large data volumes. Dashboards are functional but not as effective as some other monitoring tools. Its learning curve is stiff, and you need Splunk training as it&rsquo;s a multi-tier architecture. So, you need to spend lots of time to learn this tool. Searches are difficult to understand, especially regular expressions and search syntax.</p>
+
+<h2>6) What are the pros of getting data into a Splunk instance using forwarders?</h2>
+
+<p>The advantages of getting data into Splunk via forwarders are TCP connection, bandwidth throttling, and secure SSL connection for transferring crucial data from a forwarder to an indexer.</p>
+
+<h2>7) What is the importance of license master in Splunk?</h2>
+
+<p>License master in Splunk ensures that the right amount of data gets indexed. It ensures that the environment remains within the limits of the purchased volume as Splunk license depends on the data volume, which comes to the platform within a 24-hour window.</p>
+
+<h2>8) Name some important configuration files of Splunk</h2>
+
+<p>Commonly used Splunk configuration files are:</p>
+
+<p>Inputs file</p>
+
+<p>Transforms file</p>
+
+<p>Server file</p>
+
+<p>Indexes file</p>
+
+<p>Props file</p>
+
+<h2>9) Explain license violation in Splunk.</h2>
+
+<p>It is a warning error that occurs when you exceed the data limit. This warning error will persist for 14 days. In a commercial license, you may have 5 warnings within a 1-month rolling window before which your Indexer search results and reports stop triggering.</p>
+
+<p>However, in a free version, license violation warning shows only 3 counts of warning.</p>
+
+<h2>10) What is the use of Splunk alert?</h2>
+
+<p>Alerts can be used when you have to monitor for and respond to specific events. For example, sending an email notification to the user when there are more than three failed login attempts in a 24-hour period.</p>
+
+<h2>11) Explain map-reduce algorithm</h2>
+
+<p>Map-reduce algorithm is a technique used by Splunk to increase data searching speed. It is inspired by two functional programming functions 1) reduce () 2) map().</p>
+
+<p>Here map() function is associated with Mapper class and reduce() function is associated with a Reducer class.</p>
+
+<h2>12) Explain different types of data inputs in Splunk?</h2>
+
+<p>Following are different types of data inputs in Splunk:</p>
+
+<p>Using files and directories as input</p>
+
+<p>Configuring Network ports to receive inputs automatically</p>
+
+<p>Add windows inputs. These windows inputs are of four types: 1) active directory monitor, 2) printer monitor, 3) network monitor, and 4) registry inputs monitor.</p>
+
+<h2>13) How Splunk avoids duplicate log indexing?</h2>
+
+<p>Splunk allows you to keeps track of indexed events in a fish buckets directory. It contains CRCs and seeks pointers for the files you are indexing, so Splunk can&rsquo;t if it has read them already.</p>
+
+<h2>14) Explain pivot and data models.</h2>
+
+<p>Pivots are used to create the front views of your output and then choose the proper filter for a better view of this output. Both options are beneficial for the people from a semi-technical or non-technical background.</p>
+
+<p>Data models are most commonly used for creating a hierarchical model of data. However, it can also be used when you have a large amount of unstructured data. It helps you make use of that information without using complicated search queries.</p>
+
+<h2>15) Explain search factor and replication factor?</h2>
+
+<p>Search factor determines the number of data maintained by the indexer cluster. It determines the number of searchable copies available in the bucket.</p>
+
+<p>Replication factor determines the number of copies maintained by the cluster as well as the number of copies that each site maintains.</p>
+
+<h2>16) What is the use of lookup command?</h2>
+
+<p>Lookup command is generally used when you want to get some fields from an external file. It helps you to narrow the search results as it helps to reference fields in an external file that match fields in your event data.</p>
+
+<h2>17) Explain default fields for an event in Splunk</h2>
+
+<p>There are 5 default fields which are barcoded with every event into Splunk. They are: 1) host, 2) source, 3) source type, 4) index, and 5) timestamp.</p>
+
+<h2>18) How can you extract fields?</h2>
+
+<p>In order to extract fields from either sidebar, event lists or the settings menu using UI.</p>
+
+<p>Another way to extract fields in Splunk is to write your regular expressions in a props configuration file.</p>
+
+<h2>19) What do you mean by summary index?</h2>
+
+<p>A summary index is a special index that stores that result calculated by Splunk. It is a fast and cheap way to run a query over a longer period of time.</p>
+
+<h2>20) How to prevent events from being indexed by Splunk?</h2>
+
+<p>You can prevent the event from being indexed by Splunk by excluding debug messages by putting them in the null queue. You have to keep the null queue in transforms.conf file at the forwarder level itself.</p>
+
+<h2>21) What is a Splunk Forwarder? What are the different types of Splunk Forwarders?</h2>
+
+<p>Splunk Forwarder or Splunk Universal Forwarder is a free, dedicated version of Splunk Enterprise that contains only the essential components required to forward data. It is designed to run on production servers, having minimal CPU and memory usage. It is used to gather data from various inputs and forward the data to Splunk indexers. After that, the data would be available for searching.</p>
+
+<p>There are mainly two types of Splunk Forwarders:</p>
+
+<p>Universal Forwarder (UF): It is used to gather data locally. It can&rsquo;t parse or index data.</p>
+
+<p>Heavyweight Forwarder (HWF): It has advanced functionalities and generally works as a remote collector, intermediate forwarder, and possible data filter. It can parse data so; it is not recommended for production systems.</p>
+
+<h2>22) What are the most important configuration files in Splunk?</h2>
+
+<p>Following is the list of most important configuration files in Splunk:</p>
+
+<p>props.conf</p>
+
+<p>indexes.conf</p>
+
+<p>inputs.conf</p>
+
+<p>transforms.conf</p>
+
+<p>server.conf</p>
+
+<h2>23) What are the common port numbers used by Splunk?</h2>
+
+<p>Following is the list of the common port numbers used by Splunk:</p>
+
+<p>Splunk Web Port: 8000</p>
+
+<p>Splunk Management Port: 8089</p>
+
+<p>Splunk Index Replication Port: 8080</p>
+
+<p>Splunk Network port: 514 (Used to get data from the Network port, i.e., UDP data)</p>
+
+<p>Splunk Indexing Port: 9997 KV store: 8191</p>
+
+<h2>24) What do you understand by Splunk App?</h2>
+
+<p>In Splunk, the Splunk app is a container or directory of configurations, searches, dashboards, etc.</p>
+
+<h2>25) What are the features not available in Splunk Free?</h2>
+
+<p>Following is a list of features that are not available in the Splunk Free version:</p>
+
+<ul>
+	<li>Authentication and scheduled searches/alerting</li>
+</ul>
+
+<ul>
+	<li>Deployment management</li>
+</ul>
+
+<ul>
+	<li>Distributed search</li>
+</ul>
+
+<ul>
+	<li>Forwarding in TCP/HTTP (to non-Splunk)</li>
+</ul>
+
+<h2>26) What are the different types of Splunk dashboards available in Splunk?</h2>
+
+<p>Following are the three different types of Splunk dashboards available in Splunk:</p>
+
+<ul>
+	<li>Real-time dashboards</li>
+</ul>
+
+<ul>
+	<li>Dynamic form-based dashboards</li>
+</ul>
+
+<ul>
+	<li>Dashboards for scheduled reports</li>
+</ul>
+
+<h2>27) What will happen if the License Master is unreachable in Splunk?</h2>
+
+<p>In Splunk, if the license master is not available or unreachable, the license slave will start a 24-hour timer, after which the search will be blocked on the license slave (though indexing continues). After that, the users will not be able to search for data in that slave until it can reach the license master again.</p>
+
+<h2>28) What are the different types of search modes supported in Splunk?</h2>
+
+<p>Splunk supports the following three types of dashboards:</p>
+
+<p>Fast mode</p>
+
+<p>Smart mode</p>
+
+<p>Verbose mode</p>
+
+<h2>29) Where is the Splunk Default Configuration stored?</h2>
+
+<p>The Splunk Default Configuration is stored at $splunkhome/etc/system/default</p>
+
+<h2>30) What are the advantages of feeding data into a Splunk instance through Splunk Forwarders?</h2>
+
+<p>The biggest advantages of feeding data into a Splunk instance through Splunk Forwarders are that you can get the three significant benefits:</p>
+
+<p>TCP connection</p>
+
+<p>Bandwidth throttling</p>
+
+<p>An encrypted SSL connection to transfer data from a Forwarder to an Indexer.</p>
+
+<p>Splunk&rsquo;s architecture is made so that the data forwarded to the Indexer is load-balanced by default. In this case, if one Indexer goes down for some reason, the data can quickly re-route itself via another Indexer instance. Another advantage is that the Splunk Forwarders cache the events locally before forwarding them, creating a temporary backup of the data.</p>
+
+<h2>31) What is a license violation in Splunk?</h2>
+
+<p>In Splunk, a license violation is a warning error when the data limit is exceeded. This warning error persists for 14 days. If you have a commercial license, you may see 5 warnings within a 1-month rolling window before which your Indexer search results and reports stop triggering. If you have a free Splunk version, you will see 3 license violation warnings.</p>
+
+<h2>32) What is the use of Splunk DB Connect?</h2>
+
+<p>Splunk DB Connect is a generic SQL database plugin specially designed for Splunk. It facilitates users to integrate database information with Splunk queries and seamlessly get reports.</p>
+
+<h2>33) Why is license master important in Splunk?</h2>
+
+<p>The license master is important in Splunk because it ensures that the right amount of data gets indexed. It also ensures that the environment remains within the limits of the purchased volume. The Splunk license depends on the data volume, which comes to the platform within a 24-hour window.</p>
+
+<h2>34) What is the &ldquo;Summary Index&rdquo; in Splunk? What is its advantage?</h2>
+
+<p>In Splunk, the Summary Index specifies a default Splunk index used to store data retrieved from scheduled searches over time. Splunk Enterprise uses the Summary Index by default if a user does not specify or indicate another.</p>
+
+<p>The biggest advantage of the Summary Index is that it facilitates users to retain the analytics and reports even after the data has aged.</p>
+
+<h2>35) What is the main function of the Splunk Indexer?</h2>
+
+<p>As the name specifies, the Splunk Indexer is used to create and manage indexes.</p>
+
+<p>There are the two main functions of the Splunk Indexer:</p>
+
+<ul>
+	<li>It is used to index raw data into an index.</li>
+</ul>
+
+<ul>
+	<li>It is used to search and manage the indexed data.</li>
+</ul>
+
+<h2>36) What does the Splunk License specify?</h2>
+
+<p>The Splunk license specifies how much data we can index per calendar day (within 24 hours).</p>
+
+<h2>37) How does the Splunk License determine 1 day?</h2>
+
+<p>The Splunk License determines 1 day from midnight to midnight on the clock of the license master.</p>
+
+<h2>38) What is the difference between Splunk with Spark?</h2>
+
+<p>Following is a list of key differences between Splunk with Spark:</p>
+
+<table>
+	<tbody>
+		<tr>
+			<td><strong>Criteria</strong></td>
+			<td><strong>Splunk</strong></td>
+			<td><strong>Spark</strong></td>
+		</tr>
+		<tr>
+			<td>Deployment area</td>
+			<td>Splunk is used for collecting large amounts of machine-generated data.</td>
+			<td>Spark is used for iterative applications and in-memory processing.</td>
+		</tr>
+		<tr>
+			<td>Nature of tool</td>
+			<td>It is proprietary software. It is not open-sourced.</td>
+			<td>It is open-source software.</td>
+		</tr>
+		<tr>
+			<td>Working mode</td>
+			<td>It works on streaming mode.</td>
+			<td>It works on both streaming and batch modes.</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>39) What are the disadvantages of using the Splunk tool?</h2>
+
+<p>Following is a list of some disadvantages of using the Splunk tool:</p>
+
+<ul>
+	<li>Splunk is not open-source software.</li>
+</ul>
+
+<ul>
+	<li>You have to pay a specific price if you want a complete Splunk IT Solutions so, it may prove expensive for large data volumes.</li>
+</ul>
+
+<ul>
+	<li>Splunk dashboards are functional but not as effective as some other monitoring tools.</li>
+</ul>
+
+<ul>
+	<li>Splunk has a multi-tier architecture, and its learning curve is stiff.</li>
+</ul>
+
+<ul>
+	<li>So, you need to invest a lot of time to learn this tool.</li>
+</ul>
+
+<ul>
+	<li>You must need Splunk training to use it effectively.</li>
+</ul>
+
+<ul>
+	<li>In Splunk, searches are difficult to understand especially regular expressions and search syntax.</li>
+</ul>
+
+<h2>40) What are the advantages of using forwarders to get data into a Splunk instance?</h2>
+
+<p>Some key advantages of getting data into Splunk via forwarders are:</p>
+
+<ul>
+	<li>TCP connection</li>
+</ul>
+
+<ul>
+	<li>Bandwidth throttling</li>
+</ul>
+
+<ul>
+	<li>A secure SSL connection for transferring important data from a forwarder to an indexer.</li>
+</ul>
+
+<h2>41) What are some important Splunk search commands used in the Splunk tool?</h2>
+
+<p>Following is a list of some important Splunk search commands used in the Splunk tool:</p>
+
+<p>Abstract.</p>
+
+<p>Addtotals.</p>
+
+<p>Accum.</p>
+
+<p>Anomalies.</p>
+
+<p>Erex.</p>
+
+<p>Filldown.</p>
+
+<p>Rename.</p>
+
+<p>Typer etc.</p>
+
+<h2>42) What is the use of Transaction and Stats commands in Splunk?</h2>
+
+<p>In Splunk, transaction, and stats, both commands are used for different purposes. The transaction command is mostly used in two specific cases:</p>
+
+<p>The transaction command is used when the unique ID (from one or more fields) alone is not sufficient to discriminate between two transactions. In this case, we have to reuse the identifier. When we have to reuse the identifier, for example, in DHCP logs, a particular message is used to identify the beginning or end of a transaction. For example, web sessions are identified by a cookie/client IP. In this case, the time or pauses are also used to segment the data into transactions.</p>
+
+<p>It is also used when we want to see the raw text of events combined rather than an analysis of the constituent fields of the events.</p>
+
+<p>In other cases, it is preferred to use stats commands. The performance of the stats command is higher, so it is best suited for distributed search environment. We can also use the stats command in the case of a unique ID.</p>
+
+<h2>43) What are some important configuration files used in Splunk?</h2>
+
+<p>Some important and most commonly used Splunk configuration files are:</p>
+
+<p>Inputs file</p>
+
+<p>Transforms file</p>
+
+<p>Server file</p>
+
+<p>Indexes file</p>
+
+<p>Props file</p>
+
+<h2>44) What do you understand by Buckets? Explain the Bucket Lifecycle of Splunk.</h2>
+
+<p>In Splunk, buckets are the directories used to store the indexed data. It is a physical directory that chronicles the events of a specific period. A bucket undergoes the following stages of transformation over time.</p>
+
+<p>Hot Bucket: A hot bucket stores the newly indexed data. It is open for writing and new additions. An index can have one or more hot buckets.</p>
+
+<p>Warm Bucket: A warm bucket is used to store the data rolled out from a hot bucket.</p>
+
+<p>Cold Bucket: The cold bucket is used to store the data rolled out from a warm bucket.</p>
+
+<p>Frozen Bucket: A frozen bucket stores the data rolled out from a cold bucket. By default, the Splunk Indexer deletes the frozen data. However, Splunk provides an option to archive it. One thing you must remember is that frozen data is not searchable.</p>
+
+<h2>45) What is the difference between Index time and Search time?</h2>
+
+<p>In Splunk, the index time is a period when the data is consumed and the point when it is written to disk. On the other hand, search time occurs when the search is run as events are composed by the search.</p>
+
+<h2>46) What is the difference between stats and eventstats commands?</h2>
+
+<p>Stats Command: The stats command generates summary statistics of all the existing fields in the search results. After generating summary statistics, it saves them as values in new fields.</p>
+
+<p>Eventstats: Eventstats is similar to the stats command, but it aggregates results and adds inline to each event if the aggregation is pertinent to that event. The eventstats command computes the requested statistics, like the stats command does, but aggregates them to the original raw data.</p>
+
+<h2>47) How can you reset the Splunk administrator password?</h2>
+
+<p>We can reset the administrator password by performing the following steps:</p>
+
+<p>First, login into the server on which you have installed the Splunk tool.</p>
+
+<p>Now, rename the password file and then again start the Splunk tool.</p>
+
+<p>In this step, you can sign into the server by using the username of either the administrator or admin with a password &lsquo;change me&rsquo; option.</p>
+
+<h2>48) What are the top direct competitors of Splunk tool?</h2>
+
+<p>The top direct competitors of Splunk tool are Logstash, Loggly, LogLogic, Sumo Logic, etc.</p>
+
+<h2>49) How can you troubleshoot Splunk performance issues?</h2>
+
+<p>You should perform the following steps to troubleshoot the Splunk performance issues:</p>
+
+<p>First, check the splunkd.log to find if there is any error.</p>
+
+<p>Then, check the server performance issues (CPU/memory usage, disk i/o, etc.) After that, check the number of saved searches running in the background and their system resources consumption.</p>
+
+<p>Install the SOS (Splunk on Splunk) app and check if the dashboard shows any warning or errors. Now, install a Firefox extension called Firebug and enable it in your system.</p>
+
+<p>Now, log into Splunk using Firefox, open the Firebug&rsquo;s panels, and go to the &lsquo;Net&rsquo; panel to enable it. The Net panel displays the HTTP requests and responses and the time spent in each. Here, you will see which requests are slowing down Splunk and affecting the overall performance.</p>
+
+<p>By following the above steps, you can troubleshoot the Splunk performance issues and enhance the performance.</p>
+
+<h2>50) What is Sourcetype in Splunk?</h2>
+
+<p>In Splunk, Sourcetype specifies a default field used to identify the data structure of an incoming event. We have to set Sourcetype at the forwarder level for indexer extraction to identify the different data formats easily. It also determines how Splunk Enterprise formats the data during the indexing process. For this, we have to assign the Sourcetype to your data correctly. If you provide accurate timestamps and event breaks to the indexed data, you can make the data searching even easier.</p>
+
+<h2>51) What is the Summary Index in Splunk?</h2>
+
+<p>A summary index is the default Splunk index (the index that Splunk Enterprise uses if we do not indicate another one) .</p>
+
+<h2>52) What is Splunk DB Connect?</h2>
+
+<p>Splunk DB Connect is a generic SQL database plugin for Splunk that allows us to easily integrate database information with Splunk queries and reports.</p>

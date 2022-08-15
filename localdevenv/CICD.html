@@ -1,0 +1,311 @@
+<noscript> 
+  <style>
+    body {
+      -ms-overflow-style: scrollbar;
+      overflow-y: scroll;
+      overscroll-behavior-y: none;
+    }
+
+    .errorContainer {
+      background-color: #FFF;
+      color: #0F1419;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10%;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .errorButton {
+      margin: 3em 0;
+    }
+
+    .errorButton a {
+      background: #1DA1F2;
+      border-radius: 2.5em;
+      color: white;
+      padding: 1em 2em;
+      text-decoration: none;
+    }
+
+    .errorButton a:hover,
+    .errorButton a:focus {
+      background: rgb(26, 145, 218);
+    }
+
+    .errorFooter {
+      color: #657786;
+      font-size: 80%;
+      line-height: 1.5;
+      padding: 1em 0;
+    }
+
+    .errorFooter a,
+    .errorFooter a:visited {
+      color: #657786;
+      text-decoration: none;
+      padding-right: 1em;
+    }
+
+    .errorFooter a:hover,
+    .errorFooter a:active {
+      text-decoration: underline;
+    }
+
+      #placeholder,
+      #react-root {
+        display: none !important;
+      }
+      body {
+        background-color: #FFF !important;
+      }
+    </style> 
+  <div class="errorContainer"> 
+   <img width="46" height="38" srcset="https://abs.twimg.com/errors/logo46x38.png 1x, https://abs.twimg.com/errors/logo46x38@2x.png 2x" src="https://abs.twimg.com/errors/logo46x38.png" alt="Twitter"> 
+   <h1>JavaScript is not available.</h1> 
+   <p>We’ve detected that JavaScript is disabled in this browser. Please enable JavaScript or switch to a supported browser to continue using twitter.com. You can see a list of supported browsers in our Help Center.</p> 
+   <p class="errorButton"><a href="https://help.twitter.com/using-twitter/twitter-supported-browsers">Help Center</a></p> 
+   <p class="errorFooter"> <a href="https://twitter.com/tos">Terms of Service</a> <a href="https://twitter.com/privacy">Privacy Policy</a> <a href="https://support.twitter.com/articles/20170514">Cookie Policy</a> <a href="https://legal.twitter.com/imprint.html">Imprint</a> <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&amp;utm_source=twc&amp;utm_medium=web&amp;utm_campaign=ao&amp;utm_content=adsinfo">Ads info</a> © 2022 Twitter, Inc. </p> 
+  </div> 
+ </noscript>
+<p>Continuous integration (CI) and continuous delivery (CD) grow in popularity every day. This is because they are crucial to reducing time to market and improving the quality of software.</p>
+
+<p>With the practice of CI and CD, every time we release software from a central repository, it is built and released to test.&nbsp;</p>
+
+<h2>Continuous Integration</h2>
+
+<p>It is a development practice that requires the developer to integrate code in a central shared repository. Every time the developer commits the code, it is integrated with other code and verified by the execution of a test.</p>
+
+<p>CI starts every time we commit code to the centrally shared repository.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Adopting CI is cheap. Essentially, we only need a server with Jenkins, and we can start to use it. CI can be summarized in three simple&nbsp;phases&nbsp;(see Figure&nbsp;<a href="#Fig1">3-1</a>).</p>
+
+<p>Develop</p>
+
+<p>Test</p>
+
+<p>Deploy</p>
+
+<p>The code repository server is where we store our software. This is essentially a software for the repo, like Git or SVN.&nbsp;</p>
+
+<p>The continuous integration server is responsible for running the integration script every time we commit the code. We can use different software for doing that, for example, Jenkins, Travis CI, TeamCity, etc.</p>
+
+<p>&nbsp;</p>
+
+<p>A CI server executes some specific operations.</p>
+
+<p>Retrieves the code from the repository server</p>
+
+<p>Merges the last commit with the old software</p>
+
+<p>Executes the test on the software</p>
+
+<p>Builds the software</p>
+
+<p>Sends a feedback with the result</p>
+
+<p>&nbsp;</p>
+
+<h2>Continuous Delivery</h2>
+
+<p>CD&nbsp;is a software engineering practice used to release software within a short cycle. This means that with every build, we create a new build of the entire software. This does not mean that we release the software to production, but if we want, we can release it. This is the difference between continuous delivery and continuous deployment.</p>
+
+<p>We must understand the differences between&nbsp;<em>continuous delivery</em>&nbsp;and&nbsp;<em>continuous deployment</em>. The concepts are similar, but there is a substantial difference between the two. By continuous delivery, we are referring to a pipeline for creating a build but not necessarily one we intend to release to production. With continuous deployment, we release the build to production every time. This relatively small difference between continuous delivery and deployment makes a big difference to a company&rsquo;s business.</p>
+
+<h3>DIFFERENCES BETWEEN&nbsp;CONTINUOUS INTEGRATION AND CONTINUOUS&nbsp;DELIVERY</h3>
+
+<p>CI and CD are similar, but there are some differences between these practices. CI concentrates on integrating the software with every commit. This occurs after unit testing.</p>
+
+<p>CD extends CI, because it adds another layer after integration and testing of the software are complete. CD builds the software and prepares it for potential release.</p>
+
+<p>CI places a big emphasis on the testing phase. This is very important for CI, in particular when code is merged with the main branch. The goal of CI is not to lose functionality after the merge.</p>
+
+<p>On the other hand, CD places great emphasis on building software. With CD in place, we can decide to release new software on a daily basis. In 2011, Amazon had an average release of new software every 11.6 seconds. This is a huge number of releases per day. With continuous release, we automate any step and process required for achieving this result.</p>
+
+<p>&nbsp;</p>
+
+<h3>STRATEGIES FOR CONTINUOUS DELIVERY</h3>
+
+<p>To ensure good CD, we must have the following:</p>
+
+<ul>
+	<li>
+	<p>Good branching strategies</p>
+	</li>
+</ul>
+
+<p>In CI, the goal is to integrate the software with the main branch. With that in mind, we can develop our branching strategies.</p>
+
+<p>The most common branching strategies are to create a branch for every feature/bug we work on. In this way, we can merge single features with the master branch.</p>
+
+<ul>
+	<li>
+	<p>A strong unit test policy</p>
+	</li>
+	<li>
+	<p>An automatic testing phase</p>
+	</li>
+	<li>
+	<p>Automatic code promotion</p>
+	</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2>Designing&nbsp;a Continuous Integration and Continuous Delivery System</h2>
+
+<p>For putting in place a complete CI and CD system, we must make some changes to our infrastructure and in our architecture. The architecture changes are not directly connected to the software itself but more in the way we produce the software and release it.</p>
+
+<p>The first change we must make is in how we write the code. The developer must start to write the unit test for every single class or function we release, but to be really effective, we must use the TDD technique. This is because, otherwise, we risk writing a test to pass the code, and not to test the requirement we want to implement, which can reduce the benefit of CI.</p>
+
+<p>Another change we must initiate is to force the&nbsp;developer&nbsp;to integrate the software as soon as possible&mdash;at least one time per day. Otherwise, we can spend more time integrating the software and the test phase, and fixing a bug can take a very long time.</p>
+
+<p>We must also put in place some rules about the code. We can implement a&nbsp;code-inspection&nbsp;system, using a tool such as&nbsp;<em>infer</em>, developed by Facebook, which can check multiple languages, such as C, C++, and Java, and produce a report indicating a line of code with an error.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>The most important change we must put in place for a CI system and, later, a CD system is an automatic script for building the software. This script must be used to produce some automatic operation to compile and build the software, and, more important, must be able to start from the command line.</p>
+
+<p>To create the script, we can use software like Maven, Ant, or MSBuild, or we can use the simple command-line scripting in Bash or PowerShell. The language is not important, but we must have something that we can start every time we build under the same conditions that always produces the same result.</p>
+
+<p>To create a good&nbsp;system&nbsp;for CI and CD, we must adhere to some principles.</p>
+
+<ul>
+	<li>
+	<p>Commit the code frequently. Every minor update to the code must be committed and tested.</p>
+	</li>
+	<li>
+	<p>Don&rsquo;t break the code with the commit. With the first commit, execute a local build and test, because the code we commit doesn&rsquo;t stop the cycle for the CI.</p>
+	</li>
+	<li>
+	<p>Develop unit tests. Every commit must be associated with a strong unit test, because we must test to validate the code.</p>
+	</li>
+	<li>
+	<p>Create a script for building the software automatically. We must reduce human interaction, which means we have to create a script for building the software and ensure this works every time, to give us the consistency we need for our system.</p>
+	</li>
+	<li>
+	<p>Build the software for different environments. With a CD system, software development has different stages. Normally, we have a development server, a staging/test server, and one or more production servers. Every environment has different characteristics and, of course, connection parameters. We must create a system to build software in each of these environments.</p>
+	</li>
+	<li>
+	<p>Design pipelines for the software release. To improve quality, we must create a script that automatically promotes the software at every stage.</p>
+	</li>
+	<li>
+	<p>Design a strategy to release the software at every stage. Because different stages are involved, we must design a strategy and an architecture for the software release. For example, when the software is built in development and the test is passed, this must be promoted at this stage. By doing so, we can easily create a Docker image, release in the registry, and, by software for orchestration, release it in the stage.</p>
+	</li>
+</ul>
+
+<h3>BUILDING CONTINUOUS INTEGRATION AND CONTINUOUS DELIVERY&nbsp;PIPELINES</h3>
+
+<p>To build a good system for CI and CD, we must create a pipeline. With a pipeline, we can define the steps necessary for building the software and eventually release it in production.</p>
+
+<p>When we build software, we can identify different stages. Every stage is responsible for a specific validation of the software. The basic pipeline is composed of three stages.</p>
+
+<p>Development</p>
+
+<p>Staging</p>
+
+<p>Production</p>
+
+<p>When we define a pipeline, we essentially create a system for promoting the software from one state to another, when a certain condition is in place. This process must be managed programmatically, so that it can be easily changed/updated and reduce human interaction. Today, there is a lot of software that we can use for that, for example, GoCD, Travis CI, GitBucket, Circle CI, and Jenkins.</p>
+
+<p>&nbsp;</p>
+
+<h3>CONTINUOUS DATABASE INTEGRATION</h3>
+
+<p>When we release software, usually we have a database in which we store the data when we change the software. This can be associated with a change in the data structure, for example, a new table. In this context, it is important to establish a continuous database integration commonly known as&nbsp;<em>database migration</em>&nbsp;.</p>
+
+<p>Continuous database integration is the process of releasing and rebuilding all the database and populating it with new data, every time we release the software.</p>
+
+<p>Following this process ensures that we have a database that is always aligned with the last code and, of course, provides a fresh set of test data. Another benefit of this process is that it identifies any issue with the database every time we release the software. To take advantage of this process, we can create and maintain the script for the data manipulation language (DML) and data definition language (DDL). This script must be stored in the software repo, as with every other piece of code in the system, and then reviewed by the DBA team for approval or rejection.</p>
+
+<p>To adopt this process, we can follow these simple steps during our build:</p>
+
+<p>Drop the entire database. This way, every time we build the software, we have a fresh new database.</p>
+
+<p>Maintain the DML and DDL script in the code repo. The script for creating the database must be in the code repo and integrated every time we release the software.</p>
+
+<p>Have a stage for re-creating the database. Because we continuously integrate the database, our pipeline must have a stage for creating and maintaining the database.</p>
+
+<p>Have a code review for the DML and DDL script. The DBA team must be aware of any change we put in place in the database, so that we can easily identify any relevant issue. In addition, we must have a code review, to ensure that the update doesn&rsquo;t break the database.</p>
+
+<p>Ensure that the test data is always aligned. Because we can change the database structure, we must align the test data to reflect the changes we have made in the database.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h3>PUTTING THE BUILD IN A&nbsp;SHARED&nbsp;LOCATION</h3>
+
+<p>When we finish creating the build, we must share it with other teams. Where we put the build depends on the policy we use to release the software.</p>
+
+<p>If, for example, we release a WAR or an MSI file, we can put the software directly in a shared server. If, for example, we want to create a Docker image, this image must be published in an internal registry used to retrieve the last image to build.</p>
+
+<p>What we must keep in mind is a very simple concept: the immutability of the build. When QA tests a specific build version and validates it, we must release exactly the build used in the QA. The system doesn&rsquo;t have to make another build; it just uses the file passed in QA for release.</p>
+
+<p>&nbsp;</p>
+
+<h3>RELEASING THE BUILD</h3>
+
+<p>Releasing the build is the last phase in our CI/CD system. The build release is not intended to be solely for production but can, for example, be used to restrict the number of servers, specular to the production server, on which some customers can try out new features. This type of server is known as a&nbsp;<em>canary server</em>&nbsp;.</p>
+
+<p>To release the software without interrupting functionality, we can release it with some specific procedures. The most commonly used include</p>
+
+<ul>
+	<li>
+	<p>Blue/green deployment</p>
+	</li>
+	<li>
+	<p>Canary deployment</p>
+	</li>
+	<li>
+	<p>Incremental deployment</p>
+	</li>
+</ul>
+
+<p>The main goal of these techniques is not to interrupt the functionality of the software and intercept potential problems with the infrastructure and the software as soon as possible.</p>
+
+<h4>Blue/Green Deployment</h4>
+
+<p>Blue/green deployment is a technique for releasing software that reduces the risk of downtime. It is called &ldquo;blue/green&rdquo; because we release two production environments: one called blue and another called green.</p>
+
+<p>With blue/green deployment, we have only one live environment. The system for CD releases the new version of the software in the environment that is not live. When the software is ready and tested, it is installed in the other environment and then switched in production. With blue/green deployment, we essentially have two similar environments, and we just switch between the two</p>
+
+<p>Blue/green deployment has some benefits and some costs. With blue/green deployment, we can easily roll back the environment, in case of error, because we always have an environment ready for production.</p>
+
+<p>The cost is connected with some architectural design that we must bear in mind. The first concerns the database. When we release the software, we may have to modify the table, before proceeding with blue/green deployment. First, we must release the database. When we have released the database, we can then switch the environment.</p>
+
+<p>Another important point we must keep in mind is the user session and other data that can be used by the software. We must have a cache common to the environment, in order not to lose this&nbsp;information&nbsp;and allow its use without any issue.</p>
+
+<h4>Canary Deployment</h4>
+
+<p>Canary deployment is intended to reduce the risk connected with the release. We release the software in a small part of the infrastructure, which means only a small percent of customers is touched by the release. In case of failure, we can easily roll back the release. The release is intended to be incremental in terms of users. We increment the number of users after a certain time, so that we don&rsquo;t reach 100%</p>
+
+<p>Blue/green deployment has some benefits and some costs. With blue/green deployment, we can easily roll back the environment, in case of error, because we always have an environment ready for production.</p>
+
+<p>The cost is connected with some architectural design that we must bear in mind. The first concerns the database. When we release the software, we may have to modify the table, before proceeding with blue/green deployment. First, we must release the database. When we have released the database, we can then switch the environment.</p>
+
+<p>Another important point we must keep in mind is the user session and other data that can be used by the software. We must have a cache common to the environment, in order not to lose this&nbsp;information&nbsp;and allow its use without any issue.</p>
+
+<h4>Canary Deployment</h4>
+
+<p>Canary deployment is intended to reduce the risk connected with the release. We release the software in a small part of the infrastructure, which means only a small percent of customers is touched by the release. In case of failure, we can easily roll back the release. The release is intended to be incremental in terms of users. We increment the number of users after a certain time, so that we don&rsquo;t reach 100%</p>
+
+<p>Canary deployment</p>
+
+<p>This type of deployment can be associated with blue/green deployment. The difference is in how we switch the infrastructure. We create our new environment, and when we are satisfied, we start to release a subset of the users in the new server.</p>
+
+<p>Canary deployment is used to provide immediate feedback about the deployment from a restricted number of users. This can help to identify and solve an issue without a complete rollback, because we release only to a restricted number of users. In the event of a rollback owing to any issue, we can just release to a small number of servers.</p>
+
+<p>Another benefit of canary deployment is connected to the slow ramp-up in the number of users. When we release new functionality, a slow ramp-up of users is preferred for analyzing the use of the memory and other issues connected with the functionality. At the same time, the allows the chance to create specific&nbsp;monitoring&nbsp;values for the software.</p>
+
+<h4>Incremental Deployment</h4>
+
+<p>Incremental deployment&nbsp;is used when we want to have only one hardware in production. By this technique, we release to only a percentage of users at a time, for example, to 5% of users. When we are satisfied with the first release, we move to another set of users.</p>
+
+<p>The incremental deployment process is used with only one line of hardware. This is because only a small part of the software is used at a time. The benefit of this type of deployment is connected with the small amount of servers we release to.</p>
+
+<p>Because of this, we can monitor the feature better, immediately identify any issue with the software, and adapt the infrastructure or the code to fix the issue.</p>
+
+<p>&nbsp;</p>

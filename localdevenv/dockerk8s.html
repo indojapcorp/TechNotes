@@ -102,6 +102,17 @@ docker pull hyperledger/fabric-ccenv:1.4.0<br />
 docker tag hyperledger/fabric-ccenv:1.4.0 hyperledger/fabric-ccenv:latest<br />
 
 
+
+
+docker run -it image_name sh <br />
+Or following for images with an entrypoint<br />
+
+docker run -it --entrypoint sh image_name<br />
+Or if you want to see how the image was build, meaning the steps in its Dockerfile, you can:<br />
+
+docker image history --no-trunc image_name > image_history<br />
+
+
 <p>docker-machine create --driver virtualbox default<br />
 docker-machine env default<br />
 eval $(docker-machine env default)<br />
@@ -141,6 +152,9 @@ minikube image load mongo446.tar&nbsp;<br />
 minikube image load knote-java-03.tar&nbsp;<br />
 minikube stop<br />
 minikube ssh</p>
+
+# To point your shell to minikube's docker-daemon, run:<br />
+# eval $(minikube -p minikube docker-env)<br />
 
 <p>-------</p>
 
@@ -273,53 +287,6 @@ minikube service my-serivce</p>
 
 
 
-HYPELEDGER FABRIC compose-test-net.yaml
-
-volumes modification ,${DOCKER_SOCK} replaced with  /var/run/docker.sock
-# Copyright IBM Corp. All Rights Reserved.
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-
-version: '3.7'
-services:
-  peer0.org1.example.com:
-    container_name: peer0.org1.example.com
-    image: hyperledger/fabric-peer:latest
-    labels:
-      service: hyperledger-fabric
-    environment:
-      #Generic peer variables
-      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=fabric_test
-    volumes:
-      - ./docker/peercfg:/etc/hyperledger/peercfg
-      #- ${DOCKER_SOCK}:/host/var/run/docker.sock
-      #- ${DOCKER_SOCK}:/var/run/docker.sock
-      - /var/run/docker.sock:/var/run/docker.sock
-
-
-  peer0.org2.example.com:
-    container_name: peer0.org2.example.com
-    image: hyperledger/fabric-peer:latest
-    labels:
-      service: hyperledger-fabric
-    environment:
-      #Generic peer variables
-      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=fabric_test
-    volumes:
-      - ./docker/peercfg:/etc/hyperledger/peercfg
-      #- ${DOCKER_SOCK}:/host/var/run/docker.sock
-      #- ${DOCKER_SOCK}:/var/run/docker.sock
-      - /var/run/docker.sock:/var/run/docker.sock
-  
-  cli:
-    container_name: cli
-    image: hyperledger/fabric-tools:latest
-    volumes:
-      - ./docker/peercfg:/etc/hyperledger/peercfg
-      
       
 ------------------
 ETHERIUM
@@ -408,3 +375,51 @@ so then raised COMPOSE_HTTP_TIMEOUT from 60 to 300.
 docker kill $(docker ps -q)
 docker rm $(docker ps -a -q)
 docker network prune  //removes unused networks
+
+
+
+
+
+-----------
+
+<p>EXPORT AND IMPORT Images<br />
+If you want to export all images at once, create one big tar file:</p>
+
+<p>docker save $(docker images -q) -o /path/to/save/mydockersimages.tar<br />
+If you want to save multiples images in one .tar file:</p>
+
+<p>IDS=$(docker images | awk &#39;{if ($1 ~ /^(debian|centos)/) print $3}&#39;)<br />
+docker save $IDS -o /path/to/save/somedockersimages.tar<br />
+Finally, if you want to export multiple many images, with one .tar file per images (not disk efficient: common layer are saved in each .tar file):</p>
+
+<p>docker images | awk &#39;{if ($1 ~ /^(openshift|centos)/) print $1 &quot; &quot; $2 &quot; &quot; $3 }&#39; | tr -c &quot;a-z A-Z0-9_.\n-&quot; &quot;%&quot; | while read REPOSITORY TAG IMAGE_ID<br />
+do<br />
+&nbsp; echo &quot;== Saving $REPOSITORY $TAG $IMAGE_ID ==&quot;<br />
+&nbsp; docker &nbsp;save &nbsp; -o /path/to/save/$REPOSITORY-$TAG-$IMAGE_ID.tar $IMAGE_ID<br />
+done<br />
+You may also want to save the list of images so that the restored images can be tagged:</p>
+
+<p>docker images | sed &#39;1d&#39; | awk &#39;{print $1 &quot; &quot; $2 &quot; &quot; $3}&#39; &gt; mydockersimages.list<br />
+On the remote machine, you can load (import) the images:</p>
+
+<p>docker load -i /path/to/save/mydockersimages.tar<br />
+and tag the imported images:</p>
+
+<p>while read REPOSITORY TAG IMAGE_ID<br />
+do<br />
+&nbsp; &nbsp; &nbsp; &nbsp; echo &quot;== Tagging $REPOSITORY $TAG $IMAGE_ID ==&quot;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; docker tag &quot;$IMAGE_ID&quot; &quot;$REPOSITORY:$TAG&quot;<br />
+done &lt; mydockersimages.list</p>
+
+<p>&nbsp;</p>
+
+
+(base) Iyers-MBP:gradle-sample-app priya$ IDS=$(docker images | awk '{if ($1 ~ /^(gradle|golang|mvertes|fabric8|amazoncorretto)/) print $3}')
+docker save $IDS -o ~/vkdev/devops/dockerimagestarball/gradlegomongofabric8amazoncorreto.tar
+
+docker images | sed '1d' | awk '{print $1 " " $2 " " $3}' > mydockersimages.list
+while read REPOSITORY TAG IMAGE_ID
+do
+        echo "== Tagging $REPOSITORY $TAG $IMAGE_ID =="
+        docker tag "$IMAGE_ID" "$REPOSITORY:$TAG"
+done < mydockersimages.list

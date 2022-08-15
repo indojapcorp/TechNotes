@@ -1,0 +1,334 @@
+<h1>1) What is RabbitMQ?</h1>
+
+<p>RabbitMQ is an open-source message-broker software is also known as message queueing technology. It defines queues to which applications communicate for data transfer, or message transmission. Any kind of information could be included in a message. This message is processed by the recipient application.</p>
+
+<h1>2) When and why to use RabbitMQ?</h1>
+
+<p>Message queueing is useful when you want to exchange a message for consumption or for balance of loads between workers with multiple recipients. The user is able to take a message from the queue while the producer is in the queue, and start processing. The consumer can be on a different server or on the same server than the publisher. The requested application can be of one language and the consumer application is of other language &ndash; the message broker would not care about the application languages, it just send messages between consumer and reciever. Which also reduces the dependencies or coupling between the application.</p>
+
+<h1>3)What Is binding And routing Key?</h1>
+
+<p>A binding is a &ldquo;bridge&rdquo; that you set up to connect a queue to an exchange.<br />
+The routing key is an attribute message that the exchange examines when determining how to route the message to queues.</p>
+
+<h1>4)What is a RabbitMQ channel?</h1>
+
+<p>They enable you to have a single connection to the RabbiMQ server, but for different parts of your application they have sandboxed communication. Channels are how the RabbitMQ server communicates with your application. It hold one connection (instance) per client process and many channels in that process (instance)</p>
+
+<h1>5) What is a dead letter queue in rabbitmq?</h1>
+
+<p>In general, a death letter queue (DLQ), also referred to as an undelivered-message queue, is a holding queue of messages that can not be sent to their destinations for some reason.<br />
+In rabbitmq, the dead letter queue is service implementation to store messages that satisfy one or more of the following failure criteria.<br />
+Message that is sent to a queue that does not exist.<br />
+Queue length limit exceeded.<br />
+Message length limit exceeded.<br />
+Message is rejected by another queue exchange.<br />
+Message reaches a threshold read counter number, because it is not consumed. Sometimes this is called a &ldquo;back out queue&rdquo;.</p>
+
+<h1>6)How to implement RabbitMQ retry mechanism?</h1>
+
+<p>Whenever any data in the message is transmitted that the receiver does not accept, or when a message is sent to a queue that does not exist. The message is retried and sent up to a set number of times. Even if the communication is not received by the recipient but is sent from the sender&rsquo;s end. Now In such instances, the message queue is marked as undeliverable or deadLetter queue.</p>
+
+<h1>7)What is Exchange?</h1>
+
+<p>Messages are not posted directly in the queue; rather, the user sends messages to the exchange. An exchange is responsible for routing the messages to the various queues. An exchange receives messages from the producer request and routes them by bindings and routing keys to message queues. A binding is a linkage between an exchange and a queue.</p>
+
+<h1>8)Which Protocol RabbitMQ uses?</h1>
+
+<p>RabbitMQ uses Advanced Message Queuing Protocol (AMQP). Its an open standard layer used to communicates date across network by means of byte stream.</p>
+
+<h1>9) What is RabbitMQ Vhost?</h1>
+
+<p>A Virtual Host (a.k.a. &lsquo; vhost &lsquo;) in AMQP is a namespace for objects such as Exchanges, Queues and Bindings. RabbitMQ utilizes more concrete implementation of virtual hosts, through effectively making them &ldquo;virtual clusters&rdquo; on top of the broker.</p>
+
+<h1>10) How RabbitMQ differs from ActiveMQ?</h1>
+
+<p>RabbitMQ is open source message broker with support for several protocols, written in Erlang. Whereas ActiveMQ is also open source with support for several protocols, written in Java langauge.</p>
+
+<h1>11) Is RabbitMQ support MQTT (Message Queue Telemetry Transport)?</h1>
+
+<p>RabbitMQ supports MQTT 3.1.1 through a plugin that ships to the core distribution.<br />
+Supported MQTT Features:</p>
+
+<ul>
+	<li>QoS0 and QoS1 publish &amp; consume</li>
+	<li>QoS2 publish (downgraded to QoS1)</li>
+	<li>TLS</li>
+	<li>Session stickiness</li>
+	<li>Retained messages with pluggable storage backends</li>
+	<li>Last Will and Testament (LWT)</li>
+</ul>
+
+<h1>12) Is RabbitMQ persistent?</h1>
+
+<p>Having a queue durable is not same as making persistent messages. Messages can be distributed either with making mode to persistent or transient. When you post your message, you need to set the delivery mode to persistent if you want it to remain in your long-lasting queue during restart.</p>
+
+<h1>13) Is RabbitMQ uses database?</h1>
+
+<p>RabbitMQ intentionally does not store messages in a database. RabbitMQ writes messages to disk in below two ways:<br />
+Messages published in delivery_mode=2<br />
+Memory pressure causes RabbitMQ to run out of RAM and transfers messages to the disk to free up RAM.</p>
+
+<h1>14) Does RabbitMQ is PUSH or PULL?</h1>
+
+<p>RabbitMQ uses a PUSH template and prevents exhausting consumers through the prefetch configured limit. PULL is used by Kafka, where consumers request for messages from a particular offset batches.</p>
+
+<h1>15) What is Dead Letter Exchange in Rabbitmq?</h1>
+
+<p>If there is no appropriate queue for the message, the message will be dropped quietly. RabbitMQ offers an AMQP extension known as the &ldquo;Dead Letter Exchange&rdquo;. The dead letter exchange provides features for collecting non-deliverable messages.</p>
+
+<h1>16) What is an exchange in RabbitMQ?</h1>
+
+<p>An exchange accepts messages from the producer application and routes them to message queues with help of header attributes, bindings, and routing keys. A binding is a &ldquo;link&rdquo; that you set up to bind a queue to an exchange.</p>
+
+<h1>17) What is routing key in RabbitMQ?</h1>
+
+<p>The routing key is a message attribute. The routing algorithm behind a direct exchange is simple &ndash; a message goes to the queues whose binding key exactly matches the routing key of the message.</p>
+
+<h1>18) What is Erlang ? Why is it required for RabbitMQ ?</h1>
+
+<p>Erlang is a general-purpose, concurrent, functional programming language, as well as a garbage-collected runtime system. The RabbitMQ server is written in the Erlang programming language and is built on the Open Telecom Platform framework for clustering and failover. Since RabbitMQ is built on top of Erlang, we will first need to install Erlang beforing installing RabbitMQ</p>
+
+<h1>19) Does RabbitMQ have any concept of message priority?</h1>
+
+<p>RabbitMQ does have concept of priority-<br />
+We can define the queue&rsquo;s priority range at the time the queue is created<br />
+Messages where priority is not set get a priority of 0<br />
+Messages with a numeric priority higher than the maximum set on the queue get the highest priority the queue supports.</p>
+
+<h1>20) Why choose RabbitMQ?</h1>
+
+<p>There are many on the market now MQ You can choose , such as ActiveMQ、ZeroMQ、Appche Qpid Why choose RabbitMQ？</p>
+
+<p>except Qpid,RabbitMQ Is the only one that has achieved AMQP Standard message server<br />
+reliability ,RabbitMQ Persistence support for , It ensures the stability of the message<br />
+High concurrency ,RabbitMQ Used Erlang development language ,Erlang It&rsquo;s a language developed for telephone switches , Born with a high and luminous ring , And high availability features<br />
+Cluster deployment is simple , It should be Erlang bring RabbitMQ Cluster deployment becomes super simple<br />
+High community activity , According to the information on the Internet ,RabbitMQ It&rsquo;s also the first choice.</p>
+
+<h1>21) What are the different types of exchange types in RabbitMQ?</h1>
+
+<p>RabbitMQ has following types of Exchanges-<br />
+Direct helps in transfering the messages to the queues on the basis of message routing key.<br />
+Fanout helps in sending messages to all the queues that are linked with it.<br />
+Topic helps in exhanging matches between the routing key and the binding routing pattern.<br />
+Headers helps in exchanging the routing attributes of the message headers.</p>
+
+<h1>22) How to delete all queues in RabbitMQ ?</h1>
+
+<p>rabbitmqctl stop_app<br />
+rabbitmqctl reset<br />
+rabbitmqctl start_app</p>
+
+<h1>23) What is Exchange?</h1>
+
+<p>Messages is not posted directly in the queue, the user sends messages to the exchange, it is responsible for routing the messages to the queues.Exchange helps in receiving messages from the producer request and routes them by bindinga and routings keys for messaging queues.<br />
+It acts like a bindage, linking between an exhange and a queue.</p>
+
+<h1>24) Which Protocol RabbitMQ uses?</h1>
+
+<p>RabbitMQ uses AWQP(Advanced Message Queuing Protocol) that is an open standard layer and uses to communicate date across network by means of byte stream.</p>
+
+<h1>25) What is a Server in Rabbitmq?</h1>
+
+<p>RabbitMQ Servers are robust and scalable implementation of AMQP broker, it helps in displaying a banner messages and reports on the progress in the startup sequence with the message Broker Running, that indicates the RabbitMQ broker has been started successfully.</p>
+
+<h1>26) What ports does RabbitMQ use?</h1>
+
+<p>RabbitMQ Management console:<br />
+PORT 15672 for RabbitMQ version 3.x<br />
+PORT 55672 for RabbitMQ pre 3.x</p>
+
+<p>SERVER_ERL_ARGS=&rdquo;+K true +A30 +P 1048576 \<br />
+-kernel inet_default_connect_options [{nodelay,true}] \<br />
+-kernel inet_dist_listen_min 35197 \<br />
+-kernel inet_dist_listen_max 35197&Prime;</p>
+
+<h1>27) How can we verify RabbitMQ version?</h1>
+
+<p>sudo rabbitmqctl status</p>
+
+<h1>28) What is ZeroMQ?</h1>
+
+<p>ZeroMQ is an asynchronous messaging library and is developed by iMatrix to be used in distributed applications.It uses sockets for carrying atomic messages across various transport like in process, inter-process, TCP, and multicast.<br />
+It is written in C++, ZeroMQ is developed by a large community of contributors.</p>
+
+<h1>29) How do we stop the RabbitMQ server on localhost?</h1>
+
+<p>sudo -u rabbitmq rabbitmqctl stop</p>
+
+<h1>30) How to restart RabbitMQ service?</h1>
+
+<p>We can restart it like any other service:<br />
+sudo service rabbitmq-server restart</p>
+
+<p>We get a specific control interface as well:<br />
+sudo rabbitmqctl &ldquo;report&rdquo;<br />
+sudo rabbitmqctl &ldquo;reset&rdquo;</p>
+
+<h1>31)2) Enlist major features RabbitMQ?</h1>
+
+<p>Some of the major features of RabbitMQ are,</p>
+
+<p>RabbitMQ supports Asynchronous messaging with multiple messaging protocols, multiple exchange types, flexible routing, message queuing, and delivery acknowledgment.<br />
+It has support for Distributed deployment to deploy as clusters for high-availability and throughput.<br />
+With RabbitMQ, you get a diverse array of tools and plugins to support continuous integration, operational metrics, and integration to other enterprise systems.<br />
+It provides HTTP-API, command-line tool, and GUI based tool for managing and monitoring RabbitMQ.<br />
+It is Enterprise and Cloud-ready as it is easy to deploy in public and private clouds with support for pluggable authentication, authorization, and TLS &amp; LDAP support.<br />
+Support for many popular programming languages such as Java, .Net, PHP, Python, JavaScript, Ruby, Go, and many others.</p>
+
+<h1>32) Enlist types of exchanges available in RabbitMQ?</h1>
+
+<p>There are four types of exchanges available in RabbitMQ. They are</p>
+
+<p>Direct Exchanges &ndash; This type route the messages with a routing key equal to the routing key declared by the binding queue.</p>
+
+<p>Fanout Exchanges &ndash; This type route the messages to all bound queues indiscriminately.</p>
+
+<p>Topic Exchanges &ndash; This type route the messages to the queues if the routing key of the route is matched all or a portion of the matching patterns.</p>
+
+<p>Headers Exchanges &ndash; This type route the messages based upon the matching of message headers to the expected headers which are specified in the binding queue.</p>
+
+<h1>33) List some client Libraries supported by RabbitMQ?</h1>
+
+<p>Some of the client libraries supported by the RabbitMQ are,</p>
+
+<p>RabbitMQ Java Client<br />
+RabbitMQ JMS Client<br />
+RabbitMQ .NET Client &ndash; supports .NET Core and .NET 4.5.1+<br />
+RawRabbit &ndash; Higher-level client which targets ASP.NET vNext and .NET Core<br />
+Bunny &ndash; RabbitMQ Ruby Client<br />
+March Hare &ndash; JRuby RabbitMQ Client<br />
+Pika &amp; aio-pika &ndash; a pure Python Client<br />
+Aio-amqp &ndash; an asynchronous Python Client<br />
+Php-amqplib &ndash; Fully featured PHP RabbitMQ Client<br />
+Amqp.node &ndash; RabbitMQ Client for Node JS<br />
+Lapin &amp; amiquip &ndash; RabbitMQ Client for rust</p>
+
+<h1>34) What is Spring Cloud Stream?</h1>
+
+<p>Spring Cloud Stream is a framework for building highly-scalable event-driven microservices that are connected with the shared messaging systems. It provides a flexible programming model that is built on already established Spring idioms. It includes support for persistent pub/sub semantics, consumer groups, and stateful partitions. The core building blocks of the Spring Cloud Stream are the Destination Binders, Destination Bindings, and Message.</p>
+
+<h1>35) How to verify the version in RabbitMQ?</h1>
+
+<p>To check for the version of the RabbitMQ installed. Type the command &ldquo;sudo rabbitmqctl status&rdquo; in your shell. Then, check for the line which looks like &ldquo;{rabbit, &ldquo;RabbitMQ&rdquo;, &ldquo;2.6.1&rdquo;},&rdquo;. Here, you can verify the version of the RabbitMQ installed in your system.</p>
+
+<h1>36) What is STOMP?</h1>
+
+<p>STOMP (Simple Text Oriented Messaging Protocol) is used to provide a format for communication between the STOMP clients with the STOMP message brokers. This easy messaging interoperability is supported in many languages, platforms, and brokers. Using STOMP, you can write a client within a couple of hours as it is easy to design. RabbitMQ has support for STOMP through the plugin that ships in the core distribution.</p>
+
+<p>This plugin supports STOMP versions 1.0 through 1.2.</p>
+
+<h1>37) What is the routing key in RabbitMQ?</h1>
+
+<p>The message structure in the RabbitMQ is divided into two parts. They are the payload and routing key.</p>
+
+<p>The routing key is used to describe the payload passed by the system and the messaging system itself to determine who will be the receiver of the payload. The routing key also enables you to bind queues to exchanges to deliver the message to the queue based on the four types of exchanges.</p>
+
+<h1>38) List the design patterns used by RabbitMQ?</h1>
+
+<p>Some of the architectural patterns used by the RabbitMQ are,</p>
+
+<p>One-Message-to-One-Consumer Model</p>
+
+<p>This model is used to deliver each task to exactly one worker. The exchange types of this pattern are,</p>
+
+<p>Round-Robin &ndash; In this patter, the RabbitMQ dispatches each message to the next consumer in the sequence.<br />
+Next Available Worker &ndash; In this type, the RabbitMQ won&rsquo;t give more than one message to a worker at a time.<br />
+One-Message-to-Multiple-Consumers Model</p>
+
+<p>In this model, one message is dispatched to multiple consumers. Some exchange types of this pattern are,</p>
+
+<p>Publish/Subscribe &ndash; In this patter, a producer sends a message to a set of subscribed consumers.</p>
+
+<h1>39) MQ What are the disadvantages？</h1>
+
+<p>Reduced system availability , Dependence on the outside<br />
+You need to consider MQ Lost message , The problem of repeated consumption<br />
+It takes effort to ensure the order of messages , Uniformity</p>
+
+<h1>40) MQ How to avoid message piling up</h1>
+
+<p>Increase the consumption rate （ The way of clustering ）<br />
+Consumers obtain messages in batches for consumption</p>
+
+<h1>41) MQ How to ensure that messages are not lost</h1>
+
+<p>Message confirmation mechanism<br />
+Persistence<br />
+news ACK</p>
+
+<h1>42) MQ What is the push and pull architecture model？</h1>
+
+<p>MQ After the server establishes a long connection with the consumer ,MQ The server will actively push data to consumers<br />
+When consumers start for the first time , Will go to MQ The server pulls data</p>
+
+<h1>43) producer Producer And consumers Consumer What are the knowledge points ？</h1>
+
+<p>producer</p>
+
+<p>Message producer , Deliver a message<br />
+A message generally consists of two parts ： Message body （payload) And labels (Label)<br />
+consumer</p>
+
+<p>News consumption , receive messages<br />
+Consumer connected to RabbitMQ The server , And subscribe to the queue</p>
+
+<p>When consuming a message, only the message body is consumed , Drop the label</p>
+
+<h1>44) How persistence works?</h1>
+
+<p>Rabbit The persistent message is written to the persistent log file on disk , After the news is consumed ,Rabbit This message will be identified as waiting for garbage collection.</p>
+
+<h1>45) RabbitMQ The queue structure of？</h1>
+
+<p>rabbit_amqqueue_process<br />
+Responsible for protocol related message processing , That is, receiving messages from producers 、 Delivering messages to consumers 、 Process message confirmation, etc</p>
+
+<p>backing_queue<br />
+It&rsquo;s the concrete form and engine of message storage , And to rabbit_amqqueue_process Provide the relevant interface for calling</p>
+
+<h1>46) When the switch cannot find a qualified queue based on its own type and routing key , How do you deal with that？</h1>
+
+<p>When we set parameters for the switch , There is a sign called mandatory</p>
+
+<p>When mandatory The flag bit is set to true when<br />
+If exchange According to their own types and messages routingKey Can&rsquo;t find a suitable queue Store messages , that broker Will call basic.return Method to return the message to the producer</p>
+
+<p>When mandatory Set to false when<br />
+The preconditions are consistent with the above , here broker Will discard the message directly</p>
+
+<h1>47) What are the types of nodes in the cluster？</h1>
+
+<p>Memory nodes<br />
+ram, Write changes to memory .</p>
+
+<p>Disk nodes<br />
+disc, Disk write operation</p>
+
+<p>RabbitMQ in requirement At least one disk node</p>
+
+<h1>48) How to ensure RabbitMQ High availability of message queues?</h1>
+
+<p>RabbitMQ There are three modes to ensure ：</p>
+
+<p>standalone mode<br />
+It is usually started locally , Learn and test by yourself , Will not be used in production environments</p>
+
+<p>Common cluster mode<br />
+Start multiple&hellip; On multiple machines RabbitMQ example , Each machine starts one</p>
+
+<p>Mirror cluster mode<br />
+RabbitMQ High availability mode of</p>
+
+<p>Unlike the normal cluster model , Created queue, Regardless of metadata ( Metadata means RabbitMQ Configuration data of ) still queue The message in the message directory will exist on multiple instances ,</p>
+
+<p>Then every time I write a message to queue When , Will automatically send messages to multiple instances queue Message synchronization in</p>
+
+<h1>49) What is Fanout Exchange ?</h1>
+
+<p>Fanout exchange routes the messages to all queues which are bound to it. Say if there are 5 queues bound to Fanout Exchange then when message comes to Fanout Exchange it will go to all 5 queues. It is kind of publish-subscribe.</p>
+
+<h1>50) What is binding ?</h1>
+
+<p>It is link OR connection between exchange and queue. For exchange to route the message to particular queue that queue should be bound to exchange with routing key or headers.</p>

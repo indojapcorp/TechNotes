@@ -1,0 +1,481 @@
+<noscript> 
+  <style>
+    body {
+      -ms-overflow-style: scrollbar;
+      overflow-y: scroll;
+      overscroll-behavior-y: none;
+    }
+
+    .errorContainer {
+      background-color: #FFF;
+      color: #0F1419;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10%;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .errorButton {
+      margin: 3em 0;
+    }
+
+    .errorButton a {
+      background: #1DA1F2;
+      border-radius: 2.5em;
+      color: white;
+      padding: 1em 2em;
+      text-decoration: none;
+    }
+
+    .errorButton a:hover,
+    .errorButton a:focus {
+      background: rgb(26, 145, 218);
+    }
+
+    .errorFooter {
+      color: #657786;
+      font-size: 80%;
+      line-height: 1.5;
+      padding: 1em 0;
+    }
+
+    .errorFooter a,
+    .errorFooter a:visited {
+      color: #657786;
+      text-decoration: none;
+      padding-right: 1em;
+    }
+
+    .errorFooter a:hover,
+    .errorFooter a:active {
+      text-decoration: underline;
+    }
+
+      #placeholder,
+      #react-root {
+        display: none !important;
+      }
+      body {
+        background-color: #FFF !important;
+      }
+    </style> 
+  <div class="errorContainer"> 
+   <img width="46" height="38" srcset="https://abs.twimg.com/errors/logo46x38.png 1x, https://abs.twimg.com/errors/logo46x38@2x.png 2x" src="https://abs.twimg.com/errors/logo46x38.png" alt="Twitter"> 
+   <h1>JavaScript is not available.</h1> 
+   <p>We’ve detected that JavaScript is disabled in this browser. Please enable JavaScript or switch to a supported browser to continue using twitter.com. You can see a list of supported browsers in our Help Center.</p> 
+   <p class="errorButton"><a href="https://help.twitter.com/using-twitter/twitter-supported-browsers">Help Center</a></p> 
+   <p class="errorFooter"> <a href="https://twitter.com/tos">Terms of Service</a> <a href="https://twitter.com/privacy">Privacy Policy</a> <a href="https://support.twitter.com/articles/20170514">Cookie Policy</a> <a href="https://legal.twitter.com/imprint.html">Imprint</a> <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&amp;utm_source=twc&amp;utm_medium=web&amp;utm_campaign=ao&amp;utm_content=adsinfo">Ads info</a> © 2022 Twitter, Inc. </p> 
+  </div> 
+ </noscript>
+<ol>
+	<li><strong>What is Grafana?</strong></li>
+</ol>
+
+<p><img alt="What is Grafana? Why Use It? Everything You Should Know About It -  scaleyourapp.com" src="https://scaleyourapp.com/wp-content/uploads/2019/01/cAdvisor-Dashboard-monitoring-architectural-flow_one-min-1024x631.jpg" /></p>
+
+<p>Grafana</p>
+
+<p>Grafana is used in allowing visualizing, alerting and exploring metrics where they are stored.It also provides us with the tools used in turning our time series database data in graphs and visualizations.Grafana is an open source analutic and interactive web application and also connects all the supported data.Grafana is written in TypeScript and Go and is divided into Front End and Back End.</p>
+
+<p><strong>2. How do I create a report in Grafana?</strong></p>
+
+<p>Step-by-Step Instruction</p>
+
+<ul>
+	<li>Enter the name of the report in the Report Name field.</li>
+	<li>Select the type as a Dashboard to schedule the report. &hellip;</li>
+	<li>Select the required dashboard from the Select Dashboard drop-down to generate reports.</li>
+	<li>Load Time for Dashboard is the time taken for Skedler to evaluate the Grafana Dashboard.</li>
+</ul>
+
+<p><strong>3. What are the features provided by Grafana?</strong></p>
+
+<ul>
+	<li>Visualization &ndash; Grafana helps us in viewing and understanding our data easily.</li>
+	<li>Alerting &ndash; Grafana is used in supporting numerous number of notification channels such as Slack, Pagerduty, etc.</li>
+	<li>Annotations &ndash; Grafana is used in helping us in annotate or in leaving notes on graphs.</li>
+	<li>Open Source &ndash; Grafana is used in backing an active vibrant community.</li>
+</ul>
+
+<p><strong>4. What is Grafana Cloud?</strong></p>
+
+<p>Grafana Cloud is used in observing platform, integrating metrics, tracing and logging with the help of Grafana.It is the best open source observability software that consists of Prometheus, Loki and Tempo without installing, maintaining and in scaling our observability stack.</p>
+
+<p><strong>5. How do we edit the link in a slack notification from Grafana?</strong></p>
+
+<p>We can edit notification by adding it to our ini File and use Grafana in building self referential:</p>
+
+<p>_____________________________________-</p>
+
+<pre>
+<code>[server]
+# Protocol (http or https)
+protocol = http
+
+# The http port  to use
+https_port = 3000
+
+# Domain is used in accessing grafana from a browser
+domain = localhost
+
+# The full public facing url
+root_url = %(protocol)s://%(domain)s:%(http_port)s/
+_____________________________</code></pre>
+
+<p><strong>6. What are Grafana Alerts?</strong></p>
+
+<p>Grafana Alerts helps in allows in attching rules in our dashboard panels, we can save the dashboard as it extracts the alert rules in a separate alert rule storage and schedules it for the evaluation.</p>
+
+<p>Dashboard Alerts consists of 4 components as follows:</p>
+
+<ul>
+	<li>Alerting Rule used in creating an alert.</li>
+	<li>Contact Point used in sending notification when conditions of alerts rule are met.</li>
+	<li>Notification Policy used in grouping, matching and determining where, how to send notifications.</li>
+	<li>Silences used in matching and silencing notifications.</li>
+</ul>
+
+<p><strong>7. What are Cloud Logs?</strong></p>
+
+<p>Cloud Loggings helps in storing, searching, analyzing, monitoring and alerting on logging data and events from AWS Web Service and Google Cloud.</p>
+
+<p><strong>8. What is Grafana Dashboard Templates?</strong><br />
+Grafana Dashboard Templates are used in making our dashboards interactive, we can create dashboard template variables which can be used anywhere in the Grafana Dashboard.These variables helps in allowing us in making dynamic changes to the dashboard.</p>
+
+<p><strong>9. What are Cloud Metrics?</strong></p>
+
+<p>Cloud Metrics helps in providing insights in our Cloud Computing and also predictive analysis of our system, and in determining when our servers are under load and requires provisioning.Cloud Metrics are also used in setting up thresholds through policies which will react in conditions during the cloud operations.It also allows the cloud in self healing with auto fixing in the event of any operational failures.</p>
+
+<p><strong>10. How should we use the selected period of time in a query?</strong></p>
+
+<p>We can use the following variable for selecting the period of time in a query:</p>
+
+<hr />
+<pre>
+increase(http_requests_total[$__interval])</pre>
+
+<hr />
+<p><strong>11. How should we import custom dashboards to grafana using helm?</strong></p>
+
+<p>We can import Custom Dashboard by using the following command:</p>
+
+<p>________________________________________</p>
+
+<pre>
+<code>&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;apiVersion: v1&lt;br&gt;kind: ConfigMap&lt;br&gt;metadata:&lt;br&gt;name: example-dashboard&lt;br&gt;data:&lt;br&gt;{{ (.Files.Glob "custom-dashboards/*.json").AsConfig | indent 2 }}&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;Or&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;#&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;data:&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;custom-dashboard.json: |-&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;{{ (.Files.Get "customJSON") | indent 4 }}&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;#&lt;br&gt;#&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;pick up.&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+____________________________</code></pre>
+
+<p><strong>12. How do you check if the Grafana service is running or not?</strong><br />
+<br />
+You can validate that Grafana is running by checking the service&rsquo;s status command as given below:</p>
+
+<hr />
+<pre>
+$ sudo systemctl status grafana-server</pre>
+
+<hr />
+<p><strong>13. How to configure Grafana, so that dashboards can be viewed without requiring a password?</strong><br />
+<br />
+Make the following small configuration modifications to the default.ini/grafana.ini file to enable anonymous login (Grafana\conf).</p>
+
+<p><strong>If you wish to hide the login page, make the following changes:</strong></p>
+
+<hr />
+<pre>
+[auth]</pre>
+
+<pre>
+Set to true to disable (hide) the login form, useful if you use OAuth</pre>
+
+<pre>
+disable_login_form = false</pre>
+
+<pre>
+disable_login_form = true</pre>
+
+<hr />
+<p><strong>Update disable_login_form to true.</strong></p>
+
+<hr />
+<pre>
+[auth.anonymous]
+enable anonymous access</pre>
+
+<pre>
+enabled = true</pre>
+
+<hr />
+<p><strong>Specify the organization:</strong></p>
+
+<hr />
+<pre>
+specify organization name that should be used for unauthenticated users</pre>
+
+<pre>
+org_name = YOUR_ORG_NAME_HERE</pre>
+
+<hr />
+<p><strong>You should be able to see the Grafana dashboard after restarting Grafana. If this isn&rsquo;t the case, simply change your org role from Viewer to Editor:</strong></p>
+
+<hr />
+<pre>
+specify role for unauthenticated users</pre>
+
+<pre>
+org_role = Editor</pre>
+
+<hr />
+<p><strong>14. What Is Graphite Grafana?</strong></p>
+
+<p>Graphite is a monitoring tool yet again. It makes time series data storage and viewing easier. In a data monitoring setup, Graphite is best used as a data source for Grafana dashboard.<br />
+Grafana provides an advanced Graphite query editor that allows us to interact with data using expressions and functions.</p>
+
+<p><strong>15. How do I add alerts to Grafana?</strong></p>
+
+<p>Create an alert rule by following below steps.</p>
+
+<ul>
+	<li>Hold your mouse over the Grafana Cloud Alerting icon in Grafana and then click Alerts and rules.</li>
+	<li>If you have more than one Prometheus or Loki data source, you can select one from a choice at the top when creating or editing rules.</li>
+	<li>Select Edit rules from the drop-down menu.</li>
+	<li>Select Add rule from the drop-down menu.</li>
+</ul>
+
+<p><strong>16. What is Loki Grafana?</strong></p>
+
+<p>Loki is a Prometheus-inspired horizontally scalable, highly available, multi-tenant log aggregation system. It is intended to be both cost-effective and simple to use. It uses a set of labels for each log stream rather than indexing the contents of the logs.</p>
+
+<p><strong>17. What Alert Notification Channels does Grafana Support?</strong></p>
+
+<p>Majorly it supports below Alert Notification Channels</p>
+
+<ul>
+	<li>Email</li>
+	<li>Slack</li>
+	<li>Kafka</li>
+	<li>Google Hangouts Chat</li>
+	<li>Microsoft Teams</li>
+</ul>
+
+<p><strong>18. What is difference between Grafana and Kibana?</strong></p>
+
+<p><img alt="Evaluate Grafana vs. Kibana for IT data visualization" src="https://cdn.ttgtmedia.com/rms/onlineImages/itops-kibana_vs_grafana-f_mobile.png" /></p>
+
+<p>Difference between Grafana and Kibana</p>
+
+<ul>
+	<li>Kibana&rsquo;s main purpose was to analyze and monitor logs. In the ELK stack, K stands for Kibana. The ElasticSearch team developed Kibana with the goal of having a useful tool for monitoring logs. Instead of running Linux commands on the console to identify exceptions in production, simply navigate around and track the context from the Kibana.</li>
+	<li>Grafana, on the other hand, is developed as a generic monitoring solution that can be used to monitor and analyze pretty much anything. This is a very high-level overview of the differences between the two tools.</li>
+</ul>
+
+<p><strong>19. How do I create a drop down menu in Grafana dashboard based on a Sysdig metrics label?</strong></p>
+
+<p>To do that you need to go in your dashboard, then :</p>
+
+<p>Settings &gt; Variables &gt; New<br />
+In the General block, you have to select Query as the variable type.<br />
+In the Query Options block, you can select your datasource in the dropdown<br />
+Then, in the same block, you&rsquo;ll have a Query textfield. Here you have to use the grafana function called label_values You can refer the documentation for this function.<br />
+So basically, for our case, to retrieve the label value for the region label, will have to do something like this :</p>
+
+<hr />
+<pre>
+label_values(cloud_storage_request_count,region)
+<strong><em><strong><em>_________________</em></strong></em></strong>_______________________</pre>
+
+<p><strong>20. What is Grafana used for?</strong></p>
+
+<p>Grafana is used for a variety of data visualisation use cases including but not limited to server monitoring, performance testing, windows host monitoring and Docker monitoring as well as for building metrics reporting dashboards in general.</p>
+
+<p><strong>21. How do you create a Grafana dashboard?</strong></p>
+
+<p>To create a Grafana dashboard you will want to navigate to the Grafana application after you have installed the platform and select the + icon from the top right-hand side menu. You should now see the option to select &ldquo;Add an empty panel&rdquo;.</p>
+
+<p>Selecting this option will take you to the main dashboard configuration screen where you can start experimenting with different settings to create your first dashboard.</p>
+
+<p><strong>22. Where does Grafana save dashboards?</strong></p>
+
+<p>The folder /var/lib/grafana is the default location where all Grafana dashboards are saved.</p>
+
+<p><strong>23. How do you export a Grafana dashboard?</strong></p>
+
+<p>To export a Grafana dashboard make sure that you have selected the dashboard that you wish to share. From here you can open the dashboard menu. To export this dashboard you will now want to select &ldquo;Share&rdquo; from the menu you have just opened in order to choose &ldquo;export&rdquo;.</p>
+
+<p><strong>24. How do you backup Grafana dashboards?</strong></p>
+
+<p>In order to backup your Grafana dashboard you may wish to consider using an open-source tool such as the Grafana backup tool.</p>
+
+<p>This tool uses a Python application to backup not only Grafana dashboards but also backups your settings, folder permissions and alert channel configurations. There is also the option to use a managed service such as the platform offered by Logit.io, which offers this service by default as part of our commitment to our users.</p>
+
+<p><strong>25. How do you change the panel title in Grafana?</strong></p>
+
+<p>To change the panel title of a chart/table in Grafana click the title of the panel and from the drop-down menu select &ldquo;edit&rdquo;.</p>
+
+<p>From here you will notice a right-hand menu where you can directly change the panel title to a different name of your choice. Once you have typed a new name select &ldquo;apply&rdquo; to save your changes.</p>
+
+<p><strong>26. How do you send data to Grafana?</strong></p>
+
+<p>To forward data to Grafana from different data sources you will need to navigate to &ldquo;Data Sources&rdquo; from the configuration menu.</p>
+
+<p>On this page, you will be able to view both previously configured sources as well as the option to add a new data source. When adding a new data source to Grafana you will be able to see detailed instructions for sending your specific data type within the platform.</p>
+
+<p><strong>27. How do you use Grafana to plot string data?</strong></p>
+
+<p>To get started with plotting string data in Grafana you will need to select the table panel format when you create a new panel in order to display this data accurately, you may also need to change the setting to not aggregate data (no GROUP by).</p>
+
+<p><strong>28. Where do you find the time filter in Grafana?</strong></p>
+
+<p>The $timeFilter variable is used to drill down on insights captured between certain times. It can be found being used for log analysis and SQL querying.</p>
+
+<p>Unfortunately, some users have issues using this filter and so may need to use a workaround to distil the relevant information they are looking to display.</p>
+
+<p><strong>29. How do you use the cURL command in Grafana?</strong></p>
+
+<p>One example of a cURL command for Grafana looks like this; curl http://admin:admin@localhost:3000/api/search. This command performs a fetch of the dashboard for local installations of Grafana running with basic authentication enabled</p>
+
+<p>To find out more on how to use the cURL command in regards on how to perform calls to the Grafana API please read this article.</p>
+
+<p><strong>30. How do you use variables in Grafana?</strong></p>
+
+<p>To use variables in Grafana you will want to familiarise yourself with some of the most popular uses of variables in these example dashboards.</p>
+
+<p><strong>31. How do you delete a Grafana dashboard?</strong></p>
+
+<p>Deleting a dashboard in Grafana is simple. To do this yourself all you have to do is navigate to the dashboard that you wish to delete and select &ldquo;dashboard settings&rdquo; from the top right-hand corner.</p>
+
+<p>Scroll down to the bottom and you will see a button that says &ldquo;Delete dashboard&rdquo;. You will then be asked to confirm your decision to delete your dashboard.</p>
+
+<p><strong>32. What is InfluxDB?</strong></p>
+
+<p><img alt="InfluxDB Report and Query Application - ONOS - Wiki" src="https://wiki.onosproject.org/download/attachments/8423670/influxdb_arch.png?version=1&amp;modificationDate=1459521841415&amp;api=v2" /></p>
+
+<p>InfluxDB</p>
+
+<p>InfluxDB is a time-series database written in the Go programming language.</p>
+
+<p><strong>33. What is InfluxDB used for?</strong></p>
+
+<p>InfluxDB is used for both the storage and retrieval of time series data and is commonly used by those who wish to perform operations monitoring as well as logs and metrics analysis.</p>
+
+<p><strong>34. What is Graphite DB?</strong></p>
+
+<p>Graphite DB is an open-source time-series database. This means that it is able to store time-series data and render graphs based upon this data.</p>
+
+<p><strong>35. How do you restart Grafana?</strong></p>
+
+<p>If you are running your Grafana deployment on Windows you will need to locate the services app, right-click on Grafana and then within the context menu select &ldquo;restart&rdquo;.</p>
+
+<p><strong>36. How do you upgrade Grafana?</strong></p>
+
+<p>If you have installed Grafana from the APT repository then every time you run the apt-get upgrade command it will automatically update your software to the latest version.</p>
+
+<p>If you installed Grafana in another way then you may wish to review other methods of upgrading here.</p>
+
+<p><strong>37. Is Grafana a monitoring tool?</strong></p>
+
+<p>As a visualization tool, Grafana is a popular component in monitoring stacks, often used in combination with time series databases such as InfluxDB, Prometheus and Graphite; monitoring platforms such as Sensu, Icinga, Checkmk, Zabbix, Netdata, and PRTG; SIEMs such as Elasticsearch and Splunk; and other data sources.</p>
+
+<p><strong>38. What can I monitor with Grafana?</strong></p>
+
+<p>Grafana supports graph, singlestat, table, heatmap, and freetext panels, as well as integration with official and community-built plugins (like world map or clock) and apps that could be visualized, too.</p>
+
+<p><strong>39. What is the purpose of Grafana?</strong></p>
+
+<p>The purpose of Grafana dashboards is to bring data together in a way that is both efficient and organized. It allows users to better understand the metrics of their data through queries, informative visualizations and alerts.</p>
+
+<p><strong>40. How good is Grafana?</strong></p>
+
+<p><strong>Grafana Ratings</strong></p>
+
+<p>&ldquo;It&rsquo;s a great tool that will help you to put your data into perspective in a nice and organized way.&rdquo; &ldquo;This software can connect with a lot of things, like mysql, postgres, zabbix. This made a powerfull tool for develop a nice dashboard to show any type of graphs.&rdquo;</p>
+
+<p><strong>41. Is Grafana an APM?</strong></p>
+
+<p>Grafana is a great open source solution for combining data from multiple data sources. The new Instana APM plugin for Grafana is another example of our commitment to working with the open source community to foster solutions that meet the needs of all customers.</p>
+
+<p><strong>42. What is metrics in Grafana?</strong></p>
+
+<p>Metrics tell you how much of something exists, such as how much memory a computer system has available or how many centimeters long a desktop is. In the case of Grafana, metrics are most useful when they are recorded repeatedly over time.</p>
+
+<p><strong>43. What is the difference between Splunk and Grafana?</strong></p>
+
+<p>Grafana is your tool if you need a product only for data visualization without spending a fortune on it. &hellip; Splunk is your product if you need a more versatile solution that can ingest any kind of data or logs and give you the capabilities to query and search through the data quickly.</p>
+
+<p><strong>44. Is Grafana easy to learn?</strong></p>
+
+<p>Grafana is an open source database analysis and monitoring tool that is easy to install on any operating system. It&rsquo;s accessed through a browser, so it can be deployed to your favorite hosting company and can then be accessed by your whole team.</p>
+
+<p><strong>45. What companies use Grafana?</strong></p>
+
+<ul>
+	<li>1639 companies reportedly use Grafana in their tech stacks, including Uber, Robinhood, andLaunchDarkly.</li>
+	<li>Uber.</li>
+	<li>Robinhood.</li>
+	<li>LaunchDarkly.</li>
+	<li>Nubank.</li>
+	<li>KAVAK.</li>
+	<li>Bitpanda.</li>
+	<li>HENNGE K.K.</li>
+	<li>medium.com.</li>
+</ul>
+
+<p><strong>46. What are the disadvantages of Grafana?</strong></p>
+
+<p><strong>Cons to Grafana include:</strong></p>
+
+<ul>
+	<li>Limitations on dashboard organization and design. Visualization panels are limited to those made available by Grafana Labs and its community. &hellip;</li>
+	<li>No data collection and storage. &hellip;</li>
+	<li>Limited data type visualizations.</li>
+</ul>
+
+<p><strong>47. What is Grafana tempo?</strong></p>
+
+<p>Grafana Tempo is an open source, easy-to-use and high-volume distributed tracing backend. Tempo is cost-efficient, requiring only object storage to operate, and is deeply integrated with Grafana, Prometheus, and Loki.</p>
+
+<p><strong>48. How do I monitor logs in Grafana?</strong></p>
+
+<p>After login into the Grafana, click on the Explore tab. Select data source as Loki and enter the {app=&rdquo;nginx&rdquo;} in Log labels. Note that metadata of Nginx deployment contains the label app=nginx which is the same that filters out logs in Loki. Alerts enter into the Pending state as soon as its condition satisfies.</p>
+
+<p><strong>49. How do I push logs into Grafana?</strong></p>
+
+<p><strong>Configure Grafana Cloud to receive the logs</strong>.</p>
+
+<p>Open Grafana Cloud. In the side menu, from Settings (looks like a gear) select Data Sources. On the Configuration page that opens, in the Data Sources tab (which you should already be in), click Add data source. From the list of options, select Loki.</p>
+
+<p><strong>50. Is Grafana better than tableau?</strong></p>
+
+<p>The concept of Grafana is very broad, while Tableau is more focused on business intelligence. Grafana is well suited for working with time-series, application monitoring, and server monitoring. Working with servers can be a bit less comfortable with Tableau. However, Tableau has more specific business analytics tools.</p>
+
+<p>&nbsp;</p>

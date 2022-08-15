@@ -1,0 +1,183 @@
+<p><strong>What exactly is Docker? What distinguishes it?</strong><br />
+<strong>Ans.&nbsp;</strong>Docker is a versatile open-source application that runs on both Linux and Windows. It&rsquo;s used to automate the creation and deployment of containers-based applications. It can be described as a light form of virtualization.</p>
+
+<p>Users can use Docker to package their application and all of its dependencies into containers. It allows users to decouple their applications and infrastructure.</p>
+
+<p>Docker&rsquo;s features</p>
+
+<p>Configuration is simple.</p>
+
+<p>Improved Software Distribution</p>
+
+<p>Isolation of the application</p>
+
+<p>Systems can scale up quickly.</p>
+
+<p>Management of Security</p>
+
+<p>Controlling the versions</p>
+
+<p>Networking that is defined by software</p>
+
+<p>Developer Productivity Has Increased</p>
+
+<p>Efficiencies in Operations</p>
+
+<p><strong>What are Docker containers?</strong></p>
+
+<p><strong>Ans.&nbsp;</strong>Docker containers abstract the application layer and package applications with all of their dependencies in a single container. This enables us to quickly and reliably deploy applications. Containers do not necessitate the installation of a separate operating system. Instead, they use the CPU and memory of the underlying system to complete tasks. This means that any containerized application, regardless of the underlying operating system, can run on any platform. Containers can also be thought of as runtime instances of Docker images.</p>
+
+<p><strong>Describe Docker&rsquo;s main components.<br />
+Ans.&nbsp;</strong>Docker is made up of three main parts:</p>
+
+<p>The Docker Client is a programme that allows users to interact with Docker. The client includes a command-line interface (CLI) that allows users to give Docker daemons commands to create, run, and stop applications. The client and daemon can both be on the same machine. It can also connect to a daemon running on another computer. A client can communicate with multiple daemons.</p>
+
+<p>Docker Host: It gives you everything you need to run your apps. Docker daemon, containers, networks, storage, and images are all part of it. Docker Registry is a repository for Docker containers.</p>
+
+<p>This is the location where Docker images can be stored and downloaded. A public registry and a private registry are the two types of registries. Docker Hub is where docker images are stored by default.</p>
+
+<p>The docker image is stored on the configured registry when we use the docker push command. The docker image is pulled from the configured registry when we use the docker pull or run commands.</p>
+
+<p><strong>What is a DockerFile?</strong><br />
+<strong>Ans.</strong>&nbsp;A Dockerfile is a text file that contains all of the commands necessary to create a Docker image. Docker builds images automatically by following the instructions in the Dockerfile. Docker build can be used to automate the execution of multiple command-line instructions in a sequential order.</p>
+
+<p><strong>How do you turn a Docker image into a Docker container?</strong></p>
+
+<p><strong>Ans.&nbsp;</strong>To make a container from an image, we first have to find the image we want in the Docker repository and then create a container from it. The following command can be used:</p>
+
+<p>1 $ docker run -it -d &lt;image_name&gt;</p>
+
+<p><strong>For Docker Compose, can you use JSON instead of YAML?</strong><br />
+<strong>Ans.</strong>&nbsp;Yes, instead of a YAML file, we can use a JSON file for the Docker Compose file. To use JSON, we must provide the following filename:</p>
+
+<p>1 $ docker-compose -f docker-compose.json up</p>
+
+<p><strong>What is a Docker image, and how does it work?<br />
+Ans.</strong>&nbsp;A Docker image is a read-only template that contains a set of instructions for building Docker containers. It&rsquo;s an executable package (a collection of files or layers) that contains everything you&rsquo;ll need to set up a fully functional container environment, including application code, dependencies, software packages, and more. A Docker image can be created in one of two ways:</p>
+
+<p>Interactive</p>
+
+<p>Dockerfile</p>
+
+<p><strong>Which command should you use to archive a Docker image?</strong></p>
+
+<p><strong>Ans.</strong>&nbsp;The docker save command can be used to save a docker image as an archive.</p>
+
+<p><strong>Syntax</strong></p>
+
+<table>
+	<tbody>
+		<tr>
+			<td>docker save -o &lt;exported_name&gt;.tar &lt;container-name&gt;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><strong>Which</strong>&nbsp;<strong>command is used to import a Docker image</strong>&nbsp;<strong>that has already been exported into</strong>&nbsp;<strong>another Docker host?</strong><br />
+<strong>Ans.&nbsp;</strong>Using the docker load command, we can import a pre-exported Docker image into another Docker host.</p>
+
+<p><strong>Syntax</strong></p>
+
+<table>
+	<tbody>
+		<tr>
+			<td>docker load -i &lt;export_image_name&gt;.tar</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><strong>What is Docker Swarm, and how does it work?</strong><br />
+<strong>Ans.</strong>&nbsp;Docker Swarm is a container orchestration tool that lets us manage multiple containers on multiple hosts. We can use Swarm to combine multiple Docker hosts into a single host for easier management and monitoring.</p>
+
+<p><strong>How do you modify a base image if you want to use it as a starting point?</strong><br />
+<strong>Ans.</strong>&nbsp;Using the Docker command, we can pull an image from Docker Hub onto our local system:</p>
+
+<p>1 $ docker pull &lt;image_name&gt;</p>
+
+<p><strong>What&rsquo;s the best way to start, stop, and kill containers?</strong><br />
+<strong>Ans.</strong>&nbsp;Use the following command to start a Docker container:</p>
+
+<p>$ docker start &lt;container_id&gt;</p>
+
+<p>To stop a Docker container, use the following command:</p>
+
+<p>1 $ docker stop &lt;container_id&gt;</p>
+
+<p>To kill a Docker container, use the following command:</p>
+
+<p>1 $ docker kill &lt;container_id&gt;</p>
+
+<p><strong>Distinguish between the Docker components.</strong><br />
+<strong>Ans.</strong>&nbsp;Docker Client, Host, and Registry are the three architectural components.</p>
+
+<ul>
+	<li>Docker Client: This component communicates with the Docker Host by executing build and run operations.</li>
+	<li>Docker Host: The Docker Daemon, Docker images, and Docker containers are all stored in this component. A connection to the Docker Registry is established by the daemon.</li>
+	<li>Docker Registry: This component is responsible for storing Docker images. It can be a public or private registry, such as Docker Hub or Docker Cloud.</li>
+</ul>
+
+<p><strong>When it comes to virtualization and containerization, what&rsquo;s the difference?</strong><br />
+<strong>Ans.&nbsp;</strong>Virtualization- We can run and host multiple operating systems on a single physical server thanks to virtualization. Hypervisors provide a virtual machine to the guest operating system in virtualization. Each VM on the host can act as a physical machine because the VMs abstract the hardware layer.</p>
+
+<p>Containerization- Containerization gives us a secure environment in which to run our applications. On a single server or virtual machine, we can run multiple applications using the same operating system. Each container represents a different application because containers are an abstraction of the application layer.</p>
+
+<p><strong>What is a hypervisor and what does it do?</strong></p>
+
+<p><strong>Ans.&nbsp;</strong>A hypervisor, also known as a virtual machine monitor, is software that aids in the creation and management of virtual machines. It allows us to support multiple guest virtual machines on a single host computer. This is accomplished by partitioning the host&rsquo;s system resources and allocating them to the installed guest environments. On a single host operating system, multiple operating systems can be installed. Hypervisors are divided into two types:</p>
+
+<p><strong>Native:&nbsp;</strong>Native hypervisors, also known as bare-metal hypervisors, run directly on the host system. It gives us direct access to the host system&rsquo;s hardware and eliminates the need for a base server operating system.</p>
+
+<p><strong>Hosted:&nbsp;</strong>Hypervisors that are hosted use the underlying host operating system.</p>
+
+<p><strong>How do you make a Dockerfile ?</strong><br />
+<strong>Ans.&nbsp;</strong>We&rsquo;ll need to build a Dockerfile in order to create an image that meets our requirements. We can use the docker build command to build a Dockerfile:</p>
+
+<p>1 $ docker build &lt;path to dockerfile&gt;</p>
+
+<p><strong>To add a new image to the Docker Registry, what command do you use?<br />
+Ans.&nbsp;</strong>The docker push command can be used to push a new image to the Docker Registry:</p>
+
+<p>1 $ docker push myorg/img</p>
+
+<p><strong>What is Docker Engine?</strong><br />
+<strong>Ans.</strong>&nbsp;Docker Engine is a free and open-source containerization technology that we can use to create and containerize our apps. The following components are required to run Docker Engine:</p>
+
+<ul>
+	<li>REST API for Docker Engine</li>
+	<li>Docker CLI is a command-line interface for Docker (CLI)</li>
+	<li>Docker Daemon is a daemon that runs on Docker.</li>
+</ul>
+
+<p><strong>How do you get to a container that&rsquo;s already running?</strong><br />
+<strong>Ans.&nbsp;</strong>We can use the following command to get access to a running container:</p>
+
+<p>1 $ docker exec -it &lt;container_id&gt; bash</p>
+
+<p><strong>How do you get a list of all the containers that are currently running?<br />
+Ans.&nbsp;</strong>We can use the following command to get a list of all running containers:</p>
+
+<p>1 $ docker ps</p>
+
+<p><strong>Describe the Docker container&rsquo;s lifecycle.</strong></p>
+
+<p><strong>Ans.&nbsp;</strong>The stages of Docker containers are as follows:</p>
+
+<ul>
+	<li>Create a container</li>
+	<li>Run the container</li>
+	<li>Pause the container (optional)</li>
+	<li>Un-pause the container (optional)</li>
+	<li>Start the container</li>
+	<li>Stop the container</li>
+	<li>Restart the container</li>
+	<li>Kill the container</li>
+	<li>Destroy the container</li>
+</ul>
+
+<p><strong>What are Docker object labels?<br />
+Ans.&nbsp;</strong>Labels for Docker objects are key-value pairs stored as strings. They allow us to tag Docker objects like containers, networks, local daemons, images, Swarm nodes, and services with metadata.</p>
+
+<p><strong>What is the purpose of the docker create command?</strong><br />
+<strong>Ans.&nbsp;</strong>The docker create command prepares an image for running a specified command by creating a writable container layer over it.</p>
+
+<p>&nbsp;</p>

@@ -1,0 +1,882 @@
+<noscript> 
+  <style>
+    body {
+      -ms-overflow-style: scrollbar;
+      overflow-y: scroll;
+      overscroll-behavior-y: none;
+    }
+
+    .errorContainer {
+      background-color: #FFF;
+      color: #0F1419;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10%;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .errorButton {
+      margin: 3em 0;
+    }
+
+    .errorButton a {
+      background: #1DA1F2;
+      border-radius: 2.5em;
+      color: white;
+      padding: 1em 2em;
+      text-decoration: none;
+    }
+
+    .errorButton a:hover,
+    .errorButton a:focus {
+      background: rgb(26, 145, 218);
+    }
+
+    .errorFooter {
+      color: #657786;
+      font-size: 80%;
+      line-height: 1.5;
+      padding: 1em 0;
+    }
+
+    .errorFooter a,
+    .errorFooter a:visited {
+      color: #657786;
+      text-decoration: none;
+      padding-right: 1em;
+    }
+
+    .errorFooter a:hover,
+    .errorFooter a:active {
+      text-decoration: underline;
+    }
+
+      #placeholder,
+      #react-root {
+        display: none !important;
+      }
+      body {
+        background-color: #FFF !important;
+      }
+    </style> 
+  <div class="errorContainer"> 
+   <img width="46" height="38" srcset="https://abs.twimg.com/errors/logo46x38.png 1x, https://abs.twimg.com/errors/logo46x38@2x.png 2x" src="https://abs.twimg.com/errors/logo46x38.png" alt="Twitter"> 
+   <h1>JavaScript is not available.</h1> 
+   <p>We’ve detected that JavaScript is disabled in this browser. Please enable JavaScript or switch to a supported browser to continue using twitter.com. You can see a list of supported browsers in our Help Center.</p> 
+   <p class="errorButton"><a href="https://help.twitter.com/using-twitter/twitter-supported-browsers">Help Center</a></p> 
+   <p class="errorFooter"> <a href="https://twitter.com/tos">Terms of Service</a> <a href="https://twitter.com/privacy">Privacy Policy</a> <a href="https://support.twitter.com/articles/20170514">Cookie Policy</a> <a href="https://legal.twitter.com/imprint.html">Imprint</a> <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&amp;utm_source=twc&amp;utm_medium=web&amp;utm_campaign=ao&amp;utm_content=adsinfo">Ads info</a> © 2022 Twitter, Inc. </p> 
+  </div> 
+ </noscript>
+<h2>1) How to fix a broken build for your project in Jenkins and how to make sure project build doesn&rsquo;t break in Jenkins at all?</h2>
+
+<p>The user needs to open the console output for the build and will try to see if any file changes that were missed during building the project. If there are no issues on that then a better approach would be clean and update his local workspace to replicate the problem on their local machine and will try to solve it.</p>
+
+<p>To make sure Jenkins build is not broken at all we need to make sure that we perform a successful clean install on the local machine with all unit tests. Then make sure that all code changes are checked in without any issues. Then synchronize with a repository to make sure that all required config and changes and any differences are checked into the repository.</p>
+
+<h2>2) What are the different ways in which build can be scheduled in Jenkins?</h2>
+
+<p>The below are the ways of scheduling build in Jenkins</p>
+
+<ul>
+	<li>Builds can be triggered by source code management commits.</li>
+	<li>Builds can be triggered sequentially after completion of other builds.</li>
+	<li>Can be scheduled to run at a specified time using the CRON jobs</li>
+	<li>Manual Build Requests.</li>
+</ul>
+
+<h2>3) What is the use of the Role Based strategy plugin?</h2>
+
+<p>The role-based strategy plugin allows us to create three different types of roles as describes below,</p>
+
+<p>Global Roles: Some of the roles such as admin, job creator, anonymous can be created while selecting this option. The user can allow setting Overall, slave, job, and View and SCM permissions on a global basis.<br />
+Project roles: This job is basically to allow the creation of Job and Run permissions on a project basis.<br />
+Slave roles: This job is only to set node-related permissions.</p>
+
+<h2>4) What do you mean by build pipeline in Jenkins?</h2>
+
+<p>Creating a chain of jobs in Jenkins is the process of automatically starting the sequential job after one job is executed successfully. This approach lets the user build multi-step build pipelines or trigger the rebuild of a project if one of the Project dependencies is updated.</p>
+
+<h2>5) What do you mean by a Jenkins File and what are its advantages?</h2>
+
+<p>A Jenkins file is a text file that contains the definition of a Jenkins Pipeline and it is generally checked into source control.</p>
+
+<p>Audit trail for the Pipeline can be monitored<br />
+It serves as a single source of truth for the Pipeline, which can be viewed and edited by multiple members of the project.</p>
+
+<h2>6) What the Source Code Management tools does Jenkins support?</h2>
+
+<p>Jenkins supports a wide range of Source Code Management tools and few of them are mentioned below,</p>
+
+<ul>
+	<li>AccuRev</li>
+	<li>CVS</li>
+	<li>Subversion</li>
+	<li>Git</li>
+	<li>Mercurial</li>
+	<li>Perforce</li>
+	<li>Clearcase</li>
+	<li>RTC</li>
+</ul>
+
+<h2>7) What is the use of setting environment directive in Jenkins?</h2>
+
+<p>The environment directive specifies a sequence of key-value pairs which will be defined as environment variables for the all steps, or stage-specific steps, depending on where the environment directive is located within the Pipeline. This directive supports a special helper method credentials() which can be used to access pre-defined Credentials by their identifier in the Jenkins environment.</p>
+
+<h2>8) What are the Stages in Jenkins?</h2>
+
+<p>A stage block defines a conceptually distinct subset of tasks performed through the entire Pipeline. Stages contain a sequence of one or more stage directives, the stages section is where the bulk of the &ldquo;work&rdquo; described by a Pipeline will be located. Minimum, it is recommended that stages contain at least one stage directive for each discrete part of the continuous delivery process, such as Build, Test, and Deploy.</p>
+
+<h2>9) What is the programming language that Jenkins builds on?</h2>
+
+<p>Jenkins is an open source automation server written in Java. As an extensible automation server, Jenkins can be used as a simple CI server or turned into the continuous delivery hub for any project.</p>
+
+<p>Impress Employers with your Jenkins knowledge</p>
+
+<p>So, this is all about the best interview questions and answers on Jenkins. I hope these Jenkins interview questions help you crack your interview.<br />
+Prepare yourself with the best interview questions and answers on Jenkins to land your dream job!</p>
+
+<h2>10) What is Jenkins and why use it?</h2>
+
+<p>Jenkins is one of the leading open-source continuous integration tools. The main functionality of this tool is to keep track of the version control system and monitor the build system and provide notifications and reports to alert. It enables you to deliver software by integrating with a large number of testing and deployment technologies.</p>
+
+<p>The following are the reasons to use Jenkins:</p>
+
+<ul>
+	<li>It possesses an installer package for major operating systems.</li>
+</ul>
+
+<ul>
+	<li>Integrates individual projects for a larger purpose</li>
+</ul>
+
+<ul>
+	<li>To keep your team in sync</li>
+</ul>
+
+<ul>
+	<li>Troubleshoot and audit past jobs effortlessly</li>
+</ul>
+
+<ul>
+	<li>Provides accurate data support for project management</li>
+</ul>
+
+<h2>11) What is continuous integration?</h2>
+
+<p>Continuous integration is a process of continuously checking the developer&rsquo;s code into a version control system several times a day and automating the build to check and detect bugs in the written code. Continuous Integration includes the following:</p>
+
+<ul>
+	<li>Development and Compilation</li>
+</ul>
+
+<ul>
+	<li>Database Integration</li>
+</ul>
+
+<ul>
+	<li>Unit Testing</li>
+</ul>
+
+<ul>
+	<li>Production Deployment</li>
+</ul>
+
+<ul>
+	<li>Code Labeling</li>
+</ul>
+
+<ul>
+	<li>Functional Testing</li>
+</ul>
+
+<ul>
+	<li>Generating and Analyzing Reports</li>
+</ul>
+
+<h2>12) What are the features of Jenkins?</h2>
+
+<p>Jenkins comes with the following features:</p>
+
+<p>Free open source.</p>
+
+<p>Easy installation on various operating systems.</p>
+
+<p>Build Pipeline Support.</p>
+
+<p>Workflow Plugin.</p>
+
+<p>Test harness built around JUnit.</p>
+
+<p>Easy upgrades.</p>
+
+<p>Rapid release cycle.</p>
+
+<p>Easy configuration setup.</p>
+
+<p>Excellent community and documentation</p>
+
+<p>Extensible with the use of third-party plugins.</p>
+
+<h2>13) Name some of the plugins in Jenkin?</h2>
+
+<p>Some of the important plugins in Jenkin includes:</p>
+
+<ul>
+	<li>Maven 2 project</li>
+	<li>Amazon EC2</li>
+	<li>HTML publisher</li>
+	<li>Copy Artifact</li>
+	<li>Join</li>
+	<li>Green Balls</li>
+	<li>Git plugin</li>
+	<li>Multi job plugin</li>
+	<li>Test Results Analyzer</li>
+	<li>Metrics</li>
+</ul>
+
+<h2>14) How to restart Jenkins manually?</h2>
+
+<p>To restart Jenkins manually, you can use any one of the following commands:</p>
+
+<p>(jenkins_url)/safe restart &ndash; Allows all running jobs to complete. New jobs will remain in the queue to run after the restart is complete.</p>
+
+<p>(jenkins_url)/restart &ndash; Forces a restart without waiting for builds to complete.</p>
+
+<h2>15) What are the components that you can integrate Jenkins with?</h2>
+
+<p>Jenkins is mainly integrated with the following:</p>
+
+<p>Version Control system like GIT, SVN<br />
+And build tools like Apache Maven.</p>
+
+<h2>16) List some features of Jenkins.</h2>
+
+<p>Features of Jenkins are &ndash;</p>
+
+<ul>
+	<li>Free and open source</li>
+	<li>Excellent community and documentation</li>
+	<li>Exhaustive set of plugins and integrations</li>
+	<li>Easy to set up, install and use on any platform because it is based on Java</li>
+	<li>Supports distributed builds due to master-slave architecture, thus reducing the load on the CI server</li>
+</ul>
+
+<h2>17) How did Jenkins come into existence?</h2>
+
+<p>Originally called Hudson, Jenkins came into existence when Oracle took over the ownership to continue development of the product, by renaming it as Jenkins.</p>
+
+<h2>18) Do you know any other continuous integration tools? How is Jenkins better than any of those?</h2>
+
+<p>There are many other CI tools, the prominent ones being &ndash;</p>
+
+<p>TeamCity<br />
+Bamboo<br />
+Perforce<br />
+Circle CI<br />
+Go<br />
+ThoughtWorks<br />
+Integrity<br />
+Travis CI<br />
+There are many more. We cannot say if Jenkins is better than each because each have their own unique features. For example, TeamCity offers great .NET support but is complex and costly, Travis CI is free just like Jenkins and has good documentation too. Bamboo offers efficient and faster builds but is not completely free and so on.</p>
+
+<h2>19) What is DevOps and in which stage does Jenkins fit in?</h2>
+
+<p>DevOps is a software development practice which blends software development (Dev) with the IT operations (Ops) making the whole development lifecycle simpler and shorter by constantly delivering builds, fixes, updates, and features. Jenkins plays a great role because it helps in this integration by automating the build, test and deployment process.</p>
+
+<h2>20) What are the system requirements to install Jenkins?</h2>
+
+<p>The minimum configuration required is &ndash;</p>
+
+<ul>
+	<li>256MB of RAM</li>
+	<li>1 GB of drive space</li>
+	<li>Java</li>
+	<li>Web browser</li>
+</ul>
+
+<h2>21) How do you install Jenkins?</h2>
+
+<p>To install Jenkins, make sure the following are installed &ndash;</p>
+
+<p>Java (version 8)<br />
+Apache Tomcat (version 9)<br />
+Download the Jenkins war file and deploy it using Tomcat. You can choose to install the plugins suggested by Jenkins during the installation itself. Once the installation is done, you will be able to see the Jenkins dashboard.</p>
+
+<h2>22) What is Groovy?</h2>
+
+<p>Groovy from Apache is a language for Java platform. It is the native scripting language for Jenkins. Groovy-based plugins enhance Jenkins with great interfaces and build reports that are dynamic and consistent.</p>
+
+<h2>23) Give a simple use case/scenario to explain how Jenkins works.</h2>
+
+<p>Let us say a developer is working on some code changes and eventually commits them to the repository.<br />
+Jenkins server, which constantly checks for changes in the repository, detects the change and pulls the changes to trigger a build.<br />
+The build can fail, in which case the developer is informed with reports.<br />
+If the build passes, it is deployed on to the test server.<br />
+Once the testing is complete, a test report is generated and sent to the developers. This process continues till all the tests are successful, after which code is deployed to production.</p>
+
+<h2>24) What are the SCM tools that Jenkins supports?</h2>
+
+<p>The SCM or Source Code Management tools Jenkins supports are SVN, Clearcase, CVS, Git, AccuRev, Perforce, RTC, Mercurial.</p>
+
+<h2>25) What is a job in Jenkins?</h2>
+
+<p>A job or build job is a task or step in the entire build process. It could be compiling the source code, running unit tests, deploying the application to the web server and so on.</p>
+
+<h2>26) How can you create a job?</h2>
+
+<p>On the dashboard page, you can just select a &lsquo;New Job&rsquo;. When you create a job, you can choose options such as the SCM, triggers to control, the build script and notifications.</p>
+
+<h2>27) What are the types of pipelines in Jenkins?</h2>
+
+<p>There are 3 types &ndash;</p>
+
+<ul>
+	<li>CI CD pipeline (Continuous Integration Continuous Delivery)</li>
+	<li>Scripted pipeline</li>
+	<li>Declarative pipeline</li>
+</ul>
+
+<h2>28) What syntax does Jenkins use to schedule build job or SVN polling?</h2>
+
+<p>The cron syntax.</p>
+
+<p>Cron syntax is represented using five asterisks each separated by a space. The syntax is as follows &ndash; [minutes] [hours] [day of the month] [month] [day of the week]. Example, if you want to set up a cron for every Monday at 11.59 pm, it would be</p>
+
+<p>59 11 * * 1</p>
+
+<h2>29) Have you created a build job in Jenkins? Explain how to do it.</h2>
+
+<p>Yes. The simple steps are &ndash;</p>
+
+<ul>
+	<li>Click on New Item on the Dashboard.</li>
+	<li>Select the freestyle project option</li>
+	<li>Specify the details of the job like SCM, build triggers, advanced options etc&hellip;</li>
+	<li>It is important to specify the location of files that should be built.</li>
+	<li>Once all the settings are marked, click on &lsquo;Add build step&rsquo; and select the appropriate option. For example, if you want to build a file, select the file name along with the build command.</li>
+	<li>Click on Build now for saving the build and doing a test run.</li>
+</ul>
+
+<h2>30) How does Jenkins authenticate users?</h2>
+
+<p>There are 3 ways &ndash;</p>
+
+<ul>
+	<li>The default way is to store user data and credentials in an internal database.</li>
+	<li>Configure Jenkins to use the authentication mechanism defined by the application server on which it is deployed.</li>
+	<li>Configure Jenkins to authenticate against LDAP server.</li>
+</ul>
+
+<h2>31) How can you use a third-party tool in Jenkins?</h2>
+
+<p>Let us say we want to use the third-party tool Node.</p>
+
+<p>First make sure Node is installed.<br />
+Though the Jenkins admin console, install the Jenkins plugin for node.<br />
+Go to manage in the admin console and configure the settings on the Tools tab.<br />
+You can add any configured nodeJS tool to your build job in a pipeline<br />
+For different third-party tools, the procedure may vary slightly, because of the difference in configuration settings.</p>
+
+<h2>32) Explain Jenkins&rsquo; working in a simple use-case?</h2>
+
+<p>Let&rsquo;s assume a developer is operating on a code and contributes it to the repository.</p>
+
+<p>Jenkins server scans for adjustments in the repository detects the code and pulls it to start a build.<br />
+If the build malfunctions, the results are sent to the developer to make changes.<br />
+If it succeeds, the build is deployed to a test server.<br />
+A test report is produced and submitted to the developer when the testing is completed. This method is repeated until the code passes all the checks, after which it is deployed to output.</p>
+
+<h2>33) How does one start using Jenkins from the command line?</h2>
+
+<p>The Jenkins Web application ARchive (WAR) file can be started from the command line in the following manner:</p>
+
+<p>Download the latest stable Jenkins WAR file to an appropriate directory on your machine.<br />
+Open up a terminal/command prompt window to the download directory.<br />
+Run the command java -jar Jenkins.War.<br />
+Browse to http://localhost:8080 and wait until the unlock Jenkins page appears.<br />
+Continue with the post-installation setup wizard below.</p>
+
+<h2>34) Explain the Jenkins pipeline?</h2>
+
+<p>A pipeline is a set of interconnected jobs that are executed one after another in a predetermined order. Jenkins pipelines have several modules that can be used to combine and incorporate continuous deployment pipelines. Code is used to convey the directions to be followed.</p>
+
+<p>Jenkins pipeline (or just &ldquo;Pipeline&rdquo;) is a collection of plugins that help you set up and use continuous distribution pipelines in Jenkins. A continuous distribution pipeline is an integrated representation of the product delivery process, from source code to consumers and customers.</p>
+
+<h2>35) Name the types of pipelines in Jenkins?</h2>
+
+<p>There are 3 types:</p>
+
+<ul>
+	<li>CI-CD pipeline (Continuous Integration Continuous Delivery)</li>
+	<li>Scripted pipeline</li>
+	<li>Declarative pipeline</li>
+</ul>
+
+<h2>36) If using SVN polling or scheduling a building job in Jenkins, what syntax is used?</h2>
+
+<p>Cron syntax is used for building a job in Jenkins. Cron syntax is represented by five asterisks, each separated by a space. The syntax is as follows &ndash; [minutes] [hours] [day of the month] [month] [day of the week]. For example, if you want to set up a Cron for every Monday at 11.59 pm, it would be 59 11 * * 1.</p>
+
+<h2>37) Explain how to build a Jenkins job?</h2>
+
+<p>The steps for building a Jenkins job are as follows:</p>
+
+<p>On the Dashboard, click on &ldquo;New Item.&rdquo;<br />
+Select &ldquo;Freestyle Project&rdquo; from the drop-down menu.<br />
+Enter job specifics such as SCM, build triggers, advanced options, and so on.<br />
+It&rsquo;s critical to determine the location of any files that need to be created.<br />
+After you&rsquo;ve labeled all options, click on &lsquo;Add build stage&rsquo; and choose the right option.<br />
+For example, if you wish to create a file, pick the file name and the build command.<br />
+Click on &ldquo;Build Now&rdquo; to save the design and perform a test run.</p>
+
+<h2>38) Explain user authentication in Jenkins?</h2>
+
+<p>Due to various optimizations, Jenkins pipeline programs have become the tool of choice for business companies looking to incorporate and transform continuous distribution (CD) pipelines through Jenkins. CD pipelines are streamlined expressions of the mechanism for getting applications from version control to consumers and clients. Jenkins allows you to build CD pipelines using either a web UI or a Jenkins file that has been dedicated to source control.</p>
+
+<h2>39) How is a third-party tool used in Jenkins?</h2>
+
+<p>Let&rsquo;s pretend we want to use Node, a third-party tool.</p>
+
+<p>Make sure Node is mounted first.<br />
+Install the Jenkins plugin for Node via the Jenkins admin console.<br />
+In the admin console, go to Manage and customize the settings on the Tools page.<br />
+Any optimized nodeJS tool can be added to create a job in a pipeline.<br />
+Because of differences in configurations, the protocol for various third-party tools can vary significantly.</p>
+
+<h2>40) What is the JENKINS_HOME directory used for?</h2>
+
+<p>The JENKINS_HOME directory contains all of the settings, logs, and configurations.</p>
+
+<h2>41) How does one copy files and create a backup in Jenkins?</h2>
+
+<p>You can back up your JENKINS_HOME directory regularly to make a snapshot.<br />
+All build job configurations, slave node configurations, and build history are stored in this directory.<br />
+Copy this directory to make a backup, or copy a working directory to duplicate some job or rename the directory.</p>
+
+<h2>42) What are variables in Jenkins?</h2>
+
+<p>Jenkins Environment Variable is a global variable exposed through the env variable and used anywhere in the Jenkinsfile . Any value stored in the env variable gets stored as a String type. Environment Variables can be set either at the pipeline top level, at the specific stage level, or inside the script block.</p>
+
+<h2>43) What are Groovy scripts?</h2>
+
+<p>Groovy is a scripting language with Java-like syntax for the Java platform. The Groovy scripting language simplifies the authoring of code by employing dot-separated notation, yet still supporting syntax to manipulate collections, Strings, and JavaBeans.</p>
+
+<h2>44) What is script in Jenkins pipeline?</h2>
+
+<p>The script has the elements &ldquo;pipeline&rdquo;, &ldquo;agent&rdquo; and &ldquo;steps&rdquo; which are specific to Declarative Pipeline syntax; &ldquo;stage&rdquo; is common to both Declarative and Scripted; and finally, node&rdquo; is specific for the Scripted one. &ldquo;Pipeline&rdquo; defines the block that will contain all the script content.</p>
+
+<h2>45) What is pipeline Groovy?</h2>
+
+<p>Introduction. A key component of the Pipeline plugin suite, this provides the standard execution engine for Pipeline steps, based on a custom Groovy interpreter that runs inside the Jenkins controller process.</p>
+
+<h2>46) What scripting language does Jenkins use?</h2>
+
+<p>Jenkins is an open source continuous integration/continuous delivery and deployment (CI/CD) automation software DevOps tool written in the Java programming language. It is used to implement CI/CD workflows, called pipelines.</p>
+
+<h2>47) What is workflow in Jenkins?</h2>
+
+<p>Jenkins Workflow is a plugin for Jenkins. &hellip; Workflow projects can be used for the same purposes as regular &ldquo;Freestyle&rdquo; Jenkins projects, but they also have the ability to orchestrate much larger tasks that can span multiple projects, and even create and manage multiple workspaces in a single Workflow.</p>
+
+<h2>48) Are useful plugins in Jenkins?</h2>
+
+<p>Jenkins plugins are a must-have for any developer working with Jenkins. From setting up pipelines to integrating with Jira, Jenkins has a ton of features and plugins that can help you to put out higher-quality software faster.</p>
+
+<h2>49) Does Jenkins require coding?</h2>
+
+<p>Jenkins is an open source automation tool written in Java programming language that allows continuous integration. Jenkins builds and tests our software projects, which continuously making it easier for developers to integrate changes to the project, and making it easier for users to obtain a fresh build.</p>
+
+<h2>50) What are the components in Jenkins?</h2>
+
+<p>Jenkins is mainly integrated with two components. These include version systems and build tools. While Git and SVN are examples of the former, Apache Maven is an example of the latter.</p>
+
+<h2>51) What is Agent label in Jenkins?</h2>
+
+<p>agent. The agent section specifies where the entire Pipeline, or a specific stage, will execute in the Jenkins environment depending on where the agent section is placed. The section must be defined at the top-level inside the pipeline block, but stage-level usage is optional.</p>
+
+<p>o build a version for the job while still keeping track of the updates. The translated code is written in the Groovy programming language.</p>
+
+<h2>52) What is DSL Jenkins?</h2>
+
+<p>Jenkins DSL (Domain Specific Language) is a plugin that allows jobs to be specified programmatically but in a human-readable manner. The UI settings are intuitively converted into code using this plugin. You&rsquo;ll be able to build a version for the job while still keeping track of the updates. The translated code is written in the Groovy programming language.</p>
+
+<p>&nbsp;</p>
+
+
+------------2-------------<br>
+
+<h2>1. What is Jenkins?</h2>
+
+<p>Jenkins is a self-contained, open-source automation server that can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software. Jenkins can be installed through native system packages, Docker, or even run standalone by any machine with a Java Runtime Environment (JRE) installed.</p>
+
+<h2>2) Tell me something about Continuous Integration, Continuous Delivery, and Continuous Deployment?</h2>
+
+<p>Continuous Integration: A software development process where the changes made to software are integrated into the main code as and when a patch is ready so that the software will be always ready to be &ndash; built, tested, deployed, monitored &ndash; continuously.</p>
+
+<p>Continuous Delivery: This is a Software Development Process where the continuously integrated (CI) changes will be tested &amp; deployed continuously into a specific environment, generally through a manual release process, after all the quality checks are successful</p>
+
+<p>Continuous Deployment: A Software Development practice where the continuously integrated (CI) changes are deployed automatically into the target environment after all the quality checks are successful</p>
+
+<h2>3) What are the common use cases Jenkins is used for?</h2>
+
+<p>Jenkins being open-source automation can be used for any kind of software-based automation. Some of the common use-cases include but not limited to &ndash;</p>
+
+<ul>
+	<li>Software build jobs</li>
+	<li>Sanity/Smoke/CI/Regression test jobs</li>
+	<li>Web/Data Scraping related jobs</li>
+	<li>Code coverage measurement jobs</li>
+	<li>General-purpose automation</li>
+	<li>Reverse Engineering jobs</li>
+	<li>Key Decoding jobs &amp; many other jobs where software automation will be applicable.</li>
+</ul>
+
+<h2>4) What are the ways to install Jenkins?</h2>
+
+<p>Jenkins can be installed using &ndash;</p>
+
+<ul>
+	<li>Native System Package Manager like &ndash; apt (Linux), brew (Mac), etc.</li>
+	<li>Docker (popular docker images for Jenkins is available for different platforms like Unix/Mac/Windows in the docker registry)</li>
+	<li>Kubernetes (available as a helm chart and can be installed on our Kubernetes clusters)</li>
+	<li>Standalone (on any machine with a Java Runtime Environment installed)</li>
+</ul>
+
+<h2>5) What is a Jenkins job?</h2>
+
+<p>A Job/Project is the fundamental unit of a logical work (like a software build, an automation task, test execution, etc) using the Jenkins automation server and other required plugins, configurations &amp; infrastructures.</p>
+
+<p>Jobs can be of different types like &ndash; a freestyle project, a multi-configuration project, a pipeline project, a multi-branch project, etc.</p>
+
+<h2>6. What are the types of Jenkins pipelines?</h2>
+
+<p>Jenkins Pipelines can be either &ndash; a Declarative pipeline or a Scripted Pipeline. Declarative pipeline makes use of numerous, generic, predefined build steps/stages (i.e. code snippets) to build our job according to our build/automation needs whereas, with Scripted pipelines, the steps/stages can be custom-defined &amp; used using a groovy syntax which provides better control &amp; fine-tuned execution levels.</p>
+
+<h2>7) How do you store credentials in Jenkins securely?</h2>
+
+<p>Credentials can be stored securely in Jenkins using the Credentials plugin, which stores different types of credentials like &ndash; Username with a password, SSH username with the private key, AWS Credentials, Jenkins Build Token, Secret File/Text, X509 &amp; other certificates, Vault related credentials securely with proper encryption &amp; decryption as and when required.</p>
+
+<h2>8) How can we stop a scheduled job from being executed temporarily?</h2>
+
+<p>Disable the job from the job details page to temporarily stop all scheduled executions &amp; other factors/events from triggering the job and enable it back to resume the job schedules/triggers. If a job is not required permanently, we can delete the job from the jobs list view page.</p>
+
+<h2>9) What are the ways to trigger a Jenkins Job/Pipeline?</h2>
+
+<p>There are many ways we can trigger a job in Jenkins. Some of the common ways are as below &ndash;</p>
+
+<ul>
+	<li>Trigger an API (POST) request to the target job URL with the required data.</li>
+	<li>Trigger it manually from the Jenkins web application.</li>
+	<li>Trigger it using Jenkins CLI from the master/slave nodes.</li>
+	<li>Time-based Scheduled Triggers like a cron job.</li>
+	<li>Event-based Triggers like SCM Actions (Git Commit, Pull Requests), WebHooks, etc.</li>
+	<li>Upstream/Downstream triggers by other Jenkins jobs.</li>
+</ul>
+
+<h2>10) What is Jenkins Build Cause?</h2>
+
+<p>Build Cause is a text attribute that represents what made a job&rsquo;s build to be triggered, say it could be a Jenkins User (from UI), Timer for Scheduled jobs, Upstream jobs for a job which was triggered by upstream job, etc. This is mainly used to identify the nature of the builds &ndash; be it nightly, manual, automated, etc.</p>
+
+<h2>11) How Jenkins knows when to execute a Scheduled job/pipeline and how it is triggered?</h2>
+
+<p>Jenkins master will have the cron entries set up for the jobs as per the scheduled Job&rsquo;s configurations. As and when the time for a particular job comes, it commands agents (based on the configuration of the job) to execute the job with required configurations.</p>
+
+<h2>12) What are the credential types supported by Jenkins?</h2>
+
+<p>In Jenkins, credentials are a set of information used for authentication with internal/external services to accomplish an action. Jenkins credentials are provisioned &amp; managed by a built-in plugin called &ndash; Credentials Binding &ndash; plugin. Jenkins can handle different credentials as follows &ndash;</p>
+
+<p>Secret text &ndash; A token such as an API token, JSON token, etc.<br />
+Username and password &ndash; Basic Authentication can be stored as a credential as well.<br />
+Secret file &ndash; A secret file used to authenticate some secure data services &amp; security handshakes.<br />
+SSH Username with a private key &ndash; An SSH public/private key pair for Machine to Machine authentication.<br />
+Certificate &ndash; a PKCS#12 certificate file and an optional password.<br />
+Docker Host Certificate Authentication credentials.<br />
+And as we can guess, this can be extended to several other extensible credential types like &ndash; AWS credential, Azure secrets, etc. using commonly available plugins.</p>
+
+<h2>13) What are the Scopes of Jenkins Credentials?</h2>
+
+<p>Jenkins credentials can be of one of the two scopes &ndash; Global &amp; System</p>
+
+<p>Global &ndash; the credential will be usable across all the jobs configured in the Jenkins instance (i.e. for all jobs). This is more suited for user Jobs (i.e. for the freestyle, pipeline, or other jobs) to authenticate itself with target services/infrastructures to accomplish the purpose of the job)</p>
+
+<p>System &ndash; This is a special scope that will allow the Jenkins itself (i.e. the core Jenkins functionalities &amp; some installed plugins) to authenticate itself to external services/infrastructures to perform some defined tasks. E.g. sending emails, etc.</p>
+
+<h2>14) What is a Jenkins Shared Library and how it is useful?</h2>
+
+<p>As an organization starts using more and more pipeline jobs, there is a chance for more and more code being duplicated in every pipeline job, since a part of the build/automation processes will be the same for most of the jobs. In such a situation, every other new upcoming job should also duplicate the same piece of code. To avoid duplications, the Jenkins project brought in the concept of Shared Libraries, to code &ndash; DRY &ndash; Don&rsquo;t Repeat Yourself.</p>
+
+<p>Shared libraries are a set of code that can be common for more than one pipeline job and can be maintained separately. Such libraries improve the maintenance, modularity &amp; readability of the pipeline code. And it also speeds up the automation for new jobs.</p>
+
+<h2>15) How do you store credentials in Jenkins securely?</h2>
+
+<p>Credentials can be stored securely in Jenkins using the Credentials plugin, which stores different types of credentials like &ndash; Username with a password, SSH username with the private key, AWS Credentials, Jenkins Build Token, Secret File/Text, X509 &amp; other certificates, Vault related credentials securely with proper encryption &amp; decryption as and when required.</p>
+
+<h2>16) What is Jenkins and why is it used?</h2>
+
+<p>Jenkins is a continuous integration (CI) tool for real-time testing and reporting of smaller builds in a large chunk of code. It is written in Java. It is used because it helps developers and testers work in tandem to detect and close defects early in the software development lifecycle and encourage automated testing of builds.</p>
+
+<h2>17) List some features of Jenkins.</h2>
+
+<p>Features of Jenkins are &ndash;</p>
+
+<ul>
+	<li>Free and open source</li>
+	<li>Excellent community and documentation</li>
+	<li>Exhaustive set of plugins and integrations</li>
+	<li>Easy to set up, install and use on any platform because it is based on Java</li>
+	<li>Supports distributed builds due to master-slave architecture, thus reducing the load on the CI server</li>
+</ul>
+
+<h2>18) What are the advantages of using Jenkins?</h2>
+
+<p>Advantages of Jenkins are &ndash;</p>
+
+<ul>
+	<li>Provides great collaboration between development and operations team, making it into a single DevOps team</li>
+	<li>Code errors can be detected as early as possible.</li>
+	<li>Code deployment is easy and happens in minutes, along with the generation of reports.</li>
+	<li>Automation of integration work, thereby reducing the number of integration issues.</li>
+</ul>
+
+<h2>19) How did Jenkins come into existence?</h2>
+
+<p>Originally called Hudson, Jenkins came into existence when Oracle took over the ownership to continue development of the product, by renaming it as Jenkins.</p>
+
+<h2>20) How is continuous integration achieved using Jenkins?</h2>
+
+<p>Here are the steps &ndash;</p>
+
+<ul>
+	<li>All the developers commit their source code changes to the shared Git repository.</li>
+	<li>Jenkins server checks the shared Git repository at specified intervals and detected changes are then taken into the build.</li>
+	<li>The build results and test results are shared to the developers</li>
+	<li>The built application is displayed on a test server like Selenium and automated tests are ran.</li>
+	<li>The clean and tested build is deployed to the production server.</li>
+</ul>
+
+<h2>21) Do you know any other continuous integration tools? How is Jenkins better than any of those?</h2>
+
+<p>There are many other CI tools, the prominent ones being &ndash;</p>
+
+<p>TeamCity<br />
+Bamboo<br />
+Perforce<br />
+Circle CI<br />
+Go<br />
+ThoughtWorks<br />
+Integrity<br />
+Travis CI<br />
+There are many more. We cannot say if Jenkins is better than each because each have their own unique features. For example, TeamCity offers great .NET support but is complex and costly, Travis CI is free just like Jenkins and has good documentation too. Bamboo offers efficient and faster builds but is not completely free and so on.</p>
+
+<h2>22) What is DevOps and in which stage does Jenkins fit in?</h2>
+
+<p>DevOps is a software development practice which blends software development (Dev) with the IT operations (Ops) making the whole development lifecycle simpler and shorter by constantly delivering builds, fixes, updates, and features. Jenkins plays a great role because it helps in this integration by automating the build, test and deployment process.</p>
+
+<h2>23) What are the system requirements to install Jenkins?</h2>
+
+<p>The minimum configuration required is &ndash;</p>
+
+<ul>
+	<li>256MB of RAM</li>
+	<li>1 GB of drive space</li>
+	<li>Java</li>
+	<li>Web browser</li>
+</ul>
+
+<h2>24) Give some important plugins in Jenkins.</h2>
+
+<p>Here you go &ndash;</p>
+
+<p>Maven 2<br />
+Gits<br />
+Amazon EC2<br />
+Join<br />
+Copy artifact<br />
+Green Balls<br />
+HTML Publisher</p>
+
+<h2>25) What is Groovy?</h2>
+
+<p>Groovy from Apache is a language for Java platform. It is the native scripting language for Jenkins. Groovy-based plugins enhance Jenkins with great interfaces and build reports that are dynamic and consistent.</p>
+
+<h2>26) Give a simple use case/scenario to explain how Jenkins works.</h2>
+
+<p>Let us say a developer is working on some code changes and eventually commits them to the repository.<br />
+Jenkins server, which constantly checks for changes in the repository, detects the change and pulls the changes to trigger a build.<br />
+The build can fail, in which case the developer is informed with reports.<br />
+If the build passes, it is deployed on to the test server.<br />
+Once the testing is complete, a test report is generated and sent to the developers. This process continues till all the tests are successful, after which code is deployed to production.</p>
+
+<h2>27) Can you start Jenkins using command line? How?</h2>
+
+<p>Yes, using jenkins.exe start</p>
+
+<h2>28) What are the SCM tools that Jenkins supports?</h2>
+
+<p>The SCM or Source Code Management tools Jenkins supports are SVN, Clearcase, CVS, Git, AccuRev, Perforce, RTC, Mercurial.</p>
+
+<h2>29) What is a job in Jenkins?</h2>
+
+<p>A job or build job is a task or step in the entire build process. It could be compiling the source code, running unit tests, deploying the application to the web server and so on.</p>
+
+<h2>30) How can you create a job?</h2>
+
+<p>On the dashboard page, you can just select a &lsquo;New Job&rsquo;. When you create a job, you can choose options such as the SCM, triggers to control, the build script and notifications.</p>
+
+<h2>31) What is meant by Jenkins pipeline?</h2>
+
+<p>A pipeline is a group of interlinked jobs done one after the other in a sequence. To integrate and implement continuous delivery pipelines, Jenkins pipelines provides a combination of plugins. The instructions to be performed are given through code.</p>
+
+<h2>32) What are the types of pipelines in Jenkins?</h2>
+
+<p>There are 3 types &ndash;</p>
+
+<ul>
+	<li>CI CD pipeline (Continuous Integration Continuous Delivery)</li>
+	<li>Scripted pipeline</li>
+	<li>Declarative pipeline</li>
+</ul>
+
+<h2>33) How do you install Jenkins?</h2>
+
+<p>To install Jenkins, make sure the following are installed &ndash;</p>
+
+<p>Java (version 8)<br />
+Apache Tomcat (version 9)<br />
+Download the Jenkins war file and deploy it using Tomcat. You can choose to install the plugins suggested by Jenkins during the installation itself. Once the installation is done, you will be able to see the Jenkins dashboard.</p>
+
+<h2>34) Explain what is continuous integration?</h2>
+
+<p>In software development, when multiple developers or teams are working on different segments of same web application, we need to perform integration test by integrating all modules. In order to do that an automated process for each piece of code is performed on daily bases so that all your code get tested.</p>
+
+<h2>35) What is the requirement for using Jenkins?</h2>
+
+<p>To use Jenkins you require</p>
+
+<p>A source code repository which is accessible, for instance, a Git repository<br />
+A working build script, e.g., a Maven script, checked into the repository</p>
+
+<h2>36) Explain how you can move or copy Jenkins from one server to another?</h2>
+
+<p>Slide a job from one installation of Jenkins to another by copying the related job directory<br />
+Make a copy of an already existing job by making clone of a job directory by a different name<br />
+Renaming an existing job by renaming a directory.</p>
+
+<h2>37) Mention what are the commands you can use to start Jenkins manually?</h2>
+
+<p>To start Jenkins manually, you can use either of the following</p>
+
+<p>(Jenkins_url)/restart: Forces a restart without waiting for builds to complete<br />
+(Jenkin_url)/safeRestart: Allows all running builds to complete</p>
+
+<h2>38) Mention some of the useful plugins in Jenkin?</h2>
+
+<p>Some of the important plugins in Jenkin includes</p>
+
+<ul>
+	<li>Maven 2 project</li>
+	<li>Amazon EC2</li>
+	<li>HTML publisher</li>
+	<li>Copy artifact</li>
+	<li>Join</li>
+	<li>Green Balls</li>
+</ul>
+
+<h2>39) Explain how you can deploy a custom build of a core plugin?</h2>
+
+<p>To deploy a custom field of a core plugin, you have to do following things</p>
+
+<ul>
+	<li>Stop Jenkins</li>
+	<li>Copy the custom HPI to $Jenkins_Home/plugins</li>
+	<li>Delete the previously expanded plugin directory</li>
+	<li>Make an empty file called .hpi.pinned</li>
+	<li>Start Jenkins</li>
+</ul>
+
+<h2>40) Explain how can create a backup and copy files in Jenkins?</h2>
+
+<p>Jenkins saves all the setting, build artifacts and logs in its home directory, to create a back-up of your Jenkins setup, just copy this directory. You can also copy a job directory to clone or replicate a job or rename the directory.</p>
+
+<h2>41) Explain how you can clone a Git repository via Jenkins?</h2>
+
+<p>To clone a Git repository via Jenkins, you have to enter the e-mail and user name for your Jenkins system. For that, you have to switch into your job directory and execute the &ldquo;git config&rdquo; command.</p>
+
+<h2>42) Explain how you can set up Jenkins job?</h2>
+
+<p>To create a project that is handled via jobs in Jenkins. Select New item from the menu, once this done enter a name for the job and select free-style job. Then click OK to create new job in Jenkins. The next page enables you to configure your job.</p>
+
+<h2>43) Mention what are the two components Jenkins is mainly integrated with?</h2>
+
+<p>Jenkin is mainly integrated with two components</p>
+
+<p>Version Control system like GIT, SVN<br />
+And build tools like Apache Maven.</p>
+
+<h2>44) Why should we use Jenkins?</h2>
+
+<p>Jenkins is often used to consistently design and validate software applications. It makes it easy for developers to implement updates to the code and for users to get the latest version quickly. Jenkins uses plugins to accomplish Continuous Integration. Plugins essentially allow DevOps stages to be integrated.</p>
+
+<h2>45) How does Jenkins achieve Continuous Integration?</h2>
+
+<p>Continuous Integration is a programming process that requires developers to commit updates to the source code in a public repository many times a day or at frequent intervals. A repository is created for any commitments made. As a result, any challenges can be spotted by the team early on. Moreover, the Continuous Integration platform performs various other tasks, such as deploying the development application to the test server, informing the relevant teams about the construct and test performance, etc. Jenkins uses plugins to accomplish Continuous Integration. Plugins generally allow DevOps stages to be integrated.</p>
+
+<h2>46) Explain DevOps and how Jenkins is used in it?</h2>
+
+<p>Azure DevOps (formerly known as Visual Studio Team Services &ndash; VSTS) is a series of tools for creating, evaluating, and distributing software. Developing and installing software has become even more effective with Azure DevOps. It is not only a series of software for automating CI-CD using the Microsoft stack but it can also be conveniently integrated with a variety of other third-party tools.</p>
+
+<h2>47) List the system requirements for the installation of Jenkins.</h2>
+
+<p>Jenkins requires a few basic requirements to be installed on your Windows system.</p>
+
+<p>Hardware Prerequisites</p>
+
+<p>Jenkins needs at least 256 MB of RAM on your computer or laptop to run.<br />
+Jenkins can take up at least 1 GB of space on your hard disc.<br />
+Software Prerequisites</p>
+
+<p>Since Jenkins is based on Java, you&rsquo;ll need the most recent update of either the Java Development Kit (JDK) or the Java Runtime Environment (JRE).</p>
+
+<h2>48) Explain the process of installation of Jenkins</h2>
+
+<p>The measures below should be taken to install Jenkins effectively:</p>
+
+<ul>
+	<li>Go to https://www.jenkins.io/download/ and choose the platform you want to use.</li>
+	<li>Unzip the downloaded package from your local computer&rsquo;s download spot. Double-click the jenkins.msi file that has been unzipped.</li>
+	<li>Press next on the Jenkins setup pad.</li>
+	<li>Selecting the directory where you want the Jenkins instance to be saved (the default location is C: Program Files (x86)Jenkins).</li>
+	<li>Click on the install option.</li>
+	<li>When the installation is completed, click on finish.</li>
+</ul>
+
+<h2>49) Name the Jenkins suite&rsquo;s essential plugins?</h2>
+
+<p>The Jenkin suite&rsquo;s essential plugins are Docker, Jira, Slack Notification, Maven, Amazon E2C, jUnit, Pipeline, Mailer, and Greenballs.</p>
+
+<h2>50) Explain what Groovy means?</h2>
+
+<p>Jenkins uses a domain-specific language (DSL) called &ldquo;Groovy&rdquo; inside a Pipeline Project (read plugin), which will describe a new pipeline as just a script. That single script may articulate a flow that would typically take several &ldquo;standard&rdquo; Jenkins jobs chained around.</p>
+
+<p>Groovy will work in conjunction with Java, and the two languages&rsquo; syntaxes are very close. While writing Groovy, when you forget the grammar, you can write in Java syntax. Groovy may be used as one of the Java platform&rsquo;s scripting languages. Groovy scripts could be named from inside Java, reducing the amount of time spent on Java development.</p>
+
+<h2>51) Explain Jenkins&rsquo; working in a simple use-case?</h2>
+
+<p>Let&rsquo;s assume a developer is operating on a code and contributes it to the repository.</p>
+
+<p>Jenkins server scans for adjustments in the repository detects the code and pulls it to start a build.<br />
+If the build malfunctions, the results are sent to the developer to make changes.<br />
+If it succeeds, the build is deployed to a test server.<br />
+A test report is produced and submitted to the developer when the testing is completed. This method is repeated until the code passes all the checks, after which it is deployed to output.</p>
+
+<h2>52) How does one start using Jenkins from the command line?</h2>
+
+<p>The Jenkins Web application ARchive (WAR) file can be started from the command line in the following manner:</p>
+
+<ul>
+	<li>Download the latest stable Jenkins WAR file to an appropriate directory on your machine.</li>
+	<li>Open up a terminal/command prompt window to the download directory.</li>
+	<li>Run the command java -jar Jenkins.War.</li>
+	<li>Browse to http://localhost:8080 and wait until the unlock Jenkins page appears.</li>
+	<li>Continue with the post-installation setup wizard below.</li>
+</ul>
+

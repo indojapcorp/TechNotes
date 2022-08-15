@@ -1,0 +1,332 @@
+<ol>
+	<li><strong>What is Logstash?</strong></li>
+</ol>
+
+<p>Logstash</p>
+
+<p>Logstash is an open source data collection engine with real-time pipelining capabilities. Logstash can dynamically unify data from disparate sources and normalize the data into destinations of your choice. Cleanse and democratize all your data for diverse advanced downstream analytics and visualization use cases.</p>
+
+<p><strong>2. What does Logstash forwarder do?</strong></p>
+
+<p>Filebeat is based on the Logstash Forwarder source code and replaces Logstash Forwarder as the method to use for tailing log files and forwarding them to Logstash. The registry file, which stores the state of the currently read files, was changed.</p>
+
+<p><strong>3. What is Logstash used for?</strong></p>
+
+<p>Logstash is an open source tool for collecting, parsing, and storing logs for future use. Kibana 3 is a web interface that can be used to search and view the logs that Logstash has indexed. Both of these tools are based on Elasticsearch.</p>
+
+<p><strong>4. What is the Power of Logstash?</strong></p>
+
+<ul>
+	<li><strong>The ingestion workhorse for Elasticsearch and mor</strong>e &ndash; Horizontally scalable data processing pipeline with strong Elasticsearch and Kibana synergy</li>
+	<li><strong>Pluggable pipeline architecture&nbsp;</strong>&ndash; Mix, match, and orchestrate different inputs, filters, and outputs to play in pipeline harmony</li>
+	<li><strong>Community</strong>-extensible and developer-friendly plugin ecosystem &ndash; Over 200 plugins available, plus the flexibility of creating and contributing your own</li>
+</ul>
+
+<p><strong>5. How does Logstash work with the web?</strong></p>
+
+<p>Transform HTTP requests into events</p>
+
+<ul>
+	<li>Consume from web service firehoses like Twitter for social sentiment analysis</li>
+	<li>Webhook support for GitHub, HipChat, JIRA, and countless other applications</li>
+	<li>Enables many Watcher alerting use cases</li>
+	<li>Create events by polling HTTP endpoints on demand</li>
+	<li>Universally capture health, performance, metrics, and other types of data from web application interfaces</li>
+	<li>Perfect for scenarios where the control of polling is preferred over receiving</li>
+</ul>
+
+<p><strong>6. What are Logs and Metrics in Logstash?</strong></p>
+
+<p>Logs and Metrics &ndash; Logstash handle all types of logging data.</p>
+
+<p>Easily ingest a multitude of web logs like Apache, and application logs like log4j for Java<br />
+Capture many other log formats like syslog, networking and firewall logs, and more<br />
+Enjoy complimentary secure log forwarding capabilities with Filebeat<br />
+Collect metrics from Ganglia, collectd, NetFlow, JMX, and many other infrastructure and application platforms over TCP and UDP.</p>
+
+<p><strong>7. Which Java version is required to install Logstash?</strong></p>
+
+<p>Logstash requires Java 8. Java 9 is not supported.</p>
+
+<p><strong>8. What are the two required elements in Logstash pipeline?</strong></p>
+
+<p>A Logstash pipeline has two required elements, input and output, and one optional element, filter. The input plugins consume data from a source, the filter plugins modify the data as you specify, and the output plugins write the data to a destination.</p>
+
+<p><strong>9. Can you explain how Logstash Works?</strong></p>
+
+<p>The Logstash event processing pipeline has three stages: inputs -&gt; filters -&gt; outputs. Inputs generate events, filters modify them, and outputs ship them elsewhere. Inputs and outputs support codecs that enable you to encode or decode the data as it enters or exits the pipeline without having to use a separate filter.</p>
+
+<p><strong>10. What are Inputs in Logstash?</strong></p>
+
+<p>You use inputs to get data into Logstash.</p>
+
+<p>Some of the more commonly-used inputs are: file, syslog, redis, and beats.</p>
+
+<ul>
+	<li><strong>file:</strong>&nbsp;reads from a file on the filesystem, much like the UNIX command tail -0F</li>
+	<li>syslog: listens on the well-known port 514 for syslog messages and parses according to the RFC3164 format</li>
+	<li><strong>redis:&nbsp;</strong>reads from a redis server, using both redis channels and redis lists. Redis is often used as a &ldquo;broker&rdquo; in a centralized Logstash installation, which queues Logstash events from remote Logstash &ldquo;shippers&rdquo;.</li>
+	<li>beats: processes events sent by Filebeat.</li>
+</ul>
+
+<p><strong>11. &nbsp;&nbsp;What Are</strong>&nbsp;<strong>filters in Logstash?</strong></p>
+
+<p>Filters are intermediary processing devices in the Logstash pipeline. You can combine filters with conditionals to perform an action on an event if it meets certain criteria. Some useful filters include:</p>
+
+<ul>
+	<li><strong>grok:</strong>&nbsp;parse and structure arbitrary text. Grok is currently the best way in Logstash to parse unstructured log data into something structured and queryable. With 120 patterns built-in to Logstash, it&rsquo;s more than likely you&rsquo;ll find one that meets your needs!</li>
+	<li><strong>mutate:</strong>&nbsp;perform general transformations on event fields. You can rename, remove, replace, and modify fields in your events.</li>
+	<li><strong>drop:&nbsp;</strong>drop an event completely, for example, debug events.</li>
+	<li><strong>clone</strong>: make a copy of an event, possibly adding or removing fields.</li>
+	<li><strong>geoip:</strong>&nbsp;add information about geographical location of IP addresses (also displays amazing charts in Kibana!)</li>
+</ul>
+
+<p><strong>12. What are Outputs in Logstash?</strong></p>
+
+<p>Outputs are the final phase of the Logstash pipeline. An event can pass through multiple outputs, but once all output processing is complete, the event has finished its execution. Some commonly used outputs include:</p>
+
+<ul>
+	<li><strong>elasticsearch:</strong>&nbsp;send event data to Elasticsearch. If you&rsquo;re planning to save your data in an efficient, convenient, and easily queryable format.</li>
+	<li>file: write event data to a file on disk.</li>
+	<li><strong>graphite:</strong>&nbsp;send event data to graphite, a popular open source tool for storing and graphing metrics.</li>
+	<li><strong>statsd:</strong>&nbsp;send event data to statsd, a service that &ldquo;listens for statistics, like counters and timers, sent over UDP and sends aggregates to one or more pluggable backend services&rdquo;. If you&rsquo;re already using statsd, this could be useful for you!</li>
+</ul>
+
+<p><strong>13. What are Codecs in Logstash?</strong></p>
+
+<p>Codecs are basically streamed filters that can operate as part of an input or output. Codecs enable you to easily separate the transport of your messages from the serialization process. Popular codecs include json, msgpack, and plain (text).</p>
+
+<ul>
+	<li><strong>json:</strong>&nbsp;encode or decode data in the JSON format.</li>
+	<li><strong>multiline:&nbsp;</strong>merge multiple-line text events such as java exception and stacktrace messages into a single event.</li>
+</ul>
+
+<p><strong>14. How many types of Logstash Configuration Files are there?</strong></p>
+
+<p>Logstash has two types of configuration files: pipeline configuration files, which define the Logstash processing pipeline, and settings files, which specify options that control Logstash startup and execution.</p>
+
+<p><strong>15. Explain the Execution Model of Logstash?</strong></p>
+
+<p>The Logstash event processing pipeline coordinates the execution of inputs, filters, and outputs.</p>
+
+<p>Each input stage in the Logstash pipeline runs in its own thread. Inputs write events to a central queue that is either in memory (default) or on disk.</p>
+
+<p>Each pipeline worker thread takes a batch of events off this queue, runs the batch of events through the configured filters, and then runs the filtered events through any outputs.</p>
+
+<p><strong>16. What Is File Beat?</strong></p>
+
+<p>The File beat consumer is a lightweight, useful resource-friendly device that collects logs from documents on the server and forwards those logs on your Logstash example for processing. File beat is designed for reliability and low latency. File beat has a light aid footprint at the host machine, and the Beats enter plugin minimizes the aid demands on the Logstash instance. Testing Tools Tutorial.</p>
+
+<p><strong>17. What Is GeoIP Plugin?</strong></p>
+
+<p>GeoIP plugin appears up IP addresses, derives geographic area records from the addresses, and adds that region statistics to the logs.</p>
+
+<p><strong>18. What Does Logstash Forwarder Do?</strong></p>
+
+<p>File beat is based totally on the Logstash Forwarder supply code and replaces Logstash Forwarder as the method to apply for tailing log files and forwarding them to Logstash. The registry report, which shops the nation of the present study files, changed into modified.</p>
+
+<p><strong>19.</strong>&nbsp;&nbsp;<strong>What are Logs and Metrics in Logstash?</strong></p>
+
+<p>Logs and Metrics &ndash; Logstash handles all types of logging data.</p>
+
+<p>Easily ingest a multitude of weblogs like Apache and application logs like log4j for Java<br />
+Capture many other log formats like Syslog, networking and firewall logs, and more<br />
+Enjoy complimentary secure log forwarding capabilities with Filebeat<br />
+Collect metrics from Ganglia, collected, NetFlow, JMX, and many other infrastructure and application platforms over TCP and UDP.</p>
+
+<p><strong>20. How does Logstash work with the web?</strong></p>
+
+<p>Transform HTTP requests into events</p>
+
+<ul>
+	<li>Consume from web service firehoses like Twitter for social sentiment analysis</li>
+	<li>Webhook support for GitHub, HipChat, JIRA, and countless other applications</li>
+	<li>Enables many Watcher alerting use cases</li>
+	<li>Create events by polling HTTP endpoints on demand</li>
+	<li>Universally capture health, performance, metrics, and other types of data from web application interfaces</li>
+	<li>Perfect for scenarios where the control of polling is preferred over receiving.</li>
+</ul>
+
+<p><strong>21. What is Elasticsearch REST API?</strong></p>
+
+<p>Elasticsearch provides extensive REST APIs to integrate, query, and manage the data. We can do many things using Elasticsearch REST APIs like:</p>
+
+<p>Check our cluster, node, and index health, status, statistics, etc.<br />
+Administer our cluster, node, and index data and metadata.<br />
+Perform CRUD (Create, Read, Update, and Delete) and search operations against our indexes.<br />
+Execute advanced search operations such as paging, sorting, filtering, scripting, aggregations, etc.</p>
+
+<p><strong>22. How can we delete an index in Elasticsearch?</strong><br />
+To delete the index, we can execute the following command:</p>
+
+<p>DELETE /blogs?pretty</p>
+
+<p><strong>23.</strong>&nbsp;<strong>How can we search for any data in Elasticsearch?</strong></p>
+
+<p>We have basically two types of search APIs in Elasticsearch: &lsquo;request URI based&rsquo; and &lsquo;request body based. In REST request URI we use to pass the search criteria in the URL itself like:</p>
+
+<p>GET /blogs/technical/_search?q=topic:kibana<br />
+In the REST request body, we use to construct the search block and write the search query inside the query block of Elasticsearch like:</p>
+
+<p>___________________________</p>
+
+<p>So the URI-based search is quite a basic search where we just want to search a keyword whereas in the request body we can construct the complex queries. So we have the query language to work with request body-based searches.</p>
+
+<p><strong>24. What are the advantages of using Logstash?</strong></p>
+
+<p>The key features that users of Logstash find beneficial include:</p>
+
+<ul>
+	<li>Over 200 plugins are available</li>
+	<li>Process unstructured data</li>
+	<li>Pre-built and custom filters</li>
+	<li>Built custom data processing pipelines</li>
+	<li>Works as an extract, transform &amp; load (ETL) tool</li>
+</ul>
+
+<p><strong>25. How can you test Logstash performance?</strong></p>
+
+<p>You can use the node stats API to retrieve runtime statistics from Logstash.</p>
+
+<p><strong>26. What is a Logstash pipeline?</strong></p>
+
+<p>A Logstash pipeline consists of these elements as listed in the following order: Input (the source of data), filter (processing, parsing &amp; enrichment of data) &amp; output (write the data for use within Elasticsearch &amp; Kibana).</p>
+
+<p><strong>27. What is ELK?</strong></p>
+
+<p>ELK (also known as the Elastic Stack) stands for the formally open-source tools Elasticsearch, Logstash, and Kibana.</p>
+
+<p><strong>28. What is Kibana?</strong></p>
+
+<p>Kibana</p>
+
+<p>Kibana is an open-source visualisation and reporting user interface developed in 2013 by Rashid Khan of the Elastic Company.</p>
+
+<p>Kibana allows users to produce visualisations from a variety of data inputs &amp; can create pie charts, heat maps, line graphs, scatter plots and so much more to reflect data in an easily digestible format.</p>
+
+<p><strong>29. What are the advantages of using Kibana?</strong></p>
+
+<p>A few of the main benefits of using Kibana are as follows:</p>
+
+<ul>
+	<li>Real-time observability</li>
+	<li>Integration with Elasticsearch</li>
+	<li>Browser-based visualisation tool</li>
+	<li>Many graphs and charts to select from</li>
+</ul>
+
+<p><strong>30. What are the advantages of using the ELK Stack?</strong></p>
+
+<p><img alt="Logging using ELK Stack for Microservices" src="https://image.slidesharecdn.com/loggingusingelkformicroservices-180410050821/95/logging-using-elk-stack-for-microservices-4-638.jpg?cb=1523336923" /></p>
+
+<p>Advantages of ELK stack</p>
+
+<p>The ELK Stack can be used for a wide variety of use cases including but not limited to;</p>
+
+<ul>
+	<li>APM</li>
+	<li>SIEM</li>
+	<li>Log analysis</li>
+	<li>Server monitoring</li>
+	<li>Container monitoring</li>
+	<li>Metrics management</li>
+	<li>Vulnerability scanning</li>
+	<li>Compliance &amp; auditing</li>
+	<li>Infrastructure monitoring</li>
+	<li>Monitoring website uptime</li>
+	<li>Measuring sales performance</li>
+	<li>Understanding user behaviour</li>
+</ul>
+
+<p><strong>31. How can you forward logs from Kubernetes to Logstash?</strong></p>
+
+<p>By using a log shipper such as Filebeat, as illustrated on our integration page for sending Kubernetes logs to Logstash.</p>
+
+<p>For additional resources on tools suited to K8s then check out our guide on Kubernetes management tools.</p>
+
+<p><strong>32.</strong>&nbsp;<strong>What Is Grok Filter Plugin?</strong></p>
+
+<p>The grok filter plugin allows you to parse the unstructured log statistics into something based and question in a position.Because the grok filter plugin appears for patterns within the incoming log facts, configuring the plugin calls for you to make choices approximately how to discover the patterns that are of hobby on your use case.</p>
+
+<p><strong>33. Why is Logstash needed?</strong></p>
+
+<p>Logstash was one of the original components of the Elastic Stack, and has long been the tool to use when needing to parse, enrich or process data. &hellip; They allow simple architectures with minimum components, where applications send data directly to Elasticsearch for processing and indexing.</p>
+
+<p><strong>34. Who uses Logstash?</strong></p>
+
+<p>Who uses Logstash? 1102 companies reportedly use Logstash in their tech stacks, including Airbnb, Udemy, and Robinhood.</p>
+
+<p><strong>35. How do you implement Logstash?</strong></p>
+
+<p>Installing Logstash. Stashing Your First Event. Parsing Logs with Logstash. Stitching Together Multiple Input and Output Plugins.<br />
+&hellip;<br />
+Logstash requires one of these versions:<br />
+Java 8.<br />
+Java 11.<br />
+Java 15 (see Using JDK 15 for settings info)</p>
+
+<p><strong>36. What is Logstash port?</strong></p>
+
+<p>By default, Logstash will use port 9600.</p>
+
+<p><strong>37. What is Logstash message?</strong></p>
+
+<p>The message field is like a default field. It&rsquo;s where most input plugins place the payload that they receive from the network, read from a file, or whatever.</p>
+
+<p><strong>38. What is a Logstash agent?</strong></p>
+
+<p>Logstash is a free and open server-side data processing pipeline that ingests data from a multitude of sources, transforms it, and then sends it to your favorite &ldquo;stash.&rdquo; Download.</p>
+
+<p><strong>39. What is Logstash format?</strong></p>
+
+<p>Logstash is a plugin-based data collection and processing engine. It comes with a wide range of plugins that makes it possible to easily configre it to collect, process and forward data in many different architectures. Processing is organized into one or more pipelines.</p>
+
+<p><strong>40. Is Logstash a ETL?</strong></p>
+
+<p>At its core, Logstash is a form of Extract-Transform-Load (ETL) pipeline. Unstructured log data is extracted, filters transform it, and the results are loaded into some form of data store.</p>
+
+<p><strong>41. Does Logstash use Log4j?</strong></p>
+
+<p>Logstash&rsquo;s logging framework is based on Log4j 2 framework, and much of its functionality is exposed directly to users. You can configure logging for a particular subsystem, module, or plugin. &hellip; You can configure logging using the log4j2. properties file or the Logstash API.</p>
+
+<p><strong>42. Can Logstash have multiple inputs?</strong></p>
+
+<p>The information you need to manage often comes from several disparate sources, and use cases can require multiple destinations for your data. Your Logstash pipeline can use multiple input and output plugins to handle these requirements.</p>
+
+<p><strong>43. Does Logstash have a UI?</strong></p>
+
+<p><strong>Monitoring UIedit</strong></p>
+
+<p>A Logstash node is considered unique based on its persistent UUID, which is written to the path. &hellip; Before you can use the monitoring UI, configure Logstash monitoring.</p>
+
+<p><strong>44. How do you write Logstash pipeline?</strong></p>
+
+<p>Step 1: Install and configure apache webserver. The access log of this webserver will serve our input to Logstash pipeline. Shell. &hellip;<br />
+Step 2: Create the pipeline configuration file. Shell. &hellip;<br />
+Step 3: Stash apache access logs to Elasticsearch using Logstash Pipeline. Shell.</p>
+
+<p><strong>45. What is Logstash yml?</strong></p>
+
+<p>Tip: Port 5000 is a default port number for Logstash. If you want to use a different port number, you must change the port number in both the Logstash and Filebeat configuration files.</p>
+
+<p><strong>46. What is mutate in Logstash?</strong></p>
+
+<p>The mutate filter allows you to perform general mutations on fields. You can rename, replace, and modify fields in your events.</p>
+
+<p><strong>47. What is type in Logstash?</strong></p>
+
+<p>The type option sets the value of the field with the same name. If you only ingest a single kind of log (and never will do anything else) you don&rsquo;t have to worry about it, but in all likelihood you&rsquo;ll eventually want to process different kinds of logs and then the type field will be a good way of distinguishing them.</p>
+
+<p><strong>48. Which language is used in Logstash?</strong></p>
+
+<p><strong>JRuby programming language</strong></p>
+
+<p>Logstash is written on JRuby programming language that runs on the JVM, hence you can run Logstash on different platforms. It collects different types of data like Logs, Packets, Events, Transactions, Timestamp Data, etc., from almost every type of source.</p>
+
+<p><strong>49. Where is Logstash data stored?</strong></p>
+
+<p>conf file is stored. For example, if the logstash-simple. conf file is stored in /root/logstash-7.1. 1/, go to the directory before running the command.</p>
+
+<p><strong>50. What is the difference between Kafka and Logstash?</strong><br />
+<br />
+Kafka is much more powerful than Logstash. For syncing data from such as PostgreSQL to ElasticSearch, Kafka connectors could do the similar work with Logstash. One key difference is: Kafka is a cluster, while Logstash is basically single instance. You could run multiple Logstash instances.</p>

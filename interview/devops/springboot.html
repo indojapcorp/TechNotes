@@ -1,0 +1,426 @@
+<noscript> 
+  <style>
+    body {
+      -ms-overflow-style: scrollbar;
+      overflow-y: scroll;
+      overscroll-behavior-y: none;
+    }
+
+    .errorContainer {
+      background-color: #FFF;
+      color: #0F1419;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10%;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .errorButton {
+      margin: 3em 0;
+    }
+
+    .errorButton a {
+      background: #1DA1F2;
+      border-radius: 2.5em;
+      color: white;
+      padding: 1em 2em;
+      text-decoration: none;
+    }
+
+    .errorButton a:hover,
+    .errorButton a:focus {
+      background: rgb(26, 145, 218);
+    }
+
+    .errorFooter {
+      color: #657786;
+      font-size: 80%;
+      line-height: 1.5;
+      padding: 1em 0;
+    }
+
+    .errorFooter a,
+    .errorFooter a:visited {
+      color: #657786;
+      text-decoration: none;
+      padding-right: 1em;
+    }
+
+    .errorFooter a:hover,
+    .errorFooter a:active {
+      text-decoration: underline;
+    }
+
+      #placeholder,
+      #react-root {
+        display: none !important;
+      }
+      body {
+        background-color: #FFF !important;
+      }
+    </style> 
+  <div class="errorContainer"> 
+   <img width="46" height="38" srcset="https://abs.twimg.com/errors/logo46x38.png 1x, https://abs.twimg.com/errors/logo46x38@2x.png 2x" src="https://abs.twimg.com/errors/logo46x38.png" alt="Twitter"> 
+   <h1>JavaScript is not available.</h1> 
+   <p>We’ve detected that JavaScript is disabled in this browser. Please enable JavaScript or switch to a supported browser to continue using twitter.com. You can see a list of supported browsers in our Help Center.</p> 
+   <p class="errorButton"><a href="https://help.twitter.com/using-twitter/twitter-supported-browsers">Help Center</a></p> 
+   <p class="errorFooter"> <a href="https://twitter.com/tos">Terms of Service</a> <a href="https://twitter.com/privacy">Privacy Policy</a> <a href="https://support.twitter.com/articles/20170514">Cookie Policy</a> <a href="https://legal.twitter.com/imprint.html">Imprint</a> <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&amp;utm_source=twc&amp;utm_medium=web&amp;utm_campaign=ao&amp;utm_content=adsinfo">Ads info</a> © 2022 Twitter, Inc. </p> 
+  </div> 
+ </noscript>
+<h2>1) What is Spring boot?</h2>
+
+<p>Sprint boot is a Java-based spring framework used for Rapid Application Development (to build stand-alone microservices). It has extra support of auto-configuration and embedded application server like tomcat, jetty, etc.</p>
+
+<h2>2) What are the advantages of using Spring Boot?</h2>
+
+<p>The advantages of Spring Boot are listed below:</p>
+
+<p>Easy to understand and develop spring applications.<br />
+Spring Boot is nothing but an existing framework with the addition of an embedded HTTP server and annotation configuration which makes it easier to understand and faster the process of development.<br />
+Increases productivity and reduces development time.<br />
+Minimum configuration.<br />
+We don&rsquo;t need to write any XML configuration, only a few annotations are required to do the configuration.</p>
+
+<h2>3) What are the Spring Boot key components?</h2>
+
+<p>Below are the four key components of spring-boot:</p>
+
+<p>Spring Boot auto-configuration.<br />
+Spring Boot CLI.<br />
+Spring Boot starter POMs.<br />
+Spring Boot Actuators.</p>
+
+<h2>4) What is the starter dependency of the Spring boot module?</h2>
+
+<p>Spring boot provides numbers of starter dependency, here are the most commonly used &ndash;</p>
+
+<p>Data JPA starter.<br />
+Test Starter.<br />
+Security starter.<br />
+Web starter.<br />
+Mail starter.<br />
+Thymeleaf starter.</p>
+
+<h2>5) How does Spring Boot works?</h2>
+
+<p>Spring Boot automatically configures your application based on the dependencies you have added to the project by using annotation. The entry point of the spring boot application is the class that contains @SpringBootApplication annotation and the main method.</p>
+
+<p>Spring Boot automatically scans all the components included in the project by using @ComponentScan annotation.</p>
+
+<h2>6) What does the @SpringBootApplication annotation do internally?</h2>
+
+<p><br />
+The @SpringBootApplication annotation is equivalent to using @Configuration, @EnableAutoConfiguration, and @ComponentScan with their default attributes. Spring Boot enables the developer to use a single annotation instead of using multiple. But, as we know, Spring provided loosely coupled features that we can use for each annotation as per our project needs.</p>
+
+<h2>7) What is the purpose of using @ComponentScan in the class files?</h2>
+
+<p>Spring Boot application scans all the beans and package declarations when the application initializes. You need to add the @ComponentScan annotation for your class file to scan your components added to your project.</p>
+
+<h2>8) How does a spring boot application get started?</h2>
+
+<p>Just like any other Java program, a Spring Boot application must have a main method. This method serves as an entry point, which invokes the SpringApplication#run method to bootstrap the application.</p>
+
+<p>@SpringBootApplication<br />
+public class MyApplication {</p>
+
+<pre>
+   public static void main(String[] args) {    
+
+         SpringApplication.run(MyApplication.class);        
+           // other statements     
+   } </pre>
+
+<p>}</p>
+
+<h2>9) What are starter dependencies?</h2>
+
+<p>Spring boot starter is a maven template that contains a collection of all the relevant transitive dependencies that are needed to start a particular functionality.<br />
+Like we need to import spring-boot-starter-web dependency for creating a web application.</p>
+
+<p>org.springframework.boot spring-boot-starter-web</p>
+
+<h2>10) What is Spring Initializer?</h2>
+
+<p>Spring Initializer is a web application that helps you to create an initial spring boot project structure and provides a maven or gradle file to build your code. It solves the problem of setting up a framework when you are starting a project from scratch.</p>
+
+<h2>11) What is Spring Boot CLI and what are its benefits?</h2>
+
+<p>Spring Boot CLI is a command-line interface that allows you to create a spring-based java application using Groovy.</p>
+
+<p>Example: You don&rsquo;t need to create getter and setter method or access modifier, return statement. If you use the JDBC template, it automatically loads for you.</p>
+
+<h2>12) What Are the Basic Annotations that Spring Boot Offers?</h2>
+
+<p>The primary annotations that Spring Boot offers reside in its org.springframework.boot.autoconfigure and its sub-packages. Here are a couple of basic ones:</p>
+
+<p>@EnableAutoConfiguration &ndash; to make Spring Boot look for auto-configuration beans on its classpath and automatically apply them.</p>
+
+<p>@SpringBootApplication &ndash; used to denote the main class of a Boot Application. This annotation combines @Configuration, @EnableAutoConfiguration, and @ComponentScan annotations with their default attributes.</p>
+
+<h2>13) What is Spring Boot dependency management?</h2>
+
+<p>Spring Boot dependency management is used to manage dependencies and configuration automatically without you specifying the version for any of that dependencies.</p>
+
+<p>&nbsp;</p>
+
+<h2>14) Can we create a non-web application in Spring Boot?</h2>
+
+<p>Yes, we can create a non-web application by removing the web dependencies from the classpath along with changing the way Spring Boot creates the application context.</p>
+
+<p>&nbsp;</p>
+
+<h2>15) Is it possible to change the port of the embedded Tomcat server in Spring Boot?</h2>
+
+<p>Yes, it is possible. By using the server.port in the application.properties.</p>
+
+<h2>16) What is the default port of tomcat in spring boot?</h2>
+
+<p>The default port of the tomcat server-id 8080. It can be changed by adding sever.port properties in the application.property file.</p>
+
+<p>&nbsp;</p>
+
+<h2>17) Can we override or replace the Embedded tomcat server in Spring Boot?</h2>
+
+<p>Yes, we can replace the Embedded Tomcat server with any server by using the Starter dependency in the pom.xml file. Like you can use spring-boot-starter-jetty as a dependency for using a jetty server in your project.</p>
+
+<h2>18) Can we disable the default web server in the Spring boot application?</h2>
+
+<p>Yes, we can use application.properties to configure the web application type i.e spring.main.web-application-type=none.</p>
+
+<h2>19) Explain @RestController annotation in Sprint boot?</h2>
+
+<p>It is a combination of @Controller and @ResponseBody, used for creating a restful controller. It converts the response to JSON or XML. It ensures that data returned by each method will be written straight into the response body instead of returning a template.</p>
+
+<h2>20) What is the difference between @RestController and @Controller in Spring Boot?</h2>
+
+<p>@Controller Map of the model object to view or template and make it human readable but @RestController simply returns the object and object data is directly written in HTTP response as JSON or XML.</p>
+
+<h2>21) What are the Spring Boot Annotations?</h2>
+
+<p>The @RestController is a stereotype annotation. It adds @Controller and @ResponseBody annotations to the class. We need to import org.springframework.web.bind.annotation package in our file, in order to implement it.</p>
+
+<h2>22) What is Spring Boot dependency management?</h2>
+
+<p>Spring Boot manages dependencies and configuration automatically. You don&rsquo;t need to specify version for any of that dependencies.</p>
+
+<p>Spring Boot upgrades all dependencies automatically when you upgrade Spring Boot.</p>
+
+<h2>23) What are the Spring Boot properties?</h2>
+
+<p>Spring Boot provides various properties which can be specified inside our project&rsquo;s application.properties file. These properties have default values and you can set that inside the properties file. Properties are used to set values like: server-port number, database connection configuration etc.</p>
+
+<h2>24) What are the Spring Boot Starters?</h2>
+
+<p>Starters are a set of convenient dependency descriptors which we can include in our application.</p>
+
+<p>Spring Boot provides built-in starters which makes development easier and rapid. For example, if we want to get started using Spring and JPA for database access, just include the spring-boot-starter-data-jpa dependency in your project.</p>
+
+<h2>25) What is Spring Boot Actuator?</h2>
+
+<p>Spring Boot provides actuator to monitor and manage our application. Actuator is a tool which has HTTP endpoints. when application is pushed to production, you can choose to manage and monitor your application using HTTP endpoints.</p>
+
+<h2>26) What is thymeleaf?</h2>
+
+<p>It is a server side Java template engine for web application. It&rsquo;s main goal is to bring elegant natural templates to your web application.</p>
+
+<p>It can be integrate with Spring Framework and ideal for HTML5 Java web applications.</p>
+
+<h2>27) How to connect Spring Boot to the database using JPA?</h2>
+
+<p>Spring Boot provides spring-boot-starter-data-jpa starter to connect Spring application with relational database efficiently. You can use it into project POM (Project Object Model) file.</p>
+
+<h2>28) How to connect Spring Boot application to database using JDBC?</h2>
+
+<p>Spring Boot provides starter and libraries for connecting to our application with JDBC. Here, we are creating an application which connects with Mysql database. It includes the following steps to create and setup JDBC with Spring Boot.</p>
+
+<h2>29) What is @RestController annotation in Spring Boot?</h2>
+
+<p>The @RestController is a stereotype annotation. It adds @Controller and @ResponseBody annotations to the class. We need to import org.springframework.web.bind.annotation package in our file, in order to implement it.</p>
+
+<h2>30) What is @RequestMapping annotation in Spring Boot?</h2>
+
+<p>The @RequestMapping annotation is used to provide routing information. It tells to the Spring that any HTTP request should map to the corresponding method. We need to import org.springframework.web.annotation package in our file.</p>
+
+<h2>31) How to create Spring Boot application using Spring Starter Project Wizard?</h2>
+
+<p>There is one more way to create Spring Boot project in STS (Spring Tool Suite). Creating project by using IDE is always a convenient way. Follow the following steps in order to create a Spring Boot Application by using this wizard.</p>
+
+<h2>32) Spring Vs Spring Boot?</h2>
+
+<p>Spring is a web application framework based on Java. It provides tools and libraries to create a complete cutomized web application.</p>
+
+<p>Wheras Spring Boot is a spring module which is used to create spring application project that can just run.</p>
+
+<h2>33) Can We Override Or Replace The Embedded Tomcat Server In Spring Boot?</h2>
+
+<p>Yes, we can replace the embedded tomcat server by using the starter dependencies. Like spring-boot-starter-jetty as a dependency for each project as you need.</p>
+
+<h2>34) Can We Disable The Default Web Server In The Spring Boot Application?</h2>
+
+<p>The major strong point in Spring is to provide flexibility to build your application loosely coupled. Spring provides features to disable the webserver in a quick configuration. Yes we can use the application properties to configure the web application type i.e, spring.main.web-application-type=none.</p>
+
+<h2>35) How To Disable A Specific Auto-Configuration Class?</h2>
+
+<p>You can use the exclude attribute of @EnableAutoConfiguration, if you find any specific auto-configuration classes that you do not want are being applied.</p>
+
+<p>//By using &ldquo;exclude&rdquo;<br />
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})</p>
+
+<h2>36) What Does The @SpringBootApplication Annotation Do Internally?</h2>
+
+<p>As per the Spring Boot doc, the @SpringBootApplication annotation is equivalent to using @Configuration, @EnableAutoConfiguration, and @ComponentScan with their default attributes. Spring Boot enables the developer to use a single annotation instead of using multiple. But as we know, Spring provides loosely coupled features that we can use for each individual annotation as per our project needs.</p>
+
+<h2>37) How To Use A Property Defined In Application.Properties File Into Your Java Class?</h2>
+
+<p>Use the @Value annotation to access the properties which are defined in the application &ndash; properties file.</p>
+
+<p>@Value(&ldquo;${custom.value}&rdquo;)<br />
+Private String custom Val;</p>
+
+<h2>38) Explain @RestController Annotation In Spring Boot?</h2>
+
+<p>@RestController is a convenience annotation for creating Restful controllers. It is a specialization of @Component and is autodetected through classpath scanning. It adds the @Controller and @ResponseBody annotations. It converts the response to JSON or XML.</p>
+
+<p>Which eliminates the need to annotate every request handling method of the controller class with the @ResponseBody annotation. It is typically used in combination with annotated handler methods based on the @RequestMapping annotation.<br />
+Indicates that the data returned by each method will be written straight into the response body instead of rendering template.</p>
+
+<h2>39) What Is The Difference Between RequestMapping And GetMapping?</h2>
+
+<p>RequestMapping can be used with GET, POST,PUT, and many other requests methods using the method attribute on annotation. Whereas GetMapping is only an extension of RequestMapping, which helps you to improve clarity on requests.</p>
+
+<h2>40) Mention The Possible Sources Of External Configuration.</h2>
+
+<p>The most possible source of external configuration:</p>
+
+<p>Application properties<br />
+Command line properties<br />
+Profile specific properties</p>
+
+<h2>41) Why we should avoid the Spring boot framework?</h2>
+
+<p>Besides advantages, there are few issues, where we should think about to adopt the spring boot framework to develop the microservice based architecture.</p>
+
+<p>Spring boot unnecessary increase the size of the build with unused dependencies.<br />
+Not able to create the war file manually and difficult to configure externally.<br />
+Doesn&rsquo;t provide much control and tuning the running build.<br />
+It&rsquo;s only suitable for micro-services which eventually need to deploy in docker, but not large or mono lithics web services.<br />
+Spring boot doesn&rsquo;t provide good compatibility if we are integrating third party framework.</p>
+
+<h2>42) Why do we encourage to use the spring boot over the other framework?</h2>
+
+<p>Spring boot provides good compatibility with other spring frameworks which is used to provide the security, persistency features. Spring boot provides good support with docker containerization, which makes it a good choice to deploy the microservice based application and easy to maintain.</p>
+
+<p>Provide the easiest way to configure the java beans.<br />
+Provide a powerful batch processing and manage rest endpoints.<br />
+Provide auto-configuration mechanism, that means no manual configuration needed.<br />
+Provide annotation-based configuration, so no need to configure the xml file manually.<br />
+Ease the dependency management.<br />
+It includes the Embedded servlet container.<br />
+Spring boot comes with spring cloud framework, which has many libraries which are used to handle all types of nonfunctional requirement, which is usually not available in other frameworks.</p>
+
+<h2>43) How spring boot work internally?</h2>
+
+<p>Spring boot provides many abstraction layers to ease the development, underneath there are vital libraries which work for us.</p>
+
+<p>Below is the key function performing internally.</p>
+
+<p>Using @EnableAutoConfigure annotation the spring boot application configures the spring boot application automatically.<br />
+E.g. If you need MySQL DB in your project, but you haven&rsquo;t configured any database connection, in that case, Spring boot auto configures as in memory database.<br />
+The entry point of spring boot application is a class which contains @SpringBootApplication annotation and has the main method.<br />
+Spring boot scan all the components included in the project by using @ComponentScan annotation.<br />
+Let&rsquo;s say we need the Spring and JPA for database connection, then we no need to add the individual dependency we can simply add the spring-boot-starter-data-jpa in the project.<br />
+Spring boot follows the naming convention for dependency like spring-boot-starter.<br />
+Considering above there are other internal functions which play a significant role in spring boot.</p>
+
+<h2>44) What is the important dependency of spring boot application?</h2>
+
+<p>Below are the key dependencies which you need to add in maven based or Gradle based applications, to make the application compatible to use spring boot functionality.</p>
+
+<p>spring-boot-starter-parent<br />
+spring-boot-starter-web<br />
+spring-boot-starter-actuator<br />
+spring-boot-starter-security<br />
+spring-boot-starter-test<br />
+spring-boot-maven-plugin<br />
+These dependencies come with associated child dependencies, which are also downloaded as a part of parent dependencies.</p>
+
+<h2>45) What are the basic components of spring boot?</h2>
+
+<p>Below is the basic component, which plays a vital role in spring boot framework for configuration, development, deployment, and execution of microservices based application.</p>
+
+<p>Spring boot starter.<br />
+Spring boot auto configurator.<br />
+Spring boot actuator.<br />
+Spring boot CLI.<br />
+Spring boot Initilizr.</p>
+
+<h2>46) What are the important annotation for Spring rest? What is the use case of this annotation?</h2>
+
+<p>@RestController: Define at class level, so that spring container will consider as RestENd point<br />
+@RequestMapping(value = &ldquo;/products&rdquo;): Define the REST URL for method level.<br />
+@PathVariable: Define as a method argument<br />
+@RequestBody: Define as a method argument<br />
+@ResponseEntity: To convert the domain object into the response format<br />
+@hasAuthority: To grant the access of corresponding endpoints<br />
+@GetMapping: To make endpoint compatible for get request.<br />
+@PostMapping: To make endpoint compatible for post request.<br />
+@PutMapping: To make endpoint compatible for put request.<br />
+@DeleteMapping: To make endpoint compatible for delete request.<br />
+@ResponseStatus: To generate the HTTP status.<br />
+@ResponseBody: To Generate the response message.</p>
+
+<h2>47) What is Spring Application Properties and how it is used?</h2>
+
+<p>Spring Boot lets us define Application Properties to support us for work in different environments. These properties include parameters like application name, server port number, data source details, profiles, and many other useful properties. Spring Boot supports YAML based properties configurations to run the application.</p>
+
+<p>We can simply put an &ldquo;application.yml&rdquo; file in &ldquo;src/main/resources&rdquo; directory, and it will be auto-detected. So, by using this default file, we don&rsquo;t need to explicitly register a PropertySource, or provide a path to a property file, unlike native Spring where we have explicitly define them.</p>
+
+<p>A sample application.yml file looks like below:</p>
+
+<p>spring:<br />
+application:<br />
+name: SampleRestService<br />
+profiles:<br />
+active: prod<br />
+server.port = 9090</p>
+
+<h2>48) Name &amp; explain Common Boot Starters.</h2>
+
+<p>spring-boot-starter-actuator: This starter is very useful and will be used most especially when you are developing microservices etc. This provides production-ready features to help you monitor and manage your application. It provides a lot of inbuilt endpoints, for example, health endpoint, /env endpoint.<br />
+spring-boot-starter-web: Starter for building web, including RESTful, applications using Spring MVC. Uses Tomcat as the default embedded container<br />
+spring-boot-starter-data-jpa: This is for using Spring Data JPA, default vendor is hibernated however you can override it to some other vendor, for example, ibatis.<br />
+spring-boot-starter-data-MongoDB: Starter for using MongoDB document-oriented database and Spring Data MongoDB.<br />
+Spring-boot-starter-thymeleaf: Starter for building MVC web applications using Thymeleaf views<br />
+spring-boot-starter-security: Starter for using Spring Security.<br />
+spring-boot-starter-test: Starter for testing Spring Boot applications with libraries including JUnit, Hamcrest and Mockito</p>
+
+<h2>49) What is Spring Boot DevTools?</h2>
+
+<p>Spring Boot provides &lsquo;spring-boot-devtools&rsquo; module with features that help the programmers while developing the application. It basically improves the experience of developing a Spring Boot application. One of the key features is automatic reload of application as soon as there is a change; hence developer does not need to stop and start the application each time. The is an intelligent feature as it only reloads the actively developed classes but not the third-party JARs.</p>
+
+<p>Another key feature is that by def,ault it disables the caching of view templates and static files. This enables a developer to see the changes as soon as they make them.</p>
+
+<p>In case, we want to disable any of these features, then we need to set them in an application.yml file. For example -Dspring.devtools.restart.enabled=false will avoid automatic application restart.</p>
+
+<p>Below are a few of the features provided:</p>
+
+<p>Property defaults<br />
+Automatic Restart<br />
+Live Reload<br />
+Global settings<br />
+Remote applications</p>
+
+<h2>50) What is Spring Cloud Contract?</h2>
+
+<p>Spring Cloud Contract implements the Consumer Driven Contracts (CDC) approach via the &lsquo;Spring Cloud Contract Verifier&rsquo; project.</p>
+
+<p>Consumer Driven Contracts is a software development and evolution approach where each consumer of service develops a contract that contains the consumer&rsquo;s expectations about the APIs provided by Service. The full collection of all of the consumers&rsquo; contracts constitutes the requirement set for the service.</p>
+
+<p>Once the service owners have all of the contracts for their consumers, the service owners can develop a test suite that verifies the service APIs. This test suite provides rapid feedback about failures when the service changes.</p>
+
+<p>In Spring Cloud Contract, a &ldquo;producer&rdquo; is the owner of an API and a &ldquo;consumer&rdquo; is the user of an API.</p>
+
+<p>Service A (as a consumer) creates a contract that service B (as a producer) will have to abide by. This contract acts as the invisible glue between services &ndash; even though they live in separate code bases and run on different JVMs. Breaking changes can be detected immediately during build time.</p>
+
+<p>&nbsp;</p>
