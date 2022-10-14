@@ -1,0 +1,22 @@
+create react app without automatically installing node modules. #9792
+
+npm uninstall -g create-react-app
+
+npm cache clean --force
+
+then
+
+npx create-react-app project_name --template all
+-------
+
+npm install -g create-react-app
+
+npm install --save react react-dom
+npx create-react-app my-react-project
+cd my-react-project
+npm start
+
+-------
+npm tricks part 1: Get list of globally installed packages
+
+npm list -g --depth 0
