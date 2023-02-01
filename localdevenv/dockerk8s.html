@@ -140,6 +140,16 @@ docker-machine ip</p>
 
 <p>docker stop containerids</p>
 
+<p><br />
+Stop all the containers<br />
+
+docker stop $(docker ps -a -q)<br />
+Remove all the containers<br />
+
+docker rm $(docker ps -a -q)<br />
+</p><br />
+
+
 <p>docker-machine stop</p>
 
 <p>----------<br />
