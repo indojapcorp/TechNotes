@@ -455,73 +455,81 @@ docker push localhost:5000/<local-image-name><br />
 
 ----------<br />
 
-Stop a Single Deployment
-To stop a deployment, you can run the following kubectl command:
+<p>Stop a Single Deployment<br />
+To stop a deployment, you can run the following kubectl command:</p>
 
-kubectl --namespace default scale deployment my-deployment --replicas 0
-Stop Multiple Deployments
-Kubectl allows you to perform the same operation on multiple objects at once. By doing some Linux shell magic we can obtain a list of all deployments and scale all of them using a single command.
+<p>kubectl --namespace default scale deployment my-deployment --replicas 0<br />
+Stop Multiple Deployments<br />
+Kubectl allows you to perform the same operation on multiple objects at once. By doing some Linux shell magic we can obtain a list of all deployments and scale all of them using a single command.</p>
 
-To stop all Kubernetes deployments, run the following kubectl command:
+<p>To stop all Kubernetes deployments, run the following kubectl command:</p>
 
-kubectl --namespace default scale deployment $(kubectl --namespace default get deployment | awk '{print $1}') --replicas 0 
-Also StatefulSets
-Deployment is not the only resource that manages Kubernetes workloads, there are also stateful sets. You might want to scale them as well. The command to stop a stateful set is almost identical to the command for stopping a deployment.
+<p>kubectl --namespace default scale deployment $(kubectl --namespace default get deployment | awk &#39;{print $1}&#39;) --replicas 0&nbsp;<br />
+Also StatefulSets<br />
+Deployment is not the only resource that manages Kubernetes workloads, there are also stateful sets. You might want to scale them as well. The command to stop a stateful set is almost identical to the command for stopping a deployment.</p>
 
-To stop all Kubernetes stateful sets, run the following command:
+<p>To stop all Kubernetes stateful sets, run the following command:</p>
 
-kubectl --namespace default scale statefulset --replicas 0 $(kubectl --namespace default get statefulset  | awk '{print $1}')
-Delete All Resources
-If you want to perform a complete cleanup of your Kubernetes cluster, you can delete all your resources at once:
+<p>kubectl --namespace default scale statefulset --replicas 0 $(kubectl --namespace default get statefulset &nbsp;| awk &#39;{print $1}&#39;)<br />
+Delete All Resources<br />
+If you want to perform a complete cleanup of your Kubernetes cluster, you can delete all your resources at once:</p>
 
-kubectl delete all --all --namespace default
-The examples in this article assume you’re running your workloads in a default namespace. If you are using some different namespace, replace “default” with your namespace name.
+<p>kubectl delete all --all --namespace default<br />
+The examples in this article assume you&rsquo;re running your workloads in a default namespace. If you are using some different namespace, replace &ldquo;default&rdquo; with your namespace name.</p>
 
-------------
+<p>------------</p>
 
-Metrics server install and config for minikube:
+<p>Metrics server install and config for minikube:</p>
 
+<p><br />
+Update: I deployed the metrics-server using the same command. Perhaps you can start fresh by removing existing resources and running:</p>
 
-Update: I deployed the metrics-server using the same command. Perhaps you can start fresh by removing existing resources and running:
+<p>kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml</p>
 
-kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+<p>check the status of the metric server usning<br />
+kubectl get deployment metrics-server -n kube-system</p>
 
-check the status of the metric server usning
-kubectl get deployment metrics-server -n kube-system
+<p>It appears the --kubelet-insecure-tls flag was not configured correctly for the pod template in the deployment. The following should fix this:</p>
 
-It appears the --kubelet-insecure-tls flag was not configured correctly for the pod template in the deployment. The following should fix this:
+<p>Edit the existing deployment in the cluster with&nbsp;<br />
+kubectl edit deployments.apps -n kube-system metrics-server</p>
 
-Edit the existing deployment in the cluster with 
-kubectl edit deployments.apps -n kube-system metrics-server
+<p>Add the flag to the spec.containers[].args list, so that the deployment looks like this:<br />
+...<br />
+&nbsp; &nbsp; spec:<br />
+&nbsp; &nbsp; &nbsp; containers:<br />
+&nbsp; &nbsp; &nbsp; - args:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; - --cert-dir=/tmp<br />
+&nbsp; &nbsp; &nbsp; &nbsp; - --secure-port=4443<br />
+&nbsp; &nbsp; &nbsp; &nbsp; - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname<br />
+&nbsp; &nbsp; &nbsp; &nbsp; - --kubelet-use-node-status-port<br />
+&nbsp; &nbsp; &nbsp; &nbsp; - --metric-resolution=15s<br />
+&nbsp; &nbsp; &nbsp; &nbsp; - --kubelet-insecure-tls &nbsp; &nbsp; &nbsp;&lt;=======ADD IT HERE.<br />
+&nbsp; &nbsp; &nbsp; &nbsp; image: k8s.gcr.io/metrics-server/metrics-server:v0.6.1<br />
+...</p>
 
-Add the flag to the spec.containers[].args list, so that the deployment looks like this:
-...
-    spec:
-      containers:
-      - args:
-        - --cert-dir=/tmp
-        - --secure-port=4443
-        - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
-        - --kubelet-use-node-status-port
-        - --metric-resolution=15s
-        - --kubelet-insecure-tls      <=======ADD IT HERE.
-        image: k8s.gcr.io/metrics-server/metrics-server:v0.6.1
-...
+<p>Simply save your changes and let the deployment rollout the updated pods.&nbsp;<br />
+You can use watch -n1 kubectl get deployment/kube-metrics -nkube-system and wait for UP-TO-DATE column to show 1.</p>
 
-Simply save your changes and let the deployment rollout the updated pods. 
-You can use watch -n1 kubectl get deployment/kube-metrics -nkube-system and wait for UP-TO-DATE column to show 1.
+<p><br />
+kubectl get deployment metrics-server -n kube-system</p>
 
+<p>then check the metrics using&nbsp;<br />
+kubectl top nodes<br />
+kubectl top pods</p>
 
-kubectl get deployment metrics-server -n kube-system
+<p>-------------</p>
 
-then check the metrics using 
-kubectl top nodes
-kubectl top pods
+<p>run docker image by mounting host current directory to container directory using -v or --volume.<br />
+docker run -it --rm -v `pwd`:/test_container alpine</p>
 
+<p><br />
+or using mount&nbsp;<br />
+docker run -it --rm --mount src=`pwd`,target=/test_container,type=bind alpine</p>
 
+<p>--mount: Consists of multiple key-value pairs, separated by commas. Each key/value pair takes the form of a &lt;key&gt;=&lt;value&gt; tuple. The --mount syntax is more verbose than -v or --volume, but the order of the keys is not significant, and the value of the flag is easier to understand.<br />
+The type of the mount, which can be bind, volume, or tmpfs. (We are going to use bind)<br />
+The source of the mount. For bind mounts, this is the path to the file or directory on the Docker daemon host. May be specified as source or src.<br />
+The destination takes as its value the path where the file or directory will be mounted in the container. May be specified as destination, dst, or target.</p>
 
--------------
-
-run docker image by mounting host current directory to container directory.
-docker run -it --rm -v `pwd`:/test_container alpine
-
+<p>-------------</p>
