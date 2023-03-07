@@ -433,3 +433,95 @@ do
         echo "== Tagging $REPOSITORY $TAG $IMAGE_ID =="
         docker tag "$IMAGE_ID" "$REPOSITORY:$TAG"
 done < mydockersimages.list
+
+
+
+
+
+---------<br />
+
+Start a local registry container:<br />
+docker run -d -p 5000:5000 --restart=always --name registry registry:2<br />
+
+Do docker images to find out the REPOSITORY and TAG of your local image. Then create a new tag for your local image :<br />
+docker tag <local-image-repository>:<local-image-tag> localhost:5000/<local-image-name><br />
+
+If TAG for your local image is <none>, you can simply do:<br />
+
+docker tag <local-image-repository> localhost:5000/<local-image-name><br />
+
+Push to local registry :<br />
+docker push localhost:5000/<local-image-name><br />
+
+----------<br />
+
+Stop a Single Deployment
+To stop a deployment, you can run the following kubectl command:
+
+kubectl --namespace default scale deployment my-deployment --replicas 0
+Stop Multiple Deployments
+Kubectl allows you to perform the same operation on multiple objects at once. By doing some Linux shell magic we can obtain a list of all deployments and scale all of them using a single command.
+
+To stop all Kubernetes deployments, run the following kubectl command:
+
+kubectl --namespace default scale deployment $(kubectl --namespace default get deployment | awk '{print $1}') --replicas 0 
+Also StatefulSets
+Deployment is not the only resource that manages Kubernetes workloads, there are also stateful sets. You might want to scale them as well. The command to stop a stateful set is almost identical to the command for stopping a deployment.
+
+To stop all Kubernetes stateful sets, run the following command:
+
+kubectl --namespace default scale statefulset --replicas 0 $(kubectl --namespace default get statefulset  | awk '{print $1}')
+Delete All Resources
+If you want to perform a complete cleanup of your Kubernetes cluster, you can delete all your resources at once:
+
+kubectl delete all --all --namespace default
+The examples in this article assume you’re running your workloads in a default namespace. If you are using some different namespace, replace “default” with your namespace name.
+
+------------
+
+Metrics server install and config for minikube:
+
+
+Update: I deployed the metrics-server using the same command. Perhaps you can start fresh by removing existing resources and running:
+
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+check the status of the metric server usning
+kubectl get deployment metrics-server -n kube-system
+
+It appears the --kubelet-insecure-tls flag was not configured correctly for the pod template in the deployment. The following should fix this:
+
+Edit the existing deployment in the cluster with 
+kubectl edit deployments.apps -n kube-system metrics-server
+
+Add the flag to the spec.containers[].args list, so that the deployment looks like this:
+...
+    spec:
+      containers:
+      - args:
+        - --cert-dir=/tmp
+        - --secure-port=4443
+        - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+        - --kubelet-use-node-status-port
+        - --metric-resolution=15s
+        - --kubelet-insecure-tls      <=======ADD IT HERE.
+        image: k8s.gcr.io/metrics-server/metrics-server:v0.6.1
+...
+
+Simply save your changes and let the deployment rollout the updated pods. 
+You can use watch -n1 kubectl get deployment/kube-metrics -nkube-system and wait for UP-TO-DATE column to show 1.
+
+
+kubectl get deployment metrics-server -n kube-system
+
+then check the metrics using 
+kubectl top nodes
+kubectl top pods
+
+
+
+-------------
+
+run docker image by mounting host current directory to container directory.
+docker run -it --rm -v `pwd`:/test_container alpine
+
