@@ -1,0 +1,121 @@
+<p>react native vs flutter<br />
+React Native and Flutter are two popular frameworks for building cross-platform mobile applications. Here are some key differences between them:</p>
+
+<p>Programming Language: React Native uses JavaScript and Flutter uses Dart. JavaScript is more popular and widely used, whereas Dart is a newer language developed by Google specifically for Flutter.</p>
+
+<p>Performance: Flutter uses its own rendering engine to create UI elements, which makes it faster than React Native. React Native uses native components that are wrapped in JavaScript, which can result in slower performance.</p>
+
+<p>User Interface: Flutter provides a wide range of customizable widgets for creating beautiful UIs, whereas React Native relies on third-party libraries for UI development.</p>
+
+<p>Development Tools: React Native is developed by Facebook, and has a strong community and robust set of development tools, such as the React Native CLI and Expo. Flutter is developed by Google, and also has a strong community and set of development tools, such as the Flutter CLI and Dart DevTools.</p>
+
+<p>Development Time: Flutter has a faster development time than React Native because it has a hot reload feature that allows developers to see changes in the app instantly.</p>
+
+<p>Market Share: React Native has been around longer than Flutter and has a larger market share. It has been used to build popular apps like Facebook, Instagram, and Airbnb. However, Flutter is gaining popularity quickly and has been used to build apps like Google Ads, Alibaba, and Reflectly.</p>
+
+<p>Ultimately, the choice between React Native and Flutter depends on your specific project requirements, development expertise, and personal preferences.</p>
+
+<p><br />
+<strong>Question</strong><br />
+list popular React Native third-party libraries for UI development.<br />
+Sure, here are some popular React Native third-party libraries for UI development:</p>
+
+<p>React Native Elements: A library that provides a set of pre-built UI components such as buttons, cards, and icons that are customizable.</p>
+
+<p>React Native Paper: A material design library that provides a set of components, styles, and animations for building UIs that follow Google&#39;s Material Design guidelines.</p>
+
+<p>NativeBase: A library that provides a set of pre-built UI components such as buttons, cards, and forms that are customizable and platform-agnostic.</p>
+
+<p>Shoutem UI: A library that provides a set of pre-built UI components such as grids, charts, and lists that are customizable and follow the design language of both iOS and Android platforms.</p>
+
+<p>UI Kitten: A library that provides a set of pre-built UI components such as buttons, input fields, and toggles that are customizable and follow the design language of both iOS and Android platforms.</p>
+
+<p>React Native Material Kit: A library that provides a set of pre-built UI components such as buttons, cards, and dialogs that are customizable and follow the design language of Google&#39;s Material Design.</p>
+
+<p>React Native Vector Icons: A library that provides a set of pre-built icons from various icon packs such as Material Icons, FontAwesome, and Ionicons that are customizable.</p>
+
+<p>These libraries can help speed up the development process and make it easier to create attractive, consistent UIs for React Native applications.</p>
+
+<p><br />
+<strong>Question</strong><br />
+Tutorial to build sample flutter app<br />
+Sure! Here is a step-by-step tutorial to build a simple Flutter app:</p>
+
+<p>Install Flutter SDK: Download and install the Flutter SDK from the official website. Make sure to add the Flutter SDK to your system PATH.</p>
+
+<p>Create a new Flutter project: Open a new terminal window and run the following command to create a new Flutter project:</p>
+
+<p>lua<br />
+Copy code<br />
+flutter create my_app<br />
+This will create a new Flutter project in the &quot;my_app&quot; directory.</p>
+
+<p>Open the project in an IDE: Open the &quot;my_app&quot; directory in your preferred IDE, such as Android Studio, IntelliJ IDEA, or Visual Studio Code.</p>
+
+<p>Edit the app code: Open the &quot;lib/main.dart&quot; file and replace the code with the following code:</p>
+
+<p>dart<br />
+Copy code<br />
+import &#39;package:flutter/material.dart&#39;;</p>
+
+<p>void main() {<br />
+&nbsp; runApp(MyApp());<br />
+}</p>
+
+<p>class MyApp extends StatelessWidget {<br />
+&nbsp; @override<br />
+&nbsp; Widget build(BuildContext context) {<br />
+&nbsp; &nbsp; return MaterialApp(<br />
+&nbsp; &nbsp; &nbsp; title: &#39;My Flutter App&#39;,<br />
+&nbsp; &nbsp; &nbsp; home: Scaffold(<br />
+&nbsp; &nbsp; &nbsp; &nbsp; appBar: AppBar(<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; title: Text(&#39;My Flutter App&#39;),<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ),<br />
+&nbsp; &nbsp; &nbsp; &nbsp; body: Center(<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; child: Text(&#39;Hello, Flutter!&#39;),<br />
+&nbsp; &nbsp; &nbsp; &nbsp; ),<br />
+&nbsp; &nbsp; &nbsp; ),<br />
+&nbsp; &nbsp; );<br />
+&nbsp; }<br />
+}<br />
+This code creates a simple Flutter app that displays a text message &quot;Hello, Flutter!&quot; in the center of the screen.</p>
+
+<p>Run the app: Run the following command in the terminal to start the app on a connected device or emulator:<br />
+Copy code<br />
+flutter run<br />
+This will compile the code and launch the app on the connected device or emulator.</p>
+
+<p>Experiment with the app: Try modifying the app code and experiment with different widgets and layouts to create your own custom Flutter app.<br />
+That&#39;s it! This should give you a basic understanding of how to create a Flutter app. You can find more information and tutorials on the official Flutter website.</p>
+
+<p><br />
+<strong>Question</strong><br />
+step by step setting up Visual Studio Code to develop flutter apps<br />
+Sure, here is a step-by-step guide to setting up Visual Studio Code for Flutter development:</p>
+
+<p>Install Visual Studio Code: Download and install Visual Studio Code from the official website.</p>
+
+<p>Install Flutter SDK: Download and install the Flutter SDK from the official website. Make sure to add the Flutter SDK to your system PATH.</p>
+
+<p>Install Dart SDK: Download and install the Dart SDK from the official website.</p>
+
+<p>Install Flutter and Dart extensions: Open Visual Studio Code and go to the extensions tab on the left sidebar. Search for &quot;Flutter&quot; and &quot;Dart&quot; extensions and install them.</p>
+
+<p>Create a new Flutter project: Open a new terminal window and run the following command to create a new Flutter project:</p>
+
+<p>lua<br />
+Copy code<br />
+flutter create my_app<br />
+This will create a new Flutter project in the &quot;my_app&quot; directory.</p>
+
+<p>Open the project in Visual Studio Code: Open the &quot;my_app&quot; directory in Visual Studio Code by selecting &quot;Open Folder&quot; from the File menu.</p>
+
+<p>Configure the Flutter SDK path: Press CTRL + , or click on the gear icon on the bottom left corner and select &quot;Settings&quot;. In the search bar, type &quot;flutter&quot; and click on &quot;Edit in settings.json&quot;. Add the following line to the file:</p>
+
+<p>json<br />
+Copy code<br />
+&quot;dart.flutterSdkPath&quot;: &quot;&lt;path to your Flutter SDK&gt;&quot;<br />
+Replace &lt;path to your Flutter SDK&gt; with the path to your Flutter SDK directory.</p>
+
+<p>Run the app: Open the main.dart file in the &quot;lib&quot; directory and click on the &quot;Run&quot; button on the top toolbar or press F5 to start the app on a connected device or emulator.<br />
+That&#39;s it! You have now set up Visual Studio Code for Flutter development. You can find more information and tutorials on the official Flutter website.</p>
