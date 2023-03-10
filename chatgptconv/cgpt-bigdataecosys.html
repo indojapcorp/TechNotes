@@ -1749,3 +1749,12 @@ This will open a web browser and display the hello-world application.</p>
 
 <p>Chef, Puppet, and Ansible are all&nbsp;<strong>configuration management tools</strong>, designed to install and manage software on existing servers whereas CloudFormation and Terraform are&nbsp;<strong>provisioning tools</strong>&nbsp;designed to provision the servers themselves (and the rest of the infrastructure, like load balancers, databases, networking configuration, etc), leaving the job of configuring those servers to other tools.</p>
 
+
+<h3><strong>Mutable vs Immutable Infrastructure</strong></h3>
+
+<p>Configuration management tools such as Chef, Puppet, and Ansible typically creates a&nbsp;<strong>mutable&nbsp;</strong>infrastructure. For example, using Chef to install a new version of a software, it&rsquo;ll run the software update on the existing servers and the changes will happen in-place.</p>
+
+<p>While in Terraform, every &ldquo;change&rdquo; is the deployment of a new server.&nbsp;<strong>Immutable</strong>&nbsp;components are recreated and replaced instead of updating in-place the existing components. Here, the servers are never modified after they&rsquo;re deployed.</p>
+
+
+
