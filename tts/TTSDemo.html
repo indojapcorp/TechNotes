@@ -1,48 +1,371 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Transliterate Japanese Text</title>
-  </head>
-  <body>
-    <textarea id="input" rows="10" cols="50"></textarea>
-    <br /><br />
-    <button onclick="transliterate()">Transliterate</button>
-    <br /><br />
-    <textarea id="output" rows="10" cols="50"></textarea>
+<head>
+	<title>Speech to Text</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-    <script src="https://cdn.jsdelivr.net/npm/googletrans@1.0.4/lib/googletrans.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/unofficial-jisho-api@2.3.0/index.min.js"></script>
+        .column60 {
+            float: left;
+            width: 60%;
+            padding: 10px;
+            height: 100vh;
+        }
+        
+        .column50 {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 100vh;
+        }
+        
+        .column40 {
+            float: left;
+            width: 40%;
+            padding: 10px;
+            height: 100vh;
+        }
 
-    <script>
-    function transliterate() {
-    const jisho = new JishoAPI();
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
 
-jisho.searchForPhrase('日').then(result => {
-  console.log(result);
-});
+        textarea {
+            width: 100%;
+            height: 70%;
+            resize: none;
+            border: 1px solid #ccc;
+            padding: 5px;
+            font-size: 16px;
+        }
+        
+        #output {
+            margin-top: 20px;
+        }
 
-    }
-      function transliterateorig() {
-        const inputText = document.getElementById("input").value;
+        #example {
+            margin-top: 10px;
+            font-style: italic;
+        }
 
-        // Initialize the translator object
-        const translator = googletrans(defaults = {
-            source: 'ja',
-            target: 'en'
-        });
+    </style>
 
-        // Transliterate the input text to English
-        translator
-          .translate(inputText)
-          .then((translatedText) => {
-            // Set the output text in the second textarea
-            document.getElementById("output").value = translatedText.text;
-          })
-          .catch((err) => {
-            console.error("Error occurred while transliterating: ", err);
-          });
+</head>
+<body>
+	<h1>Speech to Text</h1>
+	<label for="language">Language:</label>
+	<select id="language">
+		<option value="English">English</option>
+		<option value="Español">Español</option>
+		<option value="Français">Français</option>
+		<option value="Deutsch">Deutsch</option>
+		<option value="Italiano">Italiano</option>
+		<option value="日本語">日本語</option>
+	</select>
+	<button onclick="startRecognition()">Start</button>
+	<button onclick="stopRecognition()">Stop</button>
+	<button onclick="clearTextArea()">Clear</button>
+    <input type="checkbox" id="tts-checkbox">
+    <label for="tts-checkbox">Enable Text-to-Speech</label>	
+    
+	<button id="playBtn" disabled>Play</button>
+	<button id="pauseBtn" disabled>Pause</button>
+	<button id="resumeBtn" disabled>Resume</button>
+	<button id="stopBtn" disabled>Stop</button>
+
+    
+	<br>
+	
+	    <div class="row">
+        <div class="column50">
+            <textarea id="transcript"></textarea>
+        </div>
+        <div class="column50">
+            <div id="output"></div>
+            <div id="example"></div>
+        </div>
+		</div>
+		<!--
+	<textarea id="transcript" cols="80" rows="80"></textarea>
+	-->
+		<script>
+		// Initialize the SpeechRecognition API
+		const recognition = new webkitSpeechRecognition();
+		const transcriptTextarea = document.getElementById('transcript');
+      const ttsCheckbox = document.getElementById("tts-checkbox");
+      let isTtsEnabled = false;
+
+		let ttsUtterance = null;
+		let ttsPaused = false;
+
+
+		recognition.continuous = true;
+		recognition.interimResults = false;
+
+		const synth = window.speechSynthesis;
+		const utterance = new SpeechSynthesisUtterance();
+
+		const playBtn = document.getElementById('playBtn');
+		const pauseBtn = document.getElementById('pauseBtn');
+		const resumeBtn = document.getElementById('resumeBtn');
+		const stopBtn = document.getElementById('stopBtn');
+
+		let deflang='en';
+      const languageSelect = document.getElementById("language");
+
+      recognition.lang = languageSelect.value;
+
+      languageSelect.addEventListener("change", () => {
+        recognition.lang = languageSelect.value;
+        utterance.lang = languageSelect.value;
+        deflang=languages[document.getElementById("language").value].slice(0, 2);
+        console.log(deflang);
+      });
+
+      ttsCheckbox.addEventListener("change", () => {
+        isTtsEnabled = ttsCheckbox.checked;
+        playBtn.disabled = !ttsCheckbox.checked;
+
+      });
+
+
+
+
+		playBtn.addEventListener('click', () => {
+			// set the text to speak
+			//utterance.text = transcriptTextarea.value.substring(transcriptTextarea.selectionStart, transcriptTextarea.selectionEnd);
+			speakText(transcriptTextarea.value);
+		});
+
+		// pause the TTS when the pause button is clicked
+		pauseBtn.addEventListener('click', () => {
+			synth.pause();
+		});
+
+		// resume the TTS when the resume button is clicked
+		resumeBtn.addEventListener('click', () => {
+			synth.resume();
+		});
+
+		// stop the TTS when the stop button is clicked
+		stopBtn.addEventListener('click', () => {
+			synth.cancel();
+		});
+
+
+
+
+		// Define the language options
+		const languages = {
+			"English": "en-US",
+			"Español": "es-ES",
+			"Français": "fr-FR",
+			"Deutsch": "de-DE",
+			"Italiano": "it-IT",
+			"日本語": "ja-JP"
+		};
+
+		// Define the text-to-speech voice options
+		const voices = {
+			"English": "Alex",
+			"Español": "Monica",
+			"Français": "Thomas",
+			"Deutsch": "Anna",
+			"Italiano": "Alice",
+			"日本語": "Kyoko"
+		};
+
+		function speakText(text){
+					utterance.text = text;
+
+			utterance.voice = speechSynthesis.getVoices()
+					.find(voice => voice.name === voices[document.getElementById("language").value]);
+					
+			// add event listeners to utterance
+			utterance.onstart = () => {
+				playBtn.disabled = true;
+				pauseBtn.disabled = false;
+				resumeBtn.disabled = true;
+				stopBtn.disabled = false;
+			};
+
+			utterance.onpause = () => {
+				playBtn.disabled = true;
+				pauseBtn.disabled = true;
+				resumeBtn.disabled = false;
+				stopBtn.disabled = false;
+			};
+
+			utterance.onresume = () => {
+				playBtn.disabled = true;
+				pauseBtn.disabled = false;
+				resumeBtn.disabled = true;
+				stopBtn.disabled = false;
+			};
+
+			utterance.onend = () => {
+				playBtn.disabled = false;
+				pauseBtn.disabled = true;
+				resumeBtn.disabled = true;
+				stopBtn.disabled = true;
+			    window.getSelection().empty();
+			};
+
+			// speak the text
+			synth.speak(utterance);
+		}
+		
+		
+		
+		function clearTextArea() {
+			transcriptTextarea.value='';
+		}
+		
+		// Define the function to start speech recognition
+		function startRecognition() {
+			recognition.lang = languages[document.getElementById("language").value];
+			recognition.start();
+		}
+
+		// Define the function to stop speech recognition
+		function stopRecognition() {
+			recognition.stop();
+			if (window.getSelection) {
+  if (window.getSelection().empty) {  // Chrome
+    window.getSelection().empty();
+  } else if (window.getSelection().removeAllRanges) {  // Firefox
+    window.getSelection().removeAllRanges();
+  }
+} else if (document.selection) {  // IE?
+  document.selection.empty();
+}
+
+		}
+
+		// Add event listeners for speech recognition
+//		recognition.addEventListener("result", e => {
+//			const transcript = Array.from(e.results)
+//				.map(result => result[0].transcript)
+//				.join("");
+//			document.getElementById("transcript").value = transcript;
+//		});
+
+    recognition.onresult = function(event) {
+      let transcript = '';
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        if (event.results[i].isFinal) {
+          transcript += event.results[i][0].transcript + '\n';
+        } else {
+          transcript += event.results[i][0].transcript;
+        }
       }
-    </script>
-  </body>
+      transcriptTextarea.value += transcript;
+    }
+
+    recognition.onerror = function(event) {
+      console.error(event.error);
+    }
+    
+		// Add event listeners for text-to-speech
+		document.getElementById("transcript").addEventListener("mouseup", e => {
+			const selectedText = window.getSelection().toString();
+			if(deflang=='ja'){
+			getJishoOrgDefinitionExample();
+			}else{
+			getDefinitionExample();
+			}
+
+			if (isTtsEnabled && selectedText !== "") {
+			speakText(selectedText);
+				//const speech = new SpeechSynthesisUtterance(selectedText);
+				//console.log(document.getElementById("language").value);
+				//speech.voice = speechSynthesis.getVoices()
+				//	.find(voice => voice.name === voices[document.getElementById("language").value]);
+				//speechSynthesis.speak(speech);
+				//speech.onend = function (event) {
+    //console.log("speech end ");
+      //  window.getSelection().empty();
+
+//};
+
+			}
+		});
+		
+		    function getDefinition() {
+            var selectedText = window.getSelection().toString().trim();
+            if (selectedText !== "") {
+                var apiUrl = 'https://api.dictionaryapi.dev/api/v2/entries/en/' + selectedText;
+                fetch(apiUrl)
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(data) {
+                        var definition = data[0].meanings[0].definitions[0].definition;
+                        document.getElementById("output").innerHTML = '<strong>Definition:</strong> ' + definition;
+                    })
+                    .catch(function(error) {
+                        console.error('Error:', error);
+                        document.getElementById("output").innerHTML = '<strong>Definition:</strong> Not found';
+                    });
+            }
+        }
+        
+                function getDefinitionExample() {
+                
+            var selectedText = window.getSelection().toString().trim();
+            if (selectedText !== "") {
+                //var apiUrl = 'https://api.dictionaryapi.dev/api/v2/entries/en/' + selectedText;
+                var apiUrl = 'https://api.dictionaryapi.dev/api/v2/entries/'+deflang+'/' + selectedText;
+                fetch(apiUrl)
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(data) {
+                        var definition = data[0].meanings[0].definitions[0].definition;
+                        var example = data[0].meanings[0].definitions[0].example;
+                        document.getElementById("output").innerHTML = '<strong>Definition:</strong> ' + definition;
+                        document.getElementById("example").innerHTML = '<strong>Example:</strong> ' + example;
+                    })
+                    .catch(function(error) {
+                        console.error('Error:', error);
+                        document.getElementById("output").innerHTML = '<strong>Definition:</strong> Not found';
+                        document.getElementById("example").innerHTML = '';
+                    });
+            }
+        }
+
+        function getJishoOrgDefinitionExample() {
+            var selectedText = window.getSelection().toString().trim();
+            if (selectedText !== "") {
+                var apiUrl = 'https://cors-anywhere.herokuapp.com/https://jisho.org/api/v1/search/words?keyword=' + selectedText;
+                fetch(apiUrl)
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(data) {
+                        var definition = data.data[0].senses[0].english_definitions.join(", ");
+                        var example = data.data[0].senses[0].examples[0].english_sentence;
+                        document.getElementById("output").innerHTML = '<strong>Definition:</strong> ' + definition;
+                        document.getElementById("example").innerHTML = '<strong>Example:</strong> ' + example;
+                    })
+                    .catch(function(error) {
+                        console.error('Error:', error);
+                        document.getElementById("output").innerHTML = '<strong>Definition:</strong> Not found';
+                        document.getElementById("example").innerHTML = '';
+                    });
+            }
+        }
+
+	</script>
+</body>
 </html>
