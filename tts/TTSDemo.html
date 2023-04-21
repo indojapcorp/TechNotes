@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Speech to Text</title>
+	    <meta charset="utf-8">
+
     <style>
         * {
             box-sizing: border-box;
@@ -56,6 +58,11 @@
         #example {
             margin-top: 10px;
             font-style: italic;
+        }
+
+        .highlight {
+            background-color: yellow;
+            color: black;
         }
 
     </style>
@@ -188,8 +195,32 @@
 		function speakText(text){
 					utterance.text = text;
 
+                var words = text.split(" ");
+                var currentWord = 0;
+//                utterance.onboundary = function(event) {
+//                    var word = words[currentWord].replace(/[^A-Za-z]/g, '');
+//                    var textArea = document.getElementById("transcript");
+//                    var startIndex = text.indexOf(word, event.charIndex);
+//                    var endIndex = startIndex + word.length;
+//                    textArea.setSelectionRange(startIndex, endIndex);
+//                    textArea.classList.add("highlight");
+//                    
+//                    console.log(word);
+//                    
+//                    setTimeout(function() {
+//                        textArea.classList.remove("highlight");
+//                    }, 2);
+//                    currentWord++;
+//                };
+
 			utterance.voice = speechSynthesis.getVoices()
 					.find(voice => voice.name === voices[document.getElementById("language").value]);
+					
+				var words = text.split(" ");
+                var currentWord = 0;
+                var startOffset = 0;
+                var endOffset = 0;
+                var intervalId = null;
 					
 			// add event listeners to utterance
 			utterance.onstart = () => {
@@ -197,6 +228,10 @@
 				pauseBtn.disabled = false;
 				resumeBtn.disabled = true;
 				stopBtn.disabled = false;
+				
+
+
+
 			};
 
 			utterance.onpause = () => {
