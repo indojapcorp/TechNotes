@@ -1,0 +1,184 @@
+<p>enter the mongo shell using mongo command on command line</p>
+
+<p>show dbs</p>
+
+<p>use&nbsp;&lt;sampledatabase&gt;</p>
+
+<p>show collections</p>
+
+<p>db.&lt;collectionName&gt;.insert({&lt;key&gt;&nbsp;:&nbsp;&lt;value&gt;,&nbsp;&lt;key&gt;&nbsp;:&nbsp;&lt;value&gt;})</p>
+
+<p>use employee</p>
+
+<p>This command selects the database&nbsp;<code>employee</code>. We&rsquo;ll receive a response that says&nbsp;<code>switched to db employee</code>.</p>
+
+<p>Now let&rsquo;s create our collection and insert a document simultaneously:</p>
+
+<p>db.employeeprofile .insert({<br />
+&nbsp; &nbsp;emp_name:&nbsp;&quot;Pradeep&quot;,<br />
+&nbsp; &nbsp;emp_age: &nbsp;23,<br />
+&nbsp; &nbsp;emp_website:&nbsp;&quot;employeeprofile.com&quot;<br />
+})</p>
+
+<p>After executing this command, MongoDB will notify us:&nbsp;<code>WriteResult({ &quot;nInserted&quot; : 1 })</code>.</p>
+
+<p>We can verify that this operation was successful using the command shown below:&nbsp;</p>
+
+<p><code>db.employeeprofile.find().pretty();</code></p>
+
+<p>&nbsp;</p>
+
+<p>show collections<br />
+employeeprofile</p>
+
+<p><code>show users</code></p>
+
+<p><code>show roles</code></p>
+
+<p><code>show profile</code></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<table cellpadding="0" cellspacing="0">
+	<thead>
+		<tr>
+			<th scope="col">
+			<p>JavaScript Database Operations</p>
+			</th>
+			<th scope="col">
+			<p>Description</p>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+			<p><code>db.auth()</code></p>
+			</td>
+			<td>
+			<p>If running in secure mode, authenticate the user.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><code>coll = db.&lt;collection&gt;</code></p>
+			</td>
+			<td>
+			<p>Set a specific collection in the current database to a variable&nbsp;<code>coll</code>, as in the following example:</p>
+
+			<pre>
+
+&nbsp;</pre>
+
+			<table>
+				<tbody>
+					<tr>
+						<td><code>coll = db.myCollection;</code></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>&nbsp;</p>
+
+			<p>You can perform operations on the&nbsp;<code>myCollection</code>&nbsp;using the variable, as in the following example:</p>
+
+			<pre>
+
+&nbsp;</pre>
+
+			<table>
+				<tbody>
+					<tr>
+						<td><code>coll.find();</code></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><code>db.collection.find()</code></p>
+			</td>
+			<td>
+			<p>Find all documents in the collection and returns a cursor.</p>
+
+			<p>See the&nbsp;<code>db.collection.find()</code>&nbsp;and&nbsp;Query Documents&nbsp;for more information and examples.</p>
+
+			<p>See&nbsp;Iterate a Cursor in&nbsp;<code>mongosh</code>&nbsp;for information on cursor handling in the&nbsp;<code>mongo</code>&nbsp;shell.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><code>db.collection.insertOne()</code></p>
+			</td>
+			<td>
+			<p>Insert a new document into the collection.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><code>db.collection.insertMany()</code></p>
+			</td>
+			<td>
+			<p>Insert multiple new documents into the collection.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><code>db.collection.updateOne()</code></p>
+			</td>
+			<td>
+			<p>Update a single existing document in the collection.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><code>db.collection.updateMany()</code></p>
+			</td>
+			<td>
+			<p>Update multiple existing documents in the collection.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><code>db.collection.deleteOne()</code></p>
+			</td>
+			<td>
+			<p>Delete a single document from the collection.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><code>db.collection.deleteMany()</code></p>
+			</td>
+			<td>
+			<p>Delete documents from the collection.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><code>db.collection.drop()</code></p>
+			</td>
+			<td>
+			<p>Drops or removes completely the collection.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><code>db.collection.createIndex()</code></p>
+			</td>
+			<td>
+			<p>Create a new index on the collection if the index does not exist; otherwise, the operation has no effect.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><code>db.getSiblingDB()</code></p>
+			</td>
+		</tr>
+	</tbody>
+</table>

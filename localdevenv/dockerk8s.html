@@ -571,3 +571,84 @@ The destination takes as its value the path where the file or directory will be 
 Live log of container:</br>
 docker logs --follow 927d04e66beaContID</br>
 
+#1: Display Only the Latest Lines</br>
+docker logs --tail 100 <container ID></br>
+#2: Stream Logs Until a Specific Point in Time</br>
+docker logs --follow --until=3s</br>
+docker logs --follow --until=30m</br>
+#3: Stream Logs From a Specific Point in Time</br>
+docker logs --since 2019-03-02 <container ID></br>
+
+
+
+
+-------</br>
+JENKINS in docker img
+
+docker volume create jenkinsvol1</br>
+
+
+docker container run -d -p 8082:8080 \</br>
+    -v jenkinsvol1:/var/jenkins_home \</br>
+    --name jenkins-local \</br>
+    jenkins/jenkins:lts</br>
+
+docker container exec \</br>
+    [CONTAINER ID or NAME] \</br>
+    sh -c "cat /var/jenkins_home/secrets/initialAdminPassword"</br>
+
+
+docker container kill d857e361b552</br>
+docker container rm d857e361b552</br>
+docker ps --size</br>
+
+-------</br>
+
+
+stops all running containers</br>
+docker stop $(docker ps -a -q) </br>
+
+delete all images with </br>
+docker rmi $(docker images -q)</br>
+
+<ul>
+	<li>update and stop a container that is in a crash-loop with&nbsp;<em><strong>docker update &ndash;restart=no &amp;&amp; docker stop</strong></em></li>
+	<li>bash shell into container&nbsp;<em><strong>docker exec -i -t /bin/bash</strong></em>&nbsp;&ndash; if bash is not available use /bin/sh</li>
+	<li>bash shell with root if container is running in a different user context&nbsp;<strong><em>docker exec -i -t -u root /bin/bash</em></strong>
+	<p>Get docker container including size:</p>
+
+	<pre>
+<code>docker ps -s</code></pre>
+
+	<p>Get docker container disk utilization:</p>
+
+	<pre>
+<code>docker system df</code></pre>
+	</li>
+</ul>
+
+<h2>What about wasted resources?</h2>
+
+<p>The first command is used to remove local container images that are not used by any container and are not tagged. Its a pretty safe command to clean up your local filesystem</p>
+
+<pre>
+<code>docker image prune</code></pre>
+
+<p>If you want to clean up and delete all unused container images, just add -a</p>
+
+<pre>
+<code>docker image prune -a</code></pre>
+
+<p>only clean up container images that have been created over 24 hours ago run</p>
+
+<pre>
+<code>docker image prune -a --filter "=24h"</code></pre>
+
+<p>same can be done with container, that are not running anymore</p>
+
+<pre>
+<code>docker container prune</code></pre>
+
+<p>&nbsp;</p>
+
+

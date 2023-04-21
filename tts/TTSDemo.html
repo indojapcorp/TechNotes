@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Speech to Text</title>
+
+</head>
+<body>
+	<h1>Speech to Text</h1>
+	<label for="language">Language:</label>
+	<select id="language">
+		<option value="English">English</option>
+		<option value="Español">Español</option>
+		<option value="Français">Français</option>
+		<option value="Deutsch">Deutsch</option>
+		<option value="Italiano">Italiano</option>
+		<option value="日本語">日本語</option>
+	</select>
+	<button onclick="startRecognition()">Start</button>
+	<button onclick="stopRecognition()">Stop</button>
+	<button onclick="clearTextArea()">Clear</button>
+    <input type="checkbox" id="tts-checkbox">
+    <label for="tts-checkbox">Enable Text-to-Speech</label>	
+    
+	<button id="playBtn" disabled>Play</button>
+	<button id="pauseBtn" disabled>Pause</button>
+	<button id="resumeBtn" disabled>Resume</button>
+	<button id="stopBtn" disabled>Stop</button>
+
+    
+	<br>
+	<textarea id="transcript" cols="80" rows="80"></textarea>
+	
+		<script>
+		// Initialize the SpeechRecognition API
+		const recognition = new webkitSpeechRecognition();
+		const transcriptTextarea = document.getElementById('transcript');
+      const ttsCheckbox = document.getElementById("tts-checkbox");
+      let isTtsEnabled = false;
+
+		let ttsUtterance = null;
+		let ttsPaused = false;
+
+
+		recognition.continuous = true;
+		recognition.interimResults = false;
+
+		const synth = window.speechSynthesis;
+		const utterance = new SpeechSynthesisUtterance();
+
+		const playBtn = document.getElementById('playBtn');
+		const pauseBtn = document.getElementById('pauseBtn');
+		const resumeBtn = document.getElementById('resumeBtn');
+		const stopBtn = document.getElementById('stopBtn');
+
+
+      const languageSelect = document.getElementById("language");
+
+      recognition.lang = languageSelect.value;
+
+      languageSelect.addEventListener("change", () => {
+        recognition.lang = languageSelect.value;
+        utterance.lang = languageSelect.value;
+      });
+
+      ttsCheckbox.addEventListener("change", () => {
+        isTtsEnabled = ttsCheckbox.checked;
+        playBtn.disabled = !ttsCheckbox.checked;
+
+      });
+
+
+
+
+		playBtn.addEventListener('click', () => {
+			// set the text to speak
+			//utterance.text = transcriptTextarea.value.substring(transcriptTextarea.selectionStart, transcriptTextarea.selectionEnd);
+			speakText(transcriptTextarea.value);
+		});
+
+		// pause the TTS when the pause button is clicked
+		pauseBtn.addEventListener('click', () => {
+			synth.pause();
+		});
+
+		// resume the TTS when the resume button is clicked
+		resumeBtn.addEventListener('click', () => {
+			synth.resume();
+		});
+
+		// stop the TTS when the stop button is clicked
+		stopBtn.addEventListener('click', () => {
+			synth.cancel();
+		});
+
+
+
+
+		// Define the language options
+		const languages = {
+			"English": "en-US",
+			"Español": "es-ES",
+			"Français": "fr-FR",
+			"Deutsch": "de-DE",
+			"Italiano": "it-IT",
+			"日本語": "ja-JP"
+		};
+
+		// Define the text-to-speech voice options
+		const voices = {
+			"English": "Alex",
+			"Español": "Monica",
+			"Français": "Thomas",
+			"Deutsch": "Anna",
+			"Italiano": "Alice",
+			"日本語": "Kyoko"
+		};
+
+		function speakText(text){
+					utterance.text = text;
+
+			utterance.voice = speechSynthesis.getVoices()
+					.find(voice => voice.name === voices[document.getElementById("language").value]);
+					
+			// add event listeners to utterance
+			utterance.onstart = () => {
+				playBtn.disabled = true;
+				pauseBtn.disabled = false;
+				resumeBtn.disabled = true;
+				stopBtn.disabled = false;
+			};
+
+			utterance.onpause = () => {
+				playBtn.disabled = true;
+				pauseBtn.disabled = true;
+				resumeBtn.disabled = false;
+				stopBtn.disabled = false;
+			};
+
+			utterance.onresume = () => {
+				playBtn.disabled = true;
+				pauseBtn.disabled = false;
+				resumeBtn.disabled = true;
+				stopBtn.disabled = false;
+			};
+
+			utterance.onend = () => {
+				playBtn.disabled = false;
+				pauseBtn.disabled = true;
+				resumeBtn.disabled = true;
+				stopBtn.disabled = true;
+			    window.getSelection().empty();
+			};
+
+			// speak the text
+			synth.speak(utterance);
+		}
+		
+		
+		
+		function clearTextArea() {
+			transcriptTextarea.value='';
+		}
+		
+		// Define the function to start speech recognition
+		function startRecognition() {
+			recognition.lang = languages[document.getElementById("language").value];
+			recognition.start();
+		}
+
+		// Define the function to stop speech recognition
+		function stopRecognition() {
+			recognition.stop();
+			if (window.getSelection) {
+  if (window.getSelection().empty) {  // Chrome
+    window.getSelection().empty();
+  } else if (window.getSelection().removeAllRanges) {  // Firefox
+    window.getSelection().removeAllRanges();
+  }
+} else if (document.selection) {  // IE?
+  document.selection.empty();
+}
+
+		}
+
+		// Add event listeners for speech recognition
+//		recognition.addEventListener("result", e => {
+//			const transcript = Array.from(e.results)
+//				.map(result => result[0].transcript)
+//				.join("");
+//			document.getElementById("transcript").value = transcript;
+//		});
+
+    recognition.onresult = function(event) {
+      let transcript = '';
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        if (event.results[i].isFinal) {
+          transcript += event.results[i][0].transcript + '\n';
+        } else {
+          transcript += event.results[i][0].transcript;
+        }
+      }
+      transcriptTextarea.value += transcript;
+    }
+
+    recognition.onerror = function(event) {
+      console.error(event.error);
+    }
+    
+		// Add event listeners for text-to-speech
+		document.getElementById("transcript").addEventListener("mouseup", e => {
+			const selectedText = window.getSelection().toString();
+			if (isTtsEnabled && selectedText !== "") {
+			speakText(selectedText);
+				//const speech = new SpeechSynthesisUtterance(selectedText);
+				//console.log(document.getElementById("language").value);
+				//speech.voice = speechSynthesis.getVoices()
+				//	.find(voice => voice.name === voices[document.getElementById("language").value]);
+				//speechSynthesis.speak(speech);
+				//speech.onend = function (event) {
+    //console.log("speech end ");
+      //  window.getSelection().empty();
+
+//};
+
+			}
+		});
+	</script>
+</body>
+</html>
