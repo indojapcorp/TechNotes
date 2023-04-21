@@ -197,22 +197,6 @@
 
                 var words = text.split(" ");
                 var currentWord = 0;
-//                utterance.onboundary = function(event) {
-//                    var word = words[currentWord].replace(/[^A-Za-z]/g, '');
-//                    var textArea = document.getElementById("transcript");
-//                    var startIndex = text.indexOf(word, event.charIndex);
-//                    var endIndex = startIndex + word.length;
-//                    textArea.setSelectionRange(startIndex, endIndex);
-//                    textArea.classList.add("highlight");
-//                    
-//                    console.log(word);
-//                    
-//                    setTimeout(function() {
-//                        textArea.classList.remove("highlight");
-//                    }, 2);
-//                    currentWord++;
-//                };
-
 			utterance.voice = speechSynthesis.getVoices()
 					.find(voice => voice.name === voices[document.getElementById("language").value]);
 					
@@ -315,25 +299,14 @@
 		document.getElementById("transcript").addEventListener("mouseup", e => {
 			const selectedText = window.getSelection().toString();
 			if(deflang=='ja'){
-			getJishoOrgDefinitionExample();
+				getJishoOrgDefinitionExample();
 			}else{
-			//getDefinitionExample();
-			getDefinitionFromCSV();
+				getDefinitionExample();
+			//getDefinitionFromCSV();
 			}
 
 			if (isTtsEnabled && selectedText !== "") {
-			speakText(selectedText);
-				//const speech = new SpeechSynthesisUtterance(selectedText);
-				//console.log(document.getElementById("language").value);
-				//speech.voice = speechSynthesis.getVoices()
-				//	.find(voice => voice.name === voices[document.getElementById("language").value]);
-				//speechSynthesis.speak(speech);
-				//speech.onend = function (event) {
-    //console.log("speech end ");
-      //  window.getSelection().empty();
-
-//};
-
+				speakText(selectedText);
 			}
 		});
 		
@@ -406,7 +379,7 @@
             var selectedText = window.getSelection().toString().trim();
             if (selectedText !== "") {
                 var request = new XMLHttpRequest();
-                var url = "data/words.csv";
+                var url = "data/GRE_1300.csv";
                 request.open("GET", url);
                 request.onload = function() {
                     if (request.status === 200) {
