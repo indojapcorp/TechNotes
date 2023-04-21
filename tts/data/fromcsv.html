@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSV Word Definition Example</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>CSV Word Definition Example</h1>
+    <p>Select a word to get its definition:</p>
+    <textarea id="selectedText" onmouseup="getDefinition()"></textarea>
+    <div id="definition"></div>
+
+    <script>
+        function getDefinition() {
+            var selectedText = window.getSelection().toString().trim();
+            if (selectedText !== "") {
+                var request = new XMLHttpRequest();
+                var url = "data/words.csv";
+                request.open("GET", url);
+                request.onload = function() {
+                    if (request.status === 200) {
+                        var csvData = request.responseText;
+                        var lines = csvData.split("\n");
+                        var headers = lines[0].split(",");
+                        var wordIndex = headers.indexOf("word");
+                        var definitionIndex = headers.indexOf("definition");
+                        var exampleIndex = headers.indexOf("example");
+                        for (var i = 1; i < lines.length; i++) {
+                            var values = lines[i].split(",");
+                            var word = values[wordIndex];
+                            var definition = values[definitionIndex];
+                            var example = values[exampleIndex];
+                            if (word === selectedText) {
+                                var displayText = "<p><strong>" + word + "</strong>: " + definition + "</p><p>Example: " + example + "</p>";
+                                document.getElementById("definition").innerHTML = displayText;
+                                break;
+                            }
+                        }
+                    } else {
+                        console.log("Error: " + request.statusText);
+                    }
+                };
+                request.send();
+            }
+        }
+    </script>
+</body>
+</html>

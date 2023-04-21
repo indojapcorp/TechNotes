@@ -317,7 +317,8 @@
 			if(deflang=='ja'){
 			getJishoOrgDefinitionExample();
 			}else{
-			getDefinitionExample();
+			//getDefinitionExample();
+			getDefinitionFromCSV();
 			}
 
 			if (isTtsEnabled && selectedText !== "") {
@@ -401,6 +402,41 @@
             }
         }
 
+        function getDefinitionFromCSV() {
+            var selectedText = window.getSelection().toString().trim();
+            if (selectedText !== "") {
+                var request = new XMLHttpRequest();
+                var url = "data/words.csv";
+                request.open("GET", url);
+                request.onload = function() {
+                    if (request.status === 200) {
+                        var csvData = request.responseText;
+                        var lines = csvData.split("\n");
+                        var headers = lines[0].split(",");
+                        var wordIndex = headers.indexOf("word");
+                        var definitionIndex = headers.indexOf("definition");
+                        var exampleIndex = headers.indexOf("example");
+                        for (var i = 1; i < lines.length; i++) {
+                            var values = lines[i].split(",");
+                            var word = values[wordIndex];
+                            var definition = values[definitionIndex];
+                            var example = values[exampleIndex];
+                            if (word === selectedText) {
+                                var displayText = "<p><strong>" + word + "</strong>: " + definition + "</p><p>Example: " + example + "</p>";
+                                //document.getElementById("definition").innerHTML = displayText;
+                        document.getElementById("output").innerHTML = '<strong>Definition:</strong> ' + definition;
+                        document.getElementById("example").innerHTML = '<strong>Example:</strong> ' + example;
+                                
+                                break;
+                            }
+                        }
+                    } else {
+                        console.log("Error: " + request.statusText);
+                    }
+                };
+                request.send();
+            }
+        }
 	</script>
 </body>
 </html>
