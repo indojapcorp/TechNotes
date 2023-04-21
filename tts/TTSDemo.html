@@ -347,7 +347,7 @@
         function getJishoOrgDefinitionExample() {
             var selectedText = window.getSelection().toString().trim();
             if (selectedText !== "") {
-                var apiUrl = 'https://cors-anywhere.herokuapp.com/https://jisho.org/api/v1/search/words?keyword=' + selectedText;
+                var apiUrl = 'https://jisho.org/api/v1/search/words?keyword=' + selectedText;
                 fetch(apiUrl)
                     .then(function(response) {
                         return response.json();
