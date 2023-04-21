@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table with Checkbox Column and Buttons</title>
+
+</head>
+<body>
+	<table id="myTable">
+		<thead>
+			<tr>
+				<th><input type="checkbox" onclick="selectAll(this)"></th>
+				<th>Column 1<input type="checkbox" id="col1" value="1"></th>
+				<th>Column 2<input type="checkbox" id="col2" value="2"></th>
+				<th>Column 3<input type="checkbox" id="col3" value="3"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="checkbox" name="row1"></td>
+				<td>Data 1</td>
+				<td>Data 2</td>
+				<td>Data 3</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="row2"></td>
+				<td>Data 4</td>
+				<td>Data 5</td>
+				<td>Data 6</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="row3"></td>
+				<td>Data 7</td>
+				<td>Data 8</td>
+				<td>Data 9</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<button onclick="getSelectedData()">Get Selected Data</button>
+	<button onclick="deleteSelectedRows()">Delete Selected Rows</button>
+
+	<script>
+		function selectAll(source) {
+			var checkboxes = document.getElementsByTagName("input");
+			for (var i = 0; i < checkboxes.length; i++) {
+				if (checkboxes[i].type == "checkbox" && checkboxes[i].name.includes("row")) {
+					checkboxes[i].checked = source.checked;
+				}
+			}
+		}
+	</script>
+	
+		<script>
+	      const col1 = document.getElementById("col1");
+
+				var arr = [];
+
+let stories = document.querySelectorAll('*[id^="col"]');
+
+//let stories = document.querySelectorAll("[type='checkbox']");
+let favorites = [];
+
+function createFavorites() {
+  favorites = [];
+  //let checked = document.querySelectorAll("[type='checkbox']:checked");
+  let checked = document.querySelectorAll('*[id^="col"]:checked');
+  checked.forEach(function(el) {
+    favorites.push(el.value);
+  });
+  //console.log(favorites)
+}
+
+stories.forEach(function(el) {
+  el.addEventListener("change", function() {
+    createFavorites();
+  });
+});
+
+
+
+      
+		function getSelectedData() {
+			var table = document.getElementById("myTable");
+			var rowCount = table.rows.length;
+			var selectedData = "";
+
+
+			for (var i = 1; i < rowCount; i++) {
+				var row = table.rows[i];
+				var checkBox = row.cells[0].getElementsByTagName("input")[0];
+
+				if (checkBox.checked) {
+					for (var j = 1; j < row.cells.length; j++) {
+						if(favorites.includes(""+j)){
+						selectedData += row.cells[j].innerHTML + " ";
+						}
+					}
+					selectedData += "\n";
+				}
+			}
+
+			alert(selectedData);
+		}
+
+		function deleteSelectedRows() {
+			var table = document.getElementById("myTable");
+			var rowCount = table.rows.length;
+
+			for (var i = 1; i < rowCount; i++) {
+				var row = table.rows[i];
+				var checkBox = row.cells[0].getElementsByTagName("input")[0];
+
+				if (checkBox.checked) {
+					table.deleteRow(i);
+					rowCount--;
+					i--;
+				}
+			}
+		}
+	</script>
+</body>
+</html>
