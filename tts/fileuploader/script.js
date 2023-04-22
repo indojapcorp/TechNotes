@@ -157,7 +157,7 @@ function speakRowData(row) {
     for (var i = 1; i < row.cells.length - 1; i++) {
 
             if(favorites.includes(""+i)){
-            selectedData += row.cells[i].innerHTML + " ";
+            selectedData += row.cells[i].innerHTML + " .!  ";
             }
 }
 console.log("selectedData="+selectedData);
@@ -293,13 +293,6 @@ let selectedData = "";
 
 
 		function speakText(text){
-
-           // speakMessage(text, PAUSE_MS = 500,'en');
-
-  
-//            if(true)
-  //          return;
-
 			utterance.text = text;
 
 		var words = text.split(" ");
