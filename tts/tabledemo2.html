@@ -2,42 +2,104 @@
 <html>
 <head>
 	<title>Table with Checkbox Column and Buttons</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			border: 1px solid #ddd;
+			padding: 8px;
+			text-align: left;
+		}
+		input {
+			width: 100%;
+		}
 
+		th:first-child, td:first-child {
+			width: 5%;
+		  }
+		  
+		  th:nth-child(2), td:nth-child(2) {
+			width: 25%;
+		  }
+		  
+		  th:nth-child(3), td:nth-child(3) {
+			width: 30%;
+		  }
+		  
+		  th:nth-child(4), td:nth-child(4) {
+			width: 35%;
+		  }
+		  
+		  th:last-child, td:last-child {
+			width: 5%;
+		  }
+		  
+	</style>
 </head>
 <body>
+
+	<button onclick="deleteSelectedRows()">Delete Selected</button>
+	<button onclick="deleteNonselectedRows()">Delete Unelected</button>
+
+	<label for="language">Language:</label>
+	<select id="language">
+		<option value="English">English</option>
+		<option value="Español">Español</option>
+		<option value="Français">Français</option>
+		<option value="Deutsch">Deutsch</option>
+		<option value="Italiano">Italiano</option>
+		<option value="日本語">日本語</option>
+	</select>
+	<button id="playBtn" >Play</button>
+	<button id="pauseBtn" disabled>Pause</button>
+	<button id="resumeBtn" disabled>Resume</button>
+	<button id="stopBtn" disabled>Stop</button>
+	<br><br>
 	<table id="myTable">
 		<thead>
+			<tr>
+				<th></th>
+				<th><input type="text" id="input_1" onkeyup="filterTable(1)" placeholder="Filter Column 2"></th>
+				<th><input type="text" id="input_2" onkeyup="filterTable(2)" placeholder="Filter Column 3"></th>
+				<th><input type="text" id="input_3" onkeyup="filterTable(3)" placeholder="Filter Column 4"></th>
+				<th></th>
+			</tr>
 			<tr>
 				<th><input type="checkbox" onclick="selectAll(this)"></th>
 				<th>Column 1<input type="checkbox" id="col1" value="1"></th>
 				<th>Column 2<input type="checkbox" id="col2" value="2"></th>
 				<th>Column 3<input type="checkbox" id="col3" value="3"></th>
+				<th>Speak</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td><input type="checkbox" name="row1"></td>
-				<td>Data 1</td>
+				<td>Data 1 動画</td>
 				<td>Data 2</td>
 				<td>Data 3</td>
+				<td><button onclick="speakRowData(this.parentNode.parentNode)">Play</button></td>
 			</tr>
 			<tr>
 				<td><input type="checkbox" name="row2"></td>
 				<td>Data 4</td>
 				<td>Data 5</td>
 				<td>Data 6</td>
+				<td><button onclick="speakRowData(this.parentNode.parentNode)">Play</button></td>
 			</tr>
 			<tr>
 				<td><input type="checkbox" name="row3"></td>
 				<td>Data 7</td>
 				<td>Data 8</td>
 				<td>Data 9</td>
+				<td><button onclick="speakRowData(this.parentNode.parentNode)">Play</button></td>
 			</tr>
 		</tbody>
 	</table>
 
-	<button onclick="getSelectedData()">Get Selected Data</button>
-	<button onclick="deleteSelectedRows()">Delete Selected Rows</button>
+
 
 	<script>
 		function selectAll(source) {
@@ -76,16 +138,24 @@ stories.forEach(function(el) {
   });
 });
 
+const languageSelect = document.getElementById("language");
+languageSelect.addEventListener("change", () => {
+  utterance.lang = languageSelect.value;
+  deflang=languages[document.getElementById("language").value].slice(0, 2);
+  console.log(deflang);
+});
 
 
-      
+let selectedData = "";
+
 		function getSelectedData() {
 			var table = document.getElementById("myTable");
 			var rowCount = table.rows.length;
-			var selectedData = "";
+			//var selectedData = "";
+			selectedData = "";
 
 
-			for (var i = 1; i < rowCount; i++) {
+			for (var i = 2; i < rowCount; i++) {
 				var row = table.rows[i];
 				var checkBox = row.cells[0].getElementsByTagName("input")[0];
 
@@ -98,15 +168,17 @@ stories.forEach(function(el) {
 					selectedData += "\n";
 				}
 			}
+			//var utterance = new SpeechSynthesisUtterance(selectedData);
+			//window.speechSynthesis.speak(utterance);
 
-			alert(selectedData);
+			//alert(selectedData);
 		}
 
 		function deleteSelectedRows() {
 			var table = document.getElementById("myTable");
 			var rowCount = table.rows.length;
 
-			for (var i = 1; i < rowCount; i++) {
+			for (var i = 2; i < rowCount; i++) {
 				var row = table.rows[i];
 				var checkBox = row.cells[0].getElementsByTagName("input")[0];
 
@@ -117,6 +189,157 @@ stories.forEach(function(el) {
 				}
 			}
 		}
+
+		function deleteNonselectedRows() {
+			var table = document.getElementById("myTable");
+			var rowCount = table.rows.length;
+
+			for (var i = 2; i < rowCount; i++) {
+				var row = table.rows[i];
+				var checkBox = row.cells[0].getElementsByTagName("input")[0];
+
+				if (!checkBox.checked) {
+					table.deleteRow(i);
+					rowCount--;
+					i--;
+				}
+			}
+		}
+
+		function speakRowData(row) {
+			var selectedData = "";
+			for (var i = 1; i < row.cells.length - 1; i++) {
+
+					if(favorites.includes(""+i)){
+					selectedData += row.cells[i].innerHTML + " ";
+					}
+		}
+			var utterance = new SpeechSynthesisUtterance(selectedData);
+			window.speechSynthesis.speak(utterance);
+		}
+
+		function filterTable(columnIndex) {
+			var input, filter, table, tr, td, i;
+			input = document.getElementById("input_" + columnIndex);
+			filter = input.value.toUpperCase();
+			table = document.getElementById("myTable");
+			tr = table.getElementsByTagName("tr");
+
+			for (i = 0; i < tr.length; i++) {
+				td = tr[i].getElementsByTagName("td")[columnIndex];
+				if (td) {
+					if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+						tr[i].style.display = "";
+					} else {
+						tr[i].style.display = "none";
+					}
+				}
+			}
+		}
+
+
+				// Define the language options
+				const languages = {
+					"English": "en-US",
+					"Español": "es-ES",
+					"Français": "fr-FR",
+					"Deutsch": "de-DE",
+					"Italiano": "it-IT",
+					"日本語": "ja-JP"
+				};
+		
+				// Define the text-to-speech voice options
+				const voices = {
+					"English": "Alex",
+					"Español": "Monica",
+					"Français": "Thomas",
+					"Deutsch": "Anna",
+					"Italiano": "Alice",
+					"日本語": "Kyoko"
+				};
+		let isTtsEnabled = false;
+
+		let ttsUtterance = null;
+		let ttsPaused = false;
+		let deflang='en';
+		const synth = window.speechSynthesis;
+		const utterance = new SpeechSynthesisUtterance();
+
+		const playBtn = document.getElementById('playBtn');
+		const pauseBtn = document.getElementById('pauseBtn');
+		const resumeBtn = document.getElementById('resumeBtn');
+		const stopBtn = document.getElementById('stopBtn');
+
+		playBtn.addEventListener('click', () => {
+			// set the text to speak
+			//utterance.text = transcriptTextarea.value.substring(transcriptTextarea.selectionStart, transcriptTextarea.selectionEnd);
+			getSelectedData();
+			speakText(selectedData);
+		});
+
+		// pause the TTS when the pause button is clicked
+		pauseBtn.addEventListener('click', () => {
+			synth.pause();
+		});
+
+		// resume the TTS when the resume button is clicked
+		resumeBtn.addEventListener('click', () => {
+			synth.resume();
+		});
+
+		// stop the TTS when the stop button is clicked
+		stopBtn.addEventListener('click', () => {
+			synth.cancel();
+		});
+
+
+		function speakText(text){
+			utterance.text = text;
+
+		var words = text.split(" ");
+		var currentWord = 0;
+	utterance.voice = speechSynthesis.getVoices()
+			.find(voice => voice.name === voices[document.getElementById("language").value]);
+			
+		var words = text.split(" ");
+		var currentWord = 0;
+		var startOffset = 0;
+		var endOffset = 0;
+		var intervalId = null;
+			
+	// add event listeners to utterance
+	utterance.onstart = () => {
+		playBtn.disabled = true;
+		pauseBtn.disabled = false;
+		resumeBtn.disabled = true;
+		stopBtn.disabled = false;
+	};
+
+	utterance.onpause = () => {
+		playBtn.disabled = true;
+		pauseBtn.disabled = true;
+		resumeBtn.disabled = false;
+		stopBtn.disabled = false;
+	};
+
+	utterance.onresume = () => {
+		playBtn.disabled = true;
+		pauseBtn.disabled = false;
+		resumeBtn.disabled = true;
+		stopBtn.disabled = false;
+	};
+
+	utterance.onend = () => {
+		playBtn.disabled = false;
+		pauseBtn.disabled = true;
+		resumeBtn.disabled = true;
+		stopBtn.disabled = true;
+		window.getSelection().empty();
+	};
+
+	// speak the text
+	synth.speak(utterance);
+}
 	</script>
 </body>
 </html>

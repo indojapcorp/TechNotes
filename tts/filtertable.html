@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table with Filter Functionality</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			border: 1px solid #ddd;
+			padding: 8px;
+			text-align: left;
+		}
+		input {
+			width: 100%;
+		}
+	</style>
+	<script>
+		function filterTable(columnIndex) {
+			var input, filter, table, tr, td, i;
+			input = document.getElementById("input_" + columnIndex);
+			filter = input.value.toUpperCase();
+			table = document.getElementById("myTable");
+			tr = table.getElementsByTagName("tr");
+
+			for (i = 0; i < tr.length; i++) {
+				td = tr[i].getElementsByTagName("td")[columnIndex];
+				if (td) {
+					if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+						tr[i].style.display = "";
+					} else {
+						tr[i].style.display = "none";
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<table id="myTable">
+		<thead>
+			<tr>
+				<th><input type="text" id="input_0" onkeyup="filterTable(0)" placeholder="Filter Column 1"></th>
+				<th><input type="text" id="input_1" onkeyup="filterTable(1)" placeholder="Filter Column 2"></th>
+				<th><input type="text" id="input_2" onkeyup="filterTable(2)" placeholder="Filter Column 3"></th>
+				<th><input type="text" id="input_3" onkeyup="filterTable(3)" placeholder="Filter Column 4"></th>
+				<th><input type="text" id="input_4" onkeyup="filterTable(4)" placeholder="Filter Column 5"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Data 1</td>
+				<td>Data 2</td>
+				<td>Data 3</td>
+				<td>Data 4</td>
+				<td>Data 5</td>
+			</tr>
+			<tr>
+				<td>Data 6</td>
+				<td>Data 7</td>
+				<td>Data 8</td>
+				<td>Data 9</td>
+				<td>Data 10</td>
+			</tr>
+			<tr>
+				<td>Data 11</td>
+				<td>Data 12</td>
+				<td>Data 13</td>
+				<td>Data 14</td>
+				<td>Data 15</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
