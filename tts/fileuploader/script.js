@@ -76,7 +76,7 @@ function loadTable(event) {
         }else{
             const tr = document.createElement("tr");
 
-            const td = document.createElement("th");
+            const td = document.createElement("tr");
             var input = document.createElement('input');
             input.type = "checkbox";
             input.name="row"+rowno;
