@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>GRE_1300</title>
+</head>
+
+<body class="container">
+<div>
+      <button id="start" class="btn btn-info mt-5 me-3">S</button> 
+      <button id="startall" class="btn btn-info mt-5 me-3">SAll</button>                                   
+      <button id="pause" class="btn btn-warning mt-5 me-3">P</button>
+      <button id="resume" class="btn btn-info mt-5 me-3">R</button>
+      <button id="cancel" class="btn btn-danger mt-5 me-3">Cancel</button>
+      
+			  Loop every line:
+              <select class="selectpicker" id="everyline" >
+                    <option value="0" selected="selected">
+                      FALSE
+                    </option>        
+                    <option value="1">
+                      TRUE
+                    </option>                                                                                                                  
+              </select>
+              
+              Play Times
+              <input id="times" value="1" size="2"/>
+
+
+</div>
+<h1 class="text-center">GRE_1300</h1>
+
+<table id="maintable" class="display compact cell-border" cellspacing="0" width="100%">    <thead>
+<tr>
+<th>Word</th>
+<th>Meaning</th>
+    </tr>
+</thead>
+    <tbody>
+    <tr>
+<td>aberration</td>
+<td>straying away from what is normal</td>
+    </tr>
+    <tr>
+<td>abet</td>
+<td>help/encourage somebody (in doing wrong)</td>
+    </tr>
+    <tr>
+<td>abeyance</td>
+<td>suspended action</td>
+    </tr>
+    <tr>
+<td>abhor</td>
+<td>to hate; to detest</td>
+    </tr>
+    <tr>
+<td>abide</td>
+<td>be faithful; to endure</td>
+    </tr>
+    <tr>
+<td>abjure</td>
+<td>promise or swear to give up</td>
+    </tr>
+    <tr>
+<td>abraded</td>
+<td>rubbed off; worn away by friction</td>
+    </tr>
+    <tr>
+<td>abraid</td>
+<td>to awaken or rouse</td>
+    </tr>
+    <tr>
+<td>abrogate</td>
+<td>repeal or annul by authority</td>
+    </tr>
+    <tr>
+<td>abscond</td>
+<td>to go away suddenly (to avoid arrest)</td>
+    </tr>
+    <tr>
+<td>abstruse</td>
+<td>difficult to comprehend; obscure</td>
+    </tr>
+    <tr>
+<td>abut</td>
+<td>border on</td>
+    </tr>
+    <tr>
+<td>abysmal</td>
+<td>extreme bad</td>
+    </tr>
+    <tr>
+<td>acarpous</td>
+<td>effete no longer fertile; worn out</td>
+    </tr>
+    <tr>
+<td>acclaimed</td>
+<td>welcomed with shouts and approval</td>
+    </tr>
+    <tr>
+<td>accolade</td>
+<td>praise; approval</td>
+    </tr>
+    <tr>
+<td>accretion</td>
+<td>the growing of separate things into one</td>
+    </tr>
+    <tr>
+<td>accrue</td>
+<td>accumulate</td>
+    </tr>
+    <tr>
+<td>acumen</td>
+<td>"Keen</td>
+    </tr>
+    <tr>
+<td>adamant</td>
+<td>kind of stone; inflexible</td>
+    </tr>
+    <tr>
+<td>admonitory</td>
+<td>containing warning</td>
+    </tr>
+    <tr>
+<td>adorn</td>
+<td>add beauty; decorate</td>
+    </tr>
+    <tr>
+<td>adulteration</td>
+<td>making unpure; poorer in quality</td>
+    </tr>
+    <tr>
+<td>affable</td>
+<td>polite and friendly</td>
+    </tr>
+    <tr>
+<td>affinity</td>
+<td>close connection; relationship</td>
+    </tr>
+    <tr>
+<td>aggravate</td>
+<td>make worse; irritate</td>
+    </tr>
+    <tr>
+<td>agile</td>
+<td>active; quick-moving</td>
+    </tr>
+    <tr>
+<td>agog</td>
+<td>eager/excited</td>
+    </tr>
+    <tr>
+<td>ail</td>
+<td>"to cause pain</td>
+    </tr>
+    <tr>
+<td>alacrity</td>
+<td>eager and cheerful; readiness</td>
+    </tr>
+    <tr>
+<td>alcove</td>
+<td>recess/partially enclosed place</td>
+    </tr>
+    <tr>
+<td>ale</td>
+<td>fermented alcoholic beverage similar to but heavier than beer</td>
+    </tr>
+    <tr>
+<td>aleck</td>
+<td>one who considers himself smarter than others</td>
+    </tr>
+    <tr>
+<td>allegiance</td>
+<td>duty support loyalty</td>
+    </tr>
+    <tr>
+<td>alleviate</td>
+<td>make (pain) easier to bear</td>
+    </tr>
+    <tr>
+<td>alloy</td>
+<td>to debase by mixing with something inferior</td>
+    </tr>
+    <tr>
+<td>aloof</td>
+<td>reserved; indifferent</td>
+    </tr>
+    <tr>
+<td>amalgamate</td>
+<td>mix; combine; unite societies</td>
+    </tr>
+    <tr>
+<td>ambidextrous</td>
+<td>able to use the left hand or the right equally well</td>
+    </tr>
+    <tr>
+<td>ambiguous</td>
+<td>doubtful; uncertain</td>
+    </tr>
+    <tr>
+<td>ambivalent</td>
+<td>having both of two contrary meanings</td>
+    </tr>
+    <tr>
+<td>ambrosial</td>
+<td>extremely pleasing to taste</td>
+    </tr>
+    <tr>
+<td>ameliorate</td>
+<td>improve; make better</td>
+    </tr>
+    <tr>
+<td>amortize</td>
+<td>end (a debt) by setting aside money</td>
+    </tr>
+    <tr>
+<td>anguish</td>
+<td>severe suffering</td>
+    </tr>
+    <tr>
+<td>animosity</td>
+<td>strong dislike</td>
+    </tr>
+    <tr>
+<td>antidote</td>
+<td>medicine used against a poison or a disease</td>
+    </tr>
+    <tr>
+<td>antithetical</td>
+<td>direct opposing</td>
+    </tr>
+    <tr>
+<td>apartheid</td>
+<td>brutal racial discrimination</td>
+    </tr>
+    <tr>
+<td>aplomb</td>
+<td>self-confidence</td>
+    </tr>
+    <tr>
+<td>apostate</td>
+<td>one who abandons long-held religious or political convictions</td>
+    </tr>
+    <tr>
+<td>apotheosis</td>
+<td>deification glorification to godliness</td>
+    </tr>
+    <tr>
+<td>appease</td>
+<td>make quiet or calm</td>
+    </tr>
+    <tr>
+<td>apprehensive</td>
+<td>grasping understanding fear unhappy feeling about future</td>
+    </tr>
+    <tr>
+<td>apprise</td>
+<td>give notice to inform</td>
+    </tr>
+    <tr>
+<td>approbation</td>
+<td>approval</td>
+    </tr>
+    <tr>
+<td>apropos</td>
+<td>by the way</td>
+    </tr>
+    <tr>
+<td>apt</td>
+<td>well-suited; quick-witted</td>
+    </tr>
+    <tr>
+<td>arabesque</td>
+<td>a complex ornate design</td>
+    </tr>
+    <tr>
+<td>arboreal</td>
+<td>of connected with trees</td>
+    </tr>
+    <tr>
+<td>arcane</td>
+<td>known or understood by very few</td>
+    </tr>
+    <tr>
+<td>Archaic</td>
+<td>marked by the characteristics of an earlier period</td>
+    </tr>
+    <tr>
+<td>ardor</td>
+<td>enthusiasm</td>
+    </tr>
+    <tr>
+<td>arduous</td>
+<td>steep difficult ascent; laborious</td>
+    </tr>
+    <tr>
+<td>argot</td>
+<td>jargon; slang</td>
+    </tr>
+    <tr>
+<td>arrant</td>
+<td>in the highest degree</td>
+    </tr>
+    <tr>
+<td>arrogance</td>
+<td>proud; superior manner of behaviour</td>
+    </tr>
+    <tr>
+<td>articulate</td>
+<td>speak distinctly; connect by joints</td>
+    </tr>
+    <tr>
+<td>ascend</td>
+<td>go or come up</td>
+    </tr>
+    <tr>
+<td>ascertain</td>
+<td>get to know</td>
+    </tr>
+    <tr>
+<td>ascetic</td>
+<td>practicing self-denial; austere; stark</td>
+    </tr>
+    <tr>
+<td>ascribe</td>
+<td>consider to be the origin of or belonging to</td>
+    </tr>
+    <tr>
+<td>aseptic</td>
+<td>surgically clean</td>
+    </tr>
+    <tr>
+<td>asperity</td>
+<td>roughness; harshness; ill temper; irritability</td>
+    </tr>
+    <tr>
+<td>aspersion</td>
+<td>slander</td>
+    </tr>
+    <tr>
+<td>assail</td>
+<td>attack violently</td>
+    </tr>
+    <tr>
+<td>assiduous</td>
+<td>diligent hard-working; sedulous</td>
+    </tr>
+    <tr>
+<td>assuage</td>
+<td>make something (pain desire) less</td>
+    </tr>
+    <tr>
+<td>asterisk</td>
+<td>the mark * (e.g.. omitted letters)</td>
+    </tr>
+    <tr>
+<td>astringent</td>
+<td>substance that shrinks</td>
+    </tr>
+    <tr>
+<td>astute</td>
+<td>clever quick at seeing to get an advantage</td>
+    </tr>
+    <tr>
+<td>atavistic</td>
+<td>something reverting to an earlier type</td>
+    </tr>
+    <tr>
+<td>atonement</td>
+<td>repayment death of Jesus</td>
+    </tr>
+    <tr>
+<td>attenuate</td>
+<td>make thin; weaken; enervate</td>
+    </tr>
+    <tr>
+<td>attune</td>
+<td>bring into harmony</td>
+    </tr>
+    <tr>
+<td>audacious</td>
+<td>Bold</td>
+    </tr>
+    <tr>
+<td>augury</td>
+<td>omenl sign</td>
+    </tr>
+    <tr>
+<td>august</td>
+<td>majestic; venerable</td>
+    </tr>
+    <tr>
+<td>auspicious</td>
+<td>favorable successful prosperous</td>
+    </tr>
+    <tr>
+<td>austere</td>
+<td>severely moral and strict simple and plain</td>
+    </tr>
+    <tr>
+<td>auxiliary</td>
+<td>helping; supporting</td>
+    </tr>
+    <tr>
+<td>aver</td>
+<td>affirm; assert; prove; justify</td>
+    </tr>
+    <tr>
+<td>aversion</td>
+<td>strong dislike</td>
+    </tr>
+    <tr>
+<td>avid</td>
+<td>eager; greedy</td>
+    </tr>
+    <tr>
+<td>avow</td>
+<td>admit; declare openly</td>
+    </tr>
+    <tr>
+<td>baleful</td>
+<td>harmful; ominous causing evil</td>
+    </tr>
+    <tr>
+<td>balk</td>
+<td>obstacle purposely to get on the way of</td>
+    </tr>
+    <tr>
+<td>bandy</td>
+<td>discuss lightly or glibly; exchange (words) heatedly</td>
+    </tr>
+    <tr>
+<td>baneful</td>
+<td>causing harm or ruin; pernicious; destructive</td>
+    </tr>
+    <tr>
+<td>barrage</td>
+<td>artificial obstacle built across a river</td>
+    </tr>
+    <tr>
+<td>barren</td>
+<td>not good enough; unable to have young ones without value</td>
+    </tr>
+    <tr>
+<td>bask</td>
+<td>in enjoy warmth and light</td>
+    </tr>
+    <tr>
+<td>beatify</td>
+<td>to bless; make happy or ascribe a virtue to</td>
+    </tr>
+    <tr>
+<td>bedizen</td>
+<td>to adorn especially in a cheap showy manner</td>
+    </tr>
+    <tr>
+<td>beguile</td>
+<td>mislead or delude; cheat; pass time</td>
+    </tr>
+    <tr>
+<td>belabor</td>
+<td>beat hard</td>
+    </tr>
+    <tr>
+<td>bellicose</td>
+<td>inclined to fighting</td>
+    </tr>
+    <tr>
+<td>belligerent</td>
+<td>(person nation) waging war</td>
+    </tr>
+    <tr>
+<td>benefactor</td>
+<td>person who has given help</td>
+    </tr>
+    <tr>
+<td>benevolence</td>
+<td>wish or activity in doing good</td>
+    </tr>
+    <tr>
+<td>benign</td>
+<td>kind and gentle</td>
+    </tr>
+    <tr>
+<td>benison</td>
+<td>blessing</td>
+    </tr>
+    <tr>
+<td>bequest</td>
+<td>arrangement to give something at death</td>
+    </tr>
+    <tr>
+<td>berate</td>
+<td>scold sharply</td>
+    </tr>
+    <tr>
+<td>bereft</td>
+<td>rob or dispossess of something (material)</td>
+    </tr>
+    <tr>
+<td>bewilder</td>
+<td>puzzle; confuse</td>
+    </tr>
+    <tr>
+<td>bigot</td>
+<td>stubborn; narrow-minded person</td>
+    </tr>
+    <tr>
+<td>bilge</td>
+<td>bulge; the protuberance of a cask</td>
+    </tr>
+    <tr>
+<td>blandishment</td>
+<td>flattery; coaxing</td>
+    </tr>
+</table>
+
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="js/jszip.min.js"></script>
+<script type="text/javascript" src="js/pdfmake.min.js"></script>
+<script type="text/javascript" src="js/vfs_fonts.js"></script>
+<script type="text/javascript" src="js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="js/buttons.print.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/jquery.mark.min.js"></script>
+<script type="text/javascript" src="js/datatables.mark.js"></script>
+<script type="text/javascript" src="js/buttons.colVis.min.js"></script>
+<footer></footer>
+</body>
+
+</html>

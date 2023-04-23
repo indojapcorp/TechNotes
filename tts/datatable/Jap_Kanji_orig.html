@@ -1,0 +1,4111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>jap_kanji</title>
+</head>
+
+<body class="container">
+
+
+<h1 class="text-center">jap_kanji</h1>
+
+<table id="maintable" class="display compact cell-border" cellspacing="0" width="100%">    <thead>
+<tr>
+<th>Frequency</th>
+<th>Kanji</th>
+<th>Onyomi</th>
+<th>Kunyomi</th>
+<th>Meaning_english</th>
+<th>Njlpt</th>
+<th>Schoolstd</th>
+    </tr>
+</thead>
+    <tbody>
+    <tr>
+<td>1</td>
+<td>日</td>
+<td> ジツ, ニチ</td>
+<td>-か, -び, ひ</td>
+<td>day, sun, Japan, counter for days</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>2</td>
+<td>一</td>
+<td> イツ, イチ</td>
+<td>ひと.つ, ひと-</td>
+<td>one</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>3</td>
+<td>国</td>
+<td> コク</td>
+<td>くに</td>
+<td>country</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>4</td>
+<td>会</td>
+<td> エ, カイ</td>
+<td>あつ.まる, あ.わせる, あ.う</td>
+<td>meeting, meet, party, association, interview, join</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>5</td>
+<td>人</td>
+<td> ニン, ジン</td>
+<td>-と, -り, ひと</td>
+<td>person</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>6</td>
+<td>年</td>
+<td> ネン</td>
+<td>とし</td>
+<td>year, counter for years</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>7</td>
+<td>大</td>
+<td> タイ, ダイ</td>
+<td>-おお.いに, おお.きい, おお-</td>
+<td>large, big</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>8</td>
+<td>十</td>
+<td> ジュッ, ジッ, ジュウ</td>
+<td>と, とお</td>
+<td>ten</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>9</td>
+<td>二</td>
+<td> ジ, ニ</td>
+<td>ふたた.び, ふた.つ, ふた</td>
+<td>two</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>10</td>
+<td>本</td>
+<td> ホン</td>
+<td>もと</td>
+<td>book, present, main, true, real, counter for long cylindrical things</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>11</td>
+<td>中</td>
+<td> チュウ</td>
+<td>あた.る, うち, なか</td>
+<td>in, inside, middle, mean, center</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>12</td>
+<td>長</td>
+<td> チョウ</td>
+<td>おさ, なが.い</td>
+<td>long, leader</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>13</td>
+<td>出</td>
+<td> スイ, シュツ</td>
+<td>い.だす, い.でる, -だ.す, だ.す, -で, で.る</td>
+<td>exit, leave</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>14</td>
+<td>三</td>
+<td> ゾウ, サン</td>
+<td>みっ.つ, み.つ, み</td>
+<td>three</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>15</td>
+<td>同</td>
+<td> ドウ</td>
+<td>おな.じ</td>
+<td>same, agree, equal</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>16</td>
+<td>時</td>
+<td> ジ</td>
+<td>-どき, とき</td>
+<td>time, hour</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>17</td>
+<td>政</td>
+<td> ショウ, セイ</td>
+<td>まん, まつりごと</td>
+<td>politics, government</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>18</td>
+<td>事</td>
+<td> ズ, ジ</td>
+<td>つか.える, つか.う, こと</td>
+<td>matter, thing, fact, business, reason, possibly</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>19</td>
+<td>自</td>
+<td> シ, ジ</td>
+<td>おの.ずと, おの.ずから, みずか.ら</td>
+<td>oneself</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>20</td>
+<td>行</td>
+<td> アン, ギョウ, コウ</td>
+<td>おこ.なう, おこな.う, -いき, -い.き, -ゆき, -ゆ.き, ゆ.く, い.く</td>
+<td>going, journey</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>21</td>
+<td>社</td>
+<td> シャ</td>
+<td>やしろ</td>
+<td>company, firm, office, association, shrine</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>22</td>
+<td>見</td>
+<td> ケン</td>
+<td>み.せる, み.える, み.る</td>
+<td>see, hopes, chances, idea, opinion, look at, visible</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>23</td>
+<td>月</td>
+<td> ガツ, ゲツ</td>
+<td>つき</td>
+<td>month, moon</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>24</td>
+<td>分</td>
+<td> ブ, フン, ブン</td>
+<td>わ.かつ, わ.かる, わ.かれる, わ.け, わ.ける</td>
+<td>part, minute of time, segment, share, degree, one's lot, duty, understand, know, rate, 1%, chances, shaku/100</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>25</td>
+<td>議</td>
+<td>ギ</td>
+<td></td>
+<td>deliberation, consultation, debate, consideration</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>26</td>
+<td>後</td>
+<td> コウ, ゴ</td>
+<td>おく.れる, あと, うしろ, うし.ろ, のち</td>
+<td>behind, back, later</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>27</td>
+<td>前</td>
+<td> ゼン</td>
+<td>-まえ, まえ</td>
+<td>in front, before</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>28</td>
+<td>民</td>
+<td> ミン</td>
+<td>たみ</td>
+<td>people, nation, subjects</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>29</td>
+<td>生</td>
+<td> ショウ, セイ</td>
+<td>-う, む.す, な.す, な.る, なま-, なま, き, は.やす, は.える, お.う, う.む, うまれ, う.まれ, う.まれる, い.ける, い.かす, い.きる</td>
+<td>life, genuine, birth</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>30</td>
+<td>連</td>
+<td> レン</td>
+<td>-づ.れ, つ.れる, つら.ねる, つら.なる</td>
+<td>take along, lead, join, connect, party, gang, clique</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>31</td>
+<td>五</td>
+<td> ゴ</td>
+<td>いつ.つ, いつ</td>
+<td>five</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>32</td>
+<td>発</td>
+<td> ホツ, ハツ</td>
+<td>はな.つ, つか.わす, おこ.る, あば.く, た.つ</td>
+<td>discharge, departure, publish, emit, start from, disclose, counter for gunshots</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>33</td>
+<td>間</td>
+<td> ケン, カン</td>
+<td>あい, ま, あいだ</td>
+<td>interval, space</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>34</td>
+<td>対</td>
+<td> ツイ, タイ</td>
+<td>むか.う, なら.ぶ, つれあ.い, そろ.い, こた.える, あいて</td>
+<td>vis-a-vis, opposite, even, equal, versus, anti-, compare</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>35</td>
+<td>上</td>
+<td> シャン, ショウ, ジョウ</td>
+<td>よ.す, のぼ.す, のぼ.せる, のぼ.り, のぼ.る, -あ.がり, あ.がり, -あ.がる, あ.がる, -あ.げる, あ.げる, かみ, うわ-, -うえ, うえ</td>
+<td>above, up</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>36</td>
+<td>部</td>
+<td> ブ</td>
+<td>-べ</td>
+<td>section, bureau, dept, class, copy, part, portion, counter for copies of a newspaper or magazine</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>37</td>
+<td>東</td>
+<td> トウ</td>
+<td>ひがし</td>
+<td>east</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>38</td>
+<td>者</td>
+<td> シャ</td>
+<td>もの</td>
+<td>someone, person</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>39</td>
+<td>党</td>
+<td> トウ</td>
+<td>むら, なかま</td>
+<td>party, faction, clique</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>40</td>
+<td>地</td>
+<td>ジ, チ</td>
+<td></td>
+<td>ground, earth</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>41</td>
+<td>合</td>
+<td> カッ, ガッ, ゴウ</td>
+<td>-あ.わせる, あ.わせる, あ.わす, -あい, -あ.い, あい-, あ.い, -あ.う, あ.う</td>
+<td>fit, suit, join, 0.1</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>42</td>
+<td>市</td>
+<td> シ</td>
+<td>いち</td>
+<td>market, city, town</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>43</td>
+<td>業</td>
+<td> ゴウ, ギョウ</td>
+<td>わざ</td>
+<td>business, vocation, arts, performance</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>44</td>
+<td>内</td>
+<td> ダイ, ナイ</td>
+<td>うち</td>
+<td>inside, within, between, among, house, home</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>45</td>
+<td>相</td>
+<td> ショウ, ソウ</td>
+<td>あい-</td>
+<td>inter-, mutual, together, each other, minister of state, councillor, aspect, phase, physiognomy</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>46</td>
+<td>方</td>
+<td> ホウ</td>
+<td>-がた, -かた, かた</td>
+<td>direction, person, alternative</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>47</td>
+<td>四</td>
+<td> シ</td>
+<td>よん, よっ.つ, よ.つ, よ</td>
+<td>four</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>48</td>
+<td>定</td>
+<td> ジョウ, テイ</td>
+<td>さだ.か, さだ.まる, さだ.める</td>
+<td>determine, fix, establish, decide</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>49</td>
+<td>今</td>
+<td> キン, コン</td>
+<td>いま</td>
+<td>now</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>50</td>
+<td>回</td>
+<td> エ, カイ</td>
+<td>か.える, もとお.る, -まわ.し, まわ.し-, -まわ.す, まわ.す, -まわ.り, -まわ.る, まわ.る</td>
+<td>-times, round, game, revolve, counter for occurrences</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>51</td>
+<td>新</td>
+<td> シン</td>
+<td>にい-, あら-, あら.た, あたら.しい</td>
+<td>new</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>52</td>
+<td>場</td>
+<td> チョウ, ジョウ</td>
+<td>ば</td>
+<td>location, place</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>53</td>
+<td>金</td>
+<td> ゴン, コン, キン</td>
+<td>-がね, かな-, かね</td>
+<td>gold</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>54</td>
+<td>員</td>
+<td>イン</td>
+<td></td>
+<td>employee, member, number, the one in charge</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>55</td>
+<td>九</td>
+<td> ク, キュウ</td>
+<td>ここの.つ, ここの</td>
+<td>nine</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>56</td>
+<td>入</td>
+<td> ジュ, ニュウ</td>
+<td>はい.る, -い.れ, い.れる, -い.り, -い.る, い.る</td>
+<td>enter, insert</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>57</td>
+<td>選</td>
+<td> セン</td>
+<td>えら.ぶ</td>
+<td>elect, select, choose, prefer</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>58</td>
+<td>立</td>
+<td> リットル, リュウ, リツ</td>
+<td>-だ.てる, -だ.て, -た.て, たて-, た.て-, -た.てる, た.てる, た.ち-, -た.つ, た.つ</td>
+<td>stand up</td>
+<td>4</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>59</td>
+<td>開</td>
+<td> カイ</td>
+<td>あ.ける, あ.く, ひら.ける, -びら.き, ひら.き, ひら.く</td>
+<td>open, unfold, unseal</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>60</td>
+<td>手</td>
+<td> ズ, シュ</td>
+<td>た-, -て, て-, て</td>
+<td>hand</td>
+<td>4</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>61</td>
+<td>米</td>
+<td> メエトル, マイ, ベイ</td>
+<td>よね, こめ</td>
+<td>rice, USA, metre</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>62</td>
+<td>力</td>
+<td> リイ, リキ, リョク</td>
+<td>ちから</td>
+<td>power, strong, strain, bear up, exert</td>
+<td>4</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>63</td>
+<td>学</td>
+<td> ガク</td>
+<td>まな.ぶ</td>
+<td>study, learning, science</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>64</td>
+<td>問</td>
+<td> モン</td>
+<td>とん, と.い, と.う</td>
+<td>question, ask, problem</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>65</td>
+<td>高</td>
+<td> コウ</td>
+<td>たか.める, たか.まる, -だか, たか, たか.い</td>
+<td>tall, high, expensive</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>66</td>
+<td>代</td>
+<td> タイ, ダイ</td>
+<td>しろ, よ, か.える, -がわ.り, かわ.り, かわ.る, か.わる</td>
+<td>substitute, change, convert, replace, period, age, counter for decades of ages, eras, etc., generation, charge, rate, fee</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>67</td>
+<td>明</td>
+<td> ミン, ミョウ, メイ</td>
+<td>あ.かす, あ.くる, あ.く, -あ.け, あ.ける, あき.らか, あか.らむ, あか.るむ, あか.るい, あ.かり</td>
+<td>bright, light</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>68</td>
+<td>実</td>
+<td> シツ, ジツ</td>
+<td>みち.る, みの, まことに, まこと, みの.る, み</td>
+<td>reality, truth</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>69</td>
+<td>円</td>
+<td> エン</td>
+<td>まろ.やか, まど.か, まど, まる, まる.い</td>
+<td>circle, yen, round</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>70</td>
+<td>関</td>
+<td> カン</td>
+<td>かんぬき, からくり, かか.わる, -ぜき, せき</td>
+<td>connection, barrier, gateway, involve, concerning</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>71</td>
+<td>決</td>
+<td> ケツ</td>
+<td>さ.く, き.まる, -ぎ.め, き.める</td>
+<td>decide, fix, agree upon, appoint</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>72</td>
+<td>子</td>
+<td> ツ, ス, シ</td>
+<td>ね, -こ, こ</td>
+<td>child, sign of the rat, 11PM-1AM, first sign of Chinese zodiac</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>73</td>
+<td>動</td>
+<td> ドウ</td>
+<td>うご.かす, うご.く</td>
+<td>move, motion, change, confusion, shift, shake</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>74</td>
+<td>京</td>
+<td> キン, ケイ, キョウ</td>
+<td>みやこ</td>
+<td>capital, 10**16</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>75</td>
+<td>全</td>
+<td> ゼン</td>
+<td>すべ.て, まった.く</td>
+<td>whole, entire, all, complete, fulfill</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>76</td>
+<td>目</td>
+<td> ボク, モク</td>
+<td>ま-, -め, め</td>
+<td>eye, class, look, insight, experience, care, favor</td>
+<td>4</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>77</td>
+<td>表</td>
+<td> ヒョウ</td>
+<td>あら.わす, あらわ.れる, あらわ.す, -おもて, おもて</td>
+<td>surface, table, chart, diagram</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>78</td>
+<td>戦</td>
+<td> セン</td>
+<td>わなな.く, そよぐ, おのの.く, たたか.う, いくさ</td>
+<td>war, battle, match</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>79</td>
+<td>経</td>
+<td> キョウ, ケイ</td>
+<td>のり, はか.る, たていと, た.つ, へ.る</td>
+<td>sutra, longitude, pass thru, expire, warp</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>80</td>
+<td>通</td>
+<td> ツ, ツウ</td>
+<td>かよ.う, -どお.し, とお.し, とお.す, -どお.り, -とお.り, とお.り, とお.る</td>
+<td>traffic, pass through, avenue, commute, counter for letters, notes, documents, etc.</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>81</td>
+<td>外</td>
+<td> ゲ, ガイ</td>
+<td>と-, はず.れる, はず.す, ほか, そと</td>
+<td>outside</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>82</td>
+<td>最</td>
+<td> シュ, サイ</td>
+<td>つま, もっと.も</td>
+<td>utmost, most, extreme</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>83</td>
+<td>言</td>
+<td> ゴン, ゲン</td>
+<td>こと, い.う</td>
+<td>say</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>84</td>
+<td>氏</td>
+<td> シ</td>
+<td>-うじ, うじ</td>
+<td>family name, surname, clan</td>
+<td>1</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>85</td>
+<td>現</td>
+<td> ゲン</td>
+<td>うつ.つ, うつつ, あらわ.す, あらわ.れる</td>
+<td>present, existing, actual</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>86</td>
+<td>理</td>
+<td> リ</td>
+<td>ことわり</td>
+<td>logic, arrangement, reason, justice, truth</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>87</td>
+<td>調</td>
+<td> チョウ</td>
+<td>ととの.える, ととの.う, しら.べ, しら.べる</td>
+<td>tune, tone, meter, key (music); writing style, prepare, exorcise, investigate</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>88</td>
+<td>体</td>
+<td> テイ, タイ</td>
+<td>かたち, からだ</td>
+<td>body, substance, object, reality, counter for images</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>89</td>
+<td>化</td>
+<td> ケ, カ</td>
+<td>け.する, ふ.ける, ば.かす, ば.ける</td>
+<td>change, take the form of, influence, enchant, delude, -ization</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>90</td>
+<td>田</td>
+<td> デン</td>
+<td>た</td>
+<td>rice field, rice paddy</td>
+<td>4</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>91</td>
+<td>当</td>
+<td> トウ</td>
+<td>まさ.にべし, まさ.に, あ.て, あ.てる, あ.たり, あ.たる</td>
+<td>hit, right, appropriate, himself</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>92</td>
+<td>八</td>
+<td> ハチ</td>
+<td>よう, やっ.つ, や.つ, や</td>
+<td>eight</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>93</td>
+<td>六</td>
+<td> リク, ロク</td>
+<td>むい, むっ.つ, む.つ, む</td>
+<td>six</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>94</td>
+<td>約</td>
+<td>ヤク</td>
+<td></td>
+<td>promise, approximately, shrink</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>95</td>
+<td>主</td>
+<td> シュウ, ス, シュ</td>
+<td>あるじ, おも, ぬし</td>
+<td>lord, chief, master, main thing, principal</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>96</td>
+<td>題</td>
+<td>ダイ</td>
+<td></td>
+<td>topic, subject</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>97</td>
+<td>下</td>
+<td> ゲ, カ</td>
+<td>お.りる, お.ろす, くだ.さる, -くだ.す, くだ.す, くだ.り, くだ.る, さ.がる, さ.げる, もと, しも, した</td>
+<td>below, down, descend, give, low, inferior</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>98</td>
+<td>首</td>
+<td> シュ</td>
+<td>くび</td>
+<td>neck, counter for songs and poems</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>99</td>
+<td>意</td>
+<td>イ</td>
+<td></td>
+<td>idea, mind, heart, taste, thought, desire, care, liking</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>100</td>
+<td>法</td>
+<td> フラン, ホッ, ハッ, ホウ</td>
+<td>のり</td>
+<td>method, law, rule, principle, model, system</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>101</td>
+<td>不</td>
+<td>ブ, フ</td>
+<td></td>
+<td>negative, non-, bad, ugly, clumsy</td>
+<td>4</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>102</td>
+<td>来</td>
+<td> タイ, ライ</td>
+<td>こ, き, き.たる, き.たす, きた.す, きた.る, く.る</td>
+<td>come, due, next, cause, become</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>103</td>
+<td>作</td>
+<td> サ, サク</td>
+<td>-づく.り, つく.り, つく.る</td>
+<td>make, production, prepare, build</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>104</td>
+<td>性</td>
+<td> ショウ, セイ</td>
+<td>さが</td>
+<td>sex, gender, nature</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>105</td>
+<td>的</td>
+<td> テキ</td>
+<td>まと</td>
+<td>bull's eye, mark, target, object, adjective ending</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>106</td>
+<td>要</td>
+<td> ヨウ</td>
+<td>い.る</td>
+<td>need, main point, essence, pivot, key to</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>107</td>
+<td>用</td>
+<td> ヨウ</td>
+<td>もち.いる</td>
+<td>utilize, business, service, use, employ</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>108</td>
+<td>制</td>
+<td>セイ</td>
+<td></td>
+<td>system, law, rule</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>109</td>
+<td>治</td>
+<td> チ, ジ</td>
+<td>なお.す, なお.る, おさ.まる, おさ.める</td>
+<td>reign, be at peace, calm down, subdue, quell, govt, cure, heal, rule, conserve</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>110</td>
+<td>度</td>
+<td> タク, ト, ド</td>
+<td>-た.い, たび</td>
+<td>degrees, occurrence, time, counter for occurrences</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>111</td>
+<td>務</td>
+<td> ム</td>
+<td>つと.める</td>
+<td>task, duties</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>112</td>
+<td>強</td>
+<td> ゴウ, キョウ</td>
+<td>こわ.い, し.いる, つよ.める, つよ.まる, つよ.い</td>
+<td>strong</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>113</td>
+<td>気</td>
+<td> ケ, キ</td>
+<td>いき</td>
+<td>spirit, mind, air, atmosphere, mood</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>114</td>
+<td>小</td>
+<td> ショウ</td>
+<td>さ-, お-, こ-, ちい.さい</td>
+<td>little, small</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>115</td>
+<td>七</td>
+<td> シチ</td>
+<td>なの, なな.つ, なな</td>
+<td>seven</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>116</td>
+<td>成</td>
+<td> ジョウ, セイ</td>
+<td>-な.す, な.す, な.る</td>
+<td>turn into, become, get, grow, elapse, reach</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>117</td>
+<td>期</td>
+<td>ゴ, キ</td>
+<td></td>
+<td>period, time, date, term</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>118</td>
+<td>公</td>
+<td> ク, コウ</td>
+<td>おおやけ</td>
+<td>public, prince, official, governmental</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>119</td>
+<td>持</td>
+<td> ジ</td>
+<td>も.てる, -も.ち, も.つ</td>
+<td>hold, have</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>120</td>
+<td>野</td>
+<td> ショ, ヤ</td>
+<td>の-, の</td>
+<td>plains, field, rustic, civilian life</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>121</td>
+<td>協</td>
+<td>キョウ</td>
+<td></td>
+<td>co-, cooperation</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>122</td>
+<td>取</td>
+<td> シュ</td>
+<td>-ど.り, とり, と.り-, と.り, と.る</td>
+<td>take, fetch, take up</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>123</td>
+<td>都</td>
+<td> ツ, ト</td>
+<td>みやこ</td>
+<td>metropolis, capital</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>124</td>
+<td>和</td>
+<td> カ, オ, ワ</td>
+<td>なご.やか, なご.む, やわ.らげる, やわ.らぐ</td>
+<td>harmony, Japanese style, peace, soften, Japan</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>125</td>
+<td>統</td>
+<td> トウ</td>
+<td>ほび.る, す.べる</td>
+<td>overall, relationship, ruling, governing</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>126</td>
+<td>以</td>
+<td> イ</td>
+<td>もっ.て</td>
+<td>by means of, because, in view of, compared with</td>
+<td>4</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>127</td>
+<td>機</td>
+<td> キ</td>
+<td>はた</td>
+<td>mechanism, opportunity, occasion, machine, airplane</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>128</td>
+<td>平</td>
+<td> ヒョウ, ビョウ, ヘイ</td>
+<td>ひら-, ひら, -だいら, たい.ら</td>
+<td>even, flat, peace</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>129</td>
+<td>総</td>
+<td> ソウ</td>
+<td>ふさ, すべ.て, す.べて</td>
+<td>general, whole, all, full, total</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>130</td>
+<td>加</td>
+<td> カ</td>
+<td>くわ.わる, くわ.える</td>
+<td>add, addition, increase, join, include, Canada</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>131</td>
+<td>山</td>
+<td> セン, サン</td>
+<td>やま</td>
+<td>mountain</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>132</td>
+<td>思</td>
+<td> シ</td>
+<td>おぼ.す, おもえら.く, おも.う</td>
+<td>think</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>133</td>
+<td>家</td>
+<td> ケ, カ</td>
+<td>うち, や, いえ</td>
+<td>house, home</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>134</td>
+<td>話</td>
+<td> ワ</td>
+<td>はなし, はな.す</td>
+<td>tale, talk</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>135</td>
+<td>世</td>
+<td> ソウ, セ, セイ</td>
+<td>さんじゅう, よ</td>
+<td>generation, world, society, public</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>136</td>
+<td>受</td>
+<td> ジュ</td>
+<td>う.かる, -う.け, う.ける</td>
+<td>accept, undergo, answer (phone); take, get, catch, receive</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>137</td>
+<td>区</td>
+<td>コウ, オウ, ク</td>
+<td></td>
+<td>ward, district</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>138</td>
+<td>領</td>
+<td> リョウ</td>
+<td>えり</td>
+<td>jurisdiction, dominion, territory, fief, reign</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>139</td>
+<td>多</td>
+<td> タ</td>
+<td>まさ.る, まさ.に, おお.い</td>
+<td>many, frequent, much</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>140</td>
+<td>県</td>
+<td> ケン</td>
+<td>か.ける</td>
+<td>prefecture</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>141</td>
+<td>続</td>
+<td> キョウ, コウ, ショク, ゾク</td>
+<td>つぐ.ない, つづ.ける, つづ.く</td>
+<td>continue, series, sequel</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>142</td>
+<td>進</td>
+<td> シン</td>
+<td>すす.める, すす.む</td>
+<td>advance, proceed, progress, promote</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>143</td>
+<td>正</td>
+<td> ショウ, セイ</td>
+<td>まさ.に, まさ, ただ.す, ただ.しい</td>
+<td>correct, justice, righteous, 10**40</td>
+<td>4</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>144</td>
+<td>安</td>
+<td> アン</td>
+<td>やす.らか, やす, やす.まる, やす.い</td>
+<td>relax, cheap, low, quiet, rested, contented, peaceful</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>145</td>
+<td>設</td>
+<td> セツ</td>
+<td>もう.ける</td>
+<td>establishment, provision, prepare</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>146</td>
+<td>保</td>
+<td> ホウ, ホ</td>
+<td>たも.つ</td>
+<td>protect, guarantee, keep, preserve, sustain, support</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>147</td>
+<td>改</td>
+<td> カイ</td>
+<td>あらた.まる, あらた.める</td>
+<td>reformation, change, modify, mend, renew, examine, inspect, search</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>148</td>
+<td>数</td>
+<td> シュ, ソク, サク, ス, スウ</td>
+<td>わずらわ.しい, せ.める, しばしば, かぞ.える, かず</td>
+<td>number, strength, fate, law, figures</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>149</td>
+<td>記</td>
+<td> キ</td>
+<td>しる.す</td>
+<td>scribe, account, narrative</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>150</td>
+<td>院</td>
+<td>イン</td>
+<td></td>
+<td>Inst., institution, temple, mansion, school</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>151</td>
+<td>女</td>
+<td> ニョウ, ニョ, ジョ</td>
+<td>め, おんな</td>
+<td>woman, female</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>152</td>
+<td>初</td>
+<td> ショ</td>
+<td>-ぞ.め, -そ.める, うい-, はつ-, はつ, はじ.めて, はじ.め</td>
+<td>first time, beginning</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>153</td>
+<td>北</td>
+<td> ホク</td>
+<td>きた</td>
+<td>north</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>154</td>
+<td>午</td>
+<td> ゴ</td>
+<td>うま</td>
+<td>noon, sign of the horse, 11AM-1PM, seventh sign of Chinese zodiac</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>155</td>
+<td>指</td>
+<td> シ</td>
+<td>-さ.し, さ.す, ゆび</td>
+<td>finger, point to, indicate, put into, play (chess); measure (ruler)</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>156</td>
+<td>権</td>
+<td> ゴン, ケン</td>
+<td>はか.る, かり, おもり</td>
+<td>authority, power, rights</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>157</td>
+<td>心</td>
+<td> シン</td>
+<td>-ごころ, こころ</td>
+<td>heart, mind, spirit</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>158</td>
+<td>界</td>
+<td>カイ</td>
+<td></td>
+<td>world</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>159</td>
+<td>支</td>
+<td> シ</td>
+<td>か.う, つか.える, ささ.える</td>
+<td>branch, support, sustain</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>160</td>
+<td>第</td>
+<td>テイ, ダイ</td>
+<td></td>
+<td>No., residence</td>
+<td>1</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>161</td>
+<td>産</td>
+<td> サン</td>
+<td>む.す, うぶ-, う.まれる, う.む</td>
+<td>products, bear, give birth, yield, childbirth, native, property</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>162</td>
+<td>結</td>
+<td> ケチ, ケツ</td>
+<td>ゆ.わえる, ゆ.う, むす.ぶ</td>
+<td>tie, bind, contract, join, organize, do up hair, fasten</td>
+<td>1</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>163</td>
+<td>百</td>
+<td> ビャク, ヒャク</td>
+<td>もも</td>
+<td>hundred</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>164</td>
+<td>派</td>
+<td>ハ</td>
+<td></td>
+<td>faction, group, party, clique, sect, school</td>
+<td>1</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>165</td>
+<td>点</td>
+<td> テン</td>
+<td>ぼち, とも.す, とぼ.す, さ.す, た.てる, つ.く, つ.ける</td>
+<td>spot, point, mark, speck, decimal point</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>166</td>
+<td>教</td>
+<td> キョウ</td>
+<td>おそ.わる, おし.える</td>
+<td>teach, faith, doctrine</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>167</td>
+<td>報</td>
+<td> ホウ</td>
+<td>むく.いる</td>
+<td>report, news, reward, retribution</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>168</td>
+<td>済</td>
+<td> セイ, サイ</td>
+<td>わた.る, わたし, な.す, すく.う, -す.ます, す.ます, す.まない, -ずみ, -ず.み, す.む</td>
+<td>finish, come to an end, excusable, need not</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>169</td>
+<td>書</td>
+<td> ショ</td>
+<td>-がき, -が.き, か.く</td>
+<td>write</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>170</td>
+<td>府</td>
+<td>フ</td>
+<td></td>
+<td>borough, urban prefecture, govt office, representative body, storehouse</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>171</td>
+<td>活</td>
+<td> カツ</td>
+<td>い.ける, い.かす, い.きる</td>
+<td>lively, resuscitation, being helped, living</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>172</td>
+<td>原</td>
+<td> ゲン</td>
+<td>はら</td>
+<td>meadow, original, primitive, field, plain, prairie, tundra, wilderness</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>173</td>
+<td>先</td>
+<td> セン</td>
+<td>ま.ず, さき</td>
+<td>before, ahead, previous, future, precedence</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>174</td>
+<td>共</td>
+<td> キョウ</td>
+<td>-ども, とも.に, とも</td>
+<td>together, both, neither, all, and, alike, with</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>175</td>
+<td>得</td>
+<td> トク</td>
+<td>う.る, え.る</td>
+<td>gain, get, find, earn, acquire, can, may, able to, profit, advantage, benefit</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>176</td>
+<td>解</td>
+<td> ゲ, カイ</td>
+<td>さと.る, わか.る, ほど.ける, ほど.く, と.ける, と.かす, と.く</td>
+<td>unravel, notes, key, explanation, understanding, untie, undo, solve, answer, cancel, absolve, explain, minute</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>177</td>
+<td>名</td>
+<td> ミョウ, メイ</td>
+<td>-な, な</td>
+<td>name, noted, distinguished, reputation</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>178</td>
+<td>交</td>
+<td> コウ</td>
+<td>こもごも, かわ.す, か.わす, -か.う, ま.ぜる, ま.ざる, まじ.る, ま.じる, まじ.える, まじ.わる</td>
+<td>mingle, mixing, association, coming & going</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>179</td>
+<td>資</td>
+<td>シ</td>
+<td></td>
+<td>assets, resources, capital, funds, data, be conducive to, contribute to</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>180</td>
+<td>予</td>
+<td> シャ, ヨ</td>
+<td>あらかじ.め</td>
+<td>beforehand, previous, myself, I</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>181</td>
+<td>川</td>
+<td> セン</td>
+<td>かわ</td>
+<td>stream, river</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>182</td>
+<td>向</td>
+<td> コウ</td>
+<td>むか.い, むこ, む.こう-, む.こう, む.かい, む.かう, -む.け, む.ける, -む.き, む.い, む.く</td>
+<td>yonder, facing, beyond, confront, defy, tend toward, approach</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>183</td>
+<td>際</td>
+<td> サイ</td>
+<td>-ぎわ, きわ</td>
+<td>occasion, side, edge, verge, dangerous, adventurous, indecent, time, when</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>184</td>
+<td>査</td>
+<td>サ</td>
+<td></td>
+<td>investigate</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>185</td>
+<td>勝</td>
+<td> ショウ</td>
+<td>かつ, すぐ.れる, まさ.る, -が.ち, か.つ</td>
+<td>victory, win, prevail, excel</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>186</td>
+<td>面</td>
+<td> ベン, メン</td>
+<td>つら, おもて, おも</td>
+<td>mask, face, features, surface</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>187</td>
+<td>委</td>
+<td> イ</td>
+<td>ゆだ.ねる</td>
+<td>committee, entrust to, leave to, devote, discard</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>188</td>
+<td>告</td>
+<td> コク</td>
+<td>つ.げる</td>
+<td>revelation, tell, inform, announce</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>189</td>
+<td>軍</td>
+<td>グン</td>
+<td></td>
+<td>army, force, troops, war, battle</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>190</td>
+<td>文</td>
+<td> モン, ブン</td>
+<td>あや, ふみ</td>
+<td>sentence, literature, style, art, decoration, figures, plan</td>
+<td>4</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>191</td>
+<td>反</td>
+<td> ホ, タン, ホン, ハン</td>
+<td>-かえ.る, かえ.る, かえ.す, そ.らす, そ.る</td>
+<td>anti-</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>192</td>
+<td>元</td>
+<td> ガン, ゲン</td>
+<td>もと</td>
+<td>beginning, former time, origin</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>193</td>
+<td>重</td>
+<td> チョウ, ジュウ</td>
+<td>おも, かさ.なる, かさ.ねる, おも.なう, おも.り, おも.い, え</td>
+<td>heavy, heap up, pile up, nest of boxes, -fold</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>194</td>
+<td>近</td>
+<td> コン, キン</td>
+<td>ちか.い</td>
+<td>near, early, akin, tantamount</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>195</td>
+<td>千</td>
+<td> セン</td>
+<td>ち</td>
+<td>thousand</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>196</td>
+<td>考</td>
+<td> コウ</td>
+<td>かんが.え, かんが.える</td>
+<td>consider, think over</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>197</td>
+<td>判</td>
+<td> バン, ハン</td>
+<td>わか.る</td>
+<td>judgement, signature, stamp, seal</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>198</td>
+<td>認</td>
+<td> ニン</td>
+<td>したた.める, みと.める</td>
+<td>acknowledge, witness, discern, recognize, appreciate, believe</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>199</td>
+<td>画</td>
+<td> カイ, エ, カク, ガ</td>
+<td>はか.る, はかりごと, かぎ.る, かく.する, えが.く</td>
+<td>brush-stroke, picture</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>200</td>
+<td>海</td>
+<td> カイ</td>
+<td>うみ</td>
+<td>sea, ocean</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>201</td>
+<td>参</td>
+<td> シン, サン</td>
+<td>みつ, まじわる, まい-, まい.る</td>
+<td>nonplussed, three, going, coming, visiting, visit, be defeated, die, be madly in love</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>202</td>
+<td>売</td>
+<td> バイ</td>
+<td>う.れる, う.る</td>
+<td>sell</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>203</td>
+<td>利</td>
+<td> リ</td>
+<td>き.く</td>
+<td>profit, advantage, benefit</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>204</td>
+<td>組</td>
+<td> ソ</td>
+<td>-ぐみ, くみ, く.む</td>
+<td>association, braid, plait, construct, assemble, unite, cooperate, grapple</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>205</td>
+<td>知</td>
+<td> チ</td>
+<td>し.らせる, し.る</td>
+<td>know, wisdom</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>206</td>
+<td>案</td>
+<td> アン</td>
+<td>つくえ</td>
+<td>plan, suggestion, draft, ponder, fear, proposition, idea, expectation, bill, worry</td>
+<td>1</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>207</td>
+<td>道</td>
+<td> トウ, ドウ</td>
+<td>みち</td>
+<td>road-way, street, district, journey, course, moral, teachings</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>208</td>
+<td>信</td>
+<td>シン</td>
+<td></td>
+<td>faith, truth, fidelity, trust</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>209</td>
+<td>策</td>
+<td>サク</td>
+<td></td>
+<td>scheme, plan, policy, step, means</td>
+<td>1</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>210</td>
+<td>集</td>
+<td> シュウ</td>
+<td>つど.う, あつ.める, あつ.まる</td>
+<td>gather, meet, congregate, swarm, flock</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>211</td>
+<td>在</td>
+<td> ザイ</td>
+<td>あ.る</td>
+<td>exist, outskirts, suburbs, located in</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>212</td>
+<td>件</td>
+<td> ケン</td>
+<td>くだん</td>
+<td>affair, case, matter, item</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>213</td>
+<td>団</td>
+<td> トン, ダン</td>
+<td>まる.い, かたまり</td>
+<td>group, association</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>214</td>
+<td>別</td>
+<td> ベツ</td>
+<td>わ.ける, わか.れる</td>
+<td>separate, branch off, diverge, fork, another, extra, specially</td>
+<td>4</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>215</td>
+<td>物</td>
+<td> モツ, ブツ</td>
+<td>もの-, もの</td>
+<td>thing, object, matter</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>216</td>
+<td>側</td>
+<td> ソク</td>
+<td>そば, がわ, かわ</td>
+<td>side, lean, oppose, regret</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>217</td>
+<td>任</td>
+<td> ニン</td>
+<td>まか.す, まか.せる</td>
+<td>responsibility, duty, term, entrust to, appoint</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>218</td>
+<td>引</td>
+<td> イン</td>
+<td>ひ.ける, -び.き, ひ.き-, ひ.き, ひ.く</td>
+<td>pull, tug, jerk, admit, install, quote, refer to</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>219</td>
+<td>使</td>
+<td> シ</td>
+<td>-づか.い, -つか.い, つか.い, つか.う</td>
+<td>use</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>220</td>
+<td>求</td>
+<td> グ, キュウ</td>
+<td>もと.める</td>
+<td>request, want, wish for, require, demand</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>221</td>
+<td>所</td>
+<td> ショ</td>
+<td>とこ, どころ, -ところ, ところ</td>
+<td>place</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>222</td>
+<td>次</td>
+<td> シ, ジ</td>
+<td>つぎ, つ.ぐ</td>
+<td>next, order, sequence</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>223</td>
+<td>水</td>
+<td> スイ</td>
+<td>みず-, みず</td>
+<td>water</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>224</td>
+<td>半</td>
+<td> ハン</td>
+<td>なか.ば</td>
+<td>half, middle, odd number, semi-, part-</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>225</td>
+<td>品</td>
+<td> ホン, ヒン</td>
+<td>しな</td>
+<td>goods, refinement, dignity, article, counter for meal courses</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>226</td>
+<td>昨</td>
+<td>サク</td>
+<td></td>
+<td>yesterday, previous</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>227</td>
+<td>論</td>
+<td>ロン</td>
+<td></td>
+<td>argument, discourse</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>228</td>
+<td>計</td>
+<td> ケイ</td>
+<td>はか.らう, はか.る</td>
+<td>plot, plan, scheme, measure</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>229</td>
+<td>死</td>
+<td> シ</td>
+<td>し.に-, し.ぬ</td>
+<td>death, die</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>230</td>
+<td>官</td>
+<td>カン</td>
+<td></td>
+<td>bureaucrat, the government</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>231</td>
+<td>増</td>
+<td> ゾウ</td>
+<td>ふ.やす, ふ.える, ま.し, ま.す</td>
+<td>increase, add, augment, gain, promote</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>232</td>
+<td>係</td>
+<td> ケイ</td>
+<td>かか.わる, -がかり, かかり, かか.る</td>
+<td>person in charge, connection, duty, concern oneself</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>233</td>
+<td>感</td>
+<td>カン</td>
+<td></td>
+<td>emotion, feeling, sensation</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>234</td>
+<td>特</td>
+<td>トク</td>
+<td></td>
+<td>special</td>
+<td>4</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>235</td>
+<td>情</td>
+<td> セイ, ジョウ</td>
+<td>なさ.け</td>
+<td>feelings, emotion, passion, sympathy, circumstances, facts</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>236</td>
+<td>投</td>
+<td> トウ</td>
+<td>-な.げ, な.げる</td>
+<td>throw, discard, abandon, launch into, join, invest in, hurl, give up, sell at a loss</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>237</td>
+<td>示</td>
+<td> シ, ジ</td>
+<td>しめ.す</td>
+<td>show, indicate, point out, express, display</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>238</td>
+<td>変</td>
+<td> ヘン</td>
+<td>か.える, か.わり, か.わる</td>
+<td>unusual, change, strange</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>239</td>
+<td>打</td>
+<td> ダアス, ダ</td>
+<td>ぶ.つ, う.ち-, う.つ</td>
+<td>strike, hit, knock, pound, dozen</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>240</td>
+<td>男</td>
+<td> ナン, ダン</td>
+<td>お, おとこ</td>
+<td>male</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>241</td>
+<td>基</td>
+<td> キ</td>
+<td>もとい, もと</td>
+<td>fundamentals, radical (chem); counter for machines, foundation</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>242</td>
+<td>私</td>
+<td> シ</td>
+<td>わたし, わたくし</td>
+<td>private, I, me</td>
+<td>4</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>243</td>
+<td>各</td>
+<td> カク</td>
+<td>おのおの</td>
+<td>each, every, either</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>244</td>
+<td>始</td>
+<td> シ</td>
+<td>はじ.まる, -はじ.める, はじ.める</td>
+<td>commence, begin</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>245</td>
+<td>島</td>
+<td> トウ</td>
+<td>しま</td>
+<td>island</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>246</td>
+<td>直</td>
+<td> ジカ, ジキ, チョク</td>
+<td>す.ぐ, なお.き, なお.る, -なお.す, なお.す, ただ.ちに</td>
+<td>straightaway, honesty, frankness, fix, repair</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>247</td>
+<td>両</td>
+<td> リョウ</td>
+<td>ふたつ, てる</td>
+<td>both, old Japanese coin, counter for carriages (e.g., in a train); two</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>248</td>
+<td>朝</td>
+<td> チョウ</td>
+<td>あさ</td>
+<td>morning, dynasty, regime, epoch, period, (North) Korea</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>249</td>
+<td>革</td>
+<td> カク</td>
+<td>かわ</td>
+<td>leather, become serious, skin, hide, pelt</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>250</td>
+<td>価</td>
+<td> ケ, カ</td>
+<td>あたい</td>
+<td>value, price</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>251</td>
+<td>式</td>
+<td>シキ</td>
+<td></td>
+<td>style, ceremony, rite, function, method, system, form, expression</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>252</td>
+<td>確</td>
+<td> コウ, カク</td>
+<td>たし.かめる, たし.か</td>
+<td>assurance, firm, tight, hard, solid, confirm, clear, evident</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>253</td>
+<td>村</td>
+<td> ソン</td>
+<td>むら</td>
+<td>village, town</td>
+<td>3</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>254</td>
+<td>提</td>
+<td> ダイ, チョウ, テイ</td>
+<td>さ.げる</td>
+<td>propose, take along, carry in hand</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>255</td>
+<td>運</td>
+<td> ウン</td>
+<td>はこ.ぶ</td>
+<td>carry, luck, destiny, fate, lot, transport, progress, advance</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>256</td>
+<td>終</td>
+<td> シュウ</td>
+<td>つい.に, つい, お.える, おわ.る, -お.わる, お.わる</td>
+<td>end, finish</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>257</td>
+<td>挙</td>
+<td> キョ</td>
+<td>こぞ.る, あ.がる, あ.げる</td>
+<td>raise, plan, project, behavior, actions</td>
+<td>1</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>258</td>
+<td>果</td>
+<td> カ</td>
+<td>は.て, -は.てる, は.てる, -は.たす, はた.す, は.たす</td>
+<td>fruit, reward, carry out, achieve, complete, end, finish, succeed</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>259</td>
+<td>西</td>
+<td> ス, サイ, セイ</td>
+<td>にし</td>
+<td>west, Spain</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>260</td>
+<td>勢</td>
+<td> ゼイ, セイ</td>
+<td>はずみ, いきお.い</td>
+<td>forces, energy, military strength</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>261</td>
+<td>減</td>
+<td> ゲン</td>
+<td>へ.らす, へ.る</td>
+<td>dwindle, decrease, reduce, decline, curtail, get hungry</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>262</td>
+<td>台</td>
+<td> タイ, ダイ</td>
+<td>つかさ, われ, うてな</td>
+<td>pedestal, a stand, counter for machines and vehicles</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>263</td>
+<td>広</td>
+<td> コウ</td>
+<td>ひろ.げる, ひろ.がる, ひろ.める, ひろ.まる, ひろ.い</td>
+<td>wide, broad, spacious</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>264</td>
+<td>容</td>
+<td> ヨウ</td>
+<td>い.れる</td>
+<td>contain, form, looks</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>265</td>
+<td>必</td>
+<td> ヒツ</td>
+<td>かなら.ず</td>
+<td>invariably, certain, inevitable</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>266</td>
+<td>応</td>
+<td> -ノウ, ヨウ, オウ</td>
+<td>こた.える, まさに, あた.る</td>
+<td>apply, answer, yes, OK, reply, accept</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>267</td>
+<td>演</td>
+<td>エン</td>
+<td></td>
+<td>performance, act, play, render, stage</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>268</td>
+<td>電</td>
+<td>デン</td>
+<td></td>
+<td>electricity</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>269</td>
+<td>歳</td>
+<td> セイ, サイ</td>
+<td>よわい, とせ, とし</td>
+<td>year-end, age, occasion, opportunity</td>
+<td>2</td>
+<td>中学1年</td>
+    </tr>
+    <tr>
+<td>270</td>
+<td>住</td>
+<td> チュウ, ヂュウ, ジュウ</td>
+<td>-ず.まい, す.まう, す.む</td>
+<td>dwell, reside, live, inhabit</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>271</td>
+<td>争</td>
+<td> ソウ</td>
+<td>いか.でか, あらそ.う</td>
+<td>contend, dispute, argue</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>272</td>
+<td>談</td>
+<td>ダン</td>
+<td></td>
+<td>discuss, talk</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>273</td>
+<td>能</td>
+<td> ノウ</td>
+<td>よ.く</td>
+<td>ability, talent, skill, capacity</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>274</td>
+<td>無</td>
+<td> ブ, ム</td>
+<td>な.い</td>
+<td>nothingness, none, ain't, nothing, nil, not</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>275</td>
+<td>再</td>
+<td> サ, サイ</td>
+<td>ふたた.び</td>
+<td>again, twice, second time</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>276</td>
+<td>位</td>
+<td> イ</td>
+<td>ぐらい, くらい</td>
+<td>rank, grade, throne, crown, about, some</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>277</td>
+<td>置</td>
+<td> チ</td>
+<td>-お.き, お.く</td>
+<td>placement, put, set, deposit, leave behind, keep, employ, pawn</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>278</td>
+<td>企</td>
+<td> キ</td>
+<td>たくら.む, くわだ.てる</td>
+<td>undertake, scheme, design, attempt, plan</td>
+<td>1</td>
+<td>中学2年</td>
+    </tr>
+    <tr>
+<td>279</td>
+<td>真</td>
+<td> シン</td>
+<td>まこと, ま-, ま</td>
+<td>true, reality, Buddhist sect</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>280</td>
+<td>流</td>
+<td> ル, リュウ</td>
+<td>-なが.す, なが.す, なが.れ, なが.れる</td>
+<td>current, a sink, flow, forfeit</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>281</td>
+<td>格</td>
+<td>ゴウ, キャク, コウ, カク</td>
+<td></td>
+<td>status, rank, capacity, character, case (law, grammar)</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>282</td>
+<td>有</td>
+<td> ウ, ユウ</td>
+<td>あ.る</td>
+<td>possess, have, exist, happen, occur, approx</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>283</td>
+<td>疑</td>
+<td> ギ</td>
+<td>うたが.う</td>
+<td>doubt, distrust, be suspicious, question</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>284</td>
+<td>口</td>
+<td> ク, コウ</td>
+<td>くち</td>
+<td>mouth</td>
+<td>4</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>285</td>
+<td>過</td>
+<td> カ</td>
+<td>よ.ぎる, あやま.ち, あやま.つ, す.ごす, -す.ぎ, -す.ぎる, す.ぎる</td>
+<td>overdo, exceed, go beyond, error</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>286</td>
+<td>局</td>
+<td> キョク</td>
+<td>つぼね</td>
+<td>bureau, board, office, affair, conclusion, court lady, lady-in-waiting, her apartment</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>287</td>
+<td>少</td>
+<td> ショウ</td>
+<td>すこ.し, すく.ない</td>
+<td>few, little</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>288</td>
+<td>放</td>
+<td> ホウ</td>
+<td>ほう.る, こ.く, はな.れる, はな.つ, -っぱな.し, はな.す</td>
+<td>set free, release, fire, shoot, emit, banish, liberate</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>289</td>
+<td>税</td>
+<td>ゼイ</td>
+<td></td>
+<td>tax, duty</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>290</td>
+<td>検</td>
+<td> ケン</td>
+<td>しら.べる</td>
+<td>examination, investigate</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>291</td>
+<td>藤</td>
+<td> ドウ, トウ</td>
+<td>ふじ</td>
+<td>wisteria</td>
+<td>1</td>
+<td>高等学校</td>
+    </tr>
+    <tr>
+<td>292</td>
+<td>町</td>
+<td> チョウ</td>
+<td>まち</td>
+<td>town, village, block, street</td>
+<td>4</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>293</td>
+<td>常</td>
+<td> ジョウ</td>
+<td>とこ-, つね</td>
+<td>usual, ordinary, normal, regular</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>294</td>
+<td>校</td>
+<td>キョウ, コウ</td>
+<td></td>
+<td>exam, school, printing, proof, correction</td>
+<td>3</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>295</td>
+<td>料</td>
+<td>リョウ</td>
+<td></td>
+<td>fee, materials</td>
+<td>4</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>296</td>
+<td>沢</td>
+<td> タク</td>
+<td>つや, うるお.す, うるお.い, さわ</td>
+<td>swamp</td>
+<td>1</td>
+<td>中学1年</td>
+    </tr>
+    <tr>
+<td>297</td>
+<td>裁</td>
+<td> サイ</td>
+<td>さば.く, た.つ</td>
+<td>tailor, judge, decision, cut out (pattern)</td>
+<td>1</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>298</td>
+<td>状</td>
+<td>ジョウ</td>
+<td></td>
+<td>status quo, conditions, circumstances, form, appearance</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>299</td>
+<td>工</td>
+<td>グ, ク, コウ</td>
+<td></td>
+<td>craft, construction</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>300</td>
+<td>建</td>
+<td> コン, ケン</td>
+<td>た.つ, -だ.て, た.て, た.てる</td>
+<td>build</td>
+<td>4</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>301</td>
+<td>語</td>
+<td> ゴ</td>
+<td>かた.らう, かた.る</td>
+<td>word, speech, language</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>302</td>
+<td>球</td>
+<td> キュウ</td>
+<td>たま</td>
+<td>ball, sphere</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>303</td>
+<td>営</td>
+<td> エイ</td>
+<td>いとな.み, いとな.む</td>
+<td>occupation, camp, perform, build, conduct (business)</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>304</td>
+<td>空</td>
+<td> クウ</td>
+<td>むな.しい, す.かす, す.く, から, あ.ける, あ.き, あ.く, そら</td>
+<td>empty, sky, void, vacant, vacuum</td>
+<td>4</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>305</td>
+<td>職</td>
+<td>ソク, ショク</td>
+<td></td>
+<td>post, employment, work</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>306</td>
+<td>証</td>
+<td> ショウ</td>
+<td>あかし</td>
+<td>evidence, proof, certificate</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>307</td>
+<td>土</td>
+<td> ト, ド</td>
+<td>つち</td>
+<td>soil, earth, ground, Turkey</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>308</td>
+<td>与</td>
+<td> ヨ</td>
+<td>ともに, くみ.する, あずか.る, あた.える</td>
+<td>bestow, participate in, give, award, impart, provide, cause, gift, godsend</td>
+<td>2</td>
+<td>中学1年</td>
+    </tr>
+    <tr>
+<td>309</td>
+<td>急</td>
+<td> キュウ</td>
+<td>いそ.ぎ, いそ.ぐ</td>
+<td>hurry, emergency, sudden, steep</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>310</td>
+<td>止</td>
+<td> シ</td>
+<td>-さ.し, -さ.す, よ.す, -や.む, や.む, や.める, とど.まる, とど.め, とど.める, -ど.め, -と.める, と.める, -ど.まり, と.まる</td>
+<td>stop, halt</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>311</td>
+<td>送</td>
+<td> ソウ</td>
+<td>おく.る</td>
+<td>escort, send</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>312</td>
+<td>援</td>
+<td>エン</td>
+<td></td>
+<td>abet, help, save</td>
+<td>1</td>
+<td>中学1年</td>
+    </tr>
+    <tr>
+<td>313</td>
+<td>供</td>
+<td> グ, クウ, ク, キョウ</td>
+<td>-ども, とも, そな.える</td>
+<td>submit, offer, present, serve (meal); accompany</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>314</td>
+<td>可</td>
+<td> コク, カ</td>
+<td>-べ.し, -べ.き</td>
+<td>can, possible, mustn't, should not, do not</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>315</td>
+<td>役</td>
+<td>エキ, ヤク</td>
+<td></td>
+<td>duty, war, campaign, drafted labor, office, service, role</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>316</td>
+<td>構</td>
+<td> コウ</td>
+<td>かま.う, かま.える</td>
+<td>posture, build, pretend</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>317</td>
+<td>木</td>
+<td> モク, ボク</td>
+<td>こ-, き</td>
+<td>tree, wood</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>318</td>
+<td>割</td>
+<td> カツ</td>
+<td>さ.く, わ.れる, わ.り, わり, わ.る</td>
+<td>proportion, comparatively, divide, cut, separate, split</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>319</td>
+<td>聞</td>
+<td> モン, ブン</td>
+<td>き.こえる, き.く</td>
+<td>hear, ask, listen</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>320</td>
+<td>身</td>
+<td> シン</td>
+<td>み</td>
+<td>somebody, person, one's station in life</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>321</td>
+<td>費</td>
+<td> ヒ</td>
+<td>つい.える, つい.やす</td>
+<td>expense, cost, spend, consume, waste</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>322</td>
+<td>付</td>
+<td> フ</td>
+<td>-づき, -づ.き, -つき, -つ.き, つ.き, -づ.く, つ.く, -づけ, -づ.け, -つ.け, つ.け-, つ.け, -づ.ける, -つ.ける, つ.ける</td>
+<td>adhere, attach, refer to, append</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>323</td>
+<td>施</td>
+<td> セ, シ</td>
+<td>ほどこ.す</td>
+<td>alms, apply bandages, administer first-aid</td>
+<td>1</td>
+<td>中学2年</td>
+    </tr>
+    <tr>
+<td>324</td>
+<td>切</td>
+<td> サイ, セツ</td>
+<td>-ぎ.れ, -き.れ, き.れ, -き.れる, き.れる, -ぎ.り, -き.り, き.り, -き.る, き.る</td>
+<td>cut, cutoff, be sharp</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>325</td>
+<td>由</td>
+<td> ユイ, ユウ, ユ</td>
+<td>よ.る, よし</td>
+<td>wherefore, a reason</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>326</td>
+<td>説</td>
+<td> ゼイ, セツ</td>
+<td>と.く</td>
+<td>rumor, opinion, theory</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>327</td>
+<td>転</td>
+<td> テン</td>
+<td>くる.めく, うつ.る, うたた, まろ.ぶ, ころ.ぶ, ころ.がす, ころ.げる, ころ.がる</td>
+<td>revolve, turn around, change</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>328</td>
+<td>食</td>
+<td> ジキ, ショク</td>
+<td>は.む, た.べる, く.らう, く.う</td>
+<td>eat, food</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>329</td>
+<td>比</td>
+<td> ヒ</td>
+<td>くら.べる</td>
+<td>compare, race, ratio, Philipines</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>330</td>
+<td>難</td>
+<td> ナン</td>
+<td>-にく.い, むつか.しい, むづか.しい, むずか.しい, -がた.い, かた.い</td>
+<td>difficult, impossible, trouble, accident, defect</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>331</td>
+<td>防</td>
+<td> ボウ</td>
+<td>ふせ.ぐ</td>
+<td>ward off, defend, protect, resist</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>332</td>
+<td>補</td>
+<td> ホ</td>
+<td>おぎな.う</td>
+<td>supplement, supply, make good, offset, compensate, assistant, learner</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>333</td>
+<td>車</td>
+<td> シャ</td>
+<td>くるま</td>
+<td>car</td>
+<td>5</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>334</td>
+<td>優</td>
+<td> ウ, ユウ</td>
+<td>まさ.る, すぐ.れる, やさ.しい</td>
+<td>tenderness, excel, surpass, actor, superiority, gentleness</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>335</td>
+<td>夫</td>
+<td> ブ, フウ, フ</td>
+<td>そ.れ, おっと</td>
+<td>husband, man</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>336</td>
+<td>研</td>
+<td> ケン</td>
+<td>と.ぐ</td>
+<td>polish, study of, sharpen</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>337</td>
+<td>収</td>
+<td> シュウ</td>
+<td>おさ.まる, おさ.める</td>
+<td>income, obtain, reap, pay, supply, store</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>338</td>
+<td>断</td>
+<td> ダン</td>
+<td>さだ.める, ことわ.る, た.つ</td>
+<td>severance, decline, refuse, apologize, warn, dismiss, prohibit, decision, judgement, cutting</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>339</td>
+<td>井</td>
+<td> ショウ, セイ</td>
+<td>い</td>
+<td>well, well crib, town, community</td>
+<td>1</td>
+<td>中学1年</td>
+    </tr>
+    <tr>
+<td>340</td>
+<td>何</td>
+<td> カ</td>
+<td>なん-, なに-, なん, なに</td>
+<td>what</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>341</td>
+<td>南</td>
+<td> ナ, ナン</td>
+<td>みなみ</td>
+<td>south</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>342</td>
+<td>石</td>
+<td> コク, シャク, セキ</td>
+<td>いし</td>
+<td>stone</td>
+<td>3</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>343</td>
+<td>足</td>
+<td> ソク</td>
+<td>た.す, た.る, た.りる, あし</td>
+<td>leg, foot, be sufficient, counter for pairs of footwear</td>
+<td>4</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>344</td>
+<td>違</td>
+<td> イ</td>
+<td>たが.える, たが.う, -ちが.える, ちが.える, ちが.い, ちが.う</td>
+<td>difference, differ</td>
+<td>2</td>
+<td>中学1年</td>
+    </tr>
+    <tr>
+<td>345</td>
+<td>消</td>
+<td> ショウ</td>
+<td>け.す, き.える</td>
+<td>extinguish, blow out, turn off, neutralize, cancel</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>346</td>
+<td>境</td>
+<td> ケイ, キョウ</td>
+<td>さかい</td>
+<td>boundary, border, region</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>347</td>
+<td>神</td>
+<td> ジン, シン</td>
+<td>こう-, かん-, かみ</td>
+<td>gods, mind, soul</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>348</td>
+<td>番</td>
+<td> バン</td>
+<td>つが.い</td>
+<td>turn, number in a series</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>349</td>
+<td>規</td>
+<td>キ</td>
+<td></td>
+<td>standard, measure</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>350</td>
+<td>術</td>
+<td> ジュツ</td>
+<td>すべ</td>
+<td>art, technique, skill, means, trick, resources, magic</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>351</td>
+<td>護</td>
+<td> ゴ</td>
+<td>まも.る</td>
+<td>safeguard, protect</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>352</td>
+<td>展</td>
+<td>テン</td>
+<td></td>
+<td>unfold, expand</td>
+<td>1</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>353</td>
+<td>態</td>
+<td> タイ</td>
+<td>わざ.と</td>
+<td>attitude, condition, figure, appearance, voice (of verbs)</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>354</td>
+<td>導</td>
+<td> ドウ</td>
+<td>みちび.く</td>
+<td>guidance, leading, conduct, usher</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>355</td>
+<td>鮮</td>
+<td> セン</td>
+<td>あざ.やか</td>
+<td>fresh, vivid, clear, brilliant, Korea</td>
+<td>1</td>
+<td>中学1年</td>
+    </tr>
+    <tr>
+<td>356</td>
+<td>備</td>
+<td> ビ</td>
+<td>つぶさ.に, そな.わる, そな.える</td>
+<td>equip, provision, preparation</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>357</td>
+<td>宅</td>
+<td>タク</td>
+<td></td>
+<td>home, house, residence, our house, my husband</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>358</td>
+<td>害</td>
+<td>ガイ</td>
+<td></td>
+<td>harm, injury</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>359</td>
+<td>配</td>
+<td> ハイ</td>
+<td>くば.る</td>
+<td>distribute, spouse, exile, rationing</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>360</td>
+<td>副</td>
+<td>フク</td>
+<td></td>
+<td>vice-, duplicate, copy</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>361</td>
+<td>算</td>
+<td> サン</td>
+<td>そろ</td>
+<td>calculate, divining, number, abacus, probability</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>362</td>
+<td>視</td>
+<td> シ</td>
+<td>み.る</td>
+<td>inspection, regard as, see, look at</td>
+<td>1</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>363</td>
+<td>条</td>
+<td> デキ, チョウ, ジョウ</td>
+<td>すじ, えだ</td>
+<td>article, clause, item, stripe, streak</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>364</td>
+<td>幹</td>
+<td> カン</td>
+<td>みき</td>
+<td>tree trunk</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>365</td>
+<td>独</td>
+<td> トク, ドク</td>
+<td>ひと.り</td>
+<td>single, alone, spontaneously, Germany</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>366</td>
+<td>警</td>
+<td> ケイ</td>
+<td>いまし.める</td>
+<td>admonish, commandment</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>367</td>
+<td>宮</td>
+<td> クウ, ク, グウ, キュウ</td>
+<td>みや</td>
+<td>Shinto shrine, constellations, palace, princess</td>
+<td>1</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>368</td>
+<td>究</td>
+<td> ク, キュウ</td>
+<td>きわ.める</td>
+<td>research, study</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>369</td>
+<td>育</td>
+<td> イク</td>
+<td>はぐく.む, そだ.てる, そだ.ち, そだ.つ</td>
+<td>bring up, grow up, raise, rear</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>370</td>
+<td>席</td>
+<td> セキ</td>
+<td>むしろ</td>
+<td>seat, mat, occasion, place</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>371</td>
+<td>輸</td>
+<td>シュ, ユ</td>
+<td></td>
+<td>transport, send, be inferior</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>372</td>
+<td>訪</td>
+<td> ホウ</td>
+<td>と.う, たず.ねる, おとず.れる</td>
+<td>call on, visit, look up, offer sympathy</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>373</td>
+<td>楽</td>
+<td> ゴウ, ラク, ガク</td>
+<td>この.む, たの.しむ, たの.しい</td>
+<td>music, comfort, ease</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>374</td>
+<td>起</td>
+<td> キ</td>
+<td>た.つ, おこ.す, お.こす, お.こる, お.きる</td>
+<td>rouse, wake up, get up</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>375</td>
+<td>万</td>
+<td> バン, マン</td>
+<td>よろず</td>
+<td>ten thousand</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>376</td>
+<td>着</td>
+<td> ジャク, チャク</td>
+<td>つ.ける, つ.く, -き.せ, き.せる, -ぎ, き.る</td>
+<td>don, arrive, wear, counter for suits of clothing</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>377</td>
+<td>乗</td>
+<td> ショウ, ジョウ</td>
+<td>の.せる, -の.り, の.る</td>
+<td>ride, power, multiplication, record, counter for vehicles, board, mount, join</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>378</td>
+<td>店</td>
+<td> テン</td>
+<td>たな, みせ</td>
+<td>store, shop</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>379</td>
+<td>述</td>
+<td> ジュツ</td>
+<td>の.べる</td>
+<td>mention, state, speak, relate</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>380</td>
+<td>残</td>
+<td> サン, ザン</td>
+<td>のこ.り, そこな.う, のこ.す, のこ.る</td>
+<td>remainder, leftover, balance</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>381</td>
+<td>想</td>
+<td> ソ, ソウ</td>
+<td>おも.う</td>
+<td>concept, think, idea, thought</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>382</td>
+<td>線</td>
+<td> セン</td>
+<td>すじ</td>
+<td>line, track</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>383</td>
+<td>率</td>
+<td> シュツ, リツ, ソツ</td>
+<td>ひき.いる</td>
+<td>ratio, rate, proportion, %, coefficient, factor</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>384</td>
+<td>病</td>
+<td> ヘイ, ビョウ</td>
+<td>やまい, -や.み, や.む</td>
+<td>ill, sick</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>385</td>
+<td>農</td>
+<td>ノウ</td>
+<td></td>
+<td>agriculture, farmers</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>386</td>
+<td>州</td>
+<td> ス, シュウ</td>
+<td>す</td>
+<td>state, province</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>387</td>
+<td>武</td>
+<td> ム, ブ</td>
+<td>たけ.し</td>
+<td>warrior, military, chivalry, arms</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>388</td>
+<td>声</td>
+<td> ショウ, セイ</td>
+<td>こわ-, こえ</td>
+<td>voice</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>389</td>
+<td>質</td>
+<td> チ, シチ, シツ</td>
+<td>わりふ, もと, ただ.す, たち</td>
+<td>substance, quality, matter, temperament</td>
+<td>4</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>390</td>
+<td>念</td>
+<td>ネン</td>
+<td></td>
+<td>wish, sense, idea, thought, feeling, desire, attention</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>391</td>
+<td>待</td>
+<td> タイ</td>
+<td>-ま.ち, ま.つ</td>
+<td>wait, depend on</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>392</td>
+<td>試</td>
+<td> シ</td>
+<td>ため.す, こころ.みる</td>
+<td>test, try, attempt, experiment, ordeal</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>393</td>
+<td>族</td>
+<td>ゾク</td>
+<td></td>
+<td>tribe, family</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>394</td>
+<td>象</td>
+<td> ゾウ, ショウ</td>
+<td>かたど.る</td>
+<td>elephant, pattern after, imitate, image, shape, sign (of the times)</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>395</td>
+<td>銀</td>
+<td> ギン</td>
+<td>しろがね</td>
+<td>silver</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>396</td>
+<td>域</td>
+<td>イキ</td>
+<td></td>
+<td>range, region, limits, stage, level</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>397</td>
+<td>助</td>
+<td> ジョ</td>
+<td>すけ, す.ける, たす.かる, たす.ける</td>
+<td>help, rescue, assist</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>398</td>
+<td>労</td>
+<td> ロウ</td>
+<td>ねぎら.う, つか.れる, ねぎら, いた.ずき, いたわ.る, ろう.する</td>
+<td>labor, thank for, reward for, toil, trouble</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>399</td>
+<td>例</td>
+<td> レイ</td>
+<td>たと.える</td>
+<td>example, custom, usage, precedent</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>400</td>
+<td>衛</td>
+<td>エ, エイ</td>
+<td></td>
+<td>defense, protection</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>401</td>
+<td>然</td>
+<td> ネン, ゼン</td>
+<td>さ, しか.し, しか.り, しか</td>
+<td>sort of thing, so, if so, in that case, well</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>402</td>
+<td>早</td>
+<td> サッ, ソウ</td>
+<td>さ-, はや.める, はや.まる, はや-, はや, はや.い</td>
+<td>early, fast</td>
+<td>4</td>
+<td>小学1年</td>
+    </tr>
+    <tr>
+<td>403</td>
+<td>張</td>
+<td> チョウ</td>
+<td>-ば.り, -は.り, は.る</td>
+<td>lengthen, counter for bows & stringed instruments, stretch, spread, put up (tent)</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>404</td>
+<td>映</td>
+<td> エイ</td>
+<td>-ば.え, は.える, うつ.す, うつ.る</td>
+<td>reflect, reflection, projection</td>
+<td>4</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>405</td>
+<td>限</td>
+<td> ゲン</td>
+<td>-かぎ.り, かぎ.り, かぎ.る</td>
+<td>limit, restrict, to best of ability</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>406</td>
+<td>親</td>
+<td> シン</td>
+<td>した.しむ, した.しい, おや-, おや</td>
+<td>parent, intimacy, relative, familiarity, dealer (cards)</td>
+<td>4</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>407</td>
+<td>額</td>
+<td> ガク</td>
+<td>ひたい</td>
+<td>forehead, tablet, plaque, framed picture, sum, amount, volume</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>408</td>
+<td>監</td>
+<td>カン</td>
+<td></td>
+<td>oversee, official, govt office, rule, administer</td>
+<td>1</td>
+<td>中学1年</td>
+    </tr>
+    <tr>
+<td>409</td>
+<td>環</td>
+<td> カン</td>
+<td>わ</td>
+<td>ring, circle, link, wheel</td>
+<td>1</td>
+<td>中学1年</td>
+    </tr>
+    <tr>
+<td>410</td>
+<td>験</td>
+<td> ゲン, ケン</td>
+<td>ためし, ため.す, しるし, あかし</td>
+<td>verification, effect, testing</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>411</td>
+<td>追</td>
+<td> ツイ</td>
+<td>お.う</td>
+<td>chase, drive away, follow, pursue, meanwhile</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>412</td>
+<td>審</td>
+<td> シン</td>
+<td>つぶさ.に, つまび.らか</td>
+<td>hearing, judge, trial</td>
+<td>1</td>
+<td>中学2年</td>
+    </tr>
+    <tr>
+<td>413</td>
+<td>商</td>
+<td> ショウ</td>
+<td>あきな.う</td>
+<td>make a deal, selling, dealing in, merchant</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>414</td>
+<td>葉</td>
+<td> ヨウ</td>
+<td>は</td>
+<td>leaf, plane, lobe, needle, blade, spear, counter for flat things, fragment, piece</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>415</td>
+<td>義</td>
+<td>ギ</td>
+<td></td>
+<td>righteousness, justice, morality, honor, loyalty, meaning</td>
+<td>1</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>416</td>
+<td>伝</td>
+<td> テン, デン</td>
+<td>つて, -づた.い, つだ.う, つた.う, つた.える, つた.わる</td>
+<td>transmit, go along, walk along, follow, report, communicate, legend, tradition</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>417</td>
+<td>働</td>
+<td> リョク, ロク, リキ, リュク, ドウ</td>
+<td>はたら.く</td>
+<td>work, (kokuji)</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>418</td>
+<td>形</td>
+<td> ギョウ, ケイ</td>
+<td>なり, かたち, -がた, かた</td>
+<td>shape, form, style</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>419</td>
+<td>景</td>
+<td>ケイ</td>
+<td></td>
+<td>scenery, view</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>420</td>
+<td>落</td>
+<td> ラク</td>
+<td>お.とす, お.ち, お.ちる</td>
+<td>fall, drop, come down</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>421</td>
+<td>欧</td>
+<td> オウ</td>
+<td>は.く, うた.う</td>
+<td>Europe</td>
+<td>2</td>
+<td>中学2年</td>
+    </tr>
+    <tr>
+<td>422</td>
+<td>担</td>
+<td> タン</td>
+<td>にな.う, かつ.ぐ</td>
+<td>shouldering, carry, raise, bear</td>
+<td>2</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>423</td>
+<td>好</td>
+<td> コウ</td>
+<td>い.い, よ.い, す.く, この.む</td>
+<td>fond, pleasing, like something</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>424</td>
+<td>退</td>
+<td> タイ</td>
+<td>ど.く, の.ける, の.く, ひ.く, しりぞ.ける, しりぞ.く</td>
+<td>retreat, withdraw, retire, resign, repel, expel, reject</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>425</td>
+<td>準</td>
+<td> ジュン</td>
+<td>みずもり, ひと.しい, のり, なぞら.える, じゅん.ずる, じゅん.じる</td>
+<td>semi-, correspond to, proportionate to, conform, imitate</td>
+<td>3</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>426</td>
+<td>賞</td>
+<td> ショウ</td>
+<td>ほ.める</td>
+<td>prize, reward, praise</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>427</td>
+<td>訴</td>
+<td> ソ</td>
+<td>うった.える</td>
+<td>accusation, sue, complain of pain, appeal to</td>
+<td>1</td>
+<td>中学1年</td>
+    </tr>
+    <tr>
+<td>428</td>
+<td>辺</td>
+<td> ヘン</td>
+<td>-べ, ほと.り, あた.り</td>
+<td>environs, boundary, border, vicinity</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>429</td>
+<td>造</td>
+<td> ゾウ</td>
+<td>-づく.り, つく.り, つく.る</td>
+<td>create, make, structure, physique</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>430</td>
+<td>英</td>
+<td> エイ</td>
+<td>はなぶさ</td>
+<td>England, English</td>
+<td>4</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>431</td>
+<td>被</td>
+<td> ヒ</td>
+<td>かぶ.せる, かぶ.る, おお.う, こうむ.る</td>
+<td>incur, cover, veil, brood over, shelter, wear, put on, be exposed (film); receiving</td>
+<td>2</td>
+<td>中学1年</td>
+    </tr>
+    <tr>
+<td>432</td>
+<td>株</td>
+<td> シュ</td>
+<td>かぶ</td>
+<td>stocks, stump, shares, stock, counter for small plants</td>
+<td>1</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>433</td>
+<td>頭</td>
+<td> ト, ズ, トウ</td>
+<td>かぶり, -がしら, かしら, あたま</td>
+<td>head, counter for large animals</td>
+<td>3</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>434</td>
+<td>技</td>
+<td> ギ</td>
+<td>わざ</td>
+<td>skill, art, craft, ability, feat, performance, vocation, arts</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>435</td>
+<td>低</td>
+<td> テイ</td>
+<td>ひく.まる, ひく.める, ひく.い</td>
+<td>lower, short, humble</td>
+<td>3</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>436</td>
+<td>毎</td>
+<td> マイ</td>
+<td>-ごと.に, ごと</td>
+<td>every</td>
+<td>5</td>
+<td>小学2年</td>
+    </tr>
+    <tr>
+<td>437</td>
+<td>医</td>
+<td> イ</td>
+<td>くすし, い.する, い.やす</td>
+<td>doctor, medicine</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>438</td>
+<td>復</td>
+<td> フク</td>
+<td>また</td>
+<td>restore, return to, revert, resume</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>439</td>
+<td>仕</td>
+<td> ジ, シ</td>
+<td>つか.える</td>
+<td>attend, doing, official, serve</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>440</td>
+<td>去</td>
+<td> コ, キョ</td>
+<td>-さ.る, さ.る</td>
+<td>gone, past, quit, leave, elapse, eliminate, divorce</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>441</td>
+<td>姿</td>
+<td> シ</td>
+<td>すがた</td>
+<td>figure, form, shape</td>
+<td>1</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>442</td>
+<td>味</td>
+<td> ミ</td>
+<td>あじ.わう, あじ</td>
+<td>flavor, taste</td>
+<td>4</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>443</td>
+<td>負</td>
+<td> フ</td>
+<td>お.う, ま.かす, ま.ける</td>
+<td>defeat, negative, -, minus, bear, owe, assume a responsibility</td>
+<td>3</td>
+<td>小学3年</td>
+    </tr>
+    <tr>
+<td>444</td>
+<td>閣</td>
+<td>カク</td>
+<td></td>
+<td>tower, tall building, palace</td>
+<td>1</td>
+<td>小学6年</td>
+    </tr>
+    <tr>
+<td>445</td>
+<td>韓</td>
+<td> カン</td>
+<td>いげた, から</td>
+<td>Korea</td>
+<td>0</td>
+<td>高等学校</td>
+    </tr>
+    <tr>
+<td>446</td>
+<td>渡</td>
+<td> ト</td>
+<td>わた.す, -わた.る, わた.る</td>
+<td>transit, ford, ferry, cross, import, deliver, diameter, migrate</td>
+<td>2</td>
+<td>中学1年</td>
+    </tr>
+    <tr>
+<td>447</td>
+<td>失</td>
+<td> シツ</td>
+<td>う.せる, うしな.う</td>
+<td>lose, error, fault, disadvantage, loss</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>448</td>
+<td>移</td>
+<td> イ</td>
+<td>うつ.す, うつ.る</td>
+<td>shift, move, change, drift, catch (cold, fire); pass into</td>
+<td>2</td>
+<td>小学5年</td>
+    </tr>
+    <tr>
+<td>449</td>
+<td>差</td>
+<td> サ</td>
+<td>さ.し, さ.す</td>
+<td>distinction, difference, variation, discrepancy, margin, balance</td>
+<td>2</td>
+<td>小学4年</td>
+    </tr>
+    <tr>
+<td>450</td>
+<td>衆</td>
+<td> シュ, シュウ</td>
+<td>おお.い</td>
+<td>masses, great numbers, multitude, populace</td>
+<td>1</td>
+<td>小学6年</td>
+    </tr>
+    </tbody>
+<tfoot style="background-color: #c0c0c0; color: #ffffff; font-size: 0.9em; ">
+<tr>
+<th>Frequency</th>
+<th>Kanji</th>
+<th>Onyomi</th>
+<th>Kunyomi</th>
+<th>Meaning_english</th>
+<th>Njlpt</th>
+<th>Schoolstd</th>
+    </tr>
+</tfoot>
+</table>
+
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="js/jszip.min.js"></script>
+<script type="text/javascript" src="js/pdfmake.min.js"></script>
+<script type="text/javascript" src="js/vfs_fonts.js"></script>
+<script type="text/javascript" src="js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="js/buttons.print.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/jquery.mark.min.js"></script>
+<script type="text/javascript" src="js/datatables.mark.js"></script>
+<script type="text/javascript" src="js/buttons.colVis.min.js"></script>
+<footer></footer>
+</body>
+
+</html>

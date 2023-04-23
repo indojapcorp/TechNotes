@@ -14,7 +14,7 @@ function loadTable(event) {
             const td = document.createElement("th");
             var input = document.createElement('input');
             input.type = "checkbox";
-            input.id="colall";
+            input.id="allcol";
             input.setAttribute('onclick','selectAll(this)');
             td.appendChild(input);
             trcolcheck.appendChild(td);
@@ -23,8 +23,8 @@ function loadTable(event) {
               const td = document.createElement("th");
               var input = document.createElement('input');
               input.type = "checkbox";
-              input.id="col"+i+1;
-              input.value=i+1;
+              input.id="col"+(i+1);
+              input.value=(i+1);
               input.onchange = () => createFavorites();
               //input.placeholder="Filter Column "+i;
               td.appendChild(input);
@@ -36,10 +36,12 @@ function loadTable(event) {
             const trcolsearch = document.createElement("tr");
 
             const tdsearchblank = document.createElement("th");
-            var input = document.createElement('input');
-            input.type = "hidden";
-            input.name="rowsh"+rowno;
-            input.value=rowno;
+            var input =document.createTextNode("");
+
+           // var input = document.createElement('input');
+           // input.type = "hidden";
+           // input.name="rowsh"+rowno;
+           // input.value=rowno;
             tdsearchblank.appendChild(input);
             trcolsearch.appendChild(tdsearchblank);
 
@@ -58,10 +60,11 @@ function loadTable(event) {
             const trcolheader = document.createElement("tr");
 
             const tdblank = document.createElement("th");
-            var input = document.createElement('input');
-            input.type = "hidden";
-            input.name="rowh"+rowno;
-            input.value=rowno;
+            var input =document.createTextNode("");
+            //var input = document.createElement('input');
+            //input.type = "hidden";
+            //input.name="rowh"+rowno;
+            //input.value=rowno;
             tdblank.appendChild(input);
             trcolheader.appendChild(tdblank);
 
@@ -76,7 +79,7 @@ function loadTable(event) {
         }else{
             const tr = document.createElement("tr");
 
-            const td = document.createElement("tr");
+            const td = document.createElement("td");
             var input = document.createElement('input');
             input.type = "checkbox";
             input.name="row"+rowno;
@@ -154,7 +157,7 @@ function createFavorites() {
 
 function speakRowData(row) {
     var selectedData = "";
-    for (var i = 1; i < row.cells.length - 1; i++) {
+    for (var i = 1; i < row.cells.length ; i++) {
 
             if(favorites.includes(""+i)){
             selectedData += row.cells[i].innerHTML + " .!  ";
@@ -170,11 +173,11 @@ function deleteSelectedRows() {
     var table = document.getElementById("myTable");
     var rowCount = table.rows.length;
 
-    for (var i = 2; i < rowCount; i++) {
+    for (var i = 3; i < rowCount; i++) {
         var row = table.rows[i];
         var checkBox = row.cells[0].getElementsByTagName("input")[0];
 
-        if (checkBox.checked) {
+        if (checkBox!=undefined && checkBox.checked) {
             table.deleteRow(i);
             rowCount--;
             i--;
@@ -186,11 +189,11 @@ function deleteNonselectedRows() {
     var table = document.getElementById("myTable");
     var rowCount = table.rows.length;
 
-    for (var i = 2; i < rowCount; i++) {
+    for (var i = 3; i < rowCount; i++) {
         var row = table.rows[i];
         var checkBox = row.cells[0].getElementsByTagName("input")[0];
 
-        if (!checkBox.checked) {
+        if (checkBox!=undefined && !checkBox.checked) {
             table.deleteRow(i);
             rowCount--;
             i--;
@@ -245,15 +248,15 @@ let selectedData = "";
 		function getSelectedData() {
 			var table = document.getElementById("myTable");
 			var rowCount = table.rows.length;
+      console.log(rowCount);
 			//var selectedData = "";
 			selectedData = "";
 
-
-			for (var i = 2; i < rowCount; i++) {
+			for (var i = 3; i < rowCount; i++) {
 				var row = table.rows[i];
 				var checkBox = row.cells[0].getElementsByTagName("input")[0];
-
-				if (checkBox.checked) {
+        console.log("checkBox="+checkBox);
+				if (checkBox!=undefined && checkBox.checked) {
 					for (var j = 1; j < row.cells.length; j++) {
 						if(favorites.includes(""+j)){
 						selectedData += row.cells[j].innerHTML + " .! ";
