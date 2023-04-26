@@ -92,8 +92,8 @@
 		<option value="Italiano">Italiano</option>
 		<option value="日本語">日本語</option>
 	</select>
-	<button onclick="startRecognition()">Start</button>
-	<button onclick="stopRecognition()">Stop</button>
+	<button id="startRecBtn" onclick="startRecognition()">Start</button>
+	<button id="stopRecBtn" disabled onclick="stopRecognition()" ">Stop</button>
 	<button onclick="clearTextArea()">Clear</button>
     <input type="checkbox" id="tts-checkbox">
     <label for="tts-checkbox">Enable Text-to-Speech</label>	
@@ -141,6 +141,9 @@
 		const synth = window.speechSynthesis;
 		const utterance = new SpeechSynthesisUtterance();
 
+		const startRecBtn = document.getElementById('startRecBtn');
+		const stopRecBtn = document.getElementById('stopRecBtn');
+		
 		const playBtn = document.getElementById('playBtn');
 		const pauseBtn = document.getElementById('pauseBtn');
 		const resumeBtn = document.getElementById('resumeBtn');
@@ -169,6 +172,8 @@
 		translateBtn.addEventListener('click', () => {
 			translate();
 		});
+
+
 
 		playBtn.addEventListener('click', () => {
 			// set the text to speak
@@ -272,11 +277,15 @@
 		function startRecognition() {
 			recognition.lang = languages[document.getElementById("language").value];
 			recognition.start();
+			startRecBtn.disabled=true;
+			stopRecBtn.disabled=false;			
 		}
 
 		// Define the function to stop speech recognition
 		function stopRecognition() {
 			recognition.stop();
+			startRecBtn.disabled=false;
+			stopRecBtn.disabled=true;
 			if (window.getSelection) {
   if (window.getSelection().empty) {  // Chrome
     window.getSelection().empty();
@@ -286,6 +295,7 @@
 } else if (document.selection) {  // IE?
   document.selection.empty();
 }
+			
 
 		}
 
@@ -462,7 +472,8 @@ sourceText=finalstr;
 var kuroshiro = new Kuroshiro();
 kuroshiro.init(new KuromojiAnalyzer({ dictPath: "https://indojapcorp.github.io/TechNotes/tts/js/dict" }))
 .then(function () {
-        return kuroshiro.convert(sourceText, { mode:"furigana",  to: "hiragana" });
+        return kuroshiro.convert(sourceText, { mode:"furigana",  to: "romaji" });
+        return kuroshiro.convert(sourceText, { mode:"spaced",  to: "romaji" });
     })
     .then(function(result){
         document.getElementById("furigana").innerHTML = '<strong>Furigana:</strong> ' + result;
