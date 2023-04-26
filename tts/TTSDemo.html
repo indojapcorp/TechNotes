@@ -294,12 +294,15 @@
 		// Add event listeners for text-to-speech
 		document.getElementById("transcript").addEventListener("mouseup", e => {
 			const selectedText = window.getSelection().toString();
-			if(deflang=='ja'){
-				getJishoOrgDefinitionExample();
-			}else{
+			if(deflang=='en'){
 				getDefinitionExample();
-			//getDefinitionFromCSV();
 			}
+			
+//			if(deflang=='ja'){
+//				getJishoOrgDefinitionExample();
+//			}else{
+//				getDefinitionExample();
+//			}
 
 			if (isTtsEnabled && selectedText !== "") {
 				speakText(selectedText);

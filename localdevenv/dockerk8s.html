@@ -81,6 +81,8 @@ Check installed Java versions on mac<br />
 
 To change the default java version <br />
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`<br />
+export JAVA_HOME=`/usr/libexec/java_home -v 17`<br />
+
 ----<br />
 nano ~/.bash_profile<br />
 
@@ -651,4 +653,13 @@ docker rmi $(docker images -q)</br>
 
 <p>&nbsp;</p>
 
+
+<p>
+To delete all containers including its volumes use,</br>
+
+docker rm -vf $(docker ps -aq)</br>
+To delete all the images,</br>
+
+docker rmi -f $(docker images -aq)</br>
+</p>
 
