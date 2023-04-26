@@ -74,8 +74,10 @@
 
     </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--
 <script src="https://cdn.jsdelivr.net/npm/transliteration@2.3.5/dist/browser/bundle.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@koozaki/romaji-conv@2.0.20/dist/romaji-conv.min.js"></script>
+-->
 <script src="js/kuroshiro.min.js"></script>
 <script src="js/kuroshiro-analyzer-kuromoji.min.js"></script>
 </head>
@@ -116,6 +118,7 @@
         <div class="column50" id="gt">
 	        <div id="translatetxt"></div>
             <textarea id="resultText"></textarea>
+            <div id="furigana"></div>
         </div>
 		</div>
 		<!--
@@ -153,7 +156,7 @@
         recognition.lang = languageSelect.value;
         utterance.lang = languageSelect.value;
         deflang=languages[document.getElementById("language").value].slice(0, 2);
-        console.log(deflang);
+//        console.log(deflang);
       });
 
       ttsCheckbox.addEventListener("change", () => {
@@ -435,11 +438,10 @@
   var sourceLang = deflang;
   var targetLang = $('#trtgtlang').val();
   //var targetLang = 'ja';
-  console.log(sourceText);
-  
-  var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl="+ sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
-  console.log(url);
   var finalstr=""; 
+
+  var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl="+ sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
+//  console.log(url);
   $.getJSON(url, function(data) {
       //$('textarea#resultText').val(data[0][0][0]);
       
@@ -447,28 +449,36 @@ $.each(data[0] , function(index, val) {
   finalstr += val[0];
 });
 
-  console.log(finalstr);
+//  console.log(finalstr);
       $('textarea#resultText').val(finalstr);
+      
+      
+      if(sourceLang=='ja' || targetLang=='ja'){
+
+if(targetLang=='ja'){
+sourceText=finalstr;
+}
+
+var kuroshiro = new Kuroshiro();
+kuroshiro.init(new KuromojiAnalyzer({ dictPath: "https://indojapcorp.github.io/TechNotes/tts/js/dict" }))
+.then(function () {
+        return kuroshiro.convert(sourceText, { mode:"furigana",  to: "hiragana" });
+    })
+    .then(function(result){
+        document.getElementById("furigana").innerHTML = '<strong>Furigana:</strong> ' + result;
     });
+    }
+    
+    });
+
 
 }
 	</script>
 	
 <script>
-  var toHiragana = romajiConv.toHiragana;
-var kuroshiro = new Kuroshiro();
-kuroshiro.init(new KuromojiAnalyzer({ dictPath: "js/dict" }))
-    .then(function () {
-        return kuroshiro.convert("感じ取れたら手を繋ごう、重なるのは人生のライン and レミリア最高！", { to: "hiragana" });
-    })
-    .then(function(result){
-        console.log(result);
-    });
-
-
-  console.log(transliterate('日銀の上田総裁は、本日の衆議院財政金融政策委員会の会合で、金融と通貨への信頼がインフレの可能性を低くすると述べた。'));
-    console.log(toHiragana('日銀の上田総裁は、本日の衆議院財政金融政策委員会の会合で、金融と通貨への信頼がインフレの可能性を低くすると述べた。')); // ほげほげ
-
+//var toHiragana = romajiConv.toHiragana;
+//console.log(transliterate('日銀の上田総裁は、本日の衆議院財政金融政策委員会の会合で、金融と通貨への信頼がインフレの可能性を低くすると述べた。'));
+//console.log(toHiragana('日銀の上田総裁は、本日の衆議院財政金融政策委員会の会合で、金融と通貨への信頼がインフレの可能性を低くすると述べた。')); // ほげほげ
 </script>
 
 </body>
