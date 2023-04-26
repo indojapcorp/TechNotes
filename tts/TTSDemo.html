@@ -457,6 +457,13 @@ $.each(data[0] , function(index, val) {
 <script>
   var toHiragana = romajiConv.toHiragana;
 var kuroshiro = new Kuroshiro();
+kuroshiro.init(new KuromojiAnalyzer({ dictPath: "url/to/dictFiles" }))
+    .then(function () {
+        return kuroshiro.convert("感じ取れたら手を繋ごう、重なるのは人生のライン and レミリア最高！", { to: "hiragana" });
+    })
+    .then(function(result){
+        console.log(result);
+    })
 
   console.log(transliterate('日銀の上田総裁は、本日の衆議院財政金融政策委員会の会合で、金融と通貨への信頼がインフレの可能性を低くすると述べた。'));
     console.log(toHiragana('日銀の上田総裁は、本日の衆議院財政金融政策委員会の会合で、金融と通貨への信頼がインフレの可能性を低くすると述べた。')); // ほげほげ
