@@ -457,7 +457,7 @@ $.each(data[0] , function(index, val) {
 <script>
   var toHiragana = romajiConv.toHiragana;
 var kuroshiro = new Kuroshiro();
-kuroshiro.init(new KuromojiAnalyzer({ dictPath: "js/kuromiji/dict" }))
+kuroshiro.init(new KuromojiAnalyzer({ dictPath: "js/dict" }))
     .then(function () {
         return kuroshiro.convert("感じ取れたら手を繋ごう、重なるのは人生のライン and レミリア最高！", { to: "hiragana" });
     })
