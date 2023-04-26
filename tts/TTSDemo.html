@@ -74,7 +74,10 @@
 
     </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/transliteration@2.3.5/dist/browser/bundle.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@koozaki/romaji-conv@2.0.20/dist/romaji-conv.min.js"></script>
+<script src="js/kuroshiro.min.js"></script>
+<script src="js/kuroshiro-analyzer-kuromoji.min.js"></script>
 </head>
 <body>
 	<h1>Speech to Text</h1>
@@ -450,5 +453,15 @@ $.each(data[0] , function(index, val) {
 
 }
 	</script>
+	
+<script>
+  var toHiragana = romajiConv.toHiragana;
+var kuroshiro = new Kuroshiro();
+
+  console.log(transliterate('日銀の上田総裁は、本日の衆議院財政金融政策委員会の会合で、金融と通貨への信頼がインフレの可能性を低くすると述べた。'));
+    console.log(toHiragana('日銀の上田総裁は、本日の衆議院財政金融政策委員会の会合で、金融と通貨への信頼がインフレの可能性を低くすると述べた。')); // ほげほげ
+
+</script>
+
 </body>
 </html>
