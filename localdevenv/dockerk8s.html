@@ -663,3 +663,13 @@ To delete all the images,</br>
 docker rmi -f $(docker images -aq)</br>
 </p>
 
+<p>
+To change cpus or memory you want to get the profile name like mentioned before:</br>
+minikube profile list</br>
+And then delete the profile you want to change, in my case it was minikube:</br>
+
+minikube delete --profile minikube</br>
+Then you can start minikube again creating new profile:</br>
+
+minikube start --vm-driver=virtualbox --cpus 8 --memory 16g</br>
+</p>
